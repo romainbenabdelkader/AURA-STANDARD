@@ -58,3 +58,7 @@ v0.2 – TPKR specification + dataset/model extensions
 v0.3 – Embedded Mode normalization + SDK
 
 v1.0 – Submission to ETSI / AFNOR for standardization
+
+Official standard website (under deployment):
+
+https://aura-standard.org
