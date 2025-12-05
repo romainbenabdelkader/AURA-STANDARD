@@ -25,6 +25,7 @@
     },
 
     "hash": "AURA:hash",
+
     "tdm_opt_out": {
       "@id": "AURA:tdm_opt_out",
       "@type": "xsd:boolean"
@@ -35,6 +36,7 @@
 
     "isrc": "AURA:isrc",
     "iswc": "AURA:iswc",
+
     "other_ids": {
       "@id": "AURA:other_ids",
       "@container": "@set"
