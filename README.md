@@ -2,6 +2,8 @@ AURA - European Origin Proof Standard (Draft v0.1)
 
 AURA (Authenticated Universal Registration for Assets) is an open, neutral and interoperable European-origin standard designed to provide verifiable proof of origin for any digital or creative asset.
 
+Last updated: 2025-12-05
+
 AURA brings a sovereign, cryptographically verifiable layer enabling:
 
 •	certified origin at the moment of creation,
