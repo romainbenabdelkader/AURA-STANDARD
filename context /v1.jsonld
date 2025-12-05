@@ -1,0 +1,47 @@
+{
+  "@context": {
+    "@version": 1.1,
+
+    "id": "@id",
+    "type": "@type",
+
+    "AURA": "https://aura-standard.org/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "aura_id": "AURA:aura_id",
+    "origin_proof_version": "AURA:origin_proof_version",
+
+    "origin": "AURA:origin",
+    "asset": "AURA:asset",
+    "links": "AURA:links",
+    "rights": "AURA:rights",
+    "signature": "AURA:signature",
+
+    "issuer_id": "AURA:issuer_id",
+
+    "issued_at": {
+      "@id": "AURA:issued_at",
+      "@type": "xsd:dateTime"
+    },
+
+    "hash": "AURA:hash",
+    "tdm_opt_out": {
+      "@id": "AURA:tdm_opt_out",
+      "@type": "xsd:boolean"
+    },
+
+    "model": "AURA:model",
+    "public_key": "AURA:public_key",
+
+    "isrc": "AURA:isrc",
+    "iswc": "AURA:iswc",
+    "other_ids": {
+      "@id": "AURA:other_ids",
+      "@container": "@set"
+    },
+
+    "asset_type": "AURA:asset_type",
+    "origin_type": "AURA:origin_type",
+    "declared_by": "AURA:declared_by"
+  }
+}
