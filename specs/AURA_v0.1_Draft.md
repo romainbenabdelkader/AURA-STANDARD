@@ -1,139 +1,80 @@
-# AURA Origin Proof Standard v0.1 (Release Candidate)
+AURA Origin Proof Standard v0.1 (Release Candidate)
+Authenticated Universal Registration for Assets European Origin Proof Standard
+Status: Public Draft for Review Last updated: 2025-12-05
+This document is a public draft intended for review by CMOs, regulators, DSPs, creators, and technical institutions. It does not constitute a final adopted standard.
 
-Authenticated Universal Registration for Assets  
-European Origin Proof Standard  
+0. Normative Language (RFC 2119)
+The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY in this document are to be interpreted as described in RFC 2119.
 
-**Status:** Public Draft for Review  
-**Last updated:** 2025-12-05  
-
-This document is a public draft intended for review by CMOs, regulators, DSPs, creators, and technical institutions.  
-It does not constitute a final adopted standard.
-
----
-
-## 0. Normative Language (RFC 2119)
-
-The key words **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, and **MAY** in this document are to be interpreted as described in RFC 2119.
-
----
-
-## 1. Purpose
-
+1. Purpose
 AURA is an open, neutral and interoperable European-origin standard providing verifiable proof of origin for any digital asset:
-
-- audio  
-- video  
-- text  
-- image  
-- datasets  
-- AI-generated outputs  
-
+* audio
+* video
+* text
+* image
+* datasets
+* AI-generated outputs
 AURA enables:
+* creators to seal origin at creation time,
+* platforms and regulators to verify origin independently,
+* institutions to comply with AI Act Article 53 provenance and disclosure requirements,
+* interoperability with existing rights ecosystems (ISRC, ISWC, DDEX, C2PA).
+AURA does not analyse content, detect similarities or perform fingerprinting. It certifies origin, not identity.
 
-- creators to seal origin at creation time,  
-- platforms and regulators to verify origin independently,  
-- institutions to comply with AI Act Article 53 provenance and disclosure requirements,  
-- interoperability with existing rights ecosystems (ISRC, ISWC, DDEX, C2PA).
-
-AURA does not analyse content, detect similarities or perform fingerprinting.  
-It certifies **origin**, not **identity**.
-
----
-
-## 2. Rationale
-
+2. Rationale
 AURA addresses several structural gaps:
-
-- fragmented metadata across the digital ecosystem,  
-- no sovereign, platform-independent proof-of-origin layer,  
-- AI Act requirements for transparent provenance and TDM opt-out,  
-- existing identifiers (ISRC/ISWC) unable to certify origin at creation,  
-- growing need to distinguish human / AI / hybrid creation.
-
+* fragmented metadata across the digital ecosystem,
+* no sovereign, platform-independent proof-of-origin layer,
+* AI Act requirements for transparent provenance and TDM opt-out,
+* existing identifiers (ISRC/ISWC) unable to certify origin at creation,
+* growing need to distinguish human / AI / hybrid creation.
 AURA provides a minimal, verifiable, cryptographically anchored origin layer compatible across industries.
 
----
-
-## 3. Scope
-
+3. Scope
 AURA defines:
+* AURA-ID origin identifier
+* AURA Manifest structured, signed proof
+* AURA Signature Ed25519-based integrity mechanism
+* TPKR Trusted Public Keys Registry
+* a compliance profile for AI Act Article 53
+* interoperability mappings (ISRC, ISWC, C2PA, DDEX)
+AURA does not define fingerprinting, watermarking, DRM, content recognition or rights allocation.
 
-- **AURA-ID** origin identifier  
-- **AURA Manifest** structured, signed proof  
-- **AURA Signature** Ed25519-based integrity mechanism  
-- **TPKR** Trusted Public Keys Registry  
-- a compliance profile for **AI Act Article 53**  
-- interoperability mappings (ISRC, ISWC, C2PA, DDEX)
+4. Definitions
+* Asset – digital file (audio, video, image, text, dataset, model).
+* Origin – human, ai, hybrid, or unknown.
+* Issuer – entity signing the manifest.
+* Verifier – system validating manifest integrity and authenticity.
+* AURA-ID – globally unique origin identifier.
+* TPKR – registry of trusted issuer public keys.
+* Origin Event – moment when origin is declared and sealed.
 
-AURA does **not** define fingerprinting, watermarking, DRM, content recognition or rights allocation.
-
----
-
-## 4. Definitions
-
-- **Asset** – digital file (audio, video, image, text, dataset, model).  
-- **Origin** – `human`, `ai`, `hybrid`, or `unknown`.  
-- **Issuer** – entity signing the manifest.  
-- **Verifier** – system validating manifest integrity and authenticity.  
-- **AURA-ID** – globally unique origin identifier.  
-- **TPKR** – registry of trusted issuer public keys.  
-- **Origin Event** – moment when origin is declared and sealed.
-
----
-
-## 5. AURA-ID Format
-
+5. AURA-ID Format
 AURA-ID MUST follow:
-
-`AURA-CC-YYYY-NNNNNN-CHECK`
-
+AURA-CC-YYYY-NNNNNN-CHECK
 Where:
-
-- `CC` = ISO-3166 country code or `INT`  
-- `YYYY` = year of origin  
-- `NNNNNN` = issuer-managed unique sequence  
-- `CHECK` = short checksum (Base32) from truncated SHA3-256  
-
-**Example**
-
-`AURA-FR-2025-000042-G9F3K`
-
-**Normative rules**
-
-- AURA-ID identifies **one origin event**, not a file version.  
-- Any modification of the binary asset **MUST** generate a new AURA-ID.  
-- AURA-ID **MUST NOT** be reused or reassigned.  
-- `CHECK` provides structural integrity, not cryptographic security.
-
-### 5.1 Allocation policy and anti-sybil (informative)
-
-Each issuer manages its own AURA-ID sequence (`NNNNNN`).
-From a global perspective, the tuple (issuer_id, aura_id) is sufficient
-to avoid collisions.
-
-However, nothing prevents a malicious issuer from generating an
-arbitrary number of bogus AURA-IDs.
-
+* CC = ISO-3166 country code or INT
+* YYYY = year of origin
+* NNNNNN = issuer-managed unique sequence
+* CHECK = short checksum (Base32) from truncated SHA3-256
+Example
+AURA-FR-2025-000042-G9F3K
+Normative rules
+* AURA-ID identifies one origin event, not a file version.
+* Any modification of the binary asset MUST generate a new AURA-ID.
+* AURA-ID MUST NOT be reused or reassigned.
+* CHECK provides structural integrity, not cryptographic security.
+5.1 Allocation policy and anti-sybil (informative)
+Each issuer manages its own AURA-ID sequence (NNNNNN). From a global perspective, the tuple (issuer_id, aura_id) is sufficient to avoid collisions.
+However, nothing prevents a malicious issuer from generating an arbitrary number of bogus AURA-IDs.
 This standard therefore RECOMMENDS that:
-
-- TPKR operators MAY enforce allocation or rate-limiting policies,
-  including audits of issuers’ internal logs.
-- Issuers SHOULD be able to demonstrate a link between each AURA-ID
-  and an actual origin event.
-- Ecosystems MAY refuse or downgrade issuers that generate excessive,
-  unjustified volumes of AURA-IDs.
-
-More advanced anti-sybil mechanisms (fees, proof-of-work, stake, etc.)
-are considered out of scope for v0.1 and MAY be specified in future versions.
----
-
-## 6. AURA Manifest (JSON-LD)
-
-Manifests **MUST** be expressed in JSON-LD.
-
-**Example**
-
-```json
+* TPKR operators MAY enforce allocation or rate-limiting policies, including audits of issuers’ internal logs.
+* Issuers SHOULD be able to demonstrate a link between each AURA-ID and an actual origin event.
+* Ecosystems MAY refuse or downgrade issuers that generate excessive, unjustified volumes of AURA-IDs.
+More advanced anti-sybil mechanisms (fees, proof-of-work, stake, etc.) are considered out of scope for v0.1 and MAY be specified in future versions.
+6. AURA Manifest (JSON-LD)
+Manifests MUST be expressed in JSON-LD.
+Example
 {
   "@context": "https://aura-standard.org/context/v1.jsonld",
   "origin_proof_version": "0.1",
