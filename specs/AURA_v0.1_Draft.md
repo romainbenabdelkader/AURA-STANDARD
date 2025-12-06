@@ -100,7 +100,6 @@ Normative rules:
 Manifests MUST be expressed in JSON‑LD.
 
 Example:
-
 {
   "@context": {
     "@version": 1.1,
@@ -149,7 +148,7 @@ Example:
     "origin_type": "AURA:origin_type",
     "declared_by": "AURA:declared_by"
   }
-
+}
 
 AI-generated asset example addition:
 
