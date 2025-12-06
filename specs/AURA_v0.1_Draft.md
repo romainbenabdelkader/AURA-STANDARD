@@ -102,38 +102,54 @@ Manifests MUST be expressed in JSON‑LD.
 Example:
 
 {
-  "@context": "https://raw.githubusercontent.com/romainbenabdelkader/AURA-STANDARD/main/context/v1.jsonld",,
-  "origin_proof_version": "0.1",
+  "@context": {
+    "@version": 1.1,
 
-  "aura_id": "AURA-FR-2025-000042-G9F3K",
+    "id": "@id",
+    "type": "@type",
 
-  "origin": {
-    "type": "human",
-    "declared_by": "issuer"
-  },
+    "AURA": "https://aura-standard.org/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
 
-  "asset": {
-    "type": "audio",
-    "hash": "sha3-256:3fba91..."
-  },
+    "aura_id": "AURA:aura_id",
+    "origin_proof_version": "AURA:origin_proof_version",
 
-  "links": {
-    "isrc": "FR-ABC-25-00001",
-    "iswc": "T-123456789-0"
-  },
+    "origin": "AURA:origin",
+    "asset": "AURA:asset",
+    "links": "AURA:links",
+    "rights": "AURA:rights",
+    "signature": "AURA:signature",
 
-  "issuer_id": "EXAMPLE-OGC",
-  "issued_at": "2025-02-01T12:33:00Z",
+    "issuer_id": "AURA:issuer_id",
 
-  "rights": {
-    "tdm_opt_out": true
-  },
+    "issued_at": {
+      "@id": "AURA:issued_at",
+      "@type": "xsd:dateTime"
+    },
 
-  "signature": {
-    "alg": "ed25519",
-    "value": "FE902A..."
+    "hash": "AURA:hash",
+
+    "tdm_opt_out": {
+      "@id": "AURA:tdm_opt_out",
+      "@type": "xsd:boolean"
+    },
+
+    "model": "AURA:model",
+    "public_key": "AURA:public_key",
+
+    "isrc": "AURA:isrc",
+    "iswc": "AURA:iswc",
+
+    "other_ids": {
+      "@id": "AURA:other_ids",
+      "@container": "@set"
+    },
+
+    "asset_type": "AURA:asset_type",
+    "origin_type": "AURA:origin_type",
+    "declared_by": "AURA:declared_by"
   }
-}
+
 
 AI-generated asset example addition:
 
