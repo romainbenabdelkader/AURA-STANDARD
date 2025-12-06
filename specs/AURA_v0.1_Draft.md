@@ -150,14 +150,6 @@ Example:
   }
 }
 
-AI-generated asset example addition:
-
-"origin": {
-  "type": "ai",
-  "model": "ExampleGen-2.1",
-  "declared_by": "issuer"
-}
-
 
 
 7. Hash Requirements
