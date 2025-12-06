@@ -105,6 +105,26 @@ Where:
 - AURA-ID **MUST NOT** be reused or reassigned.  
 - `CHECK` provides structural integrity, not cryptographic security.
 
+### 5.1 Allocation policy and anti-sybil (informative)
+
+Each issuer manages its own AURA-ID sequence (`NNNNNN`).
+From a global perspective, the tuple (issuer_id, aura_id) is sufficient
+to avoid collisions.
+
+However, nothing prevents a malicious issuer from generating an
+arbitrary number of bogus AURA-IDs.
+
+This standard therefore RECOMMENDS that:
+
+- TPKR operators MAY enforce allocation or rate-limiting policies,
+  including audits of issuers’ internal logs.
+- Issuers SHOULD be able to demonstrate a link between each AURA-ID
+  and an actual origin event.
+- Ecosystems MAY refuse or downgrade issuers that generate excessive,
+  unjustified volumes of AURA-IDs.
+
+More advanced anti-sybil mechanisms (fees, proof-of-work, stake, etc.)
+are considered out of scope for v0.1 and MAY be specified in future versions.
 ---
 
 ## 6. AURA Manifest (JSON-LD)
@@ -190,6 +210,22 @@ Normative
 	•	revoked or unknown issuer_id MUST invalidate manifests,
 	•	governance MUST be distributed; no single controlling authority.
 
+### 9.1 Authority levels (informative)
+
+In practice, not all issuers have the same trust level.
+
+AURA therefore anticipates several authority levels, for example:
+
+- Level 3 – public authorities, CMOs and intergovernmental bodies
+- Level 2 – certified platforms and institutions operating under a formal framework
+- Level 1 – declarative issuers (self-registered, low-trust)
+
+Verifiers MAY decide to only trust Level 3 issuers for certain use cases
+(e.g. AI training datasets), while accepting Level 1 for others
+(e.g. individual creators sealing their own works).
+
+Self-registration in the TPKR does not automatically confer “high-trust”
+status. Governance and accreditation policies are defined by the TPKR operators.
 ⸻
 
 10. Implementation Modes
