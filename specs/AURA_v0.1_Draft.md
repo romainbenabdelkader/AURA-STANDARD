@@ -1,295 +1,155 @@
-AURA Origin Proof Standard v0.1 (Release Candidate)
+AURA – European Origin Proof Standard (Draft v0.1)
 
-Authenticated Universal Registration for Assets European Origin Proof Standard
+Authenticated Universal Registration for Assets
 
-Status: Public Draft for Review Last updated: YYYY‑MM‑DD This document is a public draft intended for review by CMOs, regulators, DSPs, creators, and technical institutions. It does not constitute a final adopted standard.
+AURA is an open, neutral and interoperable European-origin standard designed to provide verifiable proof of origin for any digital or creative asset.
 
-Normative Language (RFC 2119)
-The key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY in this document are to be interpreted as described in RFC 2119.
+Last updated: 2025-12-05
+Status: Public Draft (pre-standard, not yet final)
 
-Purpose
-AURA is an open, neutral and interoperable European-origin standard providing verifiable proof of origin for any digital asset:
+AURA introduces a sovereign, cryptographically verifiable origin layer enabling:
+	
+•	certified origin at the moment of creation
+	
+•	independent verification by platforms, regulators or institutions
+	
+•	support for EU AI Act Article 53 provenance requirements
+	
+•	interoperability with ISRC, ISWC, DDEX and C2PA
+	
+•	compatibility with human, AI and hybrid-generated assets: audio, video, text, image, datasets, models
 
-• audio
+AURA does not analyse content and does not perform fingerprinting, similarity detection or DRM.
+It certifies origin, not identity.
 
-• video
+AURA is an open standard, not owned or controlled by any private company.
+This repository contains a public draft under active development and MAY evolve before v1.0.
 
-• text
+⸻
 
-• image
+📄 Documentation
 
-• datasets
+Full AURA v0.1 Draft Specification:
+/specs/AURA_v0.1_Draft.md
 
-• AI-generated outputs
+⸻
 
-AURA enables:
+📁 Repository Structure
 
-• creators to seal origin at creation time,
+/specs   – Standard specifications
 
-• platforms and regulators to verify origin independently,
+/context – JSON-LD context files
 
-• institutions to comply with AI Act Article 53 provenance and disclosure requirements,
+/examples – Manifest examples
 
-• interoperability with existing rights ecosystems (ISRC, ISWC, DDEX, C2PA).
+/schema – Manifest schemas
 
-AURA does not analyse content, detect similarities or perform fingerprinting. It certifies origin, not identity.
+⸻
 
-Rationale
-AURA addresses several structural gaps:
+🧩 Ontology (minimal definitions – draft)
 
-• fragmented metadata across the digital ecosystem,
+issuer
+Entity responsible for generating and signing an AURA manifest
+(e.g. CMO, public authority, certified institution, registered platform).
 
-• no sovereign, platform independent proof-of-origin layer,
+issuer_id
+Stable identifier registered in the Trusted Public Keys Registry (TPKR).
 
-• AI Act requirements for transparent provenance & TDM opt‑out,
+authority_level
+Optional classification (e.g. national_cmo, public_authority, research_body).
 
-• existing identifiers (ISRC/ISWC) unable to certify origin at creation,
+⸻
 
-• growing need to distinguish human / AI / hybrid creation.
+🔐 Origin Layer Design
 
-AURA provides a minimal, verifiable, cryptographically anchored origin layer compatible across industries.
-
-Scope
 AURA defines:
+	
+1.	AURA-ID – globally unique origin identifier
+	
+2.	AURA Manifest (JSON-LD) – structured and cryptographically signed
+	
+3.	Ed25519 signature – integrity & authenticity
+	
+4.	TPKR Registry – trusted public keys for verification
+	
+5.	AI Act Article 53 profile – minimal provenance requirements
 
-• AURA-ID origin identifier
+AURA does not define fingerprinting, watermarking, DRM or rights allocation.
 
-• AURA Manifest structured, signed proof
+⸻
 
-• AURA Signature Ed25519-based integrity mechanism
+🔄 Interoperability Mapping
+System	AURA mapping
 
-• TPKR Trusted Public Keys Registry
+ISRC	links.isrc
 
-• compliance profile for AI Act Article 53
+ISWC	links.iswc
 
-• interoperability mappings (ISRC, ISWC, C2PA, DDEX)
+DDEX	links.other_ids
 
-AURA does not define fingerprinting, watermarking, DRM, content recognition or rights allocation.
+C2PA	complementary, non-overlapping
+AI Act Art. 53	manifest core fields
+AURA acts as a thin origin layer that complements existing identifiers without replacing them.
 
-Definitions
-Asset digital file (audio, video, image, text, dataset, model).
+⸻
 
-Origin human, ai, hybrid, unknown.
+⚖️ AI Act Considerations
 
-Issuer entity signing the manifest.
+AURA is designed to support compliance with
+EU AI Act Article 53 (provenance, disclosure, TDM opt-out).
 
-Verifier system validating manifest integrity & authenticity.
+The AURA Manifest provides a minimal, machine-readable provenance profile that institutions, creators and platforms can validate independently.
 
-AURA-ID globally unique origin identifier.
+⸻
 
-TPKR registry of trusted issuer public keys.
+🛡 Intellectual Property Position
 
-Origin Event moment when origin is declared and sealed.
+This public draft reflects an independently conceived and documented standard.
+It was developed prior to, and separately from, any external collaboration.
 
-AURA-ID Format
-AURA-ID MUST follow:
+Except as explicitly granted under the Apache 2.0 license,
+all other rights (including patents, trademarks and trade secrets) are reserved.
 
-AURA‑CC‑YYYY‑NNNNNN‑CHECK
+⸻
 
-Where:
+📜 License
 
-• CC = ISO‑3166 country code or INT
+AURA is published under the Apache License 2.0, including patent permissions.
 
-• YYYY = year of origin
+⸻
 
-• NNNNNN = issuer-managed unique sequence
+🤝 Contributing
 
-• CHECK = short checksum (Base32) from truncated SHA3‑256
+AURA is an open standard.
+Institutions, researchers and industry participants may propose changes through:
+	
+•	GitHub Issues
+	
+•	Pull Requests
 
-Example: AURA-FR-2025-000042-G9F3K
+All discussions and contributions occur in writing only.
 
-Normative rules:
+⸻
 
-• AURA-ID identifies one origin event, not a file version.
+🗺 Roadmap
 
-• Any modification of the binary asset MUST generate a new AURA-ID.
-
-• AURA-ID MUST NOT be reused or reassigned.
-
-• CHECK provides structural integrity, not cryptographic security.
-
-AURA Manifest (JSON‑LD)
-Manifests MUST be expressed in JSON‑LD.
-
-Example:
-
-{ "@context": "https://raw.githubusercontent.com/romainbenabdelkader/aura-standard/main/context/v1.jsonld", "origin_proof_version": "0.1",
-
-"aura_id": "AURA-FR-2025-000042-G9F3K",
-
-"origin": { "type": "human", "declared_by": "issuer" },
-
-"asset": { "type": "audio", "hash": "sha3-256:3fba91..." },
-
-"links": { "isrc": "FR-ABC-25-00001", "iswc": "T-123456789-0" },
-
-"issuer_id": "EXAMPLE-OGC", "issued_at": "2025-02-01T12:33:00Z",
-
-"rights": { "tdm_opt_out": true },
-
-"signature": { "alg": "ed25519", "value": "FE902A..." } }
-
-AI-generated asset example addition:
-
-"origin": { "type": "ai", "model": "ExampleGen-2.1", "declared_by": "issuer" }
-
-Hash Requirements
-• Algorithm: SHA3‑256 (MUST)
-
-• Computed on raw binary file
-
-• Encodings: Base58 or Base64url
-
-Any modification → new hash → new manifest → new AURA-ID.
-
-Signature Mechanism
-AURA signature uses Ed25519.
-
-signature = Sign(issuer_private_key, canonical_json(manifest))
-
-Manifests MUST be canonicalized using RFC 8785 (JCS) before signing and verifying.
-
-Issuer private keys MUST remain under exclusive control of the issuer.
-
-TPKR Trusted Public Keys Registry
-A federated, multi-institution registry storing:
-
-• issuer_id
-
-• public key
-
-• authority level
-
-• registration date
-
-• revocation status
-
-Normative:
-
-• verifiers MUST obtain keys from TPKR,
-
-• revoked or unknown issuer_id MUST invalidate manifests,
-
-• governance MUST be distributed; no single controlling authority.
-
-Implementation Modes
-
-Declarative Mode (recommended)
-
-Manifest stored separately. No file modification.
-
-Attached Mode (Sidecar)
-asset.wav asset.aura
-
-Embedded Mode (experimental)
-Manifest embedded in file metadata.
-
-Standardization planned for v1.0.
-
-Verification Workflow
-
-Retrieve asset
-
-Retrieve manifest
-
-Canonicalize manifest (RFC 8785)
-
-Retrieve public key from TPKR
-
-Verify signature
-
-Recompute asset hash
-
-Compare with manifest hash
-
-Validate AURA-ID structure & CHECK
-
-If all checks pass → Origin Verified.
-
-AI Act Compliance Profile
-To satisfy Article 53, the following fields are mandatory:
-
-• aura_id
-
-• origin.type
-
-• asset.hash
-
-• issuer_id
-
-• issued_at
-
-• rights.tdm_opt_out
-
-• signature
-
-This includes datasets, models, and AI-generated outputs.
-
-Security Considerations
-Threats mitigated:
-
-• forged manifests → signature + TPKR
-
-• file replacement → hash mismatch
-
-• replay attacks → AURA-ID integrity + CHECK
-
-• spoofed issuers → trusted registry
-
-Security relies on:
-
-• strong hashing (SHA3‑256)
-
-• strong signatures (Ed25519)
-
-• protected issuer private keys
-
-• revocation in TPKR
-
-Privacy Considerations
-AURA does not require personal data. Issuer identifiers SHOULD NOT encode sensitive information. AURA is fully compatible with GDPR minimal-data principles.
-
-Interoperability Mapping
-System Mapping
-
-ISRC links.isrc
-
-ISWC links.iswc
-
-DDEX links.other_ids
-
-C2PA complementary (post-creation provenance)
-
-AI Act Art. 53 origin + issuer + issued_at + signature
-
-Versioning
-• v0.x: drafts, experimental
-
-• v1.0: stable standard
-
-Breaking changes MUST increment the major version.
-
-Roadmap
 v0.2
-
-• Full TPKR specification
-
-• Dataset/model manifest extensions
-
-• Improved AURA-ID allocation rules
+	
+•	TPKR formal specification
+	
+•	dataset/model manifest extensions
 
 v0.3
-
-• Embedded Mode normalization
-
-• Open-source verification toolkit (CLI + SDK)
+	
+•	Embedded Mode normalization
+	
+•	open-source verification toolkit (CLI + SDK)
 
 v1.0
+	
+•	ETSI / AFNOR work-item proposal for formal standardization
 
-• Submission to ETSI / AFNOR
+⸻
 
-• Governance transfer to European consortium
-
-• PQC signature layer (optional: CRYSTALS‑Dilithium)
-
-END OF AURA v0.1 (Release Candidate)
+🌐 Official project website (under deployment)
+https://aura-standard.org
