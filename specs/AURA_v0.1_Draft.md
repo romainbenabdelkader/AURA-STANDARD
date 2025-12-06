@@ -102,7 +102,7 @@ Manifests MUST be expressed in JSON‑LD.
 Example:
 
 {
-  "@context": "https://raw.githubusercontent.com/romainbenabdelkader/aura-standard/main/context/v1.jsonld",
+  "@context": "https://raw.githubusercontent.com/romainbenabdelkader/AURA-STANDARD/main/context/v1.jsonld",,
   "origin_proof_version": "0.1",
 
   "aura_id": "AURA-FR-2025-000042-G9F3K",
