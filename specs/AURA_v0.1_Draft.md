@@ -248,14 +248,13 @@ AURA is fully compatible with GDPR minimal-data principles.
 
 15. Interoperability Mapping
 
-System	Mapping
-ISRC	links.isrc
-ISWC	links.iswc
-DDEX	links.other_ids
-C2PA	complementary (post-creation provenance)
-AI Act Art. 53	origin + issuer + issued_at + signature
-
-
+| System         | Mapping                                   |
+|----------------|-------------------------------------------|
+| ISRC           | `links.isrc`                              |
+| ISWC           | `links.iswc`                              |
+| DDEX           | `links.other_ids`                         |
+| C2PA           | complementary (post-creation provenance)  |
+| AI Act Art. 53 | `origin` + `issuer` + `issued_at` + `signature` |
 
 16. Versioning
 
