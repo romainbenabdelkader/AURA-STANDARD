@@ -5,7 +5,7 @@
 **Last updated:** 2025-12-05  
 **Status:** Public Draft (pre-standard, not final)
 
-AURA is an open, neutral and interoperable European-origin standard designed to provide verifiable **proof of origin** for any digital or creative asset.
+AURA is an open, neutral and interoperable European-origin standard providing verifiable proof of origin for any digital or creative asset.
 
 AURA introduces a sovereign, cryptographically verifiable origin layer enabling:
 
@@ -15,18 +15,18 @@ AURA introduces a sovereign, cryptographically verifiable origin layer enabling:
 - interoperability with ISRC, ISWC, DDEX, C2PA  
 - compatibility with human, AI and hybrid-generated assets (audio, video, text, image, datasets, models)
 
-AURA does **not** analyse content and does **not** perform fingerprinting, similarity detection or DRM.  
+AURA does not analyse content and does not perform fingerprinting, similarity detection or DRM.  
 It certifies **origin**, not identity.
 
 AURA is an open standard, not owned or controlled by any private company.  
-This repository contains a public draft under active development and **MAY** evolve before v1.0.
+This repository contains a public draft under active development and MAY evolve before v1.0.
 
 ---
 
 ## 📄 Documentation
 
 Full AURA v0.1 Draft Specification:  
-[`/specs/AURA_v0.1_Draft.md`](specs/AURA_v0.1_Draft.md)
+👉 [`/specs/AURA_v0.1_Draft.md`](specs/AURA_v0.1_Draft.md)
 
 ---
 
@@ -58,9 +58,9 @@ Optional classification (e.g. `national_cmo`, `public_authority`, `research_body
 AURA defines:
 
 - **AURA-ID** – globally unique origin identifier  
-- **AURA Manifest (JSON-LD)** – structured, cryptographically signed proof  
+- **AURA Manifest (JSON-LD)** – structured and cryptographically signed  
 - **Ed25519 signatures** – integrity & authenticity  
-- **TPKR Registry** – trusted issuer public keys  
+- **TPKR registry** – trusted issuer public keys  
 - **AI Act Article 53 profile** – minimal provenance requirements  
 
 AURA does **not** define fingerprinting, watermarking, DRM, content recognition or rights allocation.
@@ -69,13 +69,13 @@ AURA does **not** define fingerprinting, watermarking, DRM, content recognition 
 
 ## 🔄 Interoperability Mapping
 
-| System            | AURA Mapping                      |
-|-------------------|-----------------------------------|
-| ISRC              | `links.isrc`                      |
-| ISWC              | `links.iswc`                      |
-| DDEX              | `links.other_ids`                 |
-| C2PA              | complementary, non-overlapping    |
-| EU AI Act Art. 53 | core manifest fields (origin, issuer_id, issued_at, signature, rights.tdm_opt_out) |
+| System            | AURA Mapping                                                |
+|-------------------|-------------------------------------------------------------|
+| ISRC              | `links.isrc`                                               |
+| ISWC              | `links.iswc`                                               |
+| DDEX              | `links.other_ids`                                          |
+| C2PA              | complementary (non-overlapping)                            |
+| EU AI Act Art. 53 | core fields: `origin`, `issuer_id`, `issued_at`, `signature`, `rights.tdm_opt_out` |
 
 AURA acts as a thin origin layer complementing existing identifiers without replacing them.
 
