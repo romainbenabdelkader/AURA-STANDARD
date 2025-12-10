@@ -138,4 +138,4 @@ All discussions and contributions occur **in writing only**.
 
 ## 🌐 Official Project Website
 
-https://aura-standard.org
+https://www.aura-standard.org
