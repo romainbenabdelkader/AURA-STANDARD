@@ -108,20 +108,15 @@ See LICENSE for details.
 
 ## Future Governance (2026)
 
-AURA will transition in 2026 to a neutral, multi‑stakeholder governance model inspired by IETF/ETSI processes. 
-
-Governance will be distributed across 
-
+AURA will transition in 2026 to a neutral, multi‑stakeholder governance model 
+inspired by IETF/ETSI processes. Governance will be distributed across 
 institutions, researchers, creators, and industry participants.
 
 No single private entity will have unilateral control of the AURA standard.
 
 This ensures long‑term neutrality, prevents political or institutional forks, 
-
 and guarantees that AURA remains a public, open standard aligned with 
-
 European regulatory requirements.
-
 
 ## 🤝 Contributing
 
