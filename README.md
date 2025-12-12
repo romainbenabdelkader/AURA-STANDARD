@@ -115,6 +115,13 @@ This ensures long‑term neutrality, prevents political or institutional forks,
 and guarantees that AURA remains a public, open standard aligned with 
 European regulatory requirements.
 
+🤝 Contributing
+AURA is an open standard.
+Institutions, researchers and industry participants may propose changes through:
+  • GitHub Issues  
+  • Pull Requests  
+
+All discussions and contributions occur in writing only.
 ---
 
 ## 🗺 Roadmap
