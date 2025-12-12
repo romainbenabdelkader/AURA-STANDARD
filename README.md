@@ -99,34 +99,21 @@ Except as explicitly granted under the Apache 2.0 license, all other rights (inc
 
 ---
 
-## 📜 License
-
+📜 License
 AURA is published under the Apache License 2.0, including patent permissions.
-
 See LICENSE for details.
-
 
 ## Future Governance (2026)
 
 AURA will transition in 2026 to a neutral, multi‑stakeholder governance model 
-inspired by IETF/ETSI processes. 
-Governance will be distributed across institutions, researchers, creators, and industry participants.
+inspired by IETF/ETSI processes. Governance will be distributed across 
+institutions, researchers, creators and industry participants.
 
 No single private entity will have unilateral control of the AURA standard.
 
 This ensures long‑term neutrality, prevents political or institutional forks, 
 and guarantees that AURA remains a public, open standard aligned with 
 European regulatory requirements.
-
-## 🤝 Contributing
-
-AURA is an open standard.  
-Institutions, researchers and industry participants may propose changes through:
-
-- GitHub Issues  
-- Pull Requests  
-
-All discussions and contributions occur **in writing only**.
 
 ---
 
