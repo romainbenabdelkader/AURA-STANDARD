@@ -125,16 +125,23 @@ may propose changes through:
 All discussions and contributions occur **in writing only**.
 
 🗺 Roadmap
+
 v0.2
-• TPKR formal specification  
+
+• TPKR formal specification 
+
 • Dataset/model manifest extensions  
 
 v0.3
+
 • Embedded Mode normalization  
+
 • Open-source verification toolkit (CLI + SDK)  
 
 v1.0
+
 • ETSI / AFNOR work-item proposal for formal standardization  
 
 🌐 Official Project Website  
+
 https://www.aura-standard.org
