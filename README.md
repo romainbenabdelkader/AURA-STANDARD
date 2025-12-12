@@ -115,33 +115,26 @@ This ensures long‑term neutrality, prevents political or institutional forks,
 and guarantees that AURA remains a public, open standard aligned with 
 European regulatory requirements.
 
-🤝 Contributing
-AURA is an open standard.
-Institutions, researchers and industry participants may propose changes through:
+## Contributing
+
+AURA is an open standard. Institutions, researchers and industry participants 
+may propose changes through:
   • GitHub Issues  
   • Pull Requests  
 
-All discussions and contributions occur in writing only.
----
+All discussions and contributions occur **in writing only**.
 
-## 🗺 Roadmap
+🗺 Roadmap
+v0.2
+• TPKR formal specification  
+• Dataset/model manifest extensions  
 
-**v0.2**
+v0.3
+• Embedded Mode normalization  
+• Open-source verification toolkit (CLI + SDK)  
 
-- TPKR formal specification  
-- Dataset/model manifest extensions  
+v1.0
+• ETSI / AFNOR work-item proposal for formal standardization  
 
-**v0.3**
-
-- Embedded Mode normalization  
-- Open-source verification toolkit (CLI + SDK)  
-
-**v1.0**
-
-- ETSI / AFNOR work-item proposal for formal standardization  
-
----
-
-## 🌐 Official Project Website
-
+🌐 Official Project Website  
 https://www.aura-standard.org
