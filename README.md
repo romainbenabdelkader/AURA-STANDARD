@@ -145,3 +145,9 @@ v1.0
 🌐 Official Project Website  
 
 https://www.aura-standard.org
+
+## Reference implementations (non-normative)
+
+These implementations are **prototypes** provided for illustration only and are not part of the normative AURA standard.
+
+- Minimal Python CLI demo: https://github.com/romainbenabdelkader/aura-cli
