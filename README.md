@@ -177,3 +177,13 @@ https://www.aura-standard.org
 These implementations are **prototypes** provided for illustration only and are not part of the normative AURA standard.
 
 - Minimal Python CLI demo: https://github.com/romainbenabdelkader/aura-cli
+
+### Examples (non-normative)
+
+This repository includes minimal, illustrative examples of AURA manifests
+for specific compliance or proof profiles.
+
+These examples are **not prescriptive** and do not imply enforcement,
+monitoring, or operational requirements.
+
+See: `/examples/`
