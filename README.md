@@ -103,17 +103,43 @@ Except as explicitly granted under the Apache 2.0 license, all other rights (inc
 AURA is published under the Apache License 2.0, including patent permissions.
 See LICENSE for details.
 
-## Future Governance (2026)
+## Charter of Independence
 
-AURA will transition in 2026 to a neutral, multi‑stakeholder governance model 
-inspired by IETF/ETSI processes. Governance will be distributed across 
-institutions, researchers, creators and industry participants.
+AURA is governed by a strict **Charter of Independence and Scope**.
 
-No single private entity will have unilateral control of the AURA standard.
+This Charter defines non-negotiable structural constraints ensuring that AURA remains:
 
-This ensures long‑term neutrality, prevents political or institutional forks, 
-and guarantees that AURA remains a public, open standard aligned with 
-European regulatory requirements.
+- neutral and platform-independent,
+
+- non-intrusive and non-executive,
+
+- free from enforcement, monitoring, DRM, or control mechanisms,
+
+- resistant to commercial, institutional, or political capture.
+
+The Charter explicitly defines what AURA **cannot and must not become**.
+
+Any implementation, fork, or derivative work claiming alignment with AURA must either:
+
+- comply fully with this Charter, or
+
+- explicitly state non-compliance.
+
+📄 See: `CHARTER.md`
+
+## Future Governance (indicative)
+
+Future governance models for AURA may be explored, inspired by open standardization processes (e.g. IETF, ETSI).
+
+Any governance framework must comply strictly with the AURA Charter of Independence and may not:
+
+- introduce enforcement or control mechanisms,
+
+- compromise platform neutrality,
+
+- grant unilateral control to any single entity.
+
+The definition of governance is explicitly out of scope of the current draft.
 
 ## Contributing
 
