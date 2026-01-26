@@ -178,12 +178,12 @@ These implementations are **prototypes** provided for illustration only and are 
 
 - Minimal Python CLI demo: https://github.com/romainbenabdelkader/aura-cli
 
-### Examples (non-normative)
+## Examples (non-normative)
 
-This repository includes minimal, illustrative examples of AURA manifests
-for specific compliance or proof profiles.
+This repository includes minimal, illustrative examples of AURA manifests for specific compliance or proof profiles (e.g. Proof of Declaration Immutability).
 
-These examples are **not prescriptive** and do not imply enforcement,
-monitoring, or operational requirements.
+These examples are **not prescriptive** and do **not** imply enforcement, monitoring, behavioural guarantees, or operational requirements.
+
+They are provided solely to illustrate how AURA manifests may be used as **verifiable evidentiary artefacts**.
 
 See: `/examples/`
