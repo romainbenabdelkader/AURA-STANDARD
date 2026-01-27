@@ -330,6 +330,21 @@ v1.0
 	•	Governance transfer to a European consortium.
 	•	PQC signature layer (optional: CRYSTALS-Dilithium).
 
+## Profiles (Informative)
+
+AURA supports optional proof profiles that extend the core manifest
+
+without introducing enforcement, monitoring, or control mechanisms.
+
+Profiles define declarative signal scopes only.
+
+They do not assert compliance, legality, or usage outcomes.
+
+Current draft profiles include:
+
+- PDI — Proof of Declaration Immutability
+
+- PDS — Proof of Declared Scope
 ⸻
 
 END OF AURA v0.1 (Release Candidate)
