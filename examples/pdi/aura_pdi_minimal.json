@@ -1,16 +1,43 @@
- {
-  "@context": "https://www.aura-standard.org/context/v1",
-  "profile": ["PDI"],
+{
+  "@context": "https://romainbenabdelkader.github.io/AURA-STANDARD/context/v1.jsonld",
+  "spec_version": "0.1-draft",
+  "profiles": ["PDI"],
 
-  "manifest_id": "AURA-PDI-EXAMPLE-0001",
+  "aura_id": "AURA:PDI:EXAMPLE:0001",
   "issued_at": "2026-01-26T12:00:00Z",
 
-  "issuer_id": "TPKR:ed25519:EXAMPLEPUBLICKEYFINGERPRINT",
+  "asset": {
+    "type": "audio",
+    "hash": "sha256:EXAMPLEASSETDIGEST"
+  },
 
-  "origin": "human",
+  "origin": {
+    "type": "human",
+    "declared_by": "issuer"
+  },
 
   "rights": {
     "tdm_opt_out": true
+  },
+
+  "claims": {
+    "proves": [
+      "integrity_of_the_specific_file_hash",
+      "manifest_signature_by_issuer_key",
+      "manifest_issue_time_claim",
+      "declared_origin_signal"
+    ],
+    "does_not_prove": [
+      "copyright_ownership",
+      "originality",
+      "authorization_or_license",
+      "identity_of_the_creator"
+    ]
+  },
+
+  "issuer": {
+    "issuer_id": "TPKR:ed25519:EXAMPLEPUBLICKEYFINGERPRINT",
+    "public_key_pem": "-----BEGIN PUBLIC KEY-----\nEXAMPLE...\n-----END PUBLIC KEY-----\n"
   },
 
   "canonicalization": "canonical_json_v0",
