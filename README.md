@@ -21,7 +21,8 @@ AURA manifests are evidentiary artefacts. They do not assert ownership, original
 AURA is an open standard, not owned or controlled by any private company.  
 This repository contains a public draft under active development and MAY evolve before v1.0.
 > **AURA does not create trust. It makes statements verifiable.**
-
+Note: The canonical domain https://www.aura-standard.org is reserved for the AURA standard.
+At this draft stage, all normative files and JSON-LD contexts are hosted via GitHub Pages.
 ## Documentation
 
 Full AURA v0.1 Draft Specification:  
