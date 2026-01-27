@@ -5,45 +5,35 @@
     "id": "@id",
     "type": "@type",
 
-    "AURA": "https://aura-standard.org/ns#",
+    "AURA": "https://romainbenabdelkader.github.io/AURA-STANDARD/ns#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
 
     "aura_id": "AURA:aura_id",
-    "origin_proof_version": "AURA:origin_proof_version",
-
-    "origin": "AURA:origin",
-    "asset": "AURA:asset",
-    "links": "AURA:links",
-    "rights": "AURA:rights",
-    "signature": "AURA:signature",
-
-    "issuer_id": "AURA:issuer_id",
+    "spec_version": "AURA:spec_version",
+    "profiles": "AURA:profiles",
 
     "issued_at": {
       "@id": "AURA:issued_at",
       "@type": "xsd:dateTime"
     },
 
-    "hash": "AURA:hash",
+    "asset": "AURA:asset",
+    "subject": "AURA:subject",
+    "origin": "AURA:origin",
+    "rights": "AURA:rights",
+    "claims": "AURA:claims",
+    "declared_scope": "AURA:declared_scope",
+    "interpretation": "AURA:interpretation",
 
-    "tdm_opt_out": {
-      "@id": "AURA:tdm_opt_out",
-      "@type": "xsd:boolean"
-    },
+    "issuer": "AURA:issuer",
+    "issuer_id": "AURA:issuer_id",
+    "public_key_pem": "AURA:public_key_pem",
 
-    "model": "AURA:model",
-    "public_key": "AURA:public_key",
+    "canonicalization": "AURA:canonicalization",
 
-    "isrc": "AURA:isrc",
-    "iswc": "AURA:iswc",
-
-    "other_ids": {
-      "@id": "AURA:other_ids",
-      "@container": "@set"
-    },
-
-    "asset_type": "AURA:asset_type",
-    "origin_type": "AURA:origin_type",
-    "declared_by": "AURA:declared_by"
+    "signature": "AURA:signature",
+    "alg": "AURA:alg",
+    "encoding": "AURA:encoding",
+    "value": "AURA:value"
   }
 }
