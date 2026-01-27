@@ -1,17 +1,15 @@
 {
-  "@context": "https://www.aura-standard.org/context/v1.jsonld",
+  "@context": "https://romainbenabdelkader.github.io/AURA-STANDARD/context/v1.jsonld",
   "spec_version": "0.1-draft",
   "profiles": ["PDS"],
 
   "aura_id": "AURA:PDS:EXAMPLE:0001",
   "issued_at": "2026-01-26T12:00:00Z",
 
-  "asset": {
-    "type": "audio",
-    "hash": "sha256:EXAMPLEASSETDIGEST"
+  "subject": {
+    "aura_id": "AURA:PDI:EXAMPLE:0001",
+    "asset_hash": "sha256:EXAMPLEASSETDIGEST"
   },
-
-  "issuer_id": "TPKR:ed25519:EXAMPLEPUBLICKEYFINGERPRINT",
 
   "declared_scope": {
     "activities": ["training", "fine_tuning", "evaluation"],
@@ -25,6 +23,15 @@
 
   "rights": {
     "tdm_opt_out": true
+  },
+
+  "interpretation": {
+    "note": "This is a declarative policy signal. It does not by itself establish legal ownership, enforceability, or authorization."
+  },
+
+  "issuer": {
+    "issuer_id": "TPKR:ed25519:EXAMPLEPUBLICKEYFINGERPRINT",
+    "public_key_pem": "-----BEGIN PUBLIC KEY-----\nEXAMPLE...\n-----END PUBLIC KEY-----\n"
   },
 
   "canonicalization": "canonical_json_v0",
