@@ -161,6 +161,12 @@ They are provided solely to illustrate how AURA manifests may be used as verifia
 
 See: /examples/
 
+## Use Cases
+
+Illustrative use cases are available in:
+
+/USE_CASES.md
+
 ## Citation
 
 AURA v0.1 — Public Draft  
