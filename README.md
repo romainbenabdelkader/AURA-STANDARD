@@ -159,3 +159,8 @@ These examples are not prescriptive and do not imply enforcement, monitoring, be
 They are provided solely to illustrate how AURA manifests may be used as verifiable evidentiary artefacts.  
 
 See: /examples/
+
+## Citation
+
+AURA v0.1 — Public Draft  
+DOI: https://doi.org/10.5281/zenodo.19123074
