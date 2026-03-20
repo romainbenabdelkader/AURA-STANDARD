@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19123074.svg)](https://doi.org/10.5281/zenodo.19123074)
 # AURA – European Origin Proof Standard (Draft v0.1)
 
 Authenticated Universal Registration for Assets  
