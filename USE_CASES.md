@@ -1,9 +1,13 @@
 # AURA — Illustrative Use Cases
-AURA establishes facts. It does not enforce rights.
+
+> AURA establishes facts. It does not enforce rights.
+
 This document presents a set of minimal and illustrative use cases for AURA as an evidentiary layer.
 
 AURA is not a control system, a monitoring system, or an enforcement mechanism.  
 It is a way to establish and verify certain origin-related facts independently.
+
+AURA is designed to operate independently of any single platform, infrastructure, or operator.
 
 ---
 
@@ -192,5 +196,4 @@ More specifically, AURA does not provide:
 - proof of non-use
 - proof of legal entitlement
 
-Its role is narrower and more specific:
-to make certain origin-related statements independently verifiable.
+Its role is narrower and more specific: to make certain origin-related statements independently verifiable.
