@@ -1,5 +1,5 @@
 # AURA — Illustrative Use Cases
-
+AURA establishes facts. It does not enforce rights.
 This document presents a set of minimal and illustrative use cases for AURA as an evidentiary layer.
 
 AURA is not a control system, a monitoring system, or an enforcement mechanism.  
