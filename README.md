@@ -77,6 +77,18 @@ AURA is designed to support compliance with EU AI Act Article 53 (provenance, di
 
 The AURA Manifest provides a minimal, machine-readable provenance profile that institutions, creators and platforms can validate independently.
 
+## GDPR / Privacy Considerations
+
+AURA is designed around data minimization.
+
+The standard does not require personal data to function. AURA manifests should rely on cryptographic hashes, issuer identifiers, timestamps, rights-reservation declarations and signatures rather than embedded personal content, usage logs or behavioural traces.
+
+AURA does not provide monitoring, profiling, content recognition, automated enforcement or automated legal decision-making.
+
+Implementations MAY use pseudonymous, institutional or role-based issuer identifiers. If an implementation adds personal data or links manifests to identifiable natural persons, that implementation remains responsible for its own lawful basis, transparency notices, retention periods, data-subject rights and GDPR/privacy obligations.
+
+See: PRIVACY.md
+
 ## Intellectual Property Position
 
 This public draft reflects an independently conceived and documented standard.  

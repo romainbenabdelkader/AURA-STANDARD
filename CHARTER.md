@@ -82,7 +82,29 @@ Security through obscurity is explicitly excluded.
 
 ---
 
-## 6. Separation from Control Technologies
+## 6. Privacy and Data Minimization
+
+AURA must remain compatible with privacy-by-design and data-minimization principles.
+
+AURA does **not** require personal data to function.
+
+Implementations should prefer:
+
+- cryptographic hashes instead of embedded content,
+
+- issuer or registry identifiers instead of unnecessary personal identifiers,
+
+- pseudonymous, institutional, or role-based identifiers where appropriate,
+
+- offline verification where possible.
+
+AURA must not be presented as a system for profiling, monitoring, behavioural tracking, automated enforcement, or automated legal decision-making.
+
+Any implementation adding personal data remains responsible for its own legal basis, transparency duties, retention policy, data-subject rights, and applicable GDPR/privacy obligations.
+
+---
+
+## 7. Separation from Control Technologies
 
 AURA is **explicitly distinct** from:
 
@@ -98,7 +120,7 @@ Any implementation combining AURA with such systems must clearly separate AURA f
 
 ---
 
-## 7. Governance Constraint
+## 8. Governance Constraint
 
 No evolution of AURA may:
 
@@ -112,7 +134,7 @@ Any such change constitutes a violation of this Charter.
 
 ---
 
-## 8. Relationship to AUTHENTICA
+## 9. Relationship to AUTHENTICA
 
 AUTHENTICA is a separate proof and traceability infrastructure that may support experimental or applied implementations related to AURA.
 
@@ -120,7 +142,7 @@ The existence of AUTHENTICA does **not** alter the neutral, non-executive, and i
 
 ---
 
-## 9. Irreversibility
+## 10. Irreversibility
 
 This Charter defines **non-negotiable structural constraints**.
 
@@ -134,7 +156,7 @@ Silence does not constitute compliance.
 
 ---
 
-## 10. Final Statement
+## 11. Final Statement
 
 AURA exists to make provenance and origin **provable**, not enforceable.
 
