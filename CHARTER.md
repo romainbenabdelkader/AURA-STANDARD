@@ -30,7 +30,9 @@ AURA is **structurally independent** from:
 
 - any public or private enforcement authority,
 
-- any DRM, watermarking, fingerprinting, monitoring, or content control mechanism.
+- any DRM, watermarking, fingerprinting, monitoring, or content control mechanism,
+
+- any proprietary platform, vendor, model provider, repository host, or software assistant.
 
 No actor may claim exclusivity, ownership, or privileged control over AURA.
 
@@ -62,9 +64,11 @@ AURA is:
 
 - implementation-agnostic,
 
+- tool-agnostic,
+
 - usable across public and private infrastructures.
 
-No platform-specific dependency, integration requirement, or technical coupling shall be introduced into the core specification.
+No platform-specific dependency, vendor-specific dependency, integration requirement, or technical coupling shall be introduced into the core specification.
 
 ---
 
