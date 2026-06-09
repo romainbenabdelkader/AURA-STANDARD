@@ -76,6 +76,7 @@ An implementation MUST NOT claim AURA conformance if it presents AURA as:
 - usage monitoring
 - automated enforcement
 - automated legal decision-making
+- a system requiring a proprietary vendor, AI service, repository host, software assistant or platform to create, verify, implement or audit AURA manifests
 
 ## Compatibility Labels
 

@@ -20,6 +20,8 @@ It certifies origin, not identity.
 AURA manifests are evidentiary artefacts. They do not assert ownership, originality, identity, licensing, or enforceability.
 
 AURA is an open standard, not owned or controlled by any private company.  
+AURA is tool-agnostic and implementation-neutral. No proprietary platform, vendor, model provider, repository host or software assistant is required to create, verify, implement or audit AURA manifests.
+
 This repository contains a public draft under active development and MAY evolve before v1.0.
 > **AURA does not create trust. It makes statements verifiable.**
 Note: The canonical domain https://www.aura-standard.org is reserved for the AURA standard.
@@ -122,6 +124,7 @@ AURA is governed by a strict Charter of Independence and Scope.
 
 This Charter defines non-negotiable structural constraints ensuring that AURA remains:
 - neutral and platform-independent
+- tool-agnostic and implementation-neutral
 - non-intrusive and non-executive
 - free from enforcement, monitoring, DRM, or control mechanisms
 - resistant to commercial, institutional, or political capture
