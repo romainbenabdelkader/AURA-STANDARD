@@ -1,7 +1,7 @@
 # AURA Origin Proof Standard v0.1 (Release Candidate)
 
 Authenticated Universal Registration for Assets  
-European Origin Proof Standard  
+Proposed Open European Origin-Proof Standard
 
 **Status:** Public Draft for Review  
 **Last updated:** 2025-12-05  
@@ -19,7 +19,7 @@ The key words **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, and **MAY** in
 
 ## 1. Purpose
 
-AURA is an open, neutral and interoperable European-origin standard providing verifiable proof of origin for any digital asset:
+AURA is a proposed open European origin-proof standard initiative providing verifiable proof of origin for any digital asset:
 
 - audio  
 - video  

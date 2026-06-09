@@ -1,11 +1,11 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19123074.svg)](https://doi.org/10.5281/zenodo.19123074)
-# AURA – European Origin Proof Standard (Draft v0.1)
+# AURA - Proposed Open European Origin-Proof Standard (Draft v0.1)
 
 Authenticated Universal Registration for Assets  
 Last updated: 2025-12-05  
 Status: Public Draft (pre-standard, not final)
 
-AURA is an open, neutral and interoperable European-origin standard providing verifiable proof of origin for any digital or creative asset.
+AURA is a proposed open European origin-proof standard initiative providing verifiable proof of origin for any digital or creative asset.
 
 AURA introduces a sovereign, cryptographically verifiable origin layer enabling:
 - certified origin at the moment of creation
@@ -19,7 +19,7 @@ It certifies origin, not identity.
 
 AURA manifests are evidentiary artefacts. They do not assert ownership, originality, identity, licensing, or enforceability.
 
-AURA is an open standard, not owned or controlled by any private company.  
+AURA is published as an open standard initiative, not owned or controlled by any private company.
 AURA is tool-agnostic and implementation-neutral. No proprietary platform, vendor, model provider, repository host or software assistant is required to create, verify, implement or audit AURA manifests.
 
 This repository contains a public draft under active development and MAY evolve before v1.0.
@@ -45,6 +45,12 @@ Trusted Public Keys Registry profile:
 
 Governance principles:
 /GOVERNANCE.md
+
+Public position:
+/PUBLIC_POSITION.md
+
+Priority and publication record:
+/PRIORITY_RECORD.md
 
 Security considerations:
 /SECURITY_CONSIDERATIONS.md
@@ -115,11 +121,11 @@ See: PRIVACY.md
 This public draft reflects an independently conceived and documented standard.  
 It was developed prior to, and separately from, any external collaboration.
 
-Except as explicitly granted under the Apache 2.0 license, all other rights (including patents, trademarks and trade secrets) are reserved.
+Materials published in this repository are licensed under the Apache License 2.0. Except for the rights expressly granted by that license, no rights are granted over trademarks, unpublished implementations, confidential know-how, private systems, future proprietary services, or non-public technical assets.
 
 ## License
 
-AURA is published under the Apache License 2.0, including patent permissions. See LICENSE for details.
+Materials published in this repository are licensed under the Apache License 2.0. See LICENSE for details.
 
 ## Charter of Independence
 
@@ -185,7 +191,7 @@ https://www.aura-standard.org
 
 ## Reference implementations (non-normative)
 
-These implementations are prototypes provided for illustration only and are not part of the normative AURA standard.
+These implementations are non-normative educational prototypes provided for illustration only. They are not production-ready, are not part of the protected implementation layer, and are not part of the normative AURA standard.
 
 Minimal Python CLI demo:  
 https://github.com/romainbenabdelkader/aura-cli

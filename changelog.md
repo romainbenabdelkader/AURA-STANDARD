@@ -128,7 +128,7 @@ Documentation / Métadonnées du standard
 
 •	Harmonisation du wording autour de :
 	
-•	“AURA – European Origin Proof Standard” (terminologie canonique)
+•	“AURA - Proposed Open European Origin-Proof Standard” (terminologie canonique prudente pour un public draft)
 	
 •	Clarification de la section Security Considerations (forgeries, replay attacks, spoofed issuers).
 	

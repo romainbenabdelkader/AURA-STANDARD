@@ -4,7 +4,7 @@ This repository contains a draft specification and reference materials.
 It is not a production system.
 
 If you believe you have found a security issue related to:
-- reference implementations
+- non-normative prototypes
 - example code
 - cryptographic usage
 
