@@ -129,7 +129,7 @@ Manifests **MUST** be expressed in JSON-LD.
 
 ```json
 {
-  "@context": "https://aura-standard.org/context/v1.jsonld",
+  "@context": "https://www.aura-standard.org/context/v1.jsonld",
   "origin_proof_version": "0.1",
 
   "aura_id": "AURA-FR-2025-000042-G9F3K",
@@ -161,57 +161,68 @@ Manifests **MUST** be expressed in JSON-LD.
     "value": "FE902A..."
   }
 }
+```
 
 AI-generated variant (origin block)
 
+```json
 "origin": {
   "type": "ai",
   "model": "ExampleGen-2.1",
   "declared_by": "issuer"
 }
+```
 
-7. Hash Requirements
-	•	Algorithm MUST be SHA3-256.
-	•	Hash MUST be computed on the raw binary asset (no transcoding or metadata stripping).
-	•	Encodings SHOULD be Base58 or Base64url.
+---
 
-Any modification → new hash → new manifest → new AURA-ID.
+## 7. Hash Requirements
 
-⸻
+- Algorithm MUST be SHA3-256.
+- Hash MUST be computed on the raw binary asset (no transcoding or metadata stripping).
+- Encodings SHOULD be Base58 or Base64url.
 
-8. Signature Mechanism
+Any modification creates a new hash, new manifest and new AURA-ID.
+
+---
+
+## 8. Signature Mechanism
 
 AURA signatures use Ed25519:
 
+```text
 signature = Sign(issuer_private_key, canonical_json(manifest))
+```
 
-	•	Manifests MUST be canonicalized using RFC 8785 (JCS) before signing and verifying.
-	•	Issuer private keys MUST remain under the exclusive control of the issuer.
+- Manifests MUST be canonicalized using RFC 8785 (JCS) before signing and verifying.
+- Issuer private keys MUST remain under the exclusive control of the issuer.
 
-⸻
+---
 
-9. TPKR – Trusted Public Keys Registry
+## 9. TPKR - Trusted Public Keys Registry
 
 The TPKR is a federated, multi-institution registry storing:
-	•	issuer_id
-	•	public key
-	•	authority level
-	•	registration date
-	•	revocation status
 
-Normative
-	•	Verifiers MUST obtain keys from the TPKR.
-	•	Revoked or unknown issuer_id MUST invalidate manifests.
-	•	Governance MUST be distributed; no single entity SHOULD have unilateral control.
+- `issuer_id`
+- public key
+- authority level
+- registration date
+- revocation status
 
-9.1 Authority levels (informative)
+Normative:
+
+- Verifiers MUST obtain keys from the TPKR.
+- Revoked or unknown `issuer_id` MUST invalidate manifests.
+- Governance MUST be distributed; no single entity SHOULD have unilateral control.
+
+### 9.1 Authority levels (informative)
 
 In practice, not all issuers have the same trust level.
 
 AURA therefore anticipates several authority levels, for example:
-	•	Level 3 – public authorities, CMOs and intergovernmental bodies
-	•	Level 2 – certified platforms and institutions operating under a formal framework
-	•	Level 1 – declarative issuers (self-registered, low-trust)
+
+- Level 3 - public authorities, CMOs and intergovernmental bodies
+- Level 2 - certified platforms and institutions operating under a formal framework
+- Level 1 - declarative issuers (self-registered, low-trust)
 
 Verifiers MAY decide to only trust Level 3 issuers for certain use cases
 (e.g. AI training datasets), while accepting Level 1 for others
@@ -220,115 +231,129 @@ Verifiers MAY decide to only trust Level 3 issuers for certain use cases
 Self-registration in the TPKR does not automatically confer “high-trust” status.
 Governance and accreditation policies are defined by the TPKR operators.
 
-⸻
+---
 
-10. Implementation Modes
+## 10. Implementation Modes
 
-10.1 Declarative Mode (recommended)
-	•	Manifest stored separately from the asset.
-	•	No modification of the original file is required.
+### 10.1 Declarative Mode (recommended)
 
-10.2 Attached Mode (Sidecar)
+- Manifest stored separately from the asset.
+- No modification of the original file is required.
+
+### 10.2 Attached Mode (Sidecar)
 
 Manifest stored as a sidecar file next to the asset.
 
-Example
-	•	asset.wav
-	•	asset.aura
+Example:
 
-10.3 Embedded Mode (experimental)
-	•	Manifest embedded in the file metadata.
-	•	Standardization planned for v1.0.
+- `asset.wav`
+- `asset.aura`
 
-⸻
+### 10.3 Embedded Mode (experimental)
 
-11. Verification Workflow
-	1.	Retrieve asset.
-	2.	Retrieve manifest.
-	3.	Canonicalize manifest (RFC 8785).
-	4.	Retrieve public key from TPKR.
-	5.	Verify signature.
-	6.	Recompute asset hash.
-	7.	Compare with manifest hash.
-	8.	Validate AURA-ID structure and CHECK.
+- Manifest embedded in the file metadata.
+- Standardization planned for v1.0.
+
+---
+
+## 11. Verification Workflow
+
+1. Retrieve asset.
+2. Retrieve manifest.
+3. Canonicalize manifest (RFC 8785).
+4. Retrieve public key from TPKR.
+5. Verify signature.
+6. Recompute asset hash.
+7. Compare with manifest hash.
+8. Validate AURA-ID structure and CHECK.
 
 If all checks pass → Origin Verified.
 
-⸻
+---
 
-12. AI Act Compliance Profile
+## 12. AI Act Documentation Profile
 
-To satisfy Article 53, the following fields are mandatory:
-	•	aura_id
-	•	origin.type
-	•	asset.hash
-	•	issuer_id
-	•	issued_at
-	•	rights.tdm_opt_out
-	•	signature
+To support AI Act Article 53 provenance, disclosure and TDM opt-out documentation workflows, the following fields are mandatory in this AURA profile:
+
+- `aura_id`
+- `origin.type`
+- `asset.hash`
+- `issuer_id`
+- `issued_at`
+- `rights.tdm_opt_out`
+- `signature`
 
 This applies to datasets, models, and AI-generated outputs, as well as human-created works.
 
-⸻
+---
 
-13. Security Considerations
+## 13. Security Considerations
 
-Threats mitigated
-	•	Forged manifests → mitigated by signature + TPKR.
-	•	File replacement → mitigated by hash mismatch.
-	•	Replay attacks → mitigated by AURA-ID integrity + CHECK.
-	•	Spoofed issuers → mitigated by trusted registry.
+Threats mitigated:
 
-Security relies on
-	•	strong hashing (SHA3-256),
-	•	strong signatures (Ed25519),
-	•	protected issuer private keys,
-	•	revocation in the TPKR.
+- Forged manifests: mitigated by signature and TPKR.
+- File replacement: mitigated by hash mismatch.
+- Replay attacks: mitigated by AURA-ID integrity and CHECK.
+- Spoofed issuers: mitigated by trusted registry.
 
-⸻
+Security relies on:
 
-14. Privacy Considerations
-	•	AURA does not require personal data.
-	•	Issuer identifiers SHOULD NOT encode sensitive information.
-	•	AURA is compatible with GDPR minimal-data principles.
+- strong hashing (SHA3-256)
+- strong signatures (Ed25519)
+- protected issuer private keys
+- revocation in the TPKR
 
-⸻
+---
 
-15. Interoperability Mapping
-System	Mapping
-ISRC	links.isrc
-ISWC	links.iswc
-DDEX	links.other_ids
-C2PA	complementary (post-creation provenance)
-AI Act Art.53	origin + issuer_id + issued_at + signature
+## 14. Privacy Considerations
+
+- AURA does not require personal data.
+- Issuer identifiers SHOULD NOT encode sensitive information.
+- AURA is designed to be compatible with GDPR minimal-data principles.
+
+---
+
+## 15. Interoperability Mapping
+
+| System | Mapping |
+| --- | --- |
+| ISRC | `links.isrc` |
+| ISWC | `links.iswc` |
+| DDEX | `links.other_ids` |
+| C2PA | complementary (post-creation provenance) |
+| AI Act Article 53 | `origin` + `issuer_id` + `issued_at` + `signature` |
 
 AURA acts as a thin origin layer that complements existing identifiers without replacing them.
 
-⸻
+---
 
-16. Versioning
-	•	v0.x: drafts, experimental.
-	•	v1.0: stable standard.
+## 16. Versioning
+
+- v0.x: drafts, experimental.
+- v1.0: stable standard.
 
 Breaking changes MUST increment the major version.
 
-⸻
+---
 
-17. Roadmap
+## 17. Roadmap
 
-v0.2
-	•	Full TPKR specification.
-	•	Dataset/model manifest extensions.
-	•	Improved AURA-ID allocation rules.
+### v0.2
 
-v0.3
-	•	Embedded Mode normalization.
-	•	Open-source verification toolkit (CLI + SDK).
+- Full TPKR specification.
+- Dataset/model manifest extensions.
+- Improved AURA-ID allocation rules.
 
-v1.0
-	•	Submission to ETSI / AFNOR.
-	•	Governance transfer to a European consortium.
-	•	PQC signature layer (optional: CRYSTALS-Dilithium).
+### v0.3
+
+- Embedded Mode normalization.
+- Open-source verification toolkit (CLI + SDK).
+
+### v1.0
+
+- Submission to ETSI / AFNOR.
+- Governance transfer to a European consortium.
+- PQC signature layer (optional: CRYSTALS-Dilithium).
 
 ## Profiles (Informative)
 

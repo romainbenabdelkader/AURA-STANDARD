@@ -73,7 +73,7 @@ It provides a **verifiable factual reference point** without imposing execution 
 
 ```json
 {
-  "@context": "https://aura-standard.org/context/v1.jsonld",
+  "@context": "https://www.aura-standard.org/context/v1.jsonld",
   "profiles": ["PDI"],
 
   "manifest_id": "AURA-PDI-EXAMPLE-0001",
@@ -95,3 +95,4 @@ It provides a **verifiable factual reference point** without imposing execution 
     "value": "EXAMPLESIGNATUREBASE64URL"
   }
 }
+```

@@ -12,6 +12,10 @@ Test vector files are stored under:
 test-vectors/v0.1/
 ```
 
+The signed v0.1 test vectors preserve the exact `@context` string that was
+included in their signed payload. Do not rewrite those URLs without
+regenerating the signatures and expected manifest hashes.
+
 ## Test Vector 1: Valid Signed Manifest
 
 Asset:

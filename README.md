@@ -161,7 +161,7 @@ See: GOVERNANCE.md
 
 ## Contributing
 
-AURA is an open standard. Institutions, researchers and industry participants may propose changes through:
+AURA is an open standard initiative. Institutions, researchers and industry participants may propose changes through:
 - GitHub Issues
 - Pull Requests
 

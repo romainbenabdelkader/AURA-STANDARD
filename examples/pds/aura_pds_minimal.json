@@ -1,5 +1,5 @@
 {
-  "@context": "https://aura-standard.org/context/v1.jsonld",
+  "@context": "https://www.aura-standard.org/context/v1.jsonld",
   "origin_proof_version": "0.1",
   "profiles": ["PDS"],
 

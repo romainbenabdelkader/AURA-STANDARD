@@ -57,7 +57,7 @@ Accepted changes should be reflected in the changelog.
 
 AURA governance must remain implementation-neutral.
 
-Reference implementations, demos, CLIs, SDKs, websites or third-party tools may help adoption, but they are not the standard itself.
+Non-normative prototypes, demos, CLIs, SDKs, websites or third-party tools may help adoption, but they are not the standard itself.
 
 Conformance should be judged against the published specification, schemas, contexts, profiles and test vectors, not against one preferred software product.
 
