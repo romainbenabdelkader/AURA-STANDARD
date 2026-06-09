@@ -43,6 +43,9 @@ Test vectors:
 Trusted Public Keys Registry profile:
 /TPKR.md
 
+Governance principles:
+/GOVERNANCE.md
+
 Security considerations:
 /SECURITY_CONSIDERATIONS.md
 
@@ -139,14 +142,16 @@ See: CHARTER.md
 
 ## Future Governance (indicative)
 
-Future governance models for AURA may be explored, inspired by open standardization processes (e.g. IETF, ETSI).
+AURA is currently published as a public draft. Future governance may evolve toward an open, transparent and multi-stakeholder process inspired by open standardization practices.
+
+Any governance model must preserve AURA's independence, tool-agnostic nature, privacy-by-design principles and resistance to capture by any single platform, vendor, institution or authority.
 
 Any governance framework must comply strictly with the AURA Charter of Independence and may not:
 - introduce enforcement or control mechanisms
 - compromise platform neutrality
 - grant unilateral control to any single entity
 
-The definition of governance is explicitly out of scope of the current draft.
+See: GOVERNANCE.md
 
 ## Contributing
 
