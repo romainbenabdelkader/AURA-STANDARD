@@ -32,12 +32,28 @@ Full AURA v0.1 Draft Specification:
 JSON-LD Context (v1):  
 /context/v1.jsonld
 
+Conformance levels:
+/CONFORMANCE.md
+
+Test vectors:
+/TEST_VECTORS.md
+
+Trusted Public Keys Registry profile:
+/TPKR.md
+
+Security considerations:
+/SECURITY_CONSIDERATIONS.md
+
+Glossary:
+/GLOSSARY.md
+
 ## Repository Structure
 
 /specs – Standard specifications  
 /context – JSON-LD context files  
 /examples – Manifest examples  
 /schema – Manifest schemas
+/test-vectors – Conformance-oriented test vectors
 
 ## Ontology (minimal draft definitions)
 
@@ -76,6 +92,18 @@ AURA acts as a thin origin layer complementing existing identifiers without repl
 AURA is designed to support compliance with EU AI Act Article 53 (provenance, disclosure, TDM opt-out).
 
 The AURA Manifest provides a minimal, machine-readable provenance profile that institutions, creators and platforms can validate independently.
+
+## GDPR / Privacy Considerations
+
+AURA is designed around data minimization.
+
+The standard does not require personal data to function. AURA manifests should rely on cryptographic hashes, issuer identifiers, timestamps, rights-reservation declarations and signatures rather than embedded personal content, usage logs or behavioural traces.
+
+AURA does not provide monitoring, profiling, content recognition, automated enforcement or automated legal decision-making.
+
+Implementations MAY use pseudonymous, institutional or role-based issuer identifiers. If an implementation adds personal data or links manifests to identifiable natural persons, that implementation remains responsible for its own lawful basis, transparency notices, retention periods, data-subject rights and GDPR/privacy obligations.
+
+See: PRIVACY.md
 
 ## Intellectual Property Position
 
@@ -130,6 +158,7 @@ All discussions and contributions occur in writing only.
 v0.2
 - TPKR formal specification
 - Dataset/model manifest extensions
+- conformance test suite expansion
 
 v0.3
 - Embedded Mode normalization

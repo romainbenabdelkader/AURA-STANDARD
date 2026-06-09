@@ -1,0 +1,23 @@
+{
+  "@context": "https://aura-standard.org/context/v1.jsonld",
+  "origin_proof_version": "0.1",
+  "aura_id": "AURA-INT-2026-000001-TV1",
+  "origin": {
+    "type": "human",
+    "declared_by": "issuer"
+  },
+  "asset": {
+    "type": "text",
+    "hash": "sha3-256:0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "issuer_id": "AURA-TEST-ISSUER-001",
+  "issued_at": "2026-01-01T00:00:00Z",
+  "rights": {
+    "tdm_opt_out": true
+  },
+  "signature": {
+    "alg": "ed25519",
+    "public_key": "A6EHv_POEL4dcN0Y50vAmWfk1jCbpQ1fHdyGZBJVMbg",
+    "value": "c8N7ABoKnmwGpzTqaZBplx52HbbLjieWlWQMbd8mtkEk4zPZvQezmRiCYK1xJthaPPY6EAN6iBzOhg8nfSYlDA"
+  }
+}
