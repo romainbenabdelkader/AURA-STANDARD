@@ -32,12 +32,28 @@ Full AURA v0.1 Draft Specification:
 JSON-LD Context (v1):  
 /context/v1.jsonld
 
+Conformance levels:
+/CONFORMANCE.md
+
+Test vectors:
+/TEST_VECTORS.md
+
+Trusted Public Keys Registry profile:
+/TPKR.md
+
+Security considerations:
+/SECURITY_CONSIDERATIONS.md
+
+Glossary:
+/GLOSSARY.md
+
 ## Repository Structure
 
 /specs – Standard specifications  
 /context – JSON-LD context files  
 /examples – Manifest examples  
 /schema – Manifest schemas
+/test-vectors – Conformance-oriented test vectors
 
 ## Ontology (minimal draft definitions)
 
@@ -142,6 +158,7 @@ All discussions and contributions occur in writing only.
 v0.2
 - TPKR formal specification
 - Dataset/model manifest extensions
+- conformance test suite expansion
 
 v0.3
 - Embedded Mode normalization

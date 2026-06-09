@@ -1,0 +1,15 @@
+{
+  "version": "0.1-test",
+  "issuers": {
+    "AURA-TEST-ISSUER-001": {
+      "issuer_id": "AURA-TEST-ISSUER-001",
+      "public_key": "A6EHv_POEL4dcN0Y50vAmWfk1jCbpQ1fHdyGZBJVMbg",
+      "algorithm": "ed25519",
+      "status": "active",
+      "authority_level": "test",
+      "registered_at": "2026-01-01T00:00:00Z",
+      "revoked_at": null,
+      "replaced_by": null
+    }
+  }
+}

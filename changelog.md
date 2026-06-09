@@ -112,6 +112,20 @@ Documentation / Métadonnées du standard
 
 	•	responsabilite des implementations en cas d'ajout de donnees personnelles
 
+•	Ajout des documents de structuration du standard ouvert :
+
+	•	CONFORMANCE.md
+
+	•	TEST_VECTORS.md
+
+	•	TPKR.md
+
+	•	SECURITY_CONSIDERATIONS.md
+
+	•	GLOSSARY.md
+
+	•	test-vectors/v0.1
+
 •	Harmonisation du wording autour de :
 	
 •	“AURA – European Origin Proof Standard” (terminologie canonique)
