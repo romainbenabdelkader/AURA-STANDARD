@@ -92,7 +92,7 @@ Documentation / Métadonnées du standard
 	
 •	roadmap v0.2 → v1.0
 	
-•	Publication du site officiel : https://www.aura-standard.org
+•	Réservation du domaine officiel : https://www.aura-standard.org (mise en ligne planifiée).
 	
 •	Ajout de la licence Apache 2.0 (avec permissions de brevets).
 
