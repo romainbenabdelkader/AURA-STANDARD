@@ -62,7 +62,7 @@ Target asset identification. Minimum:
 	
 •	type (string)
 	
-•	hash (string, algorithm-prefixed, e.g. sha256:...)
+•	hash (string, algorithm-prefixed, e.g. sha3-256:...)
 	
 •	declared_scope (object)
 Declared scope policy. Minimum:

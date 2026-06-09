@@ -1,5 +1,5 @@
 {
-  "@context": "https://romainbenabdelkader.github.io/AURA-STANDARD/context/v1.jsonld",
+  "@context": "https://aura-standard.org/context/v1.jsonld",
   "spec_version": "0.1-draft",
   "profiles": ["PDS"],
 
@@ -8,7 +8,7 @@
 
   "subject": {
     "aura_id": "AURA:PDI:EXAMPLE:0001",
-    "asset_hash": "sha256:EXAMPLEASSETDIGEST"
+    "asset_hash": "sha3-256:EXAMPLEASSETDIGEST"
   },
 
   "declared_scope": {

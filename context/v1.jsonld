@@ -5,11 +5,12 @@
     "id": "@id",
     "type": "@type",
 
-    "AURA": "https://romainbenabdelkader.github.io/AURA-STANDARD/ns#",
+    "AURA": "https://aura-standard.org/ns#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
 
     "aura_id": "AURA:aura_id",
     "spec_version": "AURA:spec_version",
+    "origin_proof_version": "AURA:origin_proof_version",
     "profiles": "AURA:profiles",
 
     "issued_at": {
@@ -28,6 +29,7 @@
     "issuer": "AURA:issuer",
     "issuer_id": "AURA:issuer_id",
     "public_key_pem": "AURA:public_key_pem",
+    "public_key": "AURA:public_key",
 
     "canonicalization": "AURA:canonicalization",
 
