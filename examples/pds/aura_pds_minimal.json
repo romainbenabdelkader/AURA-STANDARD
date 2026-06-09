@@ -1,6 +1,6 @@
 {
-  "@context": "https://romainbenabdelkader.github.io/AURA-STANDARD/context/v1.jsonld",
-  "spec_version": "0.1-draft",
+  "@context": "https://aura-standard.org/context/v1.jsonld",
+  "origin_proof_version": "0.1",
   "profiles": ["PDS"],
 
   "aura_id": "AURA:PDS:EXAMPLE:0001",
@@ -8,7 +8,7 @@
 
   "subject": {
     "aura_id": "AURA:PDI:EXAMPLE:0001",
-    "asset_hash": "sha256:EXAMPLEASSETDIGEST"
+    "asset_hash": "sha3-256:EXAMPLEASSETDIGEST"
   },
 
   "declared_scope": {
@@ -29,10 +29,7 @@
     "note": "This is a declarative policy signal. It does not by itself establish legal ownership, enforceability, or authorization."
   },
 
-  "issuer": {
-    "issuer_id": "TPKR:ed25519:EXAMPLEPUBLICKEYFINGERPRINT",
-    "public_key_pem": "-----BEGIN PUBLIC KEY-----\nEXAMPLE...\n-----END PUBLIC KEY-----\n"
-  },
+  "issuer_id": "TPKR:ed25519:EXAMPLEPUBLICKEYFINGERPRINT",
 
   "canonicalization": "canonical_json_v0",
 

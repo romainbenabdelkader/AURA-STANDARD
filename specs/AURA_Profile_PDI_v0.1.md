@@ -96,10 +96,10 @@ Optional but RECOMMENDED:
 	
 •	manifest_id
 	
-•	profile: ["PDI"]
+•	profiles: ["PDI"]
 
 Example (informative):
-"profile": ["PDI"]
+"profiles": ["PDI"]
 
 6. Verification Process
 

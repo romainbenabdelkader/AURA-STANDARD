@@ -73,8 +73,8 @@ It provides a **verifiable factual reference point** without imposing execution 
 
 ```json
 {
-  "@context": "https://www.aura-standard.org/context/v1",
-  "profile": ["PDI"],
+  "@context": "https://aura-standard.org/context/v1.jsonld",
+  "profiles": ["PDI"],
 
   "manifest_id": "AURA-PDI-EXAMPLE-0001",
   "issued_at": "2026-01-26T12:00:00Z",

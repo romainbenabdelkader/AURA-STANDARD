@@ -42,8 +42,8 @@ The following fields are required:
 
 AURI of the JSON-LD context used for interpretation.
 	
-•	spec_version (string)
-Specification version tag (e.g. 0.1-draft).
+•	origin_proof_version (string)
+Specification version tag (e.g. 0.1).
 	
 •	profiles (array of string)
 Must include "PDS".
@@ -62,7 +62,7 @@ Target asset identification. Minimum:
 	
 •	type (string)
 	
-•	hash (string, algorithm-prefixed, e.g. sha256:...)
+•	hash (string, algorithm-prefixed, e.g. sha3-256:...)
 	
 •	declared_scope (object)
 Declared scope policy. Minimum:
