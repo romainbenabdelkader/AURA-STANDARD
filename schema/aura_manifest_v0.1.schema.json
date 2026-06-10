@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aura-standard.org/schema/aura_manifest_v0.1.schema.json",
+  "title": "AURA Manifest (v0.1 draft)",
+  "description": "JSON Schema for the AURA v0.1 manifest. This is a DRAFT and is intentionally non-restrictive: it validates the universal evidentiary envelope (version, identifier, issuer, timestamp, signature) and the common fields, while allowing profile-specific and future fields via additionalProperties. The authoritative references remain the signed test vectors (test-vectors/v0.1/) and specs/AURA_v0.1_Draft.md. Base/asset manifests SHOULD include 'asset' and 'origin'; scope profiles (e.g. PDS) use 'subject' and 'declared_scope'.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["origin_proof_version", "aura_id", "issuer_id", "issued_at", "signature"],
+  "properties": {
+    "@context": { "type": "string", "description": "JSON-LD context IRI." },
+    "origin_proof_version": { "type": "string", "description": "AURA proof format version (e.g. \"0.1\"). Not pinned, so future versions remain valid." },
+    "profiles": { "type": "array", "items": { "type": "string" }, "description": "Optional proof profiles claimed (e.g. PDI, PDS)." },
+    "aura_id": { "type": "string", "minLength": 1, "description": "Structured AURA origin identifier." },
+    "origin": {
+      "type": "object", "additionalProperties": true,
+      "properties": {
+        "type": { "type": "string", "enum": ["human", "ai", "hybrid", "unknown"], "description": "Declared origin of the asset." },
+        "declared_by": { "type": "string" }
+      }
+    },
+    "asset": {
+      "type": "object", "additionalProperties": true,
+      "required": ["hash"],
+      "properties": {
+        "type": { "type": "string", "description": "Asset type label (audio, image, text, video, dataset, model, ...)." },
+        "hash": { "type": "string", "pattern": "^sha3-256:.+$", "description": "Algorithm-prefixed digest. AURA v0.1 mandates SHA3-256 over the raw binary asset: the value MUST begin with 'sha3-256:' followed by the lowercase hex digest." }
+      }
+    },
+    "subject": { "type": "object", "additionalProperties": true, "description": "For scope profiles (PDS): the target the declaration applies to." },
+    "declared_scope": { "type": "object", "additionalProperties": true, "description": "For scope profiles (PDS): declared activities and policy." },
+    "issuer_id": { "type": "string", "minLength": 1, "description": "Signing issuer identifier, resolvable via the TPKR." },
+    "issued_at": { "type": "string", "format": "date-time", "description": "ISO-8601 / RFC 3339 UTC issuance timestamp." },
+    "rights": {
+      "type": "object", "additionalProperties": true,
+      "properties": { "tdm_opt_out": { "type": "boolean", "description": "Machine-readable TDM / AI-training reservation signal (DSM Directive Art. 4)." } }
+    },
+    "claims": { "type": "object", "additionalProperties": true, "description": "Optional explicit statement of what the manifest does / does not prove." },
+    "interpretation": { "type": "object", "additionalProperties": true },
+    "canonicalization": { "type": "string", "description": "Canonicalization method identifier (RFC 8785 / JCS)." },
+    "signature": {
+      "type": "object", "additionalProperties": true,
+      "required": ["alg", "value"],
+      "properties": {
+        "alg": { "type": "string", "description": "Signature algorithm (e.g. ed25519)." },
+        "value": { "type": "string", "minLength": 1, "description": "Signature over the canonical unsigned manifest." },
+        "public_key": { "type": "string", "description": "Issuer public key when embedded; otherwise resolved via TPKR." },
+        "encoding": { "type": "string", "description": "Encoding of the signature value (e.g. base64url)." }
+      }
+    }
+  }
+}
