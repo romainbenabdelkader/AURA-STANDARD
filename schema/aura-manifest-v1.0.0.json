@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aura-standard.org/schema/aura-manifest-v1.0.0.json",
+  "title": "AURA Manifest v1.0.0 (frozen canonical)",
+  "description": "Canonical AURA v1.0 manifest as emitted by conformant issuers and verified by AURA-VERIFIER. FROZEN: fields are never removed or repurposed; evolution is additive in v1.1+. additionalProperties is allowed so profile-specific and future (v1.1) fields validate. Revocation / lifecycle data is NEVER part of the signed manifest.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["aura_version", "aura_uid", "issuer", "issued_at", "signature"],
+  "properties": {
+    "aura_version": { "const": "1.0" },
+    "profile": { "type": "string" },
+    "aura_id": { "type": "string" },
+    "aura_uid": {
+      "type": "string",
+      "pattern": "^aura:v1:[0-9A-HJKMNP-TV-Z]{26}$",
+      "description": "aura:v1: followed by a ULID (26 chars, Crockford base32)."
+    },
+    "issuer_role": { "type": "string" },
+    "rights_claim": { "type": "string" },
+    "issuer": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "id": { "type": "string" },
+        "service": { "type": "string" },
+        "public_key_pem": { "type": "string" },
+        "public_key_url": { "type": "string" }
+      }
+    },
+    "issued_at": { "type": "string", "format": "date-time" },
+    "asset": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "hash_algorithm": { "type": "string" },
+        "hash": { "type": "string" }
+      }
+    },
+    "retention": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "mode": { "type": "string" },
+        "master_retained": { "type": "boolean" }
+      }
+    },
+    "proof": { "type": "object", "additionalProperties": true },
+    "declarations": { "type": "object", "additionalProperties": true },
+    "catalog_claim": { "type": "object", "additionalProperties": true },
+    "signature": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["algorithm", "canonicalization", "value"],
+      "properties": {
+        "algorithm": { "const": "Ed25519" },
+        "canonicalization": { "const": "RFC-8785-JCS" },
+        "value": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}
