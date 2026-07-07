@@ -1,12 +1,12 @@
 {
-  "$comment": "TEMPLATE ONLY. Not a valid emitted manifest fragment. An issuer replaces every PENDING_* value with a real, verifiable value at emission time; emission MUST fail rather than emit a placeholder. Digests are 'sha3-256:' + 64 lowercase hex chars.",
+  "$comment": "TEMPLATE ONLY. Not a valid emitted manifest fragment. An issuer replaces every PENDING_* value with a real, verifiable value at emission time; emission MUST fail rather than emit a placeholder. Digests are 'sha3-256:' + 64 lowercase hex chars. standard.schema_digest is frozen: sha3-256 of schema/aura-manifest-v1.1.0.json at commit 0e5d945.",
   "reference_anchor": {
     "standard": {
       "name": "AURA",
       "schema_version": "1.1.0",
       "release_tag": "PENDING_STANDARD_RELEASE_TAG",
       "commit": "PENDING_STANDARD_COMMIT_SHA1",
-      "schema_digest": "PENDING_SHA3_256_SCHEMA",
+      "schema_digest": "sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa",
       "archive_doi": "PENDING_ZENODO_DOI_STANDARD"
     },
     "verifier": {
