@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aura-standard.org/schema/aura-manifest-v1.1.0.json",
+  "title": "AURA Manifest v1.1.0 (Reference Anchor)",
+  "description": "AURA v1.1 = v1.0 + reference_anchor (mandatory, in the signed payload) + prior_evidence (optional backward chain). v1.0 stays frozen; verifiers MUST accept both v1.0 and v1.1. Revocation / lifecycle data is NEVER part of the signed manifest.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["aura_version", "aura_uid", "issuer", "issued_at", "signature", "reference_anchor"],
+  "$defs": {
+    "digest": { "type": "string", "pattern": "^sha3-256:[0-9a-f]{64}$" },
+    "auraUid": { "type": "string", "pattern": "^aura:v1:[0-9A-HJKMNP-TV-Z]{26}$" }
+  },
+  "properties": {
+    "aura_version": { "const": "1.1" },
+    "profile": { "type": "string" },
+    "aura_id": { "type": "string" },
+    "aura_uid": { "$ref": "#/$defs/auraUid" },
+    "issuer_role": { "type": "string" },
+    "rights_claim": { "type": "string" },
+    "issuer": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "id": { "type": "string" },
+        "service": { "type": "string" },
+        "public_key_pem": { "type": "string" },
+        "public_key_url": { "type": "string" }
+      }
+    },
+    "issued_at": { "type": "string", "format": "date-time" },
+    "asset": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "hash_algorithm": { "type": "string" },
+        "hash": { "type": "string" }
+      }
+    },
+    "retention": { "type": "object", "additionalProperties": true },
+    "proof": { "type": "object", "additionalProperties": true },
+    "declarations": { "type": "object", "additionalProperties": true },
+    "catalog_claim": { "type": "object", "additionalProperties": true },
+    "reference_anchor": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["standard", "verifier", "issuer_key"],
+      "properties": {
+        "standard": {
+          "type": "object",
+          "required": ["name", "schema_version", "release_tag", "schema_digest", "archive_doi"],
+          "properties": {
+            "name": { "const": "AURA" },
+            "schema_version": { "type": "string" },
+            "release_tag": { "type": "string" },
+            "commit": { "type": "string" },
+            "schema_digest": { "$ref": "#/$defs/digest" },
+            "archive_doi": { "type": "string", "minLength": 1 }
+          }
+        },
+        "verifier": {
+          "type": "object",
+          "required": ["name", "version", "release_tag", "source_digest", "archive_doi"],
+          "properties": {
+            "name": { "const": "AURA-VERIFIER" },
+            "version": { "type": "string" },
+            "release_tag": { "type": "string" },
+            "commit": { "type": "string" },
+            "source_digest": { "$ref": "#/$defs/digest" },
+            "archive_doi": { "type": "string", "minLength": 1 }
+          }
+        },
+        "issuer_key": {
+          "type": "object",
+          "required": ["issuer_id", "algorithm", "public_key_digest", "public_key_doi"],
+          "properties": {
+            "issuer_id": { "type": "string" },
+            "key_id": { "type": "string" },
+            "algorithm": { "const": "Ed25519" },
+            "public_key_digest": { "$ref": "#/$defs/digest" },
+            "public_key_doi": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "prior_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["aura_uid", "manifest_hash"],
+        "properties": {
+          "aura_uid": { "$ref": "#/$defs/auraUid" },
+          "manifest_hash": { "type": "string" }
+        }
+      }
+    },
+    "signature": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["algorithm", "canonicalization", "value"],
+      "properties": {
+        "algorithm": { "const": "Ed25519" },
+        "canonicalization": { "const": "RFC-8785-JCS" },
+        "value": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}
