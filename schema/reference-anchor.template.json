@@ -1,0 +1,28 @@
+{
+  "$comment": "TEMPLATE ONLY. Not a valid emitted manifest fragment. An issuer replaces every PENDING_* value with a real, verifiable value at emission time; emission MUST fail rather than emit a placeholder. Digests are 'sha3-256:' + 64 lowercase hex chars.",
+  "reference_anchor": {
+    "standard": {
+      "name": "AURA",
+      "schema_version": "1.1.0",
+      "release_tag": "PENDING_STANDARD_RELEASE_TAG",
+      "commit": "PENDING_STANDARD_COMMIT_SHA1",
+      "schema_digest": "PENDING_SHA3_256_SCHEMA",
+      "archive_doi": "PENDING_ZENODO_DOI_STANDARD"
+    },
+    "verifier": {
+      "name": "AURA-VERIFIER",
+      "version": "PENDING_VERIFIER_VERSION",
+      "release_tag": "PENDING_VERIFIER_RELEASE_TAG",
+      "commit": "PENDING_VERIFIER_COMMIT_SHA1",
+      "source_digest": "PENDING_SHA3_256_VERIFIER_SOURCE",
+      "archive_doi": "PENDING_ZENODO_DOI_VERIFIER"
+    },
+    "issuer_key": {
+      "issuer_id": "PENDING_ISSUER_ID",
+      "key_id": "PENDING_KEY_ID",
+      "algorithm": "Ed25519",
+      "public_key_digest": "PENDING_SHA3_256_PUBLIC_KEY",
+      "public_key_doi": "PENDING_ZENODO_DOI_ISSUER_KEY"
+    }
+  }
+}
