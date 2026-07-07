@@ -1,5 +1,5 @@
 {
-  "$comment": "TEMPLATE ONLY. Not a valid emitted manifest fragment. An issuer replaces every PENDING_* value with a real, verifiable value at emission time; emission MUST fail rather than emit a placeholder. Digests are 'sha3-256:' + 64 lowercase hex chars. standard.schema_digest is frozen: sha3-256 of schema/aura-manifest-v1.1.0.json at commit 0e5d945.",
+  "$comment": "TEMPLATE ONLY. Not a valid emitted manifest fragment. An issuer replaces every PENDING_* value with a real, verifiable value at emission time; emission MUST fail rather than emit a placeholder. Digests are 'sha3-256:' + 64 lowercase hex chars. Frozen anchors: standard.schema_digest = sha3-256 of schema/aura-manifest-v1.1.0.json at commit 0e5d945; verifier.* = AURA-VERIFIER v1.0.1, source_digest = sha3-256 of AURA-VERIFIER-v1.0.1.zip attached to version DOI 10.5281/zenodo.21251287 (Zenodo md5 e90075ae3834685ba4df7ea88e690a5d). Concept/all-versions DOI 10.5281/zenodo.21251286 is for citation only, not for the anchor.",
   "reference_anchor": {
     "standard": {
       "name": "AURA",
@@ -11,11 +11,11 @@
     },
     "verifier": {
       "name": "AURA-VERIFIER",
-      "version": "PENDING_VERIFIER_VERSION",
-      "release_tag": "PENDING_VERIFIER_RELEASE_TAG",
-      "commit": "PENDING_VERIFIER_COMMIT_SHA1",
-      "source_digest": "PENDING_SHA3_256_VERIFIER_SOURCE",
-      "archive_doi": "PENDING_ZENODO_DOI_VERIFIER"
+      "version": "1.0.1",
+      "release_tag": "v1.0.1",
+      "commit": "5b7091e5cafaa40516a83bb8599e79d2b02e271c",
+      "source_digest": "sha3-256:e024d080a9f0eb87c9c2b46b1accd5445bde0307129f1626ef95e7ac1b8f5dba",
+      "archive_doi": "10.5281/zenodo.21251287"
     },
     "issuer_key": {
       "issuer_id": "PENDING_ISSUER_ID",
