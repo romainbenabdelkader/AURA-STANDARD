@@ -1,13 +1,13 @@
 {
-  "$comment": "TEMPLATE ONLY. Not a valid emitted manifest fragment. An issuer replaces every PENDING_* value with a real, verifiable value at emission time; emission MUST fail rather than emit a placeholder. Digests are 'sha3-256:' + 64 lowercase hex chars. Frozen anchors: standard.schema_digest = sha3-256 of schema/aura-manifest-v1.1.0.json at commit 0e5d945; verifier.* = AURA-VERIFIER v1.0.1, source_digest = sha3-256 of AURA-VERIFIER-v1.0.1.zip attached to version DOI 10.5281/zenodo.21251287 (Zenodo md5 e90075ae3834685ba4df7ea88e690a5d). Concept/all-versions DOI 10.5281/zenodo.21251286 is for citation only, not for the anchor.",
+  "$comment": "TEMPLATE ONLY. Not a valid emitted manifest fragment. An issuer replaces every PENDING_* value with a real, verifiable value at emission time; emission MUST fail rather than emit a placeholder. Digests are 'sha3-256:' + 64 lowercase hex chars. Frozen anchors: standard.* = AURA-STANDARD v1.1.0, schema_digest = sha3-256 of schema/aura-manifest-v1.1.0.json at commit 0027d13, archive_doi = version DOI 10.5281/zenodo.21251473 (Zenodo md5 4ff624c5c72bb434ac218e0e1a734f81); verifier.* = AURA-VERIFIER v1.0.1, source_digest = sha3-256 of AURA-VERIFIER-v1.0.1.zip attached to version DOI 10.5281/zenodo.21251287 (Zenodo md5 e90075ae3834685ba4df7ea88e690a5d). Concept/all-versions DOIs (standard 10.5281/zenodo.19123073, verifier 10.5281/zenodo.21251286) are for citation only, not for the anchor.",
   "reference_anchor": {
     "standard": {
       "name": "AURA",
       "schema_version": "1.1.0",
-      "release_tag": "PENDING_STANDARD_RELEASE_TAG",
-      "commit": "PENDING_STANDARD_COMMIT_SHA1",
+      "release_tag": "v1.1.0",
+      "commit": "0027d13ab9da20c4ef71dc89c2d0c419160c55f6",
       "schema_digest": "sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa",
-      "archive_doi": "PENDING_ZENODO_DOI_STANDARD"
+      "archive_doi": "10.5281/zenodo.21251473"
     },
     "verifier": {
       "name": "AURA-VERIFIER",
