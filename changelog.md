@@ -20,6 +20,7 @@ Statuts des versions définis dans : specs/Standard_Status_and_Versioning.md.
 
 •	Statut du standard : « Published open standard — v1.1.0 » (le matériel v0.1 est conservé comme legacy / superseded).
 •	Domaine officiel https://www.aura-standard.org actif.
+•	Convention d'empreinte de clé (reference_anchor.issuer_key.public_key_digest) : sha3-256 du DER (SPKI) de la clé publique — encodage binaire canonique et stable. Le fichier .pem n'est PAS canonique (fins de ligne, ré-encodage). Rupture de convention notée : les empreintes basées sur le fichier .pem affichées sur des certificats déjà émis restent des artefacts d'affichage valides — elles ne font pas partie du payload signé et n'exigent aucune réémission.
 •	Publication Zenodo : DOI de concept 10.5281/zenodo.19123073, DOI de version 10.5281/zenodo.21251473.
 
 ⸻
