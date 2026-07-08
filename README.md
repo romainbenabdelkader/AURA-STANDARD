@@ -1,11 +1,11 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19123074.svg)](https://doi.org/10.5281/zenodo.19123074)
-# AURA - Proposed Open European Origin-Proof Standard (Draft v0.1)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19123073.svg)](https://doi.org/10.5281/zenodo.19123073)
+# AURA — Open Standard for Verifiable Proof of Origin
 
 Authenticated Universal Registration for Assets  
-Last updated: 2025-12-05  
-Status: Public Draft (pre-standard, not final)
+Last updated: 2026-07-08  
+Status: Published open standard — v1.1.0 (schema v1.0.0 frozen canonical, v1.1.0 additive)
 
-AURA is a proposed open European origin-proof standard initiative providing verifiable proof of origin for any digital or creative asset.
+AURA is an open European origin-proof standard providing verifiable proof of origin for any digital or creative asset.
 
 AURA introduces a sovereign, cryptographically verifiable origin layer enabling:
 - certified origin at the moment of creation
@@ -22,13 +22,15 @@ AURA manifests are evidentiary artefacts. They do not assert ownership, original
 AURA is published as an open standard initiative, not owned or controlled by any private company.
 AURA is tool-agnostic and implementation-neutral. No proprietary platform, vendor, model provider, repository host or software assistant is required to create, verify, implement or audit AURA manifests.
 
-This repository contains a public draft under active development and MAY evolve before v1.0.
+This repository contains the published AURA standard (v1.1.0). Evolution is additive and explicitly versioned: schema v1.0.0 is the frozen canonical shape, and v1.1.0 adds `reference_anchor` and `prior_evidence` without breaking v1.0.
 > **AURA does not create trust. It makes statements verifiable.**
-Note: The canonical domain https://www.aura-standard.org is reserved for the AURA standard.
-At this draft stage, all normative files and JSON-LD contexts are hosted via GitHub Pages.
+Note: The canonical domain https://www.aura-standard.org is active and serves the AURA standard, including normative files and JSON-LD contexts.
 ## Documentation
 
-Full AURA v0.1 Draft Specification:  
+Canonical manifest schemas (v1.0.0 frozen, v1.1.0 additive):  
+/schema/ (see /schema/README.md)
+
+AURA v0.1 Draft Specification (legacy — superseded, retained for historical reference):  
 /specs/AURA_v0.1_Draft.md
 
 JSON-LD Context (v1):  
@@ -118,7 +120,7 @@ See: PRIVACY.md
 
 ## Intellectual Property Position
 
-This public draft reflects an independently conceived and documented standard.  
+This published open standard reflects an independently conceived and documented standard.  
 It was developed prior to, and separately from, any external collaboration.
 
 Materials published in this repository are licensed under the Apache License 2.0. Except for the rights expressly granted by that license, no rights are granted over trademarks, unpublished implementations, confidential know-how, private systems, future proprietary services, or non-public technical assets.
@@ -148,7 +150,7 @@ See: CHARTER.md
 
 ## Future Governance (indicative)
 
-AURA is currently published as a public draft. Future governance may evolve toward an open, transparent and multi-stakeholder process inspired by open standardization practices.
+AURA is currently published as an open standard (v1.1.0). Future governance may evolve toward an open, transparent and multi-stakeholder process inspired by open standardization practices.
 
 Any governance model must preserve AURA's independence, tool-agnostic nature, privacy-by-design principles and resistance to capture by any single platform, vendor, institution or authority.
 
@@ -169,25 +171,35 @@ All discussions and contributions occur in writing only.
 
 ## Roadmap
 
-v0.2
-- TPKR formal specification
-- Dataset/model manifest extensions
-- conformance test suite expansion
+Delivered and published:
+- Canonical manifest schemas (v1.0.0 frozen, v1.1.0 additive)
+- Independent open-source verifier — AURA-VERIFIER (CLI + browser)
 
-v0.3
-- Embedded Mode normalization
-- Open-source verification toolkit (CLI + SDK)
-
-v1.0
+Planned:
+- Formal TPKR (Trusted Public Keys Registry) specification
+- Dataset and model manifest extensions
 - ETSI / AFNOR work-item proposal for formal standardization
 
 ## Project Website
 
-Primary (GitHub Pages):  
+Official site (active):  
+https://www.aura-standard.org
+
+Mirror (GitHub Pages):  
 https://romainbenabdelkader.github.io/AURA-STANDARD/
 
-Custom domain (pending configuration):  
-https://www.aura-standard.org
+## Independent verifier
+
+AURA-VERIFIER is the independent, open-source verifier for AURA evidence. It checks integrity, canonical payloads and Ed25519 signatures, and requires no account or backend.
+
+Repository:  
+https://github.com/romainbenabdelkader/AURA-VERIFIER
+
+DOI (v1.0.1):  
+https://doi.org/10.5281/zenodo.21251287
+
+Web verifier:  
+https://verify.aura-standard.org/web/
 
 ## Reference implementations (non-normative)
 
@@ -212,5 +224,10 @@ Illustrative use cases are available in:
 
 ## Citation
 
-AURA v0.1 — Public Draft  
-DOI: https://doi.org/10.5281/zenodo.19123074
+AURA-STANDARD — Open Standard for Verifiable Proof of Origin
+
+Concept DOI (all versions):  
+https://doi.org/10.5281/zenodo.19123073
+
+This version — AURA-STANDARD v1.1.0:  
+https://doi.org/10.5281/zenodo.21251473

@@ -6,6 +6,32 @@ Statuts des versions définis dans : specs/Standard_Status_and_Versioning.md.
 
 ⸻
 
+[v1.1.0 – Published open standard] – 2026‑07‑08
+
+🆕 Ajouté
+
+•	Schéma canonique gelé : aura-manifest-v1.0.0.json (aura_version "1.0", aura_uid ULID, issuer object, signature Ed25519 + RFC 8785/JCS). Aucun champ n'est jamais retiré ni réaffecté.
+•	Évolution additive : aura-manifest-v1.1.0.json = v1.0.0 + reference_anchor (obligatoire, dans le payload signé) + prior_evidence (chaîne de preuves antérieures, optionnelle).
+•	Un vérificateur DOIT accepter à la fois v1.0 et v1.1.
+•	reference-anchor.template.json et schema/README.md documentant la politique de versionnement des schémas.
+•	Vérificateur indépendant open-source publié : AURA-VERIFIER v1.0.1 (CLI + navigateur), https://github.com/romainbenabdelkader/AURA-VERIFIER — DOI 10.5281/zenodo.21251287, page https://verify.aura-standard.org/web/.
+
+🔧 Modifié
+
+•	Statut du standard : « Published open standard — v1.1.0 » (le matériel v0.1 est conservé comme legacy / superseded).
+•	Domaine officiel https://www.aura-standard.org actif.
+•	Publication Zenodo : DOI de concept 10.5281/zenodo.19123073, DOI de version 10.5281/zenodo.21251473.
+
+⸻
+
+[v0.1.1 – Public Draft • Editorial hardening] – 2026‑06‑09
+
+🔧 Modifié
+
+•	Durcissement éditorial du public draft : clarifications de wording, cohérence terminologique et corrections de documentation, sans changement normatif de structure.
+
+⸻
+
 [v0.1 – Public Draft • Release Candidate] – 2025‑12‑12
 
 🆕 Ajouté
@@ -166,24 +192,20 @@ Documentation / Métadonnées du standard
 
 Prochaines versions prévues
 
-v0.2 (Roadmap)
+Livré et publié
 	
-•	Spécification complète du TPKR
+•	Schémas canoniques (v1.0.0 gelé, v1.1.0 additif)
+	
+•	Vérificateur indépendant open‑source — AURA‑VERIFIER (CLI + navigateur)
+
+Perspectives
+	
+•	Spécification formelle complète du TPKR
 	
 •	Extensions datasets & modèles IA
 	
 •	Règles avancées d’allocation AURA‑ID
-
-v0.3 (Roadmap)
-	
-•	Normalisation de l’Embedded Mode
-	
-•	CLI & SDK de vérification open‑source
-
-v1.0 (Roadmap)
-	
-•	Package de standardisation formel
 	
 •	Soumission ETSI / AFNOR
 	
-•	Introduction d’une option PQC (CRYSTALS‑Dilithium)
+•	Option post‑quantique (PQC, ex. CRYSTALS‑Dilithium)
