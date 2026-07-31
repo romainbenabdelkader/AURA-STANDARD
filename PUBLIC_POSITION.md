@@ -3,7 +3,7 @@
 Status: public scope statement.
 Last updated: 2026-06-09.
 
-AURA is a technical origin-proof standard initiative. It produces verifiable artefacts. It does not create, remove, condition, transfer or adjudicate legal rights.
+AURA is a technical standard initiative for signed origin declarations and asset integrity. It produces verifiable artefacts. It does not create, remove, condition, transfer or adjudicate legal rights.
 
 ## Creator Rights
 

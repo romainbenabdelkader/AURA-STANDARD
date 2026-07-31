@@ -6,6 +6,23 @@ Statuts des versions définis dans : specs/Standard_Status_and_Versioning.md.
 
 ⸻
 
+[Non publié – durcissement éditorial du périmètre probatoire]
+
+🔧 Modifié
+
+•	README et PRIVACY : la formulation « preuve d'origine certifiée / horodatage » est remplacée par « déclaration d'origine signée et vérifiable » et « heure d'émission déclarée par l'émetteur ». Une date d'émission n'est indépendamment établie que si une preuve d'horodatage externe est fournie.
+•	Périmètre de non-assertion étendu : un manifeste n'assère ni paternité, ni propriété, ni titularité, ni grounding, ni citation, ni exhaustivité des observations d'usage.
+•	Titre du standard : « Open Standard for Verifiable Proof of Origin » → « Open Standard for Verifiable Origin Declarations and Asset Integrity ». Dans ARCHITECTURE, CHARTER, CONTRIBUTING et PUBLIC_POSITION, « proof of origin » devient « signed origin declaration » / « origin evidence » selon le contexte. Le titre déposé sur Zenodo reste inchangé : les archives ne sont jamais modifiées rétroactivement, le nouveau titre s'appliquera au prochain dépôt.
+•	Documents non modifiés à dessein : specs/AURA_v0.1_Draft.md (legacy conservé), PRIORITY_RECORD.md et les entrées historiques du présent changelog — ce sont des enregistrements d'antériorité.
+
+🆕 Ajouté
+
+•	Section « Institutional references (non-normative) » : citation du rapport de la mission parlementaire Paoli-Gagin sur l'alignement de l'IA, avec mention explicite qu'il ne s'agit ni d'une adoption, ni d'une certification, ni d'une normalisation, ni d'une reconnaissance juridique.
+
+Aucun changement de schéma, de canonicalisation, de signature ni de vecteur de test. Modifications strictement rédactionnelles.
+
+⸻
+
 [v1.1.0 – Published open standard] – 2026‑07‑08
 
 🆕 Ajouté

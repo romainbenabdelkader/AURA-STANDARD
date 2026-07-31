@@ -1,23 +1,23 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19123073.svg)](https://doi.org/10.5281/zenodo.19123073)
-# AURA — Open Standard for Verifiable Proof of Origin
+# AURA — Open Standard for Verifiable Origin Declarations and Asset Integrity
 
 Authenticated Universal Registration for Assets  
 Last updated: 2026-07-08  
 Status: Published open standard — v1.1.0 (schema v1.0.0 frozen canonical, v1.1.0 additive)
 
-AURA is an open European origin-proof standard providing verifiable proof of origin for any digital or creative asset.
+AURA is an open European standard for signed, independently verifiable origin declarations covering any digital or creative asset.
 
 AURA introduces a sovereign, cryptographically verifiable origin layer enabling:
-- certified origin at the moment of creation
+- an issuer-declared origin statement, signed at the moment of registration
 - independent verification by platforms, regulators or institutions
-- support for EU AI Act Article 53 provenance requirements
+- support for evidentiary workflows related to EU AI Act Article 53
 - interoperability with ISRC, ISWC, DDEX, C2PA
 - compatibility with human, AI and hybrid-generated assets (audio, video, text, image, datasets, models)
 
 AURA does not perform content recognition, similarity analysis, fingerprinting, watermarking, DRM, or usage monitoring.  
-It certifies origin, not identity.
+It makes origin declarations verifiable; it does not establish the truth of the declared origin or the real-world identity or authority of the issuer.
 
-AURA manifests are evidentiary artefacts. They do not assert ownership, originality, identity, licensing, or enforceability.
+AURA manifests are evidentiary artefacts. They do not assert authorship, ownership, originality, identity, licensing, enforceability, grounding, citation or usage completeness. The issuance time carried by a manifest is issuer-declared unless independent timestamp evidence is provided.
 
 AURA is published as an open standard initiative, not owned or controlled by any private company.
 AURA is tool-agnostic and implementation-neutral. No proprietary platform, vendor, model provider, repository host or software assistant is required to create, verify, implement or audit AURA manifests.
@@ -222,9 +222,33 @@ Illustrative use cases are available in:
 
 /USE_CASES.md
 
+## Institutional references (non-normative)
+
+The typology of the three asymmetries — declaration, traceability, auditability —
+contributed by Romain Benabdelkader, and the accompanying definition of minimal,
+robust and interoperable evidence, are cited in the French parliamentary mission
+report on AI alignment (Paoli-Gagin). That report identifies the AURA protocol as
+a possible open basis for an evidence, traceability and auditability
+infrastructure.
+
+- p. 30 — the three asymmetries, attributed to Romain Benabdelkader
+- pp. 34-35 — minimal, robust and interoperable evidence; recommendation no. 8
+- p. 95 — the same recommendation carried into government priority no. 5
+
+Report: https://www.vaninapaoligagin.fr/rapport/
+
+This is a citation in a public report. It is not an adoption, endorsement,
+certification, standardisation or legal recognition of AURA by any public
+authority, and it confers no conformity status.
+
 ## Citation
 
 AURA-STANDARD — Open Standard for Verifiable Proof of Origin
+
+The title above is the one under which the records below were deposited. Archived
+records are never altered retroactively. The current repository title is
+"Open Standard for Verifiable Origin Declarations and Asset Integrity"; it will
+apply to the next deposited version.
 
 Concept DOI (all versions):  
 https://doi.org/10.5281/zenodo.19123073

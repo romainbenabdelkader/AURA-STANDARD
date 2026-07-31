@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-AURA is an open, neutral technical reference framework dedicated to proof of origin, provenance, and transparency of digital works in the context of AI systems.
+AURA is an open, neutral technical reference framework dedicated to signed origin declarations, asset integrity, provenance, and transparency of digital works in the context of AI systems.
 
 Its sole purpose is to provide a **verifiable, auditable, and interoperable evidentiary layer** enabling the expression and verification of:
 

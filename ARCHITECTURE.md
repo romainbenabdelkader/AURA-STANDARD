@@ -6,7 +6,7 @@ layer is independent and can be adopted on its own.
 ## The three layers
 
 1. **AURA** — the open, neutral *evidentiary standard*. It defines how to
-   produce and verify technical proof of origin and integrity of a digital
+   produce and verify signed origin declarations and technical integrity of a digital
    asset (AURA-ID, signed JSON-LD manifest, SHA3-256 hashing, Ed25519
    signatures, TPKR). AURA is non-capturable and depends on no other layer.
 

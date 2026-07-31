@@ -1,6 +1,6 @@
 # AURA Privacy And GDPR Principles
 
-AURA is designed as a minimal evidentiary layer for origin, integrity, timestamping and rights-reservation declarations.
+AURA is designed as a minimal evidentiary layer for origin, integrity, issuance-time and rights-reservation declarations.
 
 It is not designed to collect, monitor, profile or decide anything about individuals.
 

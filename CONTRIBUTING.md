@@ -9,7 +9,7 @@ Contributions are welcome via:
 ## Scope
 
 Proposals should focus on:
-- proof of origin
+- signed origin declarations
 - signed provenance metadata
 - interoperability with existing identifiers
 - alignment with EU AI Act transparency requirements
