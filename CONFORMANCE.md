@@ -1,69 +1,84 @@
 # AURA Conformance
 
-This document defines draft conformance levels for implementations claiming compatibility with AURA.
+This document defines conformance levels for implementations claiming compatibility with AURA v1.0 or v1.1. The published schemas remain the normative reference for manifest fields and structure.
 
-Conformance levels are cumulative unless explicitly stated otherwise.
+Conformance levels are cumulative except where this document states that a capability is conditional on the evidence type.
 
 ## AURA-Minimal
 
 An implementation is AURA-Minimal conformant if it can:
 
-- parse an AURA manifest
-- identify `aura_id`
-- identify `issuer_id`
-- identify `issued_at`
-- identify `origin.type`
-- identify `asset.hash`
-- identify `rights.tdm_opt_out`
-- distinguish technical proof claims from legal claims
+- parse a supported AURA v1.0 or v1.1 manifest
+- identify `aura_uid`, issuer metadata, `issued_at` and signature metadata
+- distinguish asset-backed evidence from a fileless signed catalogue declaration
+- identify the declared asset hash when one is present
+- identify profile-specific declarations without presenting them as independently proven facts
+- distinguish technical verification results from legal conclusions
 
 AURA-Minimal does not require cryptographic verification.
 
 ## AURA-Integrity
 
-An implementation is AURA-Integrity conformant if it satisfies AURA-Minimal and can:
+An implementation is AURA-Integrity conformant if it satisfies AURA-Minimal and, when an asset and its hash are part of the evidence, can:
 
-- compute the declared asset hash
-- compare the computed hash with `asset.hash`
-- report `VALID` only when the asset hash matches
-- report `INVALID` when the asset hash does not match
+- compute the asset hash using the declared supported algorithm
+- compare the computed hash with the manifest's declared asset hash
+- report a match only when the hashes are equal
+- report a mismatch when the hashes are not equal
+
+For a fileless signed catalogue declaration with no declared asset hash, asset integrity is not applicable and MUST NOT be reported as verified.
 
 ## AURA-Signed
 
-An implementation is AURA-Signed conformant if it satisfies AURA-Integrity and can:
+An implementation is AURA-Signed conformant if it satisfies AURA-Minimal and can:
 
-- canonicalize the unsigned manifest
+- canonicalize the unsigned manifest using the declared supported canonicalization
 - verify an Ed25519 signature
-- report signature mismatch separately from file hash mismatch
+- report signature mismatch separately from any asset-hash mismatch
 - refuse manifests with unsupported signature algorithms
+
+When an implementation also claims to verify asset integrity, it must satisfy AURA-Integrity for that evidence.
 
 ## AURA-Timestamped
 
 An implementation is AURA-Timestamped conformant if it satisfies AURA-Signed and can:
 
-- parse trusted timestamp fields when present
-- verify the timestamp binding to the manifest hash when supported
-- distinguish declared timestamps from third-party trusted timestamps
+- parse independent trusted timestamp evidence when present
+- verify the timestamp binding to the manifest hash when the timestamp format is supported
+- distinguish the issuer-declared `issued_at` value from independent trusted timestamp evidence
 
-Trusted timestamping is optional in AURA v0.1.
+Independent trusted timestamp evidence is optional in AURA v1.0 and v1.1. The `issued_at` value alone MUST NOT be presented as an independently trusted timestamp.
 
 ## AURA-Registry-Verified
 
 An implementation is AURA-Registry-Verified conformant if it satisfies AURA-Signed and can:
 
-- resolve `issuer_id` through a Trusted Public Keys Registry (TPKR)
+- evaluate the issuer key against supplied Trusted Public Keys Registry (TPKR) material
 - reject revoked issuer keys
 - reject unknown issuer keys where registry verification is required
-- support key rotation metadata
+- support key-rotation metadata
+- expose the source and freshness of registry material when known
+
+Registry material MAY be supplied as a local trusted snapshot or obtained through an optional remote resolution mechanism. AURA-Registry-Verified conformance does not require a network request or a particular registry host.
 
 ## AURA-Institutional
 
 An implementation is AURA-Institutional conformant if it satisfies AURA-Registry-Verified and can:
 
-- distinguish issuer authority levels
+- distinguish documented issuer authority levels
 - expose registry provenance
-- produce audit logs for verification events without monitoring asset usage
 - document privacy and data-minimization measures
+- distinguish any independently required operational records from AURA verification results
+
+## Verification-Event Privacy
+
+AURA conformance MUST NOT require logging verification events.
+
+A conformant implementation MUST NOT make creation of a record linking an identifiable verifier or user to the specific asset, manifest or evidence object being verified a condition of AURA verification.
+
+This requirement does not prohibit an institution from maintaining logs for a separate lawful operational, cybersecurity or regulatory purpose. Such logging is outside AURA conformance, is not evidence of AURA conformance, and SHOULD be separately justified, disclosed and minimized.
+
+When all evidence and trust material required for a cryptographic check is supplied locally, a conformant verifier MUST NOT require remote resolution, an account, analytics or telemetry to complete that check.
 
 ## Non-Conformant Claims
 
@@ -77,6 +92,7 @@ An implementation MUST NOT claim AURA conformance if it presents AURA as:
 - automated enforcement
 - automated legal decision-making
 - a system requiring a proprietary vendor, AI service, repository host, software assistant or platform to create, verify, implement or audit AURA manifests
+- a system requiring a particular remote resolver, registry host, analytics service or central platform when the required evidence and trust material is supplied locally
 
 ## Compatibility Labels
 
