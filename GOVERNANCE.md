@@ -1,12 +1,12 @@
 # AURA Governance
 
-Status: Draft governance principles for a public pre-standard.
+Status: Governance principles for the published AURA open technical specification.
 
-AURA is currently published as a public draft. This document defines lightweight governance principles for reviewing, discussing and evolving the draft while preserving its independence.
+AURA is published and versioned through public repositories. This document defines lightweight governance principles for reviewing and evolving the specification while preserving its independence.
 
-This document does not create a foundation, committee, certification body or legal authority. It only records the governance constraints that apply while AURA remains a public draft.
+This document does not create a foundation, committee, certification body or legal authority. AURA currently has no independent enforcement body with authority to investigate or sanction an implementation.
 
-## 1. Open Draft Process
+## 1. Open Review Process
 
 AURA changes should be proposed through public, written and traceable channels:
 
@@ -57,11 +57,19 @@ Accepted changes should be reflected in the changelog.
 
 AURA governance must remain implementation-neutral.
 
-Non-normative prototypes, demos, CLIs, SDKs, websites or third-party tools may help adoption, but they are not the standard itself.
+Non-normative prototypes, demos, CLIs, SDKs, websites or third-party tools may help adoption, but they are not the specification itself.
 
 Conformance should be judged against the published specification, schemas, contexts, profiles and test vectors, not against one preferred software product.
 
-## 6. Future Formalization
+## 6. Scope Of Assurance And Accountability
+
+AURA's written normative rules define what an implementation may claim as conformant. Conformance tests can check selected technical properties, but cannot establish how every deployed service handles identity, network metadata, operational logs or external legal requirements.
+
+Organizational accountability is a separate layer. Because AURA currently has no independent enforcement body, it cannot investigate deployments, impose sanctions or guarantee that an implementation will not add surveillance, identity or gatekeeping functions outside the specification.
+
+Implementers remain accountable for those deployment choices. Public documentation and test results can make conduct more visible, but they are not a substitute for an independent governance or enforcement mechanism.
+
+## 7. Future Formalization
 
 Future governance may evolve toward an open, transparent and multi-stakeholder process inspired by recognized open standardization practices.
 
@@ -73,6 +81,7 @@ Any future formal governance model should preserve:
 - platform neutrality
 - tool-agnostic implementation
 - privacy by design
+- meaningful participation by affected communities
 - resistance to capture by any single actor
 
-Until such a model exists, AURA remains a public draft maintained through transparent repository-based review.
+Until such a model exists, AURA remains maintained through transparent repository-based review without an independent certification or enforcement authority.

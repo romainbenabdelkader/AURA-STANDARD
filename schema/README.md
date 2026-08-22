@@ -23,6 +23,7 @@ uses them to check structure.
 
 ## Digests
 
-Anchor digests are `sha3-256:` followed by 64 lowercase hex characters, computed
-over the exact published artifact (schema file, verifier source archive, issuer
-public-key PEM).
+Anchor digests are `sha3-256:` followed by 64 lowercase hex characters. Schema
+and verifier-source digests are computed over the exact published artifact.
+Issuer public-key digests are computed over the DER/SPKI bytes decoded from the
+published PEM representation.

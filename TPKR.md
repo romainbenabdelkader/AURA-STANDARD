@@ -85,11 +85,15 @@ Issuer key rotation SHOULD use:
 
 TPKR does not require personal data.
 
-Issuer identifiers MAY be institutional, role-based or pseudonymous. If a registry operator stores personal data, that operator is responsible for its own GDPR and privacy compliance obligations.
+Issuer identifiers MAY be institutional, role-based or pseudonymous. A public TPKR entry MUST NOT require publication of a natural person's civil identity as a condition of AURA conformance or cryptographic verification.
+
+A registry operator MAY perform private identity or authority checks under a separately documented onboarding policy. Those checks are an external trust-assurance process, not part of AURA cryptographic validity, and MUST be distinguished from the technical mapping provided by TPKR.
+
+If a registry operator stores personal data, that operator is responsible for its own GDPR and privacy compliance obligations.
 
 ## Governance
 
-TPKR governance is out of scope for AURA v0.1, but future versions SHOULD define:
+TPKR governance remains outside the core AURA v1.1 specification, but future versions SHOULD define:
 
 - registry operator rules
 - issuer onboarding
