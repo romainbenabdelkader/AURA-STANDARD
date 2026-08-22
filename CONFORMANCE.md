@@ -70,6 +70,12 @@ An implementation is AURA-Institutional conformant if it satisfies AURA-Registry
 - document privacy and data-minimization measures
 - distinguish any independently required operational records from AURA verification results
 
+## Identity Separation
+
+A natural person's civil identity MUST NOT be required as a condition of AURA cryptographic validity or core AURA conformance. An AURA profile MUST NOT require publication of a natural person's civil identity merely to claim AURA conformance.
+
+An institution or profile MAY define separate identity or authority assurance for a particular operational context. That assurance MUST be distinguished from AURA cryptographic verification, and its absence MUST NOT cause an otherwise valid AURA signature to be reported as invalid.
+
 ## Verification-Event Privacy
 
 AURA conformance MUST NOT require logging verification events.
