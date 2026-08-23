@@ -29,9 +29,9 @@ This proof establishes *immutability of the declaration itself*, not correctness
 
 Using an AURA manifest, it is possible to verify that:
 
-- a declaration existed at a given time,
+- a declaration carries an issuer-declared issuance time,
 - the declaration content has remained unchanged,
-- the declaration was cryptographically bound to an issuer identity,
+- the declaration was cryptographically bound to an issuer signing key,
 - the declaration can be independently re-verified at any later time.
 
 This proof relies exclusively on:
@@ -73,26 +73,29 @@ It provides a **verifiable factual reference point** without imposing execution 
 
 ```json
 {
-  "@context": "https://www.aura-standard.org/context/v1.jsonld",
-  "profiles": ["PDI"],
-
-  "manifest_id": "AURA-PDI-EXAMPLE-0001",
+  "@context": "https://www.aura-standard.org/context/v1.1.jsonld",
+  "aura_version": "1.0",
+  "profile": "AURA_TDM_RIGHTS_RESERVATION_V1",
+  "aura_uid": "aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV",
   "issued_at": "2026-01-26T12:00:00Z",
 
-  "issuer_id": "TPKR:ed25519:EXAMPLEPUBLICKEYFINGERPRINT",
+  "issuer": {
+    "id": "AURA-REFERENCE-TEST"
+  },
 
-  "origin": "human",
+  "asset": {
+    "hash_algorithm": "SHA3-256",
+    "hash": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
 
-  "rights": {
+  "declarations": {
     "tdm_opt_out": true
   },
 
-  "canonicalization": "canonical_json_v0",
-
   "signature": {
-    "alg": "ed25519",
-    "encoding": "base64url",
-    "value": "EXAMPLESIGNATUREBASE64URL"
+    "algorithm": "Ed25519",
+    "canonicalization": "RFC-8785-JCS",
+    "value": "EXAMPLE_BASE64_SIGNATURE"
   }
 }
 ```

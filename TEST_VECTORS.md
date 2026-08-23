@@ -5,6 +5,18 @@ retains the signed v0.1 vectors as legacy implementation material.
 
 The purpose is to help independent implementations verify consistent hashing, manifest canonicalization, signing and error reporting.
 
+Implementations claiming support for
+`AURA_TDM_RIGHTS_RESERVATION_V1` additionally MUST test:
+
+- a correctly signed, asset-bound profile with
+  `declarations.tdm_opt_out: true`
+- rejection of a profile using a string, number, `null`, object or boolean
+  `false` in place of the required boolean `true`
+- rejection when the signed declaration is modified
+- rejection when supplied asset bytes do not match `asset.hash`
+- reporting that issuer authority, discovery and legal effect were not assessed
+  by cryptographic verification
+
 ## Current Neutral Verification Example
 
 The self-contained, non-production AURA v1.1 package is located at:

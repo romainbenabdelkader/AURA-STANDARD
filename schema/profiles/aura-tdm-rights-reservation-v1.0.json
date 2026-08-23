@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aura-standard.org/schema/profiles/aura-tdm-rights-reservation-v1.0.json",
+  "title": "AURA TDM Rights-Reservation Profile v1.0",
+  "description": "Profile overlay. A manifest MUST also validate against the canonical AURA base schema selected by aura_version.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "aura_version",
+    "profile",
+    "aura_uid",
+    "issuer",
+    "issued_at",
+    "asset",
+    "declarations",
+    "signature"
+  ],
+  "properties": {
+    "aura_version": {
+      "enum": ["1.0", "1.1"]
+    },
+    "profile": {
+      "const": "AURA_TDM_RIGHTS_RESERVATION_V1"
+    },
+    "aura_uid": {
+      "type": "string",
+      "pattern": "^aura:v1:[0-9A-HJKMNP-TV-Z]{26}$"
+    },
+    "issuer": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "asset": {
+      "type": "object",
+      "required": ["hash_algorithm", "hash"],
+      "properties": {
+        "hash_algorithm": {
+          "const": "SHA3-256"
+        },
+        "hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "declarations": {
+      "type": "object",
+      "required": ["tdm_opt_out"],
+      "properties": {
+        "tdm_opt_out": {
+          "const": true
+        }
+      }
+    },
+    "signature": {
+      "type": "object",
+      "required": ["algorithm", "canonicalization", "value"],
+      "properties": {
+        "algorithm": {
+          "const": "Ed25519"
+        },
+        "canonicalization": {
+          "const": "RFC-8785-JCS"
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "aura_version": {
+            "const": "1.1"
+          }
+        },
+        "required": ["aura_version"]
+      },
+      "then": {
+        "required": ["reference_anchor"]
+      }
+    }
+  ]
+}

@@ -33,7 +33,10 @@ Canonical manifest schemas (v1.0.0 frozen, v1.1.0 additive):
 AURA v0.1 Draft Specification (legacy — superseded, retained for historical reference):  
 /specs/AURA_v0.1_Draft.md
 
-JSON-LD Context (v1):  
+Current JSON-LD Context (v1.1):
+/context/v1.1.jsonld
+
+Legacy JSON-LD Context (v1, retained for signed v0.1 material):
 /context/v1.jsonld
 
 Conformance levels:
@@ -47,6 +50,9 @@ Neutral AURA v1.1 verification quickstart:
 
 Trusted Public Keys Registry profile:
 /TPKR.md
+
+TDM rights-reservation documentation profile:
+/specs/AI_Act_Article_53_Conformance_Profile.md
 
 Governance principles:
 /GOVERNANCE.md
@@ -92,7 +98,7 @@ AURA defines:
 - AURA Manifest (JSON-LD) – structured and cryptographically signed
 - Ed25519 signatures – integrity & authenticity
 - TPKR registry – trusted issuer public keys
-- AI Act Article 53 profile – minimal provenance requirements
+- TDM rights-reservation documentation profile – signed reservation declaration
 
 AURA does not define fingerprinting, watermarking, DRM, content recognition or rights allocation.
 
@@ -102,15 +108,22 @@ System: ISRC -> links.isrc
 System: ISWC -> links.iswc  
 System: DDEX -> links.other_ids  
 System: C2PA -> complementary (non-overlapping)  
-System: EU AI Act Art. 53 -> core fields: origin, issuer_id, issued_at, signature, rights.tdm_opt_out
+System: EU AI Act Art. 53 documentation workflows -> optional profile fields:
+profile, aura_uid, issuer, issued_at, asset.hash,
+declarations.tdm_opt_out, signature, and reference_anchor for AURA v1.1
 
 AURA acts as a thin origin layer complementing existing identifiers without replacing them.
 
 ## EU AI Act Considerations
 
-AURA is designed to support compliance with EU AI Act Article 53 (provenance, disclosure, TDM opt-out).
+AURA is designed to support documentation and audit workflows related to EU AI
+Act Article 53, including signed TDM rights-reservation declarations.
 
-The AURA Manifest provides a minimal, machine-readable provenance profile that institutions, creators and platforms can validate independently.
+The optional `AURA_TDM_RIGHTS_RESERVATION_V1` profile provides a minimal,
+machine-interpretable declaration that institutions, creators and platforms can
+validate independently. Profile conformance does not establish rightsholder
+authority, automated discoverability, receipt by a model provider, legal
+enforceability or compliance with Article 53 by itself.
 
 ## GDPR / Privacy Considerations
 
