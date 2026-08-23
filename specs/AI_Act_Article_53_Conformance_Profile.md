@@ -51,6 +51,12 @@ by the v1.1 base schema.
 
 All profile fields above form part of the signed payload.
 
+`asset.hash` binds the declaration to the exact supplied asset bytes. It does
+not identify a transcoded, reformatted, compressed, cropped, metadata-stripped
+or perceptually similar derivative as the same asset. Cross-format or
+similarity-based recognition requires a separate identification mechanism and
+is outside this profile.
+
 ## 3. Declaration semantics
 
 `declarations.tdm_opt_out: true` means only:
@@ -64,6 +70,18 @@ the boolean `false` are non-conformant with this reservation profile.
 Absence of this profile or field means that no TDM reservation is expressed by
 this AURA profile. It MUST NOT be interpreted as permission, a licence, a waiver,
 public-domain status, or absence of rights.
+
+### 3.1 Binary reservation interoperability
+
+For interoperability with the TDM Reservation Protocol (TDMRep), a conformant
+`declarations.tdm_opt_out: true` declaration maps to the TDMRep
+`tdm-reservation` value `1` (TDM rights reserved).
+
+This is a one-way semantic mapping. This AURA profile does not express the
+TDMRep value `0` (TDM rights not reserved). An absent or non-conformant AURA
+profile MUST NOT be translated to `tdm-reservation: 0`; it conveys no AURA
+reservation signal. The mapping does not make an AURA manifest a TDMRep
+discovery mechanism.
 
 Cryptographic validity proves control of the signing key, not that the issuer is
 the rightsholder or is authorised to act for the rightsholder. Implementations
