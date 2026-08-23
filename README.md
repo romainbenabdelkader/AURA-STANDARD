@@ -255,6 +255,10 @@ release is also provided in `CITATION.cff`.
 Concept DOI (all versions):  
 https://doi.org/10.5281/zenodo.19123073
 
+Current archived version — AURA-STANDARD v1.1.1:
+
+https://doi.org/10.5281/zenodo.22063255
+
 Previous archived version — AURA-STANDARD v1.1.0:
 
 https://doi.org/10.5281/zenodo.21251473
