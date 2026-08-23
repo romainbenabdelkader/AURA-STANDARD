@@ -6,7 +6,7 @@ Statuts des versions définis dans : specs/Standard_Status_and_Versioning.md.
 
 ⸻
 
-[Unreleased – TDM semantic and asset-binding clarification]
+[v1.2.1 – TDM semantic and asset-binding clarification] – 2026‑08‑23
 
 🔧 Modifié
 
