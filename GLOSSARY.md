@@ -48,9 +48,17 @@ Declared timestamp of manifest issuance. It is not equivalent to a third-party t
 
 Optional third-party timestamp binding a manifest hash to a time authority response.
 
-## rights.tdm_opt_out
+## declarations.tdm_opt_out
 
-Machine-readable declaration that the issuer reserves rights against text and data mining where applicable.
+In the optional `AURA_TDM_RIGHTS_RESERVATION_V1` profile, the JSON boolean
+`true` is a signed declaration by the issuer that rights are reserved against
+text and data mining for the asset identified by `asset.hash`, where and to the
+extent applicable. It does not prove that the issuer owns or is authorised to
+exercise those rights, that a data collector discovered the declaration, or
+that the declaration has a particular legal effect.
+
+The earlier `rights.tdm_opt_out` path belongs to the superseded v0.1 draft and
+MUST NOT be used to claim the current profile.
 
 ## Proof Scope
 

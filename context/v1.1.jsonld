@@ -1,0 +1,54 @@
+{
+  "@context": {
+    "@version": 1.1,
+
+    "id": "@id",
+    "type": "@type",
+
+    "AURA": "https://aura-standard.org/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "aura_version": "AURA:aura_version",
+    "aura_id": "AURA:aura_id",
+    "aura_uid": "AURA:aura_uid",
+    "profile": "AURA:profile",
+    "profiles": "AURA:profiles",
+
+    "issued_at": {
+      "@id": "AURA:issued_at",
+      "@type": "xsd:dateTime"
+    },
+
+    "issuer": "AURA:issuer",
+    "issuer_id": "AURA:issuer_id",
+    "issuer_role": "AURA:issuer_role",
+    "public_key": "AURA:public_key",
+
+    "asset": "AURA:asset",
+    "hash_algorithm": "AURA:hash_algorithm",
+    "hash": "AURA:hash",
+    "origin": "AURA:origin",
+    "subject": "AURA:subject",
+    "rights": "AURA:rights",
+    "rights_claim": "AURA:rights_claim",
+    "claims": "AURA:claims",
+    "declarations": "AURA:declarations",
+    "tdm_opt_out": {
+      "@id": "AURA:tdm_opt_out",
+      "@type": "xsd:boolean"
+    },
+
+    "proof": "AURA:proof",
+    "declared_scope": "AURA:declared_scope",
+    "interpretation": "AURA:interpretation",
+    "reference_anchor": "AURA:reference_anchor",
+    "prior_evidence": "AURA:prior_evidence",
+
+    "canonicalization": "AURA:canonicalization",
+    "signature": "AURA:signature",
+    "algorithm": "AURA:algorithm",
+    "alg": "AURA:alg",
+    "encoding": "AURA:encoding",
+    "value": "AURA:value"
+  }
+}

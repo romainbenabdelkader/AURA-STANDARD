@@ -6,6 +6,22 @@ Statuts des versions définis dans : specs/Standard_Status_and_Versioning.md.
 
 ⸻
 
+[Unreleased – TDM rights-reservation profile alignment]
+
+🆕 Ajouté
+
+• Profil normatif optionnel `AURA_TDM_RIGHTS_RESERVATION_V1`, appliqué en surcouche des schémas canoniques sans les modifier.
+• Schéma de profil imposant un actif lié par SHA3-256 et `declarations.tdm_opt_out: true` dans le payload signé.
+• Contexte JSON-LD v1.1 aligné sur les champs canoniques actuels et typant `tdm_opt_out` comme booléen.
+
+🔧 Modifié
+
+• Le profil documentaire Article 53 abandonne les anciens chemins v0.1 et sépare explicitement conformité syntaxique, autorité de l'émetteur, découvrabilité, réception et effet juridique.
+• Aucun schéma canonique gelé, algorithme, règle de canonicalisation, signature ou vecteur signé existant n'est modifié.
+• L'ajout constitue une capacité normative rétrocompatible ; le numéro de la prochaine version publique reste à déterminer avant publication.
+
+⸻
+
 [v1.1.1 – Privacy and verification clarification] – 2026‑08‑23
 
 🔧 Modifié

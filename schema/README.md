@@ -11,6 +11,7 @@ uses them to check structure.
 | `aura-manifest-v1.0.0.json` | **Canonical — FROZEN** | The real emitted shape: `aura_version: "1.0"`, ULID `aura_uid`, `issuer` object, Ed25519 + RFC-8785-JCS signature. No field is ever removed or repurposed. |
 | `aura-manifest-v1.1.0.json` | **Current evolution** | `v1.0.0` **plus** a mandatory `reference_anchor` (in the signed payload) and an optional `prior_evidence` backward chain. |
 | `reference-anchor.template.json` | Template | Placeholder scaffold for the v1.1 `reference_anchor`. Not a valid emitted fragment. |
+| `profiles/aura-tdm-rights-reservation-v1.0.json` | **Optional profile overlay** | Validates the signed `AURA_TDM_RIGHTS_RESERVATION_V1` declaration. It is applied in addition to the canonical base schema selected by `aura_version`. |
 | `aura_manifest_v0.1.schema.json` | **Legacy — superseded** | Earlier draft using `origin_proof_version: "0.1"`. Kept for historical reference only; **not** the canonical schema. |
 
 ## Rules
@@ -20,6 +21,7 @@ uses them to check structure.
 - `reference_anchor` (v1.1) is part of the **signed payload** — an unsigned anchor proves nothing.
 - **Revocation / lifecycle** data is **never** part of the signed manifest; it is carried out of band.
 - Emitted proofs contain **no placeholder values**: if a real value (digest, DOI, commit) is unavailable, emission fails.
+- Optional profile overlays add constraints without altering the frozen base schemas. A manifest claiming a profile MUST validate against both its base schema and the named profile overlay.
 
 ## Digests
 

@@ -70,6 +70,25 @@ An implementation is AURA-Institutional conformant if it satisfies AURA-Registry
 - document privacy and data-minimization measures
 - distinguish any independently required operational records from AURA verification results
 
+## Optional TDM Rights-Reservation Profile
+
+An implementation claiming support for
+`AURA_TDM_RIGHTS_RESERVATION_V1` MUST:
+
+- validate the manifest against both its canonical base schema and
+  `schema/profiles/aura-tdm-rights-reservation-v1.0.json`
+- require `declarations.tdm_opt_out` to be exactly the JSON boolean `true`
+- verify the manifest signature and, when the asset is supplied, its SHA3-256
+  binding
+- report profile conformance separately from issuer authority, automated
+  discoverability, receipt by a data collector and legal effect
+- avoid interpreting an absent or non-conformant profile as permission, a
+  licence, a waiver or absence of rights
+
+Support for this optional profile does not alter the AURA-Minimal through
+AURA-Institutional levels and does not require a central registry or network
+request.
+
 ## Identity Separation
 
 A natural person's civil identity MUST NOT be required as a condition of AURA cryptographic validity or core AURA conformance. An AURA profile MUST NOT require publication of a natural person's civil identity merely to claim AURA conformance.
