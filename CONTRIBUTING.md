@@ -1,6 +1,6 @@
 # Contributing
 
-AURA is an open public draft specification.
+AURA is a published open technical specification.
 
 Contributions are welcome via:
 - GitHub Issues
@@ -31,5 +31,5 @@ Out of scope:
 By contributing, you agree that your contribution may be included in the specification
 under the project license.
 
-This document may evolve before v1.0.
-A future multi-stakeholder governance model may be proposed (e.g., inspired by IETF/ETSI processes).
+Future changes remain subject to the public versioning policy and documented review.
+A future multi-stakeholder governance model may be proposed through the same public process.

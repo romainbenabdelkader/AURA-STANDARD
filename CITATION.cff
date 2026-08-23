@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use AURA, please cite this release."
+title: "AURA — Open Technical Specification for Verifiable Origin Declarations and Asset Integrity"
+type: software
+authors:
+  - family-names: Benabdelkader
+    given-names: Romain
+    orcid: "https://orcid.org/0009-0005-8754-088X"
+version: 1.1.1
+date-released: 2026-08-23
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.19123073
+    description: "Concept DOI for all AURA-STANDARD versions"
+repository-code: "https://github.com/romainbenabdelkader/AURA-STANDARD"
+url: "https://www.aura-standard.org"
+license: Apache-2.0

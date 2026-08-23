@@ -1,11 +1,11 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19123073.svg)](https://doi.org/10.5281/zenodo.19123073)
-# AURA — Open Standard for Verifiable Origin Declarations and Asset Integrity
+# AURA — Open Technical Specification for Verifiable Origin Declarations and Asset Integrity
 
-Authenticated Universal Registration for Assets  
-Last updated: 2026-07-08  
-Status: Published open standard — v1.1.0 (schema v1.0.0 frozen canonical, v1.1.0 additive)
+Authenticated Universal Registration for Assets<br>
+Last updated: 2026-08-23<br>
+Status: Published open technical specification — v1.1.1 (schema v1.0.0 frozen canonical, v1.1.0 additive)
 
-AURA is an open European standard for signed, independently verifiable origin declarations covering any digital or creative asset.
+AURA is an open European technical specification for signed, independently verifiable origin declarations covering any digital or creative asset.
 
 AURA introduces a sovereign, cryptographically verifiable origin layer enabling:
 - an issuer-declared origin statement, signed at the moment of registration
@@ -19,10 +19,10 @@ It makes origin declarations verifiable; it does not establish the truth of the 
 
 AURA manifests are evidentiary artefacts. They do not assert authorship, ownership, originality, identity, licensing, enforceability, grounding, citation or usage completeness. The issuance time carried by a manifest is issuer-declared unless independent timestamp evidence is provided.
 
-AURA is published as an open standard initiative, not owned or controlled by any private company.
+AURA is published as an open technical specification, not owned or controlled by any private company.
 AURA is tool-agnostic and implementation-neutral. No proprietary platform, vendor, model provider, repository host or software assistant is required to create, verify, implement or audit AURA manifests.
 
-This repository contains the published AURA standard (v1.1.0). Evolution is additive and explicitly versioned: schema v1.0.0 is the frozen canonical shape, and v1.1.0 adds `reference_anchor` and `prior_evidence` without breaking v1.0.
+This repository contains the published AURA technical specification (v1.1.1). Evolution is additive and explicitly versioned: schema v1.0.0 is the frozen canonical shape, and v1.1.0 adds `reference_anchor` and `prior_evidence` without breaking v1.0. The v1.1.1 release clarifies conformance and privacy requirements without changing either schema.
 > **AURA does not create trust. It makes statements verifiable.**
 Note: The canonical domain https://www.aura-standard.org is active and serves the AURA standard, including normative files and JSON-LD contexts.
 ## Documentation
@@ -47,6 +47,9 @@ Trusted Public Keys Registry profile:
 
 Governance principles:
 /GOVERNANCE.md
+
+Privacy and offline-verification conformance note:
+/PRIVACY_CONFORMANCE_NOTE.md
 
 Public position:
 /PUBLIC_POSITION.md
@@ -120,7 +123,7 @@ See: PRIVACY.md
 
 ## Intellectual Property Position
 
-This published open standard reflects an independently conceived and documented standard.  
+This published open technical specification reflects an independently conceived and documented specification.
 It was developed prior to, and separately from, any external collaboration.
 
 Materials published in this repository are licensed under the Apache License 2.0. Except for the rights expressly granted by that license, no rights are granted over trademarks, unpublished implementations, confidential know-how, private systems, future proprietary services, or non-public technical assets.
@@ -150,7 +153,7 @@ See: CHARTER.md
 
 ## Future Governance (indicative)
 
-AURA is currently published as an open standard (v1.1.0). Future governance may evolve toward an open, transparent and multi-stakeholder process inspired by open standardization practices.
+AURA is currently published as an open technical specification (v1.1.1). Future governance may evolve toward an open, transparent and multi-stakeholder process inspired by open standardization practices.
 
 Any governance model must preserve AURA's independence, tool-agnostic nature, privacy-by-design principles and resistance to capture by any single platform, vendor, institution or authority.
 
@@ -163,7 +166,7 @@ See: GOVERNANCE.md
 
 ## Contributing
 
-AURA is an open standard initiative. Institutions, researchers and industry participants may propose changes through:
+AURA is an open technical specification. Institutions, researchers and industry participants may propose changes through:
 - GitHub Issues
 - Pull Requests
 
@@ -243,15 +246,15 @@ authority, and it confers no conformity status.
 
 ## Citation
 
-AURA-STANDARD — Open Standard for Verifiable Proof of Origin
+AURA — Open Technical Specification for Verifiable Origin Declarations and Asset Integrity
 
-The title above is the one under which the records below were deposited. Archived
-records are never altered retroactively. The current repository title is
-"Open Standard for Verifiable Origin Declarations and Asset Integrity"; it will
-apply to the next deposited version.
+Archived records are never altered retroactively. The v1.1.0 archive therefore
+retains the title under which it was deposited. Citation metadata for the current
+release is also provided in `CITATION.cff`.
 
 Concept DOI (all versions):  
 https://doi.org/10.5281/zenodo.19123073
 
-This version — AURA-STANDARD v1.1.0:  
+Previous archived version — AURA-STANDARD v1.1.0:
+
 https://doi.org/10.5281/zenodo.21251473
