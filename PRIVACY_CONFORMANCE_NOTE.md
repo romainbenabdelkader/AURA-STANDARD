@@ -1,6 +1,6 @@
 # Privacy And Offline Verification Conformance Note
 
-Status: Non-normative implementation note for AURA v1.2.0.
+Status: Non-normative implementation note for AURA v1.2.1.
 
 The normative requirements remain in `CONFORMANCE.md`, `PRIVACY.md`, `TPKR.md`,
 the published schemas and the applicable proof profiles. This note summarizes how

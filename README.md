@@ -3,7 +3,7 @@
 
 Authenticated Universal Registration for Assets<br>
 Last updated: 2026-08-23<br>
-Status: Published open technical specification — v1.2.0 (schema v1.0.0 frozen canonical, v1.1.0 additive)
+Status: Published open technical specification — v1.2.1 (schema v1.0.0 frozen canonical, v1.1.0 additive)
 
 AURA is an open European technical specification for signed, independently verifiable origin declarations covering any digital or creative asset.
 
@@ -22,7 +22,7 @@ AURA manifests are evidentiary artefacts. They do not assert authorship, ownersh
 AURA is published as an open technical specification, not owned or controlled by any private company.
 AURA is tool-agnostic and implementation-neutral. No proprietary platform, vendor, model provider, repository host or software assistant is required to create, verify, implement or audit AURA manifests.
 
-This repository contains the published AURA technical specification (v1.2.0). Evolution is additive and explicitly versioned: schema v1.0.0 is the frozen canonical shape, and v1.1.0 adds `reference_anchor` and `prior_evidence` without breaking v1.0. The v1.2.0 release adds an optional signed TDM rights-reservation profile without changing either base schema.
+This repository contains the published AURA technical specification (v1.2.1). Evolution is additive and explicitly versioned: schema v1.0.0 is the frozen canonical shape, and v1.1.0 adds `reference_anchor` and `prior_evidence` without breaking v1.0. The v1.2.0 release adds an optional signed TDM rights-reservation profile; v1.2.1 clarifies its one-way binary reservation mapping and exact-byte asset-binding scope without changing either base schema.
 > **AURA does not create trust. It makes statements verifiable.**
 Note: The canonical domain https://www.aura-standard.org is active and serves the AURA standard, including normative files and JSON-LD contexts.
 ## Documentation
@@ -169,7 +169,7 @@ See: CHARTER.md
 
 ## Future Governance (indicative)
 
-AURA is currently published as an open technical specification (v1.2.0). Future governance may evolve toward an open, transparent and multi-stakeholder process inspired by open standardization practices.
+AURA is currently published as an open technical specification (v1.2.1). Future governance may evolve toward an open, transparent and multi-stakeholder process inspired by open standardization practices.
 
 Any governance model must preserve AURA's independence, tool-agnostic nature, privacy-by-design principles and resistance to capture by any single platform, vendor, institution or authority.
 
