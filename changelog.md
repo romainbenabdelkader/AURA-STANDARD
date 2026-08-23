@@ -6,6 +6,16 @@ Statuts des versions définis dans : specs/Standard_Status_and_Versioning.md.
 
 ⸻
 
+[Unreleased – TDM semantic and asset-binding clarification]
+
+🔧 Modifié
+
+• Le profil de réservation TDM documente une correspondance sémantique à sens unique entre `declarations.tdm_opt_out: true` et une valeur binaire « droits TDM réservés ». L'absence du profil ne représente jamais une autorisation.
+• La liaison SHA3-256 est explicitement limitée aux octets exacts de l'actif ; la reconnaissance de dérivés transcodés, reformatés, compressés, recadrés, privés de métadonnées ou perceptuellement similaires reste hors du profil.
+• Aucun schéma, algorithme, mécanisme de découverte, règle de canonicalisation, signature ou vecteur signé n'est modifié.
+
+⸻
+
 [v1.2.0 – TDM rights-reservation profile] – 2026‑08‑23
 
 🆕 Ajouté
