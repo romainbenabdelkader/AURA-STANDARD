@@ -17,6 +17,7 @@ Statuts des versions définis dans : specs/Standard_Status_and_Versioning.md.
 •	CONFORMANCE et PRIVACY : aucune journalisation, télémétrie, résolution distante ni identité civile ne peut être une condition de validité cryptographique ou de conformité AURA lorsque les éléments nécessaires sont fournis localement.
 •	Identifiants et clés : les bénéfices de continuité et les risques de corrélation sont rendus explicites ; le scoping et la rotation restent des choix de déploiement qui ne doivent pas masquer leur effet sur la continuité probatoire.
 •	TPKR : les entrées peuvent être institutionnelles, pseudonymes ou fondées sur un rôle ; la publication d'une identité civile n'est pas une condition de conformité.
+•	Modèle `reference_anchor` : le bloc du standard est fixé aux coordonnées archivées de v1.1.0 ; les champs propres à l'émetteur restent des sentinelles non émissibles. L'empreinte de clé publique est explicitement calculée sur les octets DER/SPKI décodés du PEM.
 •	Politique de versionnement alignée sur l'état publié : v1.1.1 est un correctif rétrocompatible de documentation normative, distinct des versions de schéma v1.0 et v1.1.
 •	Documents non modifiés à dessein : specs/AURA_v0.1_Draft.md (legacy conservé), PRIORITY_RECORD.md et les entrées historiques du présent changelog — ce sont des enregistrements d'antériorité.
 
