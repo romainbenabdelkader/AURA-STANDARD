@@ -271,7 +271,15 @@ release is also provided in `CITATION.cff`.
 Concept DOI (all versions):  
 https://doi.org/10.5281/zenodo.19123073
 
-Latest archived version — AURA-STANDARD v1.1.1:
+Latest archived version — AURA-STANDARD v1.2.1:
+
+https://doi.org/10.5281/zenodo.22071523
+
+Previous archived version — AURA-STANDARD v1.2.0:
+
+https://doi.org/10.5281/zenodo.22069687
+
+Previous archived version — AURA-STANDARD v1.1.1:
 
 https://doi.org/10.5281/zenodo.22063255
 
