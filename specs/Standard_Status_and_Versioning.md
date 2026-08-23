@@ -1,16 +1,24 @@
 # Standard Status and Versioning Policy
 
-AURA follows semantic versioning for open standard drafts:
+AURA follows semantic versioning for public technical-specification releases:
 
-- v0.x = experimental drafts, subject to change.
-- RC (Release Candidate) versions = near-final, stable structure.
-- v1.0 = stable standard candidate prepared for formal standardization submission.
+- v0.x releases are experimental drafts and may change incompatibly.
+- v1.x releases are published versions of the open technical specification.
+- Release-candidate labels identify material proposed for a later stable release.
 
-Breaking changes MUST increment the major version.
-Non-breaking clarifications MAY increment the minor version.
-Editorial updates MAY increment the patch version.
+A breaking change to manifest semantics, canonicalization, signature processing or
+required wire-format behavior MUST increment the major version.
 
-AURA v0.1 RC1 defines the stable structure of the AURA Manifest,
-AURA-ID, TPKR and AI Act conformance profile.
+A backward-compatible schema extension or new normative capability SHOULD increment
+the minor version.
 
-Future extensions MUST remain compatible with the v1.0 Core.
+Editorial corrections and backward-compatible normative clarifications MAY increment
+the patch version when they do not change a schema, signed payload interpretation,
+canonicalization, signature algorithm or existing proof result.
+
+The specification release and manifest schema are versioned separately. AURA v1.1.1
+is the current specification release; it supports the frozen v1.0 schema and the
+additive v1.1 schema. The v1.1.1 patch does not create a manifest schema v1.1.1.
+
+Future extensions MUST preserve the documented compatibility rules or use the
+appropriate major-version increment.

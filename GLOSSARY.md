@@ -2,7 +2,7 @@
 
 ## AURA
 
-Authenticated Universal Registration for Assets. An open standard initiative for verifiable origin and integrity declarations for digital assets.
+Authenticated Universal Registration for Assets. An open technical specification for verifiable origin and integrity declarations for digital assets.
 
 ## AURA-ID
 

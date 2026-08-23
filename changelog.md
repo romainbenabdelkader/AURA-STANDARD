@@ -6,20 +6,26 @@ Statuts des versions définis dans : specs/Standard_Status_and_Versioning.md.
 
 ⸻
 
-[Non publié – durcissement éditorial du périmètre probatoire]
+[v1.1.1 – Privacy and verification clarification] – 2026‑08‑23
 
 🔧 Modifié
 
 •	README et PRIVACY : la formulation « preuve d'origine certifiée / horodatage » est remplacée par « déclaration d'origine signée et vérifiable » et « heure d'émission déclarée par l'émetteur ». Une date d'émission n'est indépendamment établie que si une preuve d'horodatage externe est fournie.
 •	Périmètre de non-assertion étendu : un manifeste n'assère ni paternité, ni propriété, ni titularité, ni grounding, ni citation, ni exhaustivité des observations d'usage.
-•	Titre du standard : « Open Standard for Verifiable Proof of Origin » → « Open Standard for Verifiable Origin Declarations and Asset Integrity ». Dans ARCHITECTURE, CHARTER, CONTRIBUTING et PUBLIC_POSITION, « proof of origin » devient « signed origin declaration » / « origin evidence » selon le contexte. Le titre déposé sur Zenodo reste inchangé : les archives ne sont jamais modifiées rétroactivement, le nouveau titre s'appliquera au prochain dépôt.
+•	Titre public courant : « Open Standard for Verifiable Proof of Origin » → « Open Technical Specification for Verifiable Origin Declarations and Asset Integrity ». Dans ARCHITECTURE, CHARTER, CONTRIBUTING et PUBLIC_POSITION, « proof of origin » devient « signed origin declaration » / « origin evidence » selon le contexte. Le titre du dépôt v1.1.0 reste inchangé : les archives ne sont jamais modifiées rétroactivement.
+•	Statut public : la présentation courante emploie « open technical specification » afin de ne pas laisser entendre qu'une procédure formelle de normalisation a déjà été accomplie.
+•	CONFORMANCE et PRIVACY : aucune journalisation, télémétrie, résolution distante ni identité civile ne peut être une condition de validité cryptographique ou de conformité AURA lorsque les éléments nécessaires sont fournis localement.
+•	Identifiants et clés : les bénéfices de continuité et les risques de corrélation sont rendus explicites ; le scoping et la rotation restent des choix de déploiement qui ne doivent pas masquer leur effet sur la continuité probatoire.
+•	TPKR : les entrées peuvent être institutionnelles, pseudonymes ou fondées sur un rôle ; la publication d'une identité civile n'est pas une condition de conformité.
+•	Politique de versionnement alignée sur l'état publié : v1.1.1 est un correctif rétrocompatible de documentation normative, distinct des versions de schéma v1.0 et v1.1.
 •	Documents non modifiés à dessein : specs/AURA_v0.1_Draft.md (legacy conservé), PRIORITY_RECORD.md et les entrées historiques du présent changelog — ce sont des enregistrements d'antériorité.
 
 🆕 Ajouté
 
-•	Section « Institutional references (non-normative) » : citation du rapport de la mission parlementaire Paoli-Gagin sur l'alignement de l'IA, avec mention explicite qu'il ne s'agit ni d'une adoption, ni d'une certification, ni d'une normalisation, ni d'une reconnaissance juridique.
+•	Note de conformité non normative résumant les garanties vérifiables, les limites et les tests de vérification locale.
+•	Métadonnées de citation et d'archivage lisibles par GitHub et Zenodo.
 
-Aucun changement de schéma, de canonicalisation, de signature ni de vecteur de test. Modifications strictement rédactionnelles.
+Aucun changement de schéma, de canonicalisation, de signature ni de vecteur signé. Les preuves AURA v1.0 et v1.1 restent compatibles.
 
 ⸻
 
