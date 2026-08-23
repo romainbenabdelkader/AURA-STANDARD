@@ -1,10 +1,28 @@
 # AURA Test Vectors
 
-This document defines non-normative test vectors for AURA v0.1 implementers.
+This repository provides a current neutral AURA v1.1 verification example and
+retains the signed v0.1 vectors as legacy implementation material.
 
 The purpose is to help independent implementations verify consistent hashing, manifest canonicalization, signing and error reporting.
 
-## Location
+## Current Neutral Verification Example
+
+The self-contained, non-production AURA v1.1 package is located at:
+
+```text
+examples/quickstart-v1.1/
+```
+
+It includes a neutral asset, signed manifest, public test key, local issuer
+metadata, reproducible checksums and browser/CLI instructions. The expected
+result is `VALID` with no network request when all four verification files are
+supplied locally.
+
+See [`examples/quickstart-v1.1/README.md`](examples/quickstart-v1.1/README.md).
+
+## Legacy v0.1 Vectors
+
+### Location
 
 Test vector files are stored under:
 
@@ -16,7 +34,7 @@ The signed v0.1 test vectors preserve the exact `@context` string that was
 included in their signed payload. Do not rewrite those URLs without
 regenerating the signatures and expected manifest hashes.
 
-## Test Vector 1: Valid Signed Manifest
+### Test Vector 1: Valid Signed Manifest
 
 Asset:
 
@@ -56,7 +74,7 @@ Expected result:
 VALID
 ```
 
-## Test Vector 2: File Hash Mismatch
+### Test Vector 2: File Hash Mismatch
 
 Manifest:
 
@@ -71,7 +89,7 @@ INVALID
 Reason: file hash mismatch
 ```
 
-## Test Vector 3: Manifest Signature Mismatch
+### Test Vector 3: Manifest Signature Mismatch
 
 Manifest:
 
@@ -86,7 +104,7 @@ INVALID
 Reason: manifest signature mismatch
 ```
 
-## Test Key Material
+### Test Key Material
 
 The public test key is:
 
@@ -96,7 +114,7 @@ A6EHv_POEL4dcN0Y50vAmWfk1jCbpQ1fHdyGZBJVMbg
 
 This key is for test vectors only. It MUST NOT be used for production manifests.
 
-## Canonicalization
+### Canonicalization
 
 For these draft vectors, the canonical unsigned manifest is produced by:
 

@@ -1,0 +1,54 @@
+{
+  "aura_version": "1.1",
+  "profile": "AURA_NEUTRAL_VERIFICATION_EXAMPLE",
+  "aura_uid": "aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV",
+  "issuer": {
+    "id": "AURA-REFERENCE-TEST",
+    "service": "AURA-STANDARD",
+    "key_id": "aura-reference-test-19340c54ad5f4c86"
+  },
+  "issued_at": "2026-08-23T00:00:00.000Z",
+  "asset": {
+    "filename": "asset.txt",
+    "hash_algorithm": "SHA3-256",
+    "hash": "97d4476b2ae8c3c6b6b16aa15bbc546dac89c77fc5275511387dda7e3fd15a5b"
+  },
+  "proof": {
+    "scope": "asset_integrity_signed_declaration"
+  },
+  "declarations": {
+    "origin": "neutral-reference-fixture",
+    "legal_note": "Test-only signed declaration. It does not identify a person or establish authorship, ownership or legal rights."
+  },
+  "reference_anchor": {
+    "standard": {
+      "name": "AURA",
+      "schema_version": "1.1.0",
+      "release_tag": "v1.1.1",
+      "commit": "a96d15f48913c63954520965714f397412cf351f",
+      "schema_digest": "sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa",
+      "archive_doi": "10.5281/zenodo.22063255"
+    },
+    "verifier": {
+      "name": "AURA-VERIFIER",
+      "version": "1.0.2",
+      "release_tag": "v1.0.2",
+      "commit": "b663dece35651b586103b0c4dc70c7ce07f6ab31",
+      "source_digest": "sha3-256:e70eedeaa91cc0b52543258d4732efbbc598ef62f7ca6c6ba4bcb6a7535aca71",
+      "archive_doi": "10.5281/zenodo.22063259"
+    },
+    "issuer_key": {
+      "issuer_id": "AURA-REFERENCE-TEST",
+      "key_id": "aura-reference-test-19340c54ad5f4c86",
+      "algorithm": "Ed25519",
+      "public_key_digest": "sha3-256:a5bdf389b93c9b58ffcee1a4b4af4b5681e0f55c627592e9931df9410594f390",
+      "public_key_doi": "urn:aura:test-key:neutral-v1.1"
+    }
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "canonicalization": "RFC-8785-JCS",
+    "format": "Ed25519 raw signature, base64 encoded",
+    "value": "1/0ypNtxwh5+gK9DVi1YZeeXdCLWmVaFbbGe1gvONJOy95PSagrvo1Dkecvt6VulvehewWVQUB7rbZLsGPWQDQ=="
+  }
+}

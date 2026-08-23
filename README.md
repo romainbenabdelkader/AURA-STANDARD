@@ -42,6 +42,9 @@ Conformance levels:
 Test vectors:
 /TEST_VECTORS.md
 
+Neutral AURA v1.1 verification quickstart:
+[examples/quickstart-v1.1/README.md](examples/quickstart-v1.1/README.md)
+
 Trusted Public Keys Registry profile:
 /TPKR.md
 
@@ -198,8 +201,8 @@ AURA-VERIFIER is the independent, open-source verifier for AURA evidence. It che
 Repository:  
 https://github.com/romainbenabdelkader/AURA-VERIFIER
 
-DOI (v1.0.1):  
-https://doi.org/10.5281/zenodo.21251287
+DOI (v1.0.2):<br>
+https://doi.org/10.5281/zenodo.22063259
 
 Web verifier:  
 https://verify.aura-standard.org/web/
