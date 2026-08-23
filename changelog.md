@@ -6,7 +6,7 @@ Statuts des versions définis dans : specs/Standard_Status_and_Versioning.md.
 
 ⸻
 
-[Unreleased – TDM rights-reservation profile alignment]
+[v1.2.0 – TDM rights-reservation profile] – 2026‑08‑23
 
 🆕 Ajouté
 
@@ -18,7 +18,7 @@ Statuts des versions définis dans : specs/Standard_Status_and_Versioning.md.
 
 • Le profil documentaire Article 53 abandonne les anciens chemins v0.1 et sépare explicitement conformité syntaxique, autorité de l'émetteur, découvrabilité, réception et effet juridique.
 • Aucun schéma canonique gelé, algorithme, règle de canonicalisation, signature ou vecteur signé existant n'est modifié.
-• L'ajout constitue une capacité normative rétrocompatible ; le numéro de la prochaine version publique reste à déterminer avant publication.
+• L'ajout constitue une capacité normative rétrocompatible et entraîne une version mineure de la spécification, sans créer de nouvelle version du schéma de manifeste.
 
 ⸻
 

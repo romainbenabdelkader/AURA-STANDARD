@@ -16,9 +16,10 @@ Editorial corrections and backward-compatible normative clarifications MAY incre
 the patch version when they do not change a schema, signed payload interpretation,
 canonicalization, signature algorithm or existing proof result.
 
-The specification release and manifest schema are versioned separately. AURA v1.1.1
+The specification release and manifest schema are versioned separately. AURA v1.2.0
 is the current specification release; it supports the frozen v1.0 schema and the
-additive v1.1 schema. The v1.1.1 patch does not create a manifest schema v1.1.1.
+additive v1.1 schema. The v1.2.0 release adds an optional normative profile and
+does not create a manifest schema v1.2.0.
 
 Future extensions MUST preserve the documented compatibility rules or use the
 appropriate major-version increment.

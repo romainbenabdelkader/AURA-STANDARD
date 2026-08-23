@@ -1,13 +1,13 @@
 {
-  "title": "AURA — Open Technical Specification for Verifiable Origin Declarations and Asset Integrity (v1.1.1)",
-  "description": "AURA is an open technical specification for signed origin declarations, asset integrity and independent verification across digital content types. Version 1.1.1 clarifies verification-event privacy, local and offline verification, identity separation, identifier and key linkability, registry privacy and governance boundaries. It does not change the v1.0 or v1.1 manifest schemas, canonicalization, signatures or signed evidence. A valid AURA signature proves control of a signing key; it does not by itself prove civil identity, authorship, ownership or the truth of a declaration.",
+  "title": "AURA — Open Technical Specification for Verifiable Origin Declarations and Asset Integrity (v1.2.0)",
+  "description": "AURA is an open technical specification for signed origin declarations, asset integrity and independent verification across digital content types. Version 1.2.0 adds an optional signed TDM rights-reservation profile with exact boolean semantics, asset binding, privacy boundaries and explicit separation between cryptographic verification, issuer authority, discovery or receipt, and legal effect. It does not change the v1.0 or v1.1 manifest schemas, canonicalization, signatures or existing signed evidence.",
   "creators": [
     {
       "name": "Benabdelkader, Romain",
       "orcid": "0009-0005-8754-088X"
     }
   ],
-  "version": "1.1.1",
+  "version": "1.2.0",
   "publication_date": "2026-08-23",
   "license": "Apache-2.0",
   "access_right": "open",
@@ -18,6 +18,7 @@
     "independent verification",
     "offline verification",
     "privacy by design",
+    "TDM rights reservation",
     "Ed25519",
     "JSON-LD"
   ],
