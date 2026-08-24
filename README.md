@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19123073.svg)](https://doi.org/10.5281/zenodo.19123073)
-# AURA — Open Technical Specification for Verifiable Origin Declarations and Asset Integrity
+# AURA - Open Technical Specification for Verifiable Origin Declarations and Asset Integrity
 
 Authenticated Universal Registration for Assets<br>
 Last updated: 2026-08-23<br>
