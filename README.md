@@ -98,7 +98,7 @@ AURA defines:
 - AURA Manifest (JSON-LD) – structured and cryptographically signed
 - Ed25519 signatures – integrity & authenticity
 - TPKR registry – trusted issuer public keys
-- TDM rights-reservation documentation profile – signed reservation declaration
+- TDM rights-reservation documentation profile signed reservation declaration
 
 AURA does not define fingerprinting, watermarking, DRM, content recognition or rights allocation.
 
@@ -192,7 +192,7 @@ All discussions and contributions occur in writing only.
 
 Delivered and published:
 - Canonical manifest schemas (v1.0.0 frozen, v1.1.0 additive)
-- Independent open-source verifier — AURA-VERIFIER (CLI + browser)
+- Independent open-source verifier AURA-VERIFIER (CLI + browser)
 
 Planned:
 - Formal TPKR (Trusted Public Keys Registry) specification
@@ -243,7 +243,7 @@ Illustrative use cases are available in:
 
 ## Institutional references (non-normative)
 
-The typology of the three asymmetries — declaration, traceability, auditability —
+The typology of the three asymmetries — declaration, traceability, auditability
 contributed by Romain Benabdelkader, and the accompanying definition of minimal,
 robust and interoperable evidence, are cited in the French parliamentary mission
 report on AI alignment (Paoli-Gagin). That report identifies the AURA protocol as
@@ -262,7 +262,7 @@ authority, and it confers no conformity status.
 
 ## Citation
 
-AURA — Open Technical Specification for Verifiable Origin Declarations and Asset Integrity
+AURA - Open Technical Specification for Verifiable Origin Declarations and Asset Integrity
 
 Archived records are never altered retroactively. The v1.1.0 archive therefore
 retains the title under which it was deposited. Citation metadata for the current
