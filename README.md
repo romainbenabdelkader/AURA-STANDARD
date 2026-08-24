@@ -243,7 +243,7 @@ Illustrative use cases are available in:
 
 ## Institutional references (non-normative)
 
-The typology of the three asymmetries — declaration, traceability, auditability
+The typology of the three asymmetries declaration, traceability, auditability
 contributed by Romain Benabdelkader, and the accompanying definition of minimal,
 robust and interoperable evidence, are cited in the French parliamentary mission
 report on AI alignment (Paoli-Gagin). That report identifies the AURA protocol as
