@@ -30,7 +30,7 @@ Note: The canonical domain https://www.aura-standard.org is active and serves th
 Canonical manifest schemas (v1.0.0 frozen, v1.1.0 additive):  
 /schema/ (see /schema/README.md)
 
-AURA v0.1 Draft Specification (legacy — superseded, retained for historical reference):  
+AURA v0.1 Draft Specification (legacy superseded, retained for historical reference):  
 /specs/AURA_v0.1_Draft.md
 
 Current JSON-LD Context (v1.1):
