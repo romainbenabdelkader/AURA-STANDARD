@@ -3,7 +3,7 @@
 
 Authenticated Universal Registration for Assets<br>
 Last updated: 2026-08-23<br>
-Status: Published open technical specification — v1.2.1 (schema v1.0.0 frozen canonical, v1.1.0 additive)
+Status: Published open technical specification - v1.2.1 (schema v1.0.0 frozen canonical, v1.1.0 additive)
 
 AURA is an open European technical specification for signed, independently verifiable origin declarations covering any digital or creative asset.
 
