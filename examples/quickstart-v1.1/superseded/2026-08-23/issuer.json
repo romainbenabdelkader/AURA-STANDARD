@@ -1,0 +1,13 @@
+{
+  "issuer": "AURA-REFERENCE-TEST",
+  "algorithm": "Ed25519",
+  "public_key_url": "./public-key.pem",
+  "public_key_fingerprint_sha256": "19340c54ad5f4c860ba1c65beb15ac0a93b6a3424e4d977dce143f5621b07c93",
+  "public_key_fingerprint_sha3_256": "a5bdf389b93c9b58ffcee1a4b4af4b5681e0f55c627592e9931df9410594f390",
+  "valid_from": "2026-08-23T00:00:00.000Z",
+  "status": "active",
+  "key_id": "aura-reference-test-19340c54ad5f4c86",
+  "revoked_keys": [],
+  "test_only": true,
+  "production_use_prohibited": true
+}

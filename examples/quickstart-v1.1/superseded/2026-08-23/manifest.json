@@ -1,13 +1,13 @@
 {
   "aura_version": "1.1",
   "profile": "AURA_NEUTRAL_VERIFICATION_EXAMPLE",
-  "aura_uid": "aura:v1:T8JTWMTHHTM3DKS5AAJ71BM406",
+  "aura_uid": "aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV",
   "issuer": {
     "id": "AURA-REFERENCE-TEST",
     "service": "AURA-STANDARD",
-    "key_id": "aura-reference-test-195f65e0a921642e"
+    "key_id": "aura-reference-test-19340c54ad5f4c86"
   },
-  "issued_at": "2026-10-01T06:57:17.201Z",
+  "issued_at": "2026-08-23T00:00:00.000Z",
   "asset": {
     "filename": "asset.txt",
     "hash_algorithm": "SHA3-256",
@@ -34,27 +34,21 @@
       "version": "1.0.2",
       "release_tag": "v1.0.2",
       "commit": "b663dece35651b586103b0c4dc70c7ce07f6ab31",
-      "source_digest": "sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68",
+      "source_digest": "sha3-256:e70eedeaa91cc0b52543258d4732efbbc598ef62f7ca6c6ba4bcb6a7535aca71",
       "archive_doi": "10.5281/zenodo.22063259"
     },
     "issuer_key": {
       "issuer_id": "AURA-REFERENCE-TEST",
-      "key_id": "aura-reference-test-195f65e0a921642e",
+      "key_id": "aura-reference-test-19340c54ad5f4c86",
       "algorithm": "Ed25519",
-      "public_key_digest": "sha3-256:aeb6618e484933d6b47103cdc2502e6b818004bbabb93bc3821f96bb07ca22ca",
-      "public_key_doi": "urn:aura:test-key:T8JTWMTHHTM3DKS5AAJ71BM406"
+      "public_key_digest": "sha3-256:a5bdf389b93c9b58ffcee1a4b4af4b5681e0f55c627592e9931df9410594f390",
+      "public_key_doi": "urn:aura:test-key:neutral-v1.1"
     }
   },
-  "prior_evidence": [
-    {
-      "aura_uid": "aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV",
-      "manifest_hash": "sha3-256:0da4abe756b5720ed93306b17d10de7ac913b2496f6d8c0d047b6adf6e2e70a4"
-    }
-  ],
   "signature": {
     "algorithm": "Ed25519",
     "canonicalization": "RFC-8785-JCS",
     "format": "Ed25519 raw signature, base64 encoded",
-    "value": "Z6+Qpy/A09pgrvJAT1H/2Mg4Y0/Drj6+07YnrFes4LednQkd83gtZ/Yzmk84SYPXl+kEGAq3Osdjt6IoDDHNBg=="
+    "value": "1/0ypNtxwh5+gK9DVi1YZeeXdCLWmVaFbbGe1gvONJOy95PSagrvo1Dkecvt6VulvehewWVQUB7rbZLsGPWQDQ=="
   }
 }

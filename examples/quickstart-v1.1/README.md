@@ -11,6 +11,12 @@ It demonstrates three technical checks:
 
 Expected result: `VALID`.
 
+The 2026-10-01 replacement corrects the verifier archive digest and is newly
+signed with a new test key and identifier. The original signed package is
+preserved in `superseded/2026-08-23/`; see `CORRECTION.md` for provenance.
+Current verifier versions additionally report archive references as not checked
+and flag the test-key URN as not a DOI. This does not change the schema result.
+
 ## Browser verification
 
 1. Download `asset.txt`, `manifest.json`, `public-key.pem` and `issuer.json`
