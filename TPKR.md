@@ -1,12 +1,18 @@
 # Trusted Public Keys Registry (TPKR)
 
-The Trusted Public Keys Registry (TPKR) is the AURA registry profile for resolving issuer public keys.
+Status: conceptual registry model. This document does not describe a deployed
+registry, an implemented remote resolver or the JSON input contract of
+AURA-VERIFIER v1.2.0. Its implemented caller-supplied `issuer.json` snapshot is
+documented in [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md#current-local-issuerjson-profile).
 
-TPKR does not decide legal ownership, copyright validity, infringement, liability or institutional legitimacy. It provides a verifiable technical mapping between issuer identifiers and public keys.
+The Trusted Public Keys Registry (TPKR) model describes a possible AURA registry
+for resolving issuer public keys.
+
+TPKR does not decide legal ownership, copyright validity, infringement, liability or institutional legitimacy. The model concerns a technical mapping between issuer identifiers and public keys; authenticity and freshness require a separately established trust process.
 
 ## Purpose
 
-TPKR enables verifiers to:
+The model is intended to enable verifiers to:
 
 - resolve `issuer_id`
 - retrieve issuer public keys
@@ -60,6 +66,13 @@ Draft authority levels:
 Authority level is informative unless a verifier policy explicitly requires it.
 
 ## Revocation
+
+The options below are conceptual policy choices, not a description of current
+verifier behavior and not an override of [AURA conformance](CONFORMANCE.md).
+AURA-VERIFIER v1.2.0 rejects a key matched as revoked in the supplied snapshot,
+regardless of the manifest's declared date. Historical validity is not assessed.
+A declared `issued_at` value alone does not establish that signing preceded
+revocation or compromise; such an assessment needs independent evidence.
 
 If a key is revoked, verifiers SHOULD reject manifests signed after `revoked_at`.
 

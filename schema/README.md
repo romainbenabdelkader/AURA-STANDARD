@@ -29,3 +29,23 @@ Anchor digests are `sha3-256:` followed by 64 lowercase hex characters. Schema
 and verifier-source digests are computed over the exact published artifact.
 Issuer public-key digests are computed over the DER/SPKI bytes decoded from the
 published PEM representation.
+
+## Current specification limits
+
+The v1.0/v1.1 base schemas allow additional properties, but define no ISRC or
+ISWC field path, format or semantics. Historical v0.1 `links.isrc`, `links.iswc`
+and `links.other_ids` mappings are not current normative mappings. Carrying a
+value in an extension, including `declarations`, does not validate that identifier
+or establish interoperability with another implementation.
+
+In v1.1, `prior_evidence[].manifest_hash` is constrained only to be a string.
+The base schema does not specify its digest algorithm, input bytes,
+canonicalization or inclusion of the signature. The
+[quickstart correction](../examples/quickstart-v1.1/CORRECTION.md) uses SHA3-256
+over the original file bytes. The verifier's detached RFC 3161 feature uses a
+different, explicitly documented canonical preimage; it does not establish a
+normative rule for this linked-evidence field.
+
+See [open specification work](../IMPLEMENTATION_STATUS.md#open-specification-work)
+for the compatibility issues that a future versioned definition must address.
+No existing schema, digest or signed manifest is changed by this clarification.
