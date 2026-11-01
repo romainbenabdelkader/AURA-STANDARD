@@ -34,7 +34,8 @@ layer is independent and can be adopted on its own.
 | Layer | Repository | Role |
 |-------|------------|------|
 | AURA | `AURA-STANDARD` | The evidentiary standard (spec, schema, test vectors) |
-| AURA | `aura-core` | Reference primitives (Python) |
-| AURA | `aura-cli` | Proof demonstrator (Python) |
+| AURA | `AURA-VERIFIER` | Current v1.0/v1.1 verification path (Node and WebCrypto; RFC 3161 via Node/OpenSSL) |
+| AURA | `aura-core` | Historical v0.1 educational primitives (Python), not a current JCS SDK |
+| AURA | `aura-cli` | Historical v0.1 proof demonstrator (Python) |
 | UID_AUTH | `uid-auth` | The sovereign identifier standard |
 | AUTHENTICA | `authentica-ai-rights` | The AI rights & origin manifest profile |

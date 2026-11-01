@@ -78,7 +78,7 @@ Glossary:
 /context – JSON-LD context files  
 /examples – Manifest examples  
 /schema – Manifest schemas
-/test-vectors – Conformance-oriented test vectors
+/test-vectors – Historical v0.1 vectors only; current acceptance example: /examples/quickstart-v1.1
 
 ## Ontology (minimal draft definitions)
 
@@ -106,13 +106,19 @@ AURA does not define fingerprinting, watermarking, DRM, content recognition or r
 
 System: ISRC -> links.isrc  
 System: ISWC -> links.iswc  
-System: DDEX -> links.other_ids  
-System: C2PA -> complementary (non-overlapping)  
+System: DDEX identifiers -> links.other_ids (identifier representation, not a tested DDEX message exchange)<br>
+System: C2PA -> overlapping provenance, signature and timestamp functions; a complementary integration requires a documented mapping and interoperability tests<br>
 System: EU AI Act Art. 53 documentation workflows -> optional profile fields:
 profile, aura_uid, issuer, issued_at, asset.hash,
 declarations.tdm_opt_out, signature, and reference_anchor for AURA v1.1
 
 AURA acts as a thin origin layer complementing existing identifiers without replacing them.
+
+These mappings describe intended relationships. Carrying an identifier does not
+demonstrate a complete DDEX workflow, and no C2PA assertion transport or round-trip
+compatibility is established by this table. Existing standards already cover
+parts of AURA's technical functions; this specification does not claim exclusive
+technical originality or automatic legal compliance.
 
 ## EU AI Act Considerations
 
@@ -194,10 +200,14 @@ Delivered and published:
 - Canonical manifest schemas (v1.0.0 frozen, v1.1.0 additive)
 - Independent open-source verifier AURA-VERIFIER (CLI + browser)
 
-Planned:
-- Formal TPKR (Trusted Public Keys Registry) specification
-- Dataset and model manifest extensions
-- ETSI / AFNOR work-item proposal for formal standardization
+Current priorities:
+- Align verifier behavior and negative test vectors for the existing schemas
+- Provide one current-format developer path and mark historical demonstrations
+- Obtain independent reproduction and measure a limited real integration
+
+Possible registry infrastructure, dataset/model extensions and any ETSI / AFNOR
+work-item proposal remain deferred pending demonstrated need. No formal
+standardization proposal is planned at this stage.
 
 ## Project Website
 
@@ -214,6 +224,13 @@ AURA-VERIFIER is the independent, open-source verifier for AURA evidence. It che
 Repository:  
 https://github.com/romainbenabdelkader/AURA-VERIFIER
 
+For current manifest integration, start with its
+[integrator guide](https://github.com/romainbenabdelkader/AURA-VERIFIER/blob/main/INTEGRATORS.md)
+and [public v1.0 vector](https://github.com/romainbenabdelkader/AURA-VERIFIER/tree/main/examples/rfc3161-freetsa).
+The public vector contains fictional issuer and asset data. Its real TSA response
+can be checked locally; the signature/asset checks also run through WebCrypto,
+while RFC 3161 verification uses the Node CLI with OpenSSL.
+
 DOI (v1.0.2):<br>
 https://doi.org/10.5281/zenodo.22063259
 
@@ -223,6 +240,12 @@ https://verify.aura-standard.org/web/
 ## Reference implementations (non-normative)
 
 These implementations are non-normative educational prototypes provided for illustration only. They are not production-ready, are not part of the protected implementation layer, and are not part of the normative AURA standard.
+
+The Python `aura-core` and `aura-cli` repositories use a historical v0.1 demo
+format and Python deterministic JSON serialization, not the current v1.0/v1.1
+JCS signing workflow. They are not current-format signing SDKs. Keep their
+existing proofs with the implementation that produced them; do not relabel or
+silently re-sign old evidence to claim current conformance.
 
 Minimal Python CLI demo:  
 https://github.com/romainbenabdelkader/aura-cli
