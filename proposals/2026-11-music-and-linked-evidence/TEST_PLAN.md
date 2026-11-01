@@ -24,14 +24,18 @@ extensions. Existing base-schema and cryptographic dimensions remain separate.
 | M14 | Older verifier accepts the base package | Consumer requiring music support refuses to infer support from the old overall result. |
 | M15 | Historical identifiers in `links` or arbitrary declarations | Preserve bytes; no automatic extension activation, migration or conflict repair. |
 | M16 | Mutation of the new signed extension after signing | Signature fails; reporting never verifies an unsigned replacement declaration. |
+| M17 | Extension value is null, false, an array or a string; version missing, empty or non-string | Claimed but malformed; not silently treated as absent or supported. |
+| M18 | One recording, including a medley, with several distinct canonical work identifiers | Flat declared associations accepted when checks pass; no inference of work order, completeness, allocation or component rights. |
+| M19 | Supported version but failed checksum, signature or required asset binding | A consumer requiring the extension refuses acceptance; recognizing the version alone is insufficient. |
+| M20 | Signed AURA 1.0 and 1.1 packages carrying the declaration; unsupported base version | Supported base formats retain separate base checks; the declaration does not activate support for another format. |
 
 ## Linked evidence
 
 | ID | Input or operation | Expected observation |
 |---|---|---|
-| H01 | Explicit `sha3-256-file-v1`, original target file and matching UID | Byte and identity binding match; target signature/trust remain separate. |
+| H01 | Explicit `sha3-256-file-v1`, original target file, supported target schema and matching UID | Byte and identity binding match; referring authentication and target signature/trust remain separate. |
 | H02 | Same JSON object, changed indentation or property order | Original-file digest changes; proposed exact-file link fails unless it actually names those new bytes. |
-| H03 | LF changed to CRLF, or UTF-8 BOM added/removed | Raw digest changes. A BOM is included in hashing even when recognized during later parsing. |
+| H03 | LF changed to CRLF, or UTF-8 BOM added/removed | Raw digest changes. A single leading BOM remains in the hash and is removed only after fatal decoding for identity parsing. Double BOM or stray BOM outside a string fails parsing. |
 | H04 | File hash replaced by complete-JCS hash or unsigned-payload hash | Reject as a mismatch for the declared file method. |
 | H05 | Target signature field changes | Complete-file digest changes; the field is not excluded from link hashing. |
 | H06 | Method missing or unknown | Legacy-unspecified or unsupported respectively; no guessing and no new base-schema rejection of historical inputs. |
@@ -45,9 +49,14 @@ extensions. Existing base-schema and cryptographic dimensions remain separate.
 | H14 | Target has further prior-evidence links | One direct link only; no silent transitive verification or trust inheritance. |
 | H15 | Method changed after referring manifest was signed | Referring signature fails; no unsigned method override. |
 | H16 | Original quickstart link without method | Existing fixture and signature remain unchanged; reproduce its documented historical raw-byte recipe separately. |
+| H17 | Matching digest/UID but supported target missing other required schema fields, or UID has a trailing newline | Raw match remains visible; supported target identity/link acceptance fails. |
+| H18 | Matching target with failed or unchecked referring signature/trust | Report only an unauthenticated comparison; no authenticated issuer-reference claim. |
+| H19 | Ordinary text loaders remove BOM or replace invalid UTF-8 before hashing | Demonstrate why re-encoded text is not the original file input. Strict identity decoding rejects malformed UTF-8. |
+| H20 | One direct link matches while another required link is missing, unsupported or over a processing limit | Per-item results remain visible; an all-links-required consumer does not report overall success. |
 
 The runnable digest experiment covers the hash-input distinction relevant to
-H02, CRLF in H03, H04, H05 and the existing H16 fixture. It also exercises the
+H02, CRLF and a single BOM in H03, H04, H05 and the existing H16 fixture. It
+also reproduces the input-conversion observations in H19 and exercises the
 released duplicate-name parser. It does not implement these proposed result
 policies or execute the remaining acceptance cases.
 

@@ -43,12 +43,15 @@ These are published syntax examples from the respective authorities, combined
 only to illustrate the proposed structure. No real association between those
 codes is asserted, and this fragment is not a signed evidence package.
 
+This optional declaration is proposed for AURA 1.0 and 1.1 manifests only. It
+does not add support for other base formats.
+
 Proposed version-1 contract:
 
 | Field | Meaning and local checks |
 |---|---|
-| `declarations.music_identifiers` | Optional object; its presence requests this extension's checks. |
-| `version` | Required string `"1"`; an unknown version is unsupported, never silently treated as version 1. |
+| `declarations.music_identifiers` | Optional object; the presence of this exact property requests checks, even if its value is malformed. Null, arrays, strings and booleans fail; they are not treated as absence. |
+| `version` | Required nonempty string `"1"`; a missing, empty or non-string version fails structure checks. Another nonempty string is unsupported, never silently treated as version 1. |
 | `recording_isrc` | Required string for the one recording declared to be embodied in the bound asset. Machine form: exactly `[A-Z]{2}[A-Z0-9]{3}[0-9]{7}`. |
 | `work_iswcs` | Optional nonempty array of unique strings. Machine form: `T` plus nine work-number digits and one check digit; the work number is nonzero. Check-digit validation is also required before declaring extension checks complete. |
 
@@ -63,10 +66,18 @@ not a claim that the repertoire list is exhaustive or that every code denotes a
 different work. Historical duplicate ISWC assignments can remain in circulation
 (ISO 15707:2022, Annex A.3.4). Omitting the list means no work identifiers were
 supplied; it does not mean no musical work or rights exist. Exact duplicate strings
-are rejected. Work-only declarations, multi-track files, catalogues, medleys,
-component relationships, contributor roles, IPI numbers and share allocations
-need a separately reviewed scope rather than an implicit mapping in this first
-extension.
+are rejected; list order carries no performance order or priority, although it
+remains part of the signed JSON and must not be reordered after signing.
+
+A single recording can embody several works, including a medley; see the
+[IFPI ISRC Handbook, fourth edition, Annex B.1, p. 25](https://usisrc.org/wp-content/uploads/2024/11/ISRC_Handbook.pdf).
+Such a recording can have one declared ISRC and several associated ISWCs here.
+This flat list does not describe excerpts, timing, constituent recordings,
+arrangements or a complete rights allocation. Work-only declarations, album or
+catalogue mappings, component relationships, contributor roles, IPI numbers and
+share allocations need a separately reviewed scope. A verifier checks the signed
+declaration and file binding; it does not analyse the audio to establish that the
+file actually contains the declared recording or works.
 
 The wire form is deliberately stricter than human display forms. An issuer may
 prepare canonical codes **before signing**; a verifier never strips separators,
@@ -93,7 +104,12 @@ array, would not preserve its current selection behavior.
 Report base-schema, signature, asset, TDM and music-extension results separately.
 An older verifier may accept the base manifest while ignoring the new object;
 its `valid` result is not evidence of music-extension support. An application
-requiring the extension must require an explicit supported-version result.
+requiring the extension must require explicit passing structure and identifier
+results for the supported version, the referring signature and its configured
+trust checks, plus a matching asset digest when file binding is required.
+Recognizing a version alone is insufficient. A consumer must choose those
+requirements outside the manifest; a manifest cannot remove a required check by
+omitting its extension.
 Existing ad hoc `links` or `declarations` values are not auto-promoted into this
 extension. Do not silently rewrite old signed metadata to resolve conflicts.
 
@@ -111,6 +127,10 @@ This draft does not claim a fully verified check-digit implementation. Before
 adoption, review the complete authoritative calculation and independently replay
 positive and negative vectors. No third-party example code is substituted for
 that source review, and no online lookup is required for local format checks.
+The source check on 2026-11-01 established the code structure and the distinction
+between format, checksum and database lookup; it did not close the Annex B gap.
+Consulting a complete authorized copy or a complete calculation published by the
+registration authority remains necessary before claiming that review complete.
 
 ## Linked evidence: choose bytes explicitly
 
@@ -145,33 +165,51 @@ signed link. The proposed method selects:
 - Transport: the original file bytes supplied locally, not ZIP bytes, base64
   transport text, an HTTP transfer envelope or a directory of extracted files.
 - Supported target identity: a uniquely parsed AURA 1.0/1.1 JSON object whose
-  `aura_uid` equals the link's UID. Reject duplicate decoded property names and
-  invalid UTF-8 when interpreting target identity. Detect a UTF-8 BOM only after
+  `aura_uid` equals the link's UID. The target must pass its frozen base schema;
+  its version must be exactly `"1.0"` or `"1.1"`, and its UID must match the
+  published UID shape over the entire string, without trailing characters.
+  Merely finding two plausible identifier fields is insufficient. Reject
+  duplicate decoded property names and invalid UTF-8 when interpreting target identity. Detect a UTF-8 BOM only after
   hashing; remove at most that leading marker for parsing, while retaining it
   in the hashed bytes. A self-reference to the current UID is rejected in this
-  proposed profile.
+  proposed profile. This is a local consistency rule, not proof of global UID
+  uniqueness.
+
+Hash bytes before decoding. For identity checks, use fatal UTF-8 decoding with
+BOM preservation, then remove at most one leading U+FEFF for parsing. A second
+BOM, non-leading BOM outside a JSON string, or invalid UTF-8 is not repaired.
+BOM acceptance is a proposed input rule for these links, not a statement that all
+released manifest input paths already accept it consistently. Keep the original
+bytes available and report the decoding rule used.
 
 A matching file digest and UID establishes reference integrity only. It does not
 establish the target's signature validity, issuer authority, key status, date,
-archive resolution or truth. Expose those dimensions separately. A revoked target
-key does not change which bytes were referenced and is not made valid by linking
+archive resolution or truth. Expose those dimensions separately. If the referring
+manifest's signature or required trust checks fail or were not performed, a raw
+match is only an unauthenticated comparison; do not call it an authenticated
+issuer reference. Target base-schema acceptance is not target-signature validity.
+A revoked target key does not change which bytes were referenced and is not made
+valid by linking
 to them. Historical validity remains a separate assessment.
 
 ### Compatibility and incomplete verification
 
 | Situation | Proposed link result |
 |---|---|
-| Known method, supplied bytes, matching digest and UID | Reference integrity matches; target verification remains a separate result. |
+| Known method, supplied bytes, supported target schema and matching digest/UID | Reference integrity matches; referring authentication and target signature/trust remain separate results. |
 | Missing target file | Not checked / incomplete, never a verified chain. |
 | Wrong bytes or wrong target UID | Link check fails, even if the current manifest's own signature is valid. |
 | Missing method on an older link | Legacy method unspecified; use a separately documented historical convention if available, never guess by trying algorithms until one matches. |
 | Unknown method | Unsupported; no fallback to the proposed method. |
-| Duplicate JSON names or invalid target text | A raw byte match may be reported, but target identity/link verification fails. Preserve the original file. |
+| Duplicate JSON names, invalid target text or malformed supported target schema | A raw byte match may be reported, but target identity/link verification fails. Preserve the original file. |
 | Target uses 0.1-pilot or lacks a supported UID | Byte comparison alone is possible; target-format verification is unsupported. Do not invent a current-format UID or claim a verified AURA 1.x chain. |
 
 Check only the directly supplied link in the initial implementation. No automatic
 remote resolution, recursive chain traversal or implicit trust inheritance.
 Document resource limits; reaching one yields incomplete/error, never success.
+An application requiring every supplied direct link to be checked must not turn
+partial results into overall success. Numeric limits for bytes, nesting and item
+counts, and the machine-readable result vocabulary, remain adoption decisions.
 
 Historical unqualified hashes, including the quickstart link, stay unchanged.
 If new information is needed, issue a new signed statement with its own UID and
@@ -211,14 +249,19 @@ network access is needed. The experiment demonstrates that presentation changes
 can preserve the canonical digest while changing the original-file digest.
 It also distinguishes the complete signed object from the unsigned payload.
 The canonicalizer is the released implementation, not a second independent JCS
-implementation.
+implementation. The experiment also includes a BOM-bearing variant and shows why
+ordinary text loading is insufficient: `Buffer.toString('utf8')` retains its BOM,
+whereas `Blob.text()` removes it; invalid bytes can be replaced with U+FFFD.
+These are input-conversion observations, not evidence that a signature was forged.
+The proposed link path must retain the bytes and use explicit strict decoding.
 
 [TEST_PLAN.md](TEST_PLAN.md) lists prospective acceptance tests. They have **not**
 been executed as extension tests because these extensions are not implemented.
 Before a normative release:
 
 1. Review the recording-only scope, names, cardinality, method selector and
-   incomplete/unsupported result semantics with an actual integrator.
+   incomplete/unsupported result semantics with an actual integrator. Set and
+   test numeric processing limits and a stable machine-readable result contract.
 2. Complete the ISWC algorithm source review; implement versioned optional schema
    overlays and semantic checks in both verifier engines, preserving TDM checks.
 3. Decide an explicitly versioned JSON-LD context treatment. The current context

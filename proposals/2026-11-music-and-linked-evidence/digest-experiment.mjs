@@ -36,9 +36,13 @@ const variants = [
   ['compact_json', Buffer.from(JSON.stringify(manifest), 'utf8')],
   ['reordered_pretty_json', Buffer.from(JSON.stringify(Object.fromEntries(Object.entries(manifest).reverse()), null, 4) + '\n', 'utf8')],
   ['crlf_json', Buffer.from(originalText.replace(/\r?\n/g, '\r\n'), 'utf8')],
+  ['utf8_bom_json', Buffer.concat([Buffer.from([0xef, 0xbb, 0xbf]), original])],
 ];
 const results = variants.map(([name, bytes]) => {
-  const text = new TextDecoder('utf-8', { fatal: true }).decode(bytes);
+  // Preserve the marker during decoding, then explicitly remove at most one
+  // for parsing. The original bytes above remain the file-hash input.
+  const decoded = new TextDecoder('utf-8', { fatal: true, ignoreBOM: true }).decode(bytes);
+  const text = decoded.startsWith('\ufeff') ? decoded.slice(1) : decoded;
   const digests = canonicalSignedManifestDigest(text);
   const canonicalBytes = Buffer.from(canonicalize(parseUniqueJson(text)), 'utf8');
   assert.equal(digests.sha3_256, 'sha3-256:' + hash(canonicalBytes));
@@ -55,12 +59,31 @@ changedSignature.signature.value = (changedSignature.signature.value[0] === 'A' 
 const changedSignatureHash = canonicalSignedManifestDigest(JSON.stringify(changedSignature)).sha3_256;
 assert.notEqual(changedSignatureHash, results[0].canonical_signed_sha3_256);
 assert.throws(() => parseUniqueJson('{"name":1,"\\u006eame":2}'), /Duplicate JSON property/);
+// Text-loading observations, not a new verifier input policy.
+const bomBytes = variants.find(([name]) => name === 'utf8_bom_json')[1];
+assert.throws(() => parseUniqueJson(bomBytes.toString('utf8')), SyntaxError);
+assert.deepEqual(parseUniqueJson(await new Blob([bomBytes]).text()), manifest);
+const invalidUtf8 = Buffer.concat([Buffer.from('{"note":"'), Buffer.from([0xff]), Buffer.from('"}')]);
+const replacementUtf8 = Buffer.from('{"note":"\ufffd"}', 'utf8');
+assert.notDeepEqual(invalidUtf8, replacementUtf8);
+assert.equal(await new Blob([invalidUtf8]).text(), await new Blob([replacementUtf8]).text());
+assert.throws(() => new TextDecoder('utf-8', { fatal: true, ignoreBOM: true }).decode(invalidUtf8), TypeError);
+const doubleBom = Buffer.concat([Buffer.from([0xef, 0xbb, 0xbf]), bomBytes]);
+const decodedDoubleBom = new TextDecoder('utf-8', { fatal: true, ignoreBOM: true }).decode(doubleBom);
+assert.throws(() => parseUniqueJson(decodedDoubleBom.slice(1)), SyntaxError);
 const report = {
   kind: 'non_normative_hash_input_experiment', standard_commit: standardCommit,
   verifier_commit: verifierCommit, source_path: sourcePath, referring_path: referringPath,
   variants: results, unsigned_payload_sha3_256: unsignedHash,
   changed_signature_canonical_sha3_256: changedSignatureHash,
   escaped_duplicate_property_rejected: true,
+  input_conversion_observations: {
+    bom_retained_by_buffer_text_and_rejected_by_released_parser: true,
+    bom_removed_by_blob_text: true,
+    distinct_byte_inputs_can_have_identical_blob_text: true,
+    invalid_utf8_rejected_by_fatal_decoder: true,
+    second_bom_rejected_after_removing_one: true,
+  },
   limits: 'Uses the released canonicalizer; does not implement proposed extension validation, verify target signatures, or establish issuer trust or historical validity.',
 };
 if (process.argv[3] !== '--print') {
