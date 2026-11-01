@@ -2,7 +2,7 @@
 # AURA - Open Technical Specification for Verifiable Origin Declarations and Asset Integrity
 
 Authenticated Universal Registration for Assets<br>
-Last updated: 2026-08-23<br>
+Last updated: 2026-11-01 (documentation update)<br>
 Status: Published open technical specification - v1.2.1 (schema v1.0.0 frozen canonical, v1.1.0 additive)
 
 AURA is an open European technical specification for signed, independently verifiable origin declarations covering any digital or creative asset.
@@ -231,8 +231,12 @@ The public vector contains fictional issuer and asset data. Its real TSA respons
 can be checked locally; the signature/asset checks also run through WebCrypto,
 while RFC 3161 verification uses the Node CLI with OpenSSL.
 
-DOI (v1.0.2):<br>
-https://doi.org/10.5281/zenodo.22063259
+Historical verifier archive v1.1.0 (before the current strict-validation fixes):<br>
+https://doi.org/10.5281/zenodo.22069698
+
+Verifier source v1.2.0 is being prepared separately from release and archive
+publication. See [implementation status and registry profile](IMPLEMENTATION_STATUS.md).
+Existing signed anchors remain references to their original artifacts.
 
 Web verifier:  
 https://verify.aura-standard.org/web/
