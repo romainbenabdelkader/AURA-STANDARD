@@ -1,41 +1,60 @@
-# Ecosystem Architecture
+# AURA specification and implementation architecture
 
-This project belongs to a layered, intentionally separated ecosystem. Each
-layer is independent and can be adopted on its own.
+This non-normative overview separates the published specification, the evidence
+being checked and the software that performs a check. No application, identifier
+vendor or hosted registry is a prerequisite for local AURA verification.
 
-## The three layers
+## Specification
 
-1. **AURA** — the open, neutral *evidentiary standard*. It defines how to
-   produce and verify signed origin declarations and technical integrity of a digital
-   asset (AURA-ID, signed JSON-LD manifest, SHA3-256 hashing, Ed25519
-   signatures, TPKR). AURA is non-capturable and depends on no other layer.
+`AURA-STANDARD` publishes manifest schemas, optional profiles, conformance
+requirements and documentation. The current base schemas are v1.0.0 and v1.1.0;
+standard release numbers and verifier release numbers are separate coordinates.
+See [implementation status](IMPLEMENTATION_STATUS.md).
 
-2. **UID_AUTH** — a sovereign, verifiable *identifier* for creative works. It
-   links a work to an origin declaration, timestamp, integrity hash and
-   machine-readable AI / TDM rights signals. It may use AURA-compatible
-   concepts.
+The schemas define `aura_uid` syntax. They do not provide a global identifier
+allocation service or establish the uniqueness of a supplied value. The
+[TPKR document](TPKR.md) is a conceptual registry model; the reference verifier's
+implemented local registry input is documented separately.
 
-3. **AUTHENTICA** — an *application profile* (and its maintaining entity) for
-   *declaring rights*: rights reservation, AI-training restrictions and TDM
-   opt-out signals on top of identified works.
+## Evidence package
 
-## Independence rules (binding)
+An issuer produces a signed manifest. Verification uses that manifest and a
+public key, plus the asset bytes when checking an asset binding. Optional
+materials include a local issuer-key snapshot and detached timestamp evidence.
+They serve different purposes:
 
-- AURA does not depend on UID_AUTH or AUTHENTICA.
-- UID_AUTH and AUTHENTICA may use AURA-compatible concepts, but neither
-  controls AURA.
-- None of these layers performs DRM, watermarking, fingerprinting,
-  surveillance or automated legal decisions. They provide verifiable technical
-  artifacts only; legal qualification is for courts, regulators and competent
-  authorities.
+- A signature checks the signed statement against a supplied key.
+- An asset hash checks the exact supplied bytes.
+- A registry snapshot supplies key-status assertions whose source and freshness
+  require separate assessment.
+- A timestamp checks a time binding under an explicitly supported timestamp
+  profile and caller-supplied trust material.
 
-## Which repository is which
+None of these checks establishes the truth of an origin declaration, civil
+identity, rightsholder authority or ownership. Application-specific identifiers
+and declarations may be carried as extensions; a signed extension is not
+automatically a standardized or validated AURA profile.
 
-| Layer | Repository | Role |
-|-------|------------|------|
-| AURA | `AURA-STANDARD` | The evidentiary standard (spec, schema, test vectors) |
-| AURA | `AURA-VERIFIER` | Current v1.0/v1.1 verification path (Node and WebCrypto; RFC 3161 via Node/OpenSSL) |
-| AURA | `aura-core` | Historical v0.1 educational primitives (Python), not a current JCS SDK |
-| AURA | `aura-cli` | Historical v0.1 proof demonstrator (Python) |
-| UID_AUTH | `uid-auth` | The sovereign identifier standard |
-| AUTHENTICA | `authentica-ai-rights` | The AI rights & origin manifest profile |
+## Implementations and applications
+
+`AURA-VERIFIER` v1.2.0 implements local checks for manifests 1.0 and 1.1 through
+Node and WebCrypto. Detached RFC 3161 verification uses Node and OpenSSL. Its
+implementation policies and limits are documented in its
+[pinned integrator guide](https://github.com/romainbenabdelkader/AURA-VERIFIER/blob/6b1a631a9febdd724cfa819c67ec9d285179c27c/INTEGRATORS.md).
+
+Other implementations can use the published schemas and conformance requirements
+independently. Applications may add catalogues, rights workflows or identifiers;
+those services do not become normative AURA dependencies through their use of
+AURA. A package passing a reference-verifier check does not certify the complete
+application that produced it.
+
+| Repository | Role |
+|---|---|
+| `AURA-STANDARD` | Published schemas, profiles, conformance requirements and documentation |
+| `AURA-VERIFIER` | Current v1.0/v1.1 verification implementation; release and archive published separately |
+| `aura-core` | Historical v0.1 educational primitives in Python; not a current-format JCS signing SDK |
+| `aura-cli` | Historical v0.1 proof demonstrator in Python |
+
+The [Charter](CHARTER.md) and [conformance requirements](CONFORMANCE.md) govern
+scope and implementation independence. This overview introduces no new
+conformance level, registry dependency or application endorsement.

@@ -3,16 +3,22 @@
 
 Authenticated Universal Registration for Assets<br>
 Last updated: 2026-11-01 (documentation update)<br>
-Status: Published open technical specification - v1.2.1 (schema v1.0.0 frozen canonical, v1.1.0 additive)
+Latest archived specification: v1.2.1 (schema v1.0.0 frozen canonical, v1.1.0 additive). This branch also contains subsequent documentation updates.
 
-AURA is an open European technical specification for signed, independently verifiable origin declarations covering any digital or creative asset.
+AURA is an open technical specification for signed origin declarations and exact-byte asset integrity checks.
 
-AURA introduces a sovereign, cryptographically verifiable origin layer enabling:
-- an issuer-declared origin statement, signed at the moment of registration
-- independent verification by platforms, regulators or institutions
-- support for evidentiary workflows related to EU AI Act Article 53
-- interoperability with ISRC, ISWC, DDEX, C2PA
-- compatibility with human, AI and hybrid-generated assets (audio, video, text, image, datasets, models)
+The published schemas and reference verifier support:
+
+- signed issuer declarations in AURA manifest formats 1.0 and 1.1
+- local signature verification and SHA3-256 comparison with a supplied asset
+- an optional signed TDM rights-reservation declaration
+- optional detached RFC 3161 timestamp verification through the Node verifier and OpenSSL
+
+ISRC/ISWC field conventions, tested DDEX/C2PA exchanges, registry infrastructure
+and dedicated dataset/model profiles are not delivered capabilities. See
+[interoperability status](#interoperability-status) and
+[implementation status](IMPLEMENTATION_STATUS.md). A file hash alone does not
+establish a content-specific provenance profile or the truth of a human/AI origin declaration.
 
 AURA does not perform content recognition, similarity analysis, fingerprinting, watermarking, DRM, or usage monitoring.  
 It makes origin declarations verifiable; it does not establish the truth of the declared origin or the real-world identity or authority of the issuer.
@@ -22,7 +28,7 @@ AURA manifests are evidentiary artefacts. They do not assert authorship, ownersh
 AURA is published as an open technical specification, not owned or controlled by any private company.
 AURA is tool-agnostic and implementation-neutral. No proprietary platform, vendor, model provider, repository host or software assistant is required to create, verify, implement or audit AURA manifests.
 
-This repository contains the published AURA technical specification (v1.2.1). Evolution is additive and explicitly versioned: schema v1.0.0 is the frozen canonical shape, and v1.1.0 adds `reference_anchor` and `prior_evidence` without breaking v1.0. The v1.2.0 release adds an optional signed TDM rights-reservation profile; v1.2.1 clarifies its one-way binary reservation mapping and exact-byte asset-binding scope without changing either base schema.
+The latest archived AURA-STANDARD release is v1.2.1; subsequent documentation on this branch is not retroactively part of that archive. Evolution is additive and explicitly versioned: schema v1.0.0 is the frozen canonical shape, and v1.1.0 adds `reference_anchor` and `prior_evidence` without breaking v1.0. The AURA-STANDARD v1.2.0 release adds an optional signed TDM rights-reservation profile; v1.2.1 clarifies its one-way binary reservation mapping and exact-byte asset-binding scope without changing either base schema. AURA-VERIFIER has its own release numbering.
 > **AURA does not create trust. It makes statements verifiable.**
 Note: The canonical domain https://www.aura-standard.org is active and serves the AURA standard, including normative files and JSON-LD contexts.
 ## Documentation
@@ -48,7 +54,7 @@ Test vectors:
 Neutral AURA v1.1 verification quickstart:
 [examples/quickstart-v1.1/README.md](examples/quickstart-v1.1/README.md)
 
-Trusted Public Keys Registry profile:
+Trusted Public Keys Registry conceptual model (current local input profile is in IMPLEMENTATION_STATUS.md):
 /TPKR.md
 
 TDM rights-reservation documentation profile:
@@ -83,38 +89,47 @@ Glossary:
 ## Ontology (minimal draft definitions)
 
 issuer  
-Entity responsible for generating and signing an AURA manifest (e.g. CMO, public authority, certified institution, registered platform).
+Entity or pseudonymous actor declaring and signing an AURA manifest. A valid signature does not establish its real-world identity or authority.
 
 issuer_id  
-Stable identifier registered in the Trusted Public Keys Registry (TPKR).
+Issuer identifier in the conceptual registry model. Current signed manifests use `issuer.id` and, in v1.1, `reference_anchor.issuer_key.issuer_id`. Registration in an operational TPKR is not established by these fields.
 
 authority_level  
-Optional classification (e.g. national_cmo, public_authority, research_body).
+Conceptual registry metadata, not an authority assessment performed by the reference verifier.
 
 ## Origin Layer Design
 
-AURA defines:
-- AURA-ID – globally unique origin identifier
-- AURA Manifest (JSON-LD) – structured and cryptographically signed
-- Ed25519 signatures – integrity & authenticity
-- TPKR registry – trusted issuer public keys
-- TDM rights-reservation documentation profile signed reservation declaration
+The current verification path combines:
+
+- `aura_uid` – a ULID-shaped manifest identifier; schema validation does not establish global uniqueness or operate an allocation service
+- AURA manifest – structured JSON with an Ed25519 signature using RFC 8785 JCS canonicalization; JSON-LD contexts are published separately
+- asset hash – SHA3-256 over supplied asset bytes, when the evidence includes an asset binding
+- issuer key and optional local registry snapshot – supplied to the verifier; snapshot authenticity and freshness remain unassessed
+- optional TDM rights-reservation profile – a signed declaration, distinct from proof of authority or legal effect
+
+[TPKR.md](TPKR.md) describes a conceptual registry model, not a deployed registry
+or an implemented remote key-resolution service. See
+[ARCHITECTURE.md](ARCHITECTURE.md) for the separation between specification,
+evidence packages and implementations.
 
 AURA does not define fingerprinting, watermarking, DRM, content recognition or rights allocation.
 
-## Interoperability Mapping
+## Interoperability Status
 
-System: ISRC -> links.isrc  
-System: ISWC -> links.iswc  
-System: DDEX identifiers -> links.other_ids (identifier representation, not a tested DDEX message exchange)<br>
-System: C2PA -> overlapping provenance, signature and timestamp functions; a complementary integration requires a documented mapping and interoperability tests<br>
-System: EU AI Act Art. 53 documentation workflows -> optional profile fields:
-profile, aura_uid, issuer, issued_at, asset.hash,
-declarations.tdm_opt_out, signature, and reference_anchor for AURA v1.1
+| System or use | Current status |
+|---|---|
+| ISRC / ISWC | No standardized field path or identifier validation in the current v1.0/v1.1 schemas. The `links.isrc` / `links.iswc` mapping belongs to the historical v0.1 draft. |
+| DDEX | No tested message exchange or current normative identifier mapping. The historical `links.other_ids` example is not evidence of DDEX interoperability. |
+| C2PA | Overlapping provenance, signature and timestamp functions. A complementary integration requires a documented mapping and interoperability tests. |
+| TDM rights-reservation documentation | Optional `AURA_TDM_RIGHTS_RESERVATION_V1` profile, using `declarations.tdm_opt_out` and the base manifest fields. Profile validation does not establish legal compliance. |
 
-AURA acts as a thin origin layer complementing existing identifiers without replacing them.
+The base schemas allow additional properties: an implementation can carry
+ISRC/ISWC values in an extension, including inside `declarations`, but that choice
+does not create a shared AURA field convention or validate those identifiers.
+Preserve existing signed extensions. A future shared music profile needs an
+explicit version, field semantics, validation rules and interoperability vectors.
 
-These mappings describe intended relationships. Carrying an identifier does not
+These relationships describe integration possibilities. Carrying an identifier does not
 demonstrate a complete DDEX workflow, and no C2PA assertion transport or round-trip
 compatibility is established by this table. Existing standards already cover
 parts of AURA's technical functions; this specification does not claim exclusive
@@ -198,7 +213,7 @@ All discussions and contributions occur in writing only.
 
 Delivered and published:
 - Canonical manifest schemas (v1.0.0 frozen, v1.1.0 additive)
-- Independent open-source verifier AURA-VERIFIER (CLI + browser)
+- Standalone open-source verifier AURA-VERIFIER (CLI + browser)
 
 Current priorities:
 - Align verifier behavior and negative test vectors for the existing schemas
@@ -217,16 +232,16 @@ https://www.aura-standard.org
 Mirror (GitHub Pages):  
 https://romainbenabdelkader.github.io/AURA-STANDARD/
 
-## Independent verifier
+## Reference verifier
 
-AURA-VERIFIER is the independent, open-source verifier for AURA evidence. It checks integrity, canonical payloads and Ed25519 signatures, and requires no account or backend.
+AURA-VERIFIER is a standalone, open-source reference verifier for AURA evidence. It checks integrity, canonical payloads and Ed25519 signatures, and requires no account or backend. "Standalone" describes its operation; publication does not establish an independent external audit.
 
 Repository:  
 https://github.com/romainbenabdelkader/AURA-VERIFIER
 
 For current manifest integration, start with its
-[integrator guide](https://github.com/romainbenabdelkader/AURA-VERIFIER/blob/main/INTEGRATORS.md)
-and [public v1.0 vector](https://github.com/romainbenabdelkader/AURA-VERIFIER/tree/main/examples/rfc3161-freetsa).
+[v1.2.0 integrator guide](https://github.com/romainbenabdelkader/AURA-VERIFIER/blob/6b1a631a9febdd724cfa819c67ec9d285179c27c/INTEGRATORS.md)
+and [public v1.0 vector](https://github.com/romainbenabdelkader/AURA-VERIFIER/tree/6b1a631a9febdd724cfa819c67ec9d285179c27c/examples/rfc3161-freetsa).
 The public vector contains fictional issuer and asset data. Its real TSA response
 can be checked locally; the signature/asset checks also run through WebCrypto,
 while RFC 3161 verification uses the Node CLI with OpenSSL.
@@ -234,12 +249,20 @@ while RFC 3161 verification uses the Node CLI with OpenSSL.
 Historical verifier archive v1.1.0 (before the current strict-validation fixes):<br>
 https://doi.org/10.5281/zenodo.22069698
 
-Verifier source v1.2.0 is being prepared separately from release and archive
-publication. See [implementation status and registry profile](IMPLEMENTATION_STATUS.md).
+Published verifier v1.2.0:<br>
+[GitHub release](https://github.com/romainbenabdelkader/AURA-VERIFIER/releases/tag/v1.2.0) ·
+[version-specific Zenodo archive](https://doi.org/10.5281/zenodo.23857156)<br>
+Source commit: `6b1a631a9febdd724cfa819c67ec9d285179c27c`.
+See [implementation status, archive digests and registry profile](IMPLEMENTATION_STATUS.md).
 Existing signed anchors remain references to their original artifacts.
 
 Web verifier:  
 https://verify.aura-standard.org/web/
+
+Checked on 2026-11-01 against the v1.2.0 commit above, including the corrected
+SHA3-256 module. This is a live deployment URL and can change; use the pinned
+source and archive for reproducible verification. The dated deployment check
+and its scope are recorded in [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md).
 
 ## Reference implementations (non-normative)
 
