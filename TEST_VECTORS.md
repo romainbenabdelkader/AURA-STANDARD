@@ -34,6 +34,25 @@ See [`examples/quickstart-v1.1/README.md`](examples/quickstart-v1.1/README.md).
 
 ## Legacy v0.1 Vectors
 
+These vectors are historical only: the v0.1 draft is superseded and is not a
+supported version of the current v1.0/v1.1 verification path. They are not
+current conformance acceptance vectors. The expected results below belong
+exclusively to the historical v0.1 field model, key representation and
+canonicalization rules described in this section.
+
+Current AURA-VERIFIER rejects unsupported versions, including v0.1 material,
+instead of treating a signature check as current-format conformance. This is
+a version-support decision; it does not by itself establish that a historical
+signature was forged or that the original evidence bytes changed. Historical
+verification must identify the exact original format, implementation and key
+status policy, and report its result separately. Do not change version labels,
+contexts or signatures to make old evidence appear current.
+
+Use `examples/quickstart-v1.1/` for current acceptance tests. The
+`origin_proof_version: "0.1"` vectors here, the Python v0.1 demo and
+AUTHENTICA's `aura_version: "0.1-pilot"` are distinct historical formats;
+their version numbers do not make their field models interchangeable.
+
 ### Location
 
 Test vector files are stored under:
@@ -46,7 +65,7 @@ The signed v0.1 test vectors preserve the exact `@context` string that was
 included in their signed payload. Do not rewrite those URLs without
 regenerating the signatures and expected manifest hashes.
 
-### Test Vector 1: Valid Signed Manifest
+### Historical Test Vector 1: Valid Signed Manifest Under v0.1 Rules
 
 Asset:
 
@@ -80,13 +99,13 @@ Expected canonical unsigned manifest SHA3-256 hash:
 932e208ec47beb9b494ee6c0abbc5a94a80d8d5c25d51665f8bd99cec3f031f6
 ```
 
-Expected result:
+Expected result under the historical v0.1 rules only:
 
 ```text
 VALID
 ```
 
-### Test Vector 2: File Hash Mismatch
+### Historical Test Vector 2: File Hash Mismatch
 
 Manifest:
 
@@ -94,14 +113,14 @@ Manifest:
 test-vectors/v0.1/manifest.invalid_hash.jsonld
 ```
 
-Expected result:
+Expected result under the historical v0.1 rules only:
 
 ```text
 INVALID
 Reason: file hash mismatch
 ```
 
-### Test Vector 3: Manifest Signature Mismatch
+### Historical Test Vector 3: Manifest Signature Mismatch
 
 Manifest:
 
@@ -109,7 +128,7 @@ Manifest:
 test-vectors/v0.1/manifest.invalid_signature.jsonld
 ```
 
-Expected result:
+Expected result under the historical v0.1 rules only:
 
 ```text
 INVALID
@@ -135,4 +154,6 @@ For these draft vectors, the canonical unsigned manifest is produced by:
 - no extra whitespace
 - UTF-8 encoding
 
-Future AURA versions may replace this draft profile with RFC 8785 JCS as the normative canonicalization profile.
+This paragraph records the historical draft algorithm. Current v1.0/v1.1
+manifests declare RFC 8785 JCS; this legacy description is not the current
+signing algorithm.
