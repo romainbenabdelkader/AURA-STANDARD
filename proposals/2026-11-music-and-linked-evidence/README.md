@@ -169,8 +169,8 @@ signed link. The proposed method selects:
   its version must be exactly `"1.0"` or `"1.1"`, and its UID must match the
   published UID shape over the entire string, without trailing characters.
   Merely finding two plausible identifier fields is insufficient. Reject
-  duplicate decoded property names and invalid UTF-8 when interpreting target identity. Detect a UTF-8 BOM only after
-  hashing; remove at most that leading marker for parsing, while retaining it
+  duplicate decoded property names and invalid UTF-8 when interpreting target
+  identity. Detect a UTF-8 BOM only after hashing; remove at most that leading marker for parsing, while retaining it
   in the hashed bytes. A self-reference to the current UID is rejected in this
   proposed profile. This is a local consistency rule, not proof of global UID
   uniqueness.
@@ -189,8 +189,7 @@ manifest's signature or required trust checks fail or were not performed, a raw
 match is only an unauthenticated comparison; do not call it an authenticated
 issuer reference. Target base-schema acceptance is not target-signature validity.
 A revoked target key does not change which bytes were referenced and is not made
-valid by linking
-to them. Historical validity remains a separate assessment.
+valid by linking to them. Historical validity remains a separate assessment.
 
 ### Compatibility and incomplete verification
 
@@ -210,6 +209,9 @@ Document resource limits; reaching one yields incomplete/error, never success.
 An application requiring every supplied direct link to be checked must not turn
 partial results into overall success. Numeric limits for bytes, nesting and item
 counts, and the machine-readable result vocabulary, remain adoption decisions.
+[IMPLEMENTATION_CONTRACT.md](IMPLEMENTATION_CONTRACT.md) proposes initial limits
+and explicit application decisions; its synthetic experiment does not implement
+input parsing or either extension.
 
 Historical unqualified hashes, including the quickstart link, stay unchanged.
 If new information is needed, issue a new signed statement with its own UID and
@@ -257,6 +259,10 @@ The proposed link path must retain the bytes and use explicit strict decoding.
 
 [TEST_PLAN.md](TEST_PLAN.md) lists prospective acceptance tests. They have **not**
 been executed as extension tests because these extensions are not implemented.
+The separate `decision-experiment.mjs` exercises synthetic decision combinations
+and resource-count boundaries from the proposed implementation contract. It does
+not execute the 40 extension acceptance cases.
+
 Before a normative release:
 
 1. Review the recording-only scope, names, cardinality, method selector and

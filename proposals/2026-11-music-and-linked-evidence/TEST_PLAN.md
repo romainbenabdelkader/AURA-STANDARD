@@ -60,6 +60,12 @@ also reproduces the input-conversion observations in H19 and exercises the
 released duplicate-name parser. It does not implement these proposed result
 policies or execute the remaining acceptance cases.
 
+The separate [decision experiment](decision-experiment.mjs) exercises synthetic
+required-check aggregation and numeric count boundaries, including the decision
+principle in H20. It does not construct signed packages, parse input files,
+measure resources or execute H20 as a complete extension test. Proposed counts
+and result meanings are in [IMPLEMENTATION_CONTRACT.md](IMPLEMENTATION_CONTRACT.md).
+
 ## Integration and preservation
 
 For the future implementation, run both Node and WebCrypto checks on new signed
