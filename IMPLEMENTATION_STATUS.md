@@ -1,6 +1,6 @@
 # Implementation status and registry profile
 
-Status checked after verifier publication, 2026-11-01. This note does not change the frozen
+Status checked after verifier publication, 2026-11-02. This note does not change the frozen
 manifest schemas, historical examples, conformance levels or archived releases.
 
 ## Keep these coordinates separate
@@ -8,20 +8,49 @@ manifest schemas, historical examples, conformance levels or archived releases.
 - Standard archive v1.2.1: https://doi.org/10.5281/zenodo.22071523
 - Manifest schemas: 1.0 and 1.1 (schema files v1.0.0 and v1.1.0).
 - Historical verifier archive v1.1.0: https://doi.org/10.5281/zenodo.22069698
-- Published verifier v1.2.0: [GitHub release](https://github.com/romainbenabdelkader/AURA-VERIFIER/releases/tag/v1.2.0),
-  [Zenodo archive](https://doi.org/10.5281/zenodo.23857156).
-- Verifier source commit: `6b1a631a9febdd724cfa819c67ec9d285179c27c`.
+- Historical verifier archive v1.2.0: https://doi.org/10.5281/zenodo.23857156
+- Published verifier v1.2.1: [GitHub release](https://github.com/romainbenabdelkader/AURA-VERIFIER/releases/tag/v1.2.1),
+  [Zenodo archive](https://doi.org/10.5281/zenodo.23898686).
+- Verifier source commit: `e1fa13c4fb253c2e07a99538524b869028bb62b4`.
 
 The standard's current branch includes documentation updates after its v1.2.1
 archive. They are not retroactively part of that archived release. Verifier
-v1.2.0 does not introduce a new manifest schema version.
+v1.2.1 corrects the browser integrity explanation and release metadata; its
+cryptographic engines and acceptance policy are unchanged from v1.2.0.
+Neither release introduces a new manifest schema version.
 
 Historical manifest anchors refer to their original artifacts. Do not rewrite a
 signed anchor to point to new code. Record the actually executed verifier commit
 and test report separately. A passing package is not certification of its issuer
 or of every behavior of the implementation that created it.
 
-## Published verifier archive and web deployment
+## Published verifier v1.2.1 archive and web deployment
+
+The version-specific Zenodo record stores
+`romainbenabdelkader/AURA-VERIFIER-v1.2.1.zip` (142242 bytes):
+
+```text
+SHA-256  d8a3b9ada26a968c8cf957e2b3f22527cc89e28319e53675be43af6b8cf04dee
+SHA3-256 f3752f03b97c70c19949e870467289b407f9b7e33e4e819dfdd15770a62c6355
+```
+
+All 83 source files match released commit `e1fa13c4fb253c2e07a99538524b869028bb62b4`
+byte for byte. These hashes identify the exact Zenodo ZIP, not a repacked archive.
+
+On 2026-11-02, all 16 JavaScript modules under `src/`, plus `web/app.js`,
+`web/index.html`, `web/styles.css` and `package.json`, served by
+https://verify.aura-standard.org/ matched the same commit. This is a dated
+comparison of 20 served files, not a permanent version pin for that URL.
+
+The [release-source test run](https://github.com/romainbenabdelkader/AURA-VERIFIER/actions/runs/41534767038)
+passed Node 20/22/24 core and timestamp suites and the browser suite. Its PR
+commit `7f0e998736de3077f1aad1cd6b2f8d603856afd0` and the release merge commit
+have the same source tree. Local Chromium, Firefox and Playwright WebKit each
+passed 52 UI cases and 137 NIST vectors with no external page requests.
+Playwright WebKit is not the Safari application. These checks do not establish
+certification, issuer authority or institutional acceptance.
+
+## Historical v1.2.0 archive and deployment check
 
 The version-specific Zenodo record stores
 `romainbenabdelkader/AURA-VERIFIER-v1.2.0.zip` (141181 bytes):
@@ -61,7 +90,7 @@ snapshot with these fields:
 - public_key_fingerprint_sha256 and public_key_fingerprint_sha3_256: both digests
   of the provided public key's DER/SPKI bytes; both must match.
 - status: active for a warning-free current record. A matching record marked
-  revoked is refused in v1.2.0. Other non-active states warn.
+  revoked is refused in v1.2.0 and v1.2.1. Other non-active states warn.
 - revoked_keys: optional array of key records. A matching SHA-256 OR SHA3-256
   fingerprint is a hard failure, independent of the declared issuance date.
 - issuer: optional issuer identifier (issuer_id is also recognized).
@@ -79,7 +108,7 @@ keyStatusCheck/registryTrust report fields expose that boundary. A false
 legacy keyRevoked flag without a supplied registry is not evidence of current
 non-revocation. An unknown issuer identity is not a failed mathematical signature.
 
-## Published v1.2.0 local verifier policy
+## Published v1.2.0 / v1.2.1 local verifier policy
 
 Duplicate names in raw manifest/registry JSON are rejected, recognized asset-hash
 aliases must agree, and missing asset bytes are never reported as verified.
