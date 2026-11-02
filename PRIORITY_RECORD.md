@@ -1,7 +1,8 @@
 # AURA Priority Record
 
 Status: public factual record.
-Last updated: 2026-06-09.
+Historical record as of: 2026-06-09.
+DOI labels clarified: 2026-11-02 (documentation only).
 Initiated by: Romain Benabdelkader.
 
 This file records public priority, publication and traceability information for AURA - Authenticated Universal Registration for Assets. It is not a legal certificate. It is a human-readable index of public records that can be verified independently.
@@ -17,8 +18,9 @@ This file records public priority, publication and traceability information for 
 
 ## Persistent Publication
 
-- DOI: https://doi.org/10.5281/zenodo.19123074
-- Zenodo record: https://zenodo.org/records/19123074
+- Historical version DOI (`v0.1-draft`): https://doi.org/10.5281/zenodo.19123074
+- Historical version record (`v0.1-draft`): https://zenodo.org/records/19123074
+- Concept DOI (all versions): https://doi.org/10.5281/zenodo.19123073
 - Public GitHub release `v0.1-RC1`: 2025-12-12T09:49:11Z
 - Public GitHub release `v0.1-rc1`: 2025-12-21T11:19:11Z
 - Public GitHub release `v0.1-draft`: 2026-03-20T03:35:56Z
