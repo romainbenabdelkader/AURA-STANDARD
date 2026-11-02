@@ -1,3 +1,13 @@
+> **Historical document — superseded.** This v0.1 draft is retained for historical reference.
+> Its release-candidate label and statements below describe the historical draft,
+> not current AURA capabilities or legal guarantees. For current schemas,
+> requirements and implementation limits, see the [README](../README.md),
+> [conformance requirements](../CONFORMANCE.md) and
+> [implementation status](../IMPLEMENTATION_STATUS.md).
+> Editorial notice added on 2026-11-02; the original draft below is unchanged.
+
+---
+
 # AURA Origin Proof Standard v0.1 (Release Candidate)
 
 Authenticated Universal Registration for Assets  
