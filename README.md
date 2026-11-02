@@ -248,8 +248,8 @@ Repository:
 https://github.com/romainbenabdelkader/AURA-VERIFIER
 
 For current manifest integration, start with its
-[v1.2.0 integrator guide](https://github.com/romainbenabdelkader/AURA-VERIFIER/blob/6b1a631a9febdd724cfa819c67ec9d285179c27c/INTEGRATORS.md)
-and [public v1.0 vector](https://github.com/romainbenabdelkader/AURA-VERIFIER/tree/6b1a631a9febdd724cfa819c67ec9d285179c27c/examples/rfc3161-freetsa).
+[v1.2.1 integrator guide](https://github.com/romainbenabdelkader/AURA-VERIFIER/blob/e1fa13c4fb253c2e07a99538524b869028bb62b4/INTEGRATORS.md)
+and [public v1.0 vector](https://github.com/romainbenabdelkader/AURA-VERIFIER/tree/e1fa13c4fb253c2e07a99538524b869028bb62b4/examples/rfc3161-freetsa).
 The public vector contains fictional issuer and asset data. Its real TSA response
 can be checked locally; the signature/asset checks also run through WebCrypto,
 while RFC 3161 verification uses the Node CLI with OpenSSL.
@@ -257,18 +257,18 @@ while RFC 3161 verification uses the Node CLI with OpenSSL.
 Historical verifier archive v1.1.0 (before the current strict-validation fixes):<br>
 https://doi.org/10.5281/zenodo.22069698
 
-Published verifier v1.2.0:<br>
-[GitHub release](https://github.com/romainbenabdelkader/AURA-VERIFIER/releases/tag/v1.2.0) ·
-[version-specific Zenodo archive](https://doi.org/10.5281/zenodo.23857156)<br>
-Source commit: `6b1a631a9febdd724cfa819c67ec9d285179c27c`.
+Published verifier v1.2.1:<br>
+[GitHub release](https://github.com/romainbenabdelkader/AURA-VERIFIER/releases/tag/v1.2.1) ·
+[version-specific Zenodo archive](https://doi.org/10.5281/zenodo.23898686)<br>
+Source commit: `e1fa13c4fb253c2e07a99538524b869028bb62b4`.
 See [implementation status, archive digests and registry profile](IMPLEMENTATION_STATUS.md).
 Existing signed anchors remain references to their original artifacts.
 
 Web verifier:  
 https://verify.aura-standard.org/web/
 
-Checked on 2026-11-01 against the v1.2.0 commit above, including the corrected
-SHA3-256 module. This is a live deployment URL and can change; use the pinned
+Checked on 2026-11-02 against the v1.2.1 commit above: all 16 source modules,
+the three web files and package.json matched, including the corrected integrity label. This is a live deployment URL and can change; use the pinned
 source and archive for reproducible verification. The dated deployment check
 and its scope are recorded in [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md).
 
