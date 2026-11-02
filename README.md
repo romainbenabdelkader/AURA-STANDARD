@@ -7,6 +7,10 @@ Latest archived specification: v1.2.1 (schema v1.0.0 frozen canonical, v1.1.0 ad
 
 AURA is an open technical specification for signed origin declarations and exact-byte asset integrity checks.
 
+The core can describe assets across creative domains. No IPI, ISRC, ISWC, ISBN,
+UID_AUTH or institutional affiliation is required by manifest schemas 1.0 and
+1.1. Domain-specific identifiers may be supplied as optional extensions.
+
 The published schemas and reference verifier support:
 
 - signed issuer declarations in AURA manifest formats 1.0 and 1.1
@@ -220,6 +224,10 @@ Current priorities:
 - Provide one current-format developer path and mark historical demonstrations
 - Obtain independent reproduction and measure a limited real integration
 
+An initial implementation can provide value within a specific workflow.
+Adoption work focuses on documenting that value and testing exchanges with
+independent implementations, with broader interoperability as a longer-term objective.
+
 Possible registry infrastructure, dataset/model extensions and any ETSI / AFNOR
 work-item proposal remain deferred pending demonstrated need. No formal
 standardization proposal is planned at this stage.
@@ -306,9 +314,8 @@ infrastructure.
 
 Report: https://www.vaninapaoligagin.fr/rapport/
 
-This is a citation in a public report. It is not an adoption, endorsement,
-certification, standardisation or legal recognition of AURA by any public
-authority, and it confers no conformity status.
+This citation does not constitute official endorsement or formal
+standardisation of AURA.
 
 ## Citation
 
