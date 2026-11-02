@@ -1,3 +1,19 @@
+> **Historical v0.1 proposal — not a current conformance profile.**
+> The draft below and its [illustrative example](../examples/pdi/aura_pdi_minimal.json)
+> use historical fields; the example does not conform to the current v1.0/v1.1 schemas.
+> The original status labels and normative language are retained as historical text.
+> A signature detects changes to signed content relative to a supplied key; it does
+> not independently establish when that content existed or the truth of `issued_at`.
+> A trusted timestamp can provide independent time evidence when its binding and
+> trust material are verified separately.
+> Current conformance does not require a particular registry service when the required
+> material is supplied locally. See [conformance requirements](../CONFORMANCE.md),
+> [implementation status](../IMPLEMENTATION_STATUS.md) and the
+> [current-format example](../examples/quickstart-v1.1/README.md).
+> Editorial notice added on 2026-11-02; the original draft below is unchanged.
+
+---
+
 AURA Profile PDI — Proof of Declaration Immutability
 
 Version: v0.1 (Draft)

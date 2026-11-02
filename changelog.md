@@ -6,6 +6,15 @@ Statuts des versions définis dans : specs/Standard_Status_and_Versioning.md.
 
 ⸻
 
+[Documentation après v1.2.1 — sans nouvelle release] – 2026-11-02
+
+• Statut historique des propositions PDI/PDS et incompatibilité de leurs exemples avec les schémas actuels indiqués dès l'ouverture ; textes et exemples originaux conservés.
+• README : distinction entre exemple actuel, illustrations historiques et présentation conceptuelle des profils.
+• Charte : portée limitée aux déclarations signées et à l'intégrité des octets ; absence d'identité civile obligatoire distinguée de l'anonymat et de la qualification de donnée personnelle.
+• Clarifications alignées sur CONFORMANCE.md et PRIVACY.md, sans nouvelle exigence de schéma, de signature, de registre ou de vérification. Ces modifications de la branche courante ne font pas partie rétroactivement de l'archive v1.2.1.
+
+⸻
+
 [v1.2.1 – TDM semantic and asset-binding clarification] – 2026‑08‑23
 
 🔧 Modifié

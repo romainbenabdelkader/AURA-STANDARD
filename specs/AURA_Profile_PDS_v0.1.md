@@ -1,3 +1,18 @@
+> **Historical v0.1 proposal — not a current conformance profile.**
+> The draft below and its [illustrative example](../examples/pds/aura_pds_minimal.json)
+> use historical fields and canonicalization terminology; the example does not
+> conform to the current v1.0/v1.1 schemas. The original normative language is
+> retained as historical text, not as requirements for current implementations.
+> Identifier syntax alone does not establish global uniqueness, and `issued_at`
+> is issuer-declared unless independently supported by verified time evidence.
+> Current conformance does not require a particular registry service when the required
+> material is supplied locally. See [conformance requirements](../CONFORMANCE.md),
+> [implementation status](../IMPLEMENTATION_STATUS.md) and the
+> [current-format example](../examples/quickstart-v1.1/README.md).
+> Editorial notice added on 2026-11-02; the original draft below is unchanged.
+
+---
+
 AURA Profile PDS v0.1 (Draft) — Proof of Declared Scope
 
 1. Purpose
