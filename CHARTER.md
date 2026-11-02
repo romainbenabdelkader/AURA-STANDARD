@@ -90,7 +90,11 @@ Security through obscurity is explicitly excluded.
 
 AURA must remain compatible with privacy-by-design and data-minimization principles.
 
-AURA does **not** require personal data to function.
+AURA does **not** require publication of a natural person's civil identity or
+its verification as a condition of core cryptographic validity. Keys,
+identifiers, hashes and their associations may still constitute personal data
+in context. Their use does not by itself establish anonymity or GDPR compliance.
+See the [privacy principles](PRIVACY.md).
 
 Implementations should prefer:
 
@@ -104,7 +108,7 @@ Implementations should prefer:
 
 AURA must not be presented as a system for profiling, monitoring, behavioural tracking, automated enforcement, or automated legal decision-making.
 
-Any implementation adding personal data remains responsible for its own legal basis, transparency duties, retention policy, data-subject rights, and applicable GDPR/privacy obligations.
+Any implementation processing personal data remains responsible for its own legal basis, transparency duties, retention policy, data-subject rights, and applicable GDPR/privacy obligations.
 
 ---
 
@@ -162,6 +166,7 @@ Silence does not constitute compliance.
 
 ## 11. Final Statement
 
-AURA exists to make provenance and origin **provable**, not enforceable.
-
-Its value lies precisely in what it refuses to become.
+AURA makes signed origin declarations and exact-byte asset integrity verifiable.
+These checks establish cryptographic bindings; they do not by themselves establish
+the truth of an origin declaration, authorship, ownership, issuer authority or
+the actual time of creation. Independent timestamp evidence is a separate check.

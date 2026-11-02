@@ -287,11 +287,18 @@ https://github.com/romainbenabdelkader/aura-cli
 
 ## Examples (non-normative)
 
-This repository includes minimal, illustrative examples of AURA manifests for specific compliance or proof profiles (e.g. Proof of Declaration Immutability).  
-These examples are not prescriptive and do not imply enforcement, monitoring, behavioural guarantees, or operational requirements.  
-They are provided solely to illustrate how AURA manifests may be used as verifiable evidentiary artefacts.  
+| Material | Status and intended use |
+|---|---|
+| [Quickstart v1.1](examples/quickstart-v1.1/README.md) | Current-format verification fixture, with its own correction history and documented limits. |
+| [PDI v0.1](specs/AURA_Profile_PDI_v0.1.md) and [its example](examples/pdi/aura_pdi_minimal.json) | Historical proposal and illustration using an older format; not a current conformance profile or v1.0/v1.1 acceptance vector. |
+| [PDS v0.1](specs/AURA_Profile_PDS_v0.1.md) and [its example](examples/pds/aura_pds_minimal.json) | Historical proposal and illustration using an older format; not a current conformance profile or v1.0/v1.1 acceptance vector. |
+| [Proof-profile overview](specs/proof_profiles.md) | Non-normative conceptual explanation; its inline example is illustrative and has a placeholder signature. |
 
-See: /examples/
+Historical examples are preserved at their existing paths. They must not be used
+to infer support in the current verifier. None of these examples establishes
+enforcement, third-party behaviour or legal compliance. The published optional
+[TDM rights-reservation profile](specs/AI_Act_Article_53_Conformance_Profile.md)
+and the [conformance requirements](CONFORMANCE.md) have their own explicit scope.
 
 ## Use Cases
 
