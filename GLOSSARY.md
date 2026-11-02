@@ -6,7 +6,11 @@ Authenticated Universal Registration for Assets. An open technical specification
 
 ## AURA-ID
 
-Identifier for an origin event or proof declaration. It does not itself prove legal ownership.
+General label for an AURA declaration identifier. In manifest schemas 1.0 and
+1.1, the required field is `aura_uid`, with the `aura:v1:` prefix and a
+26-character ULID-shaped value. The separate `aura_id` field is optional; it
+does not replace `aura_uid`. Schema validation checks syntax, not global
+uniqueness, allocation or legal ownership.
 
 ## AURA Manifest
 
@@ -18,11 +22,28 @@ Digital object being declared or verified, such as audio, video, image, text, da
 
 ## Asset Hash
 
-Cryptographic digest of the asset bytes. AURA v0.1 uses SHA3-256 in the draft standard profile.
+Cryptographic digest of the exact asset bytes. The published AURA-VERIFIER
+v1.2.0 accepts an asset binding with `asset.hash_algorithm: "SHA3-256"` and a
+64-character lowercase hexadecimal `asset.hash`. Matching bytes do not identify
+a creative work independently of its file representation.
 
 ## Manifest Hash
 
-Cryptographic digest of the canonical unsigned manifest.
+A digest whose algorithm and exact input bytes must be identified for its use.
+Do not substitute one recipe for another:
+
+- The Ed25519 signature covers UTF-8 RFC 8785 JCS of the manifest with its
+  top-level `signature` object removed. This defines the signed payload, not a
+  universal manifest-hash recipe.
+- The verifier's optional RFC 3161 timestamp binds SHA-256 of UTF-8 JCS of the
+  **complete signed manifest**, including `signature`. Its companion SHA3-256
+  digest uses the same canonical input. See the
+  [timestamp preimage](https://github.com/romainbenabdelkader/AURA-VERIFIER/blob/6b1a631a9febdd724cfa819c67ec9d285179c27c/docs/RFC3161_TIMESTAMP.md#exact-canonical-preimage).
+- `prior_evidence[].manifest_hash` in schema 1.1 remains a string without a
+  shared normative algorithm or input-byte rule. The corrected quickstart
+  hashes the complete original target file bytes with SHA3-256. Preserve that
+  convention for those examples; the general verifier does not validate a
+  linked evidence chain. See [open specification work](IMPLEMENTATION_STATUS.md#open-specification-work).
 
 ## Issuer
 
@@ -30,11 +51,17 @@ Entity or role declaring and signing the manifest.
 
 ## issuer_id
 
-Stable identifier for the issuer. It may be institutional, role-based or pseudonymous.
+Identifier for the declaring signer. It may be institutional, role-based or
+pseudonymous. Current manifests use `issuer.id` and, in v1.1,
+`reference_anchor.issuer_key.issuer_id`. Agreement between these fields does
+not establish civil identity, authority or registry membership.
 
 ## TPKR
 
-Trusted Public Keys Registry. Registry profile mapping issuer identifiers to public keys and key status metadata.
+Trusted Public Keys Registry: the conceptual model described in [TPKR.md](TPKR.md).
+The reference verifier instead accepts the caller-supplied local issuer snapshot
+documented in [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md#current-local-issuerjson-profile).
+It does not establish the authenticity or freshness of that snapshot.
 
 ## Signature
 
@@ -46,7 +73,10 @@ Declared timestamp of manifest issuance. It is not equivalent to a third-party t
 
 ## Trusted Timestamp
 
-Optional third-party timestamp binding a manifest hash to a time authority response.
+Optional third-party timestamp binding a specified digest to a time authority
+response. The supported RFC 3161 recipe is described under Manifest Hash above.
+Verification depends on the supplied trust material and does not establish the
+creation date or authorship of the underlying work.
 
 ## declarations.tdm_opt_out
 
@@ -74,4 +104,7 @@ Boundary between technical proof and legal interpretation. AURA does not decide 
 
 ## UID_AUTH
 
-Independent work identifier standard that may optionally be referenced by AURA manifests. `uid_auth` identifies a work; `aura_id` identifies an AURA proof declaration.
+Independent work-identifier format that may optionally be referenced by AURA
+manifests. `uid_auth` is a declared work identifier; `aura_uid` identifies an
+AURA declaration, and an asset hash binds exact file bytes. Neither UID_AUTH nor
+an institutional work or contributor identifier is required by the AURA core.
