@@ -2,7 +2,7 @@
 
 Status: conceptual registry model. This document does not describe a deployed
 registry, an implemented remote resolver or the JSON input contract of
-AURA-VERIFIER v1.2.1. Its implemented caller-supplied `issuer.json` snapshot is
+AURA-VERIFIER v1.2.2. Its implemented caller-supplied `issuer.json` snapshot is
 documented in [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md#current-local-issuerjson-profile).
 
 The Trusted Public Keys Registry (TPKR) model describes a possible AURA registry
@@ -69,7 +69,7 @@ Authority level is informative unless a verifier policy explicitly requires it.
 
 The options below are conceptual policy choices, not a description of current
 verifier behavior and not an override of [AURA conformance](CONFORMANCE.md).
-AURA-VERIFIER v1.2.1 rejects a key matched as revoked in the supplied snapshot,
+AURA-VERIFIER v1.2.2 rejects a key matched as revoked in the supplied snapshot,
 regardless of the manifest's declared date. Historical validity is not assessed.
 A declared `issued_at` value alone does not establish that signing preceded
 revocation or compromise; such an assessment needs independent evidence.

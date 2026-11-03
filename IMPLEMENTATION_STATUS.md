@@ -1,6 +1,6 @@
 # Implementation status and registry profile
 
-Status checked after verifier publication, 2026-11-02. This note does not change the frozen
+Status checked after verifier publication, 2026-11-03. This note does not change the frozen
 manifest schemas, historical examples, conformance levels or archived releases.
 
 ## Keep these coordinates separate
@@ -9,22 +9,56 @@ manifest schemas, historical examples, conformance levels or archived releases.
 - Manifest schemas: 1.0 and 1.1 (schema files v1.0.0 and v1.1.0).
 - Historical verifier archive v1.1.0: https://doi.org/10.5281/zenodo.22069698
 - Historical verifier archive v1.2.0: https://doi.org/10.5281/zenodo.23857156
-- Published verifier v1.2.1: [GitHub release](https://github.com/romainbenabdelkader/AURA-VERIFIER/releases/tag/v1.2.1),
-  [Zenodo archive](https://doi.org/10.5281/zenodo.23898686).
-- Verifier source commit: `e1fa13c4fb253c2e07a99538524b869028bb62b4`.
+- Historical verifier archive v1.2.1: https://doi.org/10.5281/zenodo.23898686
+- Published verifier v1.2.2: [GitHub release](https://github.com/romainbenabdelkader/AURA-VERIFIER/releases/tag/v1.2.2),
+  [Zenodo archive](https://doi.org/10.5281/zenodo.23917182).
+- Verifier source commit: `08d7c70404bab16e2e3b09bb9e59aefaf6fa5391`.
 
 The standard's current branch includes documentation updates after its v1.2.1
 archive. They are not retroactively part of that archived release. Verifier
-v1.2.1 corrects the browser integrity explanation and release metadata; its
-cryptographic engines and acceptance policy are unchanged from v1.2.0.
-Neither release introduces a new manifest schema version.
+v1.2.2 corrects input-error reporting in both engines and the CLI. It preserves
+completed integrity checks when PEM decoding fails and identifies JSON parsing
+errors without fabricating verification results. Cryptographic primitives and
+validation policies are unchanged. No new manifest schema version is introduced.
 
 Historical manifest anchors refer to their original artifacts. Do not rewrite a
 signed anchor to point to new code. Record the actually executed verifier commit
 and test report separately. A passing package is not certification of its issuer
 or of every behavior of the implementation that created it.
 
-## Published verifier v1.2.1 archive and web deployment
+## Published verifier v1.2.2 archive and web deployment
+
+The version-specific [Zenodo record](https://doi.org/10.5281/zenodo.23917182) stores
+`romainbenabdelkader/AURA-VERIFIER-v1.2.2.zip` (147860 bytes):
+
+```text
+SHA-256  512d1b8810f9f630b46737c6d8513c2ed4159c3c118ad4f9272a60b38659a21a
+SHA3-256 43e907d8dbf5c64a5e1af32e928e37a927202ec7461f16985a730ef824e6f13e
+```
+
+All 86 source files match released commit `08d7c70404bab16e2e3b09bb9e59aefaf6fa5391`
+byte for byte. These hashes identify the exact Zenodo ZIP, not a repacked archive.
+
+On 2026-11-03, all 17 JavaScript modules under `src/`, plus `web/app.js`,
+`web/index.html`, `web/styles.css` and `package.json`, served by
+https://verify.aura-standard.org/ matched the same commit: 21 files in total.
+This is a dated deployment check, not a permanent version pin for that URL.
+
+The [release-source test run](https://github.com/romainbenabdelkader/AURA-VERIFIER/actions/runs/41633148733)
+passed Node 20/22/24 regression and RFC 3161 suites and the three-browser suite.
+Tested PR commit `2fed47de0075ea4cf5b0c37a5015f5de13fc1dc4` and the release commit
+have the same source tree. The tests include 32 focused API/CLI error cases;
+each browser runs 137 NIST vectors, 58 UI reports and five JSON-error displays,
+with no external page requests. Playwright WebKit is not the Safari application.
+
+PEM decoding failures now yield an invalid report preserving completed checks;
+unavailable fingerprints and pin comparisons remain null. JSON parsing errors
+still reject the API promise as a typed input error; `verify --json` emits an
+`input_error` object and exits 2 without verification dimensions. See the
+[pinned input-error contract](https://github.com/romainbenabdelkader/AURA-VERIFIER/blob/08d7c70404bab16e2e3b09bb9e59aefaf6fa5391/INTEGRATORS.md#input-errors-in-the-javascript-api-and-cli).
+These checks do not establish external audit certification or issuer authority.
+
+## Historical v1.2.1 archive and deployment check
 
 The version-specific Zenodo record stores
 `romainbenabdelkader/AURA-VERIFIER-v1.2.1.zip` (142242 bytes):
@@ -90,7 +124,7 @@ snapshot with these fields:
 - public_key_fingerprint_sha256 and public_key_fingerprint_sha3_256: both digests
   of the provided public key's DER/SPKI bytes; both must match.
 - status: active for a warning-free current record. A matching record marked
-  revoked is refused in v1.2.0 and v1.2.1. Other non-active states warn.
+  revoked is refused in v1.2.0, v1.2.1 and v1.2.2. Other non-active states warn.
 - revoked_keys: optional array of key records. A matching SHA-256 OR SHA3-256
   fingerprint is a hard failure, independent of the declared issuance date.
 - issuer: optional issuer identifier (issuer_id is also recognized).
@@ -108,7 +142,7 @@ keyStatusCheck/registryTrust report fields expose that boundary. A false
 legacy keyRevoked flag without a supplied registry is not evidence of current
 non-revocation. An unknown issuer identity is not a failed mathematical signature.
 
-## Published v1.2.0 / v1.2.1 local verifier policy
+## Local verifier policy retained through v1.2.2
 
 Duplicate names in raw manifest/registry JSON are rejected, recognized asset-hash
 aliases must agree, and missing asset bytes are never reported as verified.

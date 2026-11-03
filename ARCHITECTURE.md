@@ -37,10 +37,10 @@ automatically a standardized or validated AURA profile.
 
 ## Implementations and applications
 
-`AURA-VERIFIER` v1.2.1 implements local checks for manifests 1.0 and 1.1 through
+`AURA-VERIFIER` v1.2.2 implements local checks for manifests 1.0 and 1.1 through
 Node and WebCrypto. Detached RFC 3161 verification uses Node and OpenSSL. Its
 implementation policies and limits are documented in its
-[pinned integrator guide](https://github.com/romainbenabdelkader/AURA-VERIFIER/blob/e1fa13c4fb253c2e07a99538524b869028bb62b4/INTEGRATORS.md).
+[pinned integrator guide](https://github.com/romainbenabdelkader/AURA-VERIFIER/blob/08d7c70404bab16e2e3b09bb9e59aefaf6fa5391/INTEGRATORS.md).
 
 Other implementations can use the published schemas and conformance requirements
 independently. Applications may add catalogues, rights workflows or identifiers;
