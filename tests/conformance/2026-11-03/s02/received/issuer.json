@@ -1,0 +1,13 @@
+{
+  "issuer": "S02-INDEPENDENT-TEST",
+  "algorithm": "Ed25519",
+  "public_key_url": "./public-key.pem",
+  "public_key_fingerprint_sha256": "4fb64b14749268b2ba69cb2cad5f023e76c6c8f53a6806394a194c62a641b559",
+  "public_key_fingerprint_sha3_256": "19d28e448bd6fbd24fe9b5aa81eb962ddcb1abed1a7f5f6b474543eaceaba02a",
+  "valid_from": "2026-11-03T08:50:00.000Z",
+  "status": "active",
+  "key_id": "s02-independent-test-4fb64b14749268b2",
+  "revoked_keys": [],
+  "test_only": true,
+  "production_use_prohibited": true
+}

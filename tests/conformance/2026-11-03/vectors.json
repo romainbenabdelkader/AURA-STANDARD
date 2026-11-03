@@ -1,0 +1,1348 @@
+{
+  "testOnly": true,
+  "productionEmission": false,
+  "canonicalizationScope": "ASCII strings and safe integer subset only; no general independent JCS implementation claimed",
+  "standardCommit": "378a82ad3aa95978ea3beea0c727ea7772f01de3",
+  "verifierCommit": "e1fa13c4fb253c2e07a99538524b869028bb62b4",
+  "privateKeyPersisted": false,
+  "vectors": [
+    {
+      "row": "F01",
+      "id": "f01-v10",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"ix047YALC6smgB/q5L+pGQISt9X5kwFRSlBLr62MQ7r3pp6e9yPSGgZcQE+0bHQCTfh7e/qjYdhrrw+2pyLXDg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true,
+        "integrityStatus": "verified"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "262065afd1aa140d57a27b9d0b79dfb95502bdf03ac83463fb91a28555f35e65",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F02",
+      "id": "f02-original-quickstart",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"profile\": \"AURA_NEUTRAL_VERIFICATION_EXAMPLE\",\n  \"aura_uid\": \"aura:v1:T8JTWMTHHTM3DKS5AAJ71BM406\",\n  \"issuer\": {\n    \"id\": \"AURA-REFERENCE-TEST\",\n    \"service\": \"AURA-STANDARD\",\n    \"key_id\": \"aura-reference-test-195f65e0a921642e\"\n  },\n  \"issued_at\": \"2026-10-01T06:57:17.201Z\",\n  \"asset\": {\n    \"filename\": \"asset.txt\",\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"97d4476b2ae8c3c6b6b16aa15bbc546dac89c77fc5275511387dda7e3fd15a5b\"\n  },\n  \"proof\": {\n    \"scope\": \"asset_integrity_signed_declaration\"\n  },\n  \"declarations\": {\n    \"origin\": \"neutral-reference-fixture\",\n    \"legal_note\": \"Test-only signed declaration. It does not identify a person or establish authorship, ownership or legal rights.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-REFERENCE-TEST\",\n      \"key_id\": \"aura-reference-test-195f65e0a921642e\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:aeb6618e484933d6b47103cdc2502e6b818004bbabb93bc3821f96bb07ca22ca\",\n      \"public_key_doi\": \"urn:aura:test-key:T8JTWMTHHTM3DKS5AAJ71BM406\"\n    }\n  },\n  \"prior_evidence\": [\n    {\n      \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n      \"manifest_hash\": \"sha3-256:0da4abe756b5720ed93306b17d10de7ac913b2496f6d8c0d047b6adf6e2e70a4\"\n    }\n  ],\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"format\": \"Ed25519 raw signature, base64 encoded\",\n    \"value\": \"Z6+Qpy/A09pgrvJAT1H/2Mg4Y0/Drj6+07YnrFes4LednQkd83gtZ/Yzmk84SYPXl+kEGAq3Osdjt6IoDDHNBg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH8M0Or8h/ONhs38AI1d2uVMhenCgTI4SmWtfyZjzlDw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "41555241206e65757472616c20766572696669636174696f6e206578616d706c652076312e310a",
+      "issuerText": "{\n  \"issuer\": \"AURA-REFERENCE-TEST\",\n  \"algorithm\": \"Ed25519\",\n  \"public_key_url\": \"./public-key.pem\",\n  \"public_key_fingerprint_sha256\": \"195f65e0a921642ed66f9d8877a884b3bbc4d2e4bfb8bb3f84dd7cfba253116a\",\n  \"public_key_fingerprint_sha3_256\": \"aeb6618e484933d6b47103cdc2502e6b818004bbabb93bc3821f96bb07ca22ca\",\n  \"valid_from\": \"2026-10-01T06:57:17.201Z\",\n  \"status\": \"active\",\n  \"key_id\": \"aura-reference-test-195f65e0a921642e\",\n  \"revoked_keys\": [],\n  \"test_only\": true,\n  \"production_use_prohibited\": true\n}\n",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true,
+        "integrityStatus": "verified"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "633a892403a284f2ae66c235838a76ba8abaf7b5e5637075d5a3a0d07aa4a97b",
+        "publicKey": "c39a7ddefde6900f3247543e13fc9b59e6012cf2c12f4bdb86465d39dfd9cf75",
+        "asset": "0fbee401e10117ffe1fa991a8ec3421fec75d333a65bbe4c07a48ccb73d63e66",
+        "issuer": "ea18a82945debfcc5490483a79ec3bf342bb362cadac5aee4dfd4b828fbef8a6"
+      }
+    },
+    {
+      "row": "F03",
+      "id": "f03-anchor-absent-v11",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"pwV0msld6XpKxwNGP1dJQSsa83fm/76zacDqAtpwZtXNfMu/8fhp1XBq/BCOjegw/0h0iO6Lha8Clg+wzvAlBg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "fail",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "102b84bf9a64b6790d11f705d9eff81102676743d5f16b6a8ded846793b8e506",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F04",
+      "id": "f04-no-anchor-v10",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"ix047YALC6smgB/q5L+pGQISt9X5kwFRSlBLr62MQ7r3pp6e9yPSGgZcQE+0bHQCTfh7e/qjYdhrrw+2pyLXDg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "262065afd1aa140d57a27b9d0b79dfb95502bdf03ac83463fb91a28555f35e65",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F05",
+      "id": "f05-unsupported-version",
+      "manifestText": "{\n  \"aura_version\": \"1.2\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"1OAwgH0iw/iERu53l1+s+xfHtc+pJXqPfksHZSi/dI4g+CsQrAnF1udtPmntkqRYSkaOyWSExuk1fBrFO9/eCA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "unsupported",
+      "expectedReference": {
+        "signatureOk": true,
+        "status": "invalid"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "d5a21eb8b30382dbcbf8b6d5e92517f804b0ed5413ebe0dc194acab4cf53acfe",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F06",
+      "id": "f06-no-signature",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "fail",
+      "expectedReference": {
+        "signatureOk": false
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "dcd7165a6027e392c7f4f60863efe6edf88195bdcad46dd80c9e49c67f755a38",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F07",
+      "id": "f07-wrong-algorithm",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"unsupported\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"//s29rCwI3gbbpqStHsABvDJkJOZSYq3jGDeUu0isX8g+BmH2YGfXIoPm2P4TLcbmVhvebOumwooMe1YFaxcBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "fail",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "ff6d89a9c92f4c3cfd262e45f159a15f5153ed909e12390a6c6fb0dd94c4b8c7",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F08",
+      "id": "f08-wrong-canonicalization",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"unsupported\",\n    \"value\": \"//s29rCwI3gbbpqStHsABvDJkJOZSYq3jGDeUu0isX8g+BmH2YGfXIoPm2P4TLcbmVhvebOumwooMe1YFaxcBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "fail",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "f4182b7f4aab188e3ff6d419b4ee1836bcf74c213186e2849755986162964391",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F09",
+      "id": "f09-empty-signature",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "fail",
+      "expectedReference": {
+        "signatureOk": false
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "fe940917423151a91aca93f9854e7454b54a1637dc8571440d22c4fe27ceff43",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F10",
+      "id": "f10-empty-issuer-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {},\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"xXyIccLGDu+tQjzSkrJoVlTuCGuV5mXZ4wUaYgOiSG/YnHSmWkgLpCBnrgVKkOgYlNyvn/NK938dvJLleYCnBg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "bb573dcd932ff8dbee2aa32a9f03735e5af83e295e796311112a8b016692c09a",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F11",
+      "id": "f11-no-evidence-marker-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"WrB59U6hlm3dPGe7RlU8cIG0i0TEwjUVUQ/LWDlV/oKGYsidMw5667rX4SLu6xjtKPTBdQU5/tbvinyx6o4+Ag==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": null,
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "36ccb0f34bf23d32d4d73e39a28ae3f7f10f52959e579d9a3fbb3dcfeab43c86",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F12",
+      "id": "f12-extension-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"asset_typo\": {},\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"RwfzhlfPB9X/pieConuytnLEKELX1YOmYcY0H+Q77Gw6X0aSDXRFqDKYJK7MUT1iGNwrYy21nunIYLxZSafjAA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "ebd1fc5af5de41ce291509a397ce32e33e724ac7668ef90f5b92326b15301a2c",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F13",
+      "id": "f13-ulid-range-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:T8JTWMTHHTM3DKS5AAJ71BM406\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"Fk+h5zZpeNhvkwlMY9EM/+Goq1qGGo8mfB/hrXuWThdQ1yUSowe79R5+X2MerfHoCVKgz586Wgn5wdC6nDdjAg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "f985a5e2000d66b0f0706544990fe59d7981fcec6ee95b066a8a110a6cbffee6",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F14",
+      "id": "f14-short-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"/PuM0dECN1zEYjhxCyJo/AY4W3IZTB2QaEtICslwmjFvtehGOuS2Dw70twU/e+CnqTYQn61aXEPZrFMezgFQCw==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "fail",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "1e751b24293c83e931b3ca0add04931b2a359bd56eb84e0534acccd6684f40c6",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F14",
+      "id": "f14-forbidden-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:I0000000000000000000000000\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"N3xQ0yyTgTPPQOXU+zGohwuWLR9iBd5Bo7DDfx2/gevFSdSxxSAVTfnFkaCQ531HGNE1ZZhr5CevY2pYgNOzAA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "fail",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "dec47e00904c874068705ecaa32e25b1b7cab48369a6b297a41bb4b4bffe4a38",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F10",
+      "id": "f10-empty-issuer-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {},\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"NSE00GYztrJT8fCwAyxagVhgmkYtkVIW67NustyBPFhfrv1gDm2Erw0ze64t+KsHNybpUHXULXC7K2ak0pkjAg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "233cd57c8508ee9b5337f92d386a62e4d943045f0ee5396e4b46577550dd6f54",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F11",
+      "id": "f11-no-evidence-marker-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"LL53wNPhJCAhTBfRXM/0pbQG7w7cYVVI1waySZjO/8UsgVls8agoAX6TlJHP8v3xalsT1RjDphG8ySzOjPrxCw==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": null,
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "d0234751323a99052e94dbeb32ca455818859ddc127adfd841c0b4928e0facc5",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F12",
+      "id": "f12-extension-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"asset_typo\": {},\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"yy7Ij7K4bfkXUj9S9MAqsu6F4wpjm7iQXVopersHywVVT1s8uoL/ECEQwgd09HuOynU6c+CBruUdslcwvFA/Bw==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "6c45f9a338f38107024c6f2c737ff88eebd1559459bfe36c4f9ff88b65eaef54",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F13",
+      "id": "f13-ulid-range-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:T8JTWMTHHTM3DKS5AAJ71BM406\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"C0o48ej1AiW8XhiEhtfUgOSBHzgYCO3Lp2Bi60ocZaAe1jmb9S4yeX1692RF86g2HnK8p/+v7DSwIYfHv+U1DA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "d6197f9d41b31aafeb0917d0bc6ff4d4418c0c9ef0f1834649f1e28132326033",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F14",
+      "id": "f14-short-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"UrZWAdmmmnmSUE1Fc5S/4k2kU3pXC48sxFPA/716bRdR2DUV345gsx00R/q47i8sUcHdY5TrhPK2krLhrh4sAg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "fail",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "762b9543f53e441c5fd5d9616e2db8a71a536a87b7c61b8439f1cfbb43143214",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F14",
+      "id": "f14-forbidden-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:I0000000000000000000000000\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"Uaeh1lJEzTVUiEmTYflbV2Kwv6PiQMxPuOPtg+iLtgsjwChKUob3kn/bD7j2x08U4ZZj5Izp1osJyY4o7d44Dg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "fail",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "196a3ca7326ca9820fc35cc404019eedda4255d494675c6ea83f212f2fab6d48",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F15",
+      "id": "f15-other-verifier-anchor",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"TEST-OTHER-TOOL\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"1aR7Kz6jwUuXpynQvf5zcj0Z4cmEUh/09o+lAVqJT/2nVYUk4joEA+QYWCBQCHVETr0UVZAmr+7pAV829cleCQ==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "fail",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "2d0a2b18ae5554e909e77f3c768e462f9442b2390e89651075477cf731fb384b",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F16",
+      "id": "f16-digest-prefix-standard",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"L7W4dfheaUNrQzb+eiP8SmW1eQFpCEtzhdSTKkrNLsKs9FL8NWAPEEMH0wId+i4HduBTG0bF1nmXm6ox/hI3Aw==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "fail",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "f39a3896d106b1340460c4771f9bb5e974d7021e452046f5e33f0aa94089c285",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F16",
+      "id": "f16-digest-prefix-verifier",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"UxUcpazAGgNKdcn+5dZGfzG5I0Z+0zPFU9sJUCOx34NXqnY1SAHlljMGQ+LJ3uYrJNjmZVBp+qK+h5PQhEJIAA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "fail",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "9da73aacfb14b2b027b52fa8daed698c9b103450f6b1a2c1f0e4ad1acfbd39c3",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F16",
+      "id": "f16-digest-prefix-issuer_key",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"194mvAT58XK7nYhMyds+Pk6TCOLXoZDrL9SwoibEEiEtAFjl+UNWxrCtSDeget+ONsjnHB+x8NhFtJIiTcb0Cg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "fail",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "8d65d1b047bdb3a35bad81951d41d60012cc716665bc9ba8ad8dc580e3bef014",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F17",
+      "id": "f17-f18-arbitrary",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"prior_evidence\": [\n    {\n      \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n      \"manifest_hash\": \"not-a-digest\"\n    }\n  ],\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"TfaJGEFiHAzdmDcSaSnJzfTZLRYqrUj3xK/SxBFvQyA3vt6yni5vC+RaeQSyaxVHgFzqjEHIm9/qNxIq0yQ7Dw==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "15864a2e734bc8fe4614026b96fd4afc184afb3f914efbf6885c7e9712526a11",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F17",
+      "id": "f17-f18-empty",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"prior_evidence\": [\n    {\n      \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n      \"manifest_hash\": \"\"\n    }\n  ],\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"Alv4ADriDDRUfg7RZZQkre2eh/ghJap/S+AwBi2D5vNR0AwJeT5+CBVRGFTLACj2VlWkTq5P5MU19fAy8TzLAQ==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "5c204e2b5137bad72727f261c639ce247a985acf30acfb449da33bceb81dc79e",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "F18",
+      "id": "f17-f18-number",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"prior_evidence\": [\n    {\n      \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n      \"manifest_hash\": 17\n    }\n  ],\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"34K1zTtIWaVJkmnVHfaWc1Q1lYju/DEFixkQ9/qjVklT0DS4NB/498pR1nvWisuv9dkmhfluHoRGhTsyyoj6CA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "fail",
+      "expectedReference": {},
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "13b459449b536a64bd1a8574366ebf36ab8e5ce7dbb603d015061ebbeaca5900",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "I01",
+      "id": "i01-matching-asset",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"//s29rCwI3gbbpqStHsABvDJkJOZSYq3jGDeUu0isX8g+BmH2YGfXIoPm2P4TLcbmVhvebOumwooMe1YFaxcBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true,
+        "integrityStatus": "verified"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "f4dbaaf896ebaf4798786451e8dc303ce1ab406bfb28cea0183964bc3c3e8cbd",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "I02",
+      "id": "i02-changed-asset",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"//s29rCwI3gbbpqStHsABvDJkJOZSYq3jGDeUu0isX8g+BmH2YGfXIoPm2P4TLcbmVhvebOumwooMe1YFaxcBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a78",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true,
+        "integrityStatus": "mismatch"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "f4dbaaf896ebaf4798786451e8dc303ce1ab406bfb28cea0183964bc3c3e8cbd",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "ce5e4e98647f48701e9b35cbd23814182d9e237977b8c5339114f35d1b4556db",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "I03",
+      "id": "i03-fileless",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"catalog_claim\": {},\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"fVK2yEC4ycHvnj9EKon5SudHr+NsobapxG5tDJX60x7Maw0+ZJnCzEFcSfiS1rZz9InfG7Bj4FkuxXpPxm50Cw==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": null,
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true,
+        "integrityStatus": "not_applicable"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "cc55d635e24a6c2fc56dc3852a4b7585ebc206f47555d64305b60b64c97ca14d",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "I04",
+      "id": "i04-missing-asset",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"//s29rCwI3gbbpqStHsABvDJkJOZSYq3jGDeUu0isX8g+BmH2YGfXIoPm2P4TLcbmVhvebOumwooMe1YFaxcBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": null,
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true,
+        "integrityStatus": "not_checked"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "f4dbaaf896ebaf4798786451e8dc303ce1ab406bfb28cea0183964bc3c3e8cbd",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "S01",
+      "id": "s01-tampered-declaration",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"altered\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"//s29rCwI3gbbpqStHsABvDJkJOZSYq3jGDeUu0isX8g+BmH2YGfXIoPm2P4TLcbmVhvebOumwooMe1YFaxcBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": false,
+        "integrityStatus": "verified"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "7bf01a569b8f79f13661e2d87266ba1215e928681a5ae8f50b0ca308229a83cf",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "S02",
+      "id": "s02-fresh-python-signature",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"//s29rCwI3gbbpqStHsABvDJkJOZSYq3jGDeUu0isX8g+BmH2YGfXIoPm2P4TLcbmVhvebOumwooMe1YFaxcBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true,
+        "integrityStatus": "verified"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "f4dbaaf896ebaf4798786451e8dc303ce1ab406bfb28cea0183964bc3c3e8cbd",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "S03",
+      "id": "s03-wrong-public-key",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"//s29rCwI3gbbpqStHsABvDJkJOZSYq3jGDeUu0isX8g+BmH2YGfXIoPm2P4TLcbmVhvebOumwooMe1YFaxcBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEASsAVvQyTK5f+vEZsVPQPch+bq9qmPIhKGo2BSsTJUE0=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": false
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "f4dbaaf896ebaf4798786451e8dc303ce1ab406bfb28cea0183964bc3c3e8cbd",
+        "publicKey": "fbd9176021d8cf7e16a85e156ef6bead9811ffdc47067dcae248f0e99c67fb60",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "S04",
+      "id": "s04-original-signature-reordered",
+      "manifestText": "{\"signature\":{\"value\":\"Z6+Qpy/A09pgrvJAT1H/2Mg4Y0/Drj6+07YnrFes4LednQkd83gtZ/Yzmk84SYPXl+kEGAq3Osdjt6IoDDHNBg==\",\"format\":\"Ed25519 raw signature, base64 encoded\",\"canonicalization\":\"RFC-8785-JCS\",\"algorithm\":\"Ed25519\"},\"prior_evidence\":[{\"manifest_hash\":\"sha3-256:0da4abe756b5720ed93306b17d10de7ac913b2496f6d8c0d047b6adf6e2e70a4\",\"aura_uid\":\"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\"}],\"reference_anchor\":{\"issuer_key\":{\"public_key_doi\":\"urn:aura:test-key:T8JTWMTHHTM3DKS5AAJ71BM406\",\"public_key_digest\":\"sha3-256:aeb6618e484933d6b47103cdc2502e6b818004bbabb93bc3821f96bb07ca22ca\",\"algorithm\":\"Ed25519\",\"key_id\":\"aura-reference-test-195f65e0a921642e\",\"issuer_id\":\"AURA-REFERENCE-TEST\"},\"verifier\":{\"archive_doi\":\"10.5281/zenodo.22063259\",\"source_digest\":\"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\"commit\":\"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\"release_tag\":\"v1.0.2\",\"version\":\"1.0.2\",\"name\":\"AURA-VERIFIER\"},\"standard\":{\"archive_doi\":\"10.5281/zenodo.22063255\",\"schema_digest\":\"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\"commit\":\"a96d15f48913c63954520965714f397412cf351f\",\"release_tag\":\"v1.1.1\",\"schema_version\":\"1.1.0\",\"name\":\"AURA\"}},\"declarations\":{\"legal_note\":\"Test-only signed declaration. It does not identify a person or establish authorship, ownership or legal rights.\",\"origin\":\"neutral-reference-fixture\"},\"proof\":{\"scope\":\"asset_integrity_signed_declaration\"},\"asset\":{\"hash\":\"97d4476b2ae8c3c6b6b16aa15bbc546dac89c77fc5275511387dda7e3fd15a5b\",\"hash_algorithm\":\"SHA3-256\",\"filename\":\"asset.txt\"},\"issued_at\":\"2026-10-01T06:57:17.201Z\",\"issuer\":{\"key_id\":\"aura-reference-test-195f65e0a921642e\",\"service\":\"AURA-STANDARD\",\"id\":\"AURA-REFERENCE-TEST\"},\"aura_uid\":\"aura:v1:T8JTWMTHHTM3DKS5AAJ71BM406\",\"profile\":\"AURA_NEUTRAL_VERIFICATION_EXAMPLE\",\"aura_version\":\"1.1\"}",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH8M0Or8h/ONhs38AI1d2uVMhenCgTI4SmWtfyZjzlDw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "41555241206e65757472616c20766572696669636174696f6e206578616d706c652076312e310a",
+      "issuerText": "{\n  \"issuer\": \"AURA-REFERENCE-TEST\",\n  \"algorithm\": \"Ed25519\",\n  \"public_key_url\": \"./public-key.pem\",\n  \"public_key_fingerprint_sha256\": \"195f65e0a921642ed66f9d8877a884b3bbc4d2e4bfb8bb3f84dd7cfba253116a\",\n  \"public_key_fingerprint_sha3_256\": \"aeb6618e484933d6b47103cdc2502e6b818004bbabb93bc3821f96bb07ca22ca\",\n  \"valid_from\": \"2026-10-01T06:57:17.201Z\",\n  \"status\": \"active\",\n  \"key_id\": \"aura-reference-test-195f65e0a921642e\",\n  \"revoked_keys\": [],\n  \"test_only\": true,\n  \"production_use_prohibited\": true\n}\n",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true,
+        "integrityStatus": "verified"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "4aa2a2d37ec171bd6f58547712b69160efb7c4a8dce9168f1d7250ea097d8d87",
+        "publicKey": "c39a7ddefde6900f3247543e13fc9b59e6012cf2c12f4bdb86465d39dfd9cf75",
+        "asset": "0fbee401e10117ffe1fa991a8ec3421fec75d333a65bbe4c07a48ccb73d63e66",
+        "issuer": "ea18a82945debfcc5490483a79ec3bf342bb362cadac5aee4dfd4b828fbef8a6"
+      }
+    },
+    {
+      "row": "P01",
+      "id": "p01-tdm-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": true\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"+TxZR7CqosovMZHy4pwEtsy8Ohe2zRGJrDiW2n8RxNewARUAgjuRy7XequfvBQVjb5DMfgf68Az1PzBkUG8BDw==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true,
+        "tdmRightsReservation.profileVerified": true
+      },
+      "expectedProfile": "pass",
+      "sha256": {
+        "manifest": "fcb0fe4078ed41c340864b262d5554d218e630a21b2be98cac9de0b8d4ff6ac4",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P02",
+      "id": "p02-false-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": false\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"iJFDc++2n025OZqR3RQZnnINqKuvN0iehHMY4PJ4WMo/9vzHpXgDSh+s91PQeNiBqBMSdMtc8ujxWJbccLWsBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "463b307d672099948a9fa4bcf4400cbb2a8fc1606d985b3d3f960838bf22de29",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P02",
+      "id": "p02-null-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": null\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"2EQ3nUVluxFnf9Qm+94Lmw0Z2g/ehn+0AV0HAwuXMHn/gx8K89/22e14PeL2OzpDTzE4+HuV5U8HioFi+rYjBQ==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "b84476fa48f0b765f7f95c71012e9241dcb116f4a411177fc6831452c3718d12",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P02",
+      "id": "p02-string-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": \"true\"\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"qF74ZRks5uLR5b3jJGvNWRDDXGuMVVaH/25sZGnmwmo80Tu15gMy2mfD1s9v6Y2RSZOmrBMpvwePhXt2JILKDg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "7c8a4df2c41fe5ab23e4c0a5bbe0c4965f007fa269e42b49ac50c1cd1ee8d3b6",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P02",
+      "id": "p02-one-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": 1\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"2vPHoQW6Sgz1A7hOiXmf8pEoMA9l4q8i9E+OJwuQCQUY/p1m2qmBPnuODaHIrV5x5p/QDtdPzz3gPAjdBCCBBw==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "43bfcd9a45360f9e74b56d4b3340c0e238ecad71b2550a7ca6bb0ff53040d626",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P02",
+      "id": "p02-zero-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": 0\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"GaUQ6aFP5h/otLhjTqkYhv6gGIfAkmUGP/yHRFlCy/U7LRoAjHVkT0rR6OFaZy/SmaYPWTjNRp6VEMn5khLfBg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "a067f4a8707246c9a68dc7358b4717e18656dc4c76149313cd8b0ea0d12c514a",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P02",
+      "id": "p02-array-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": []\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"V9qCTBNiqEU/BJ2ul/9r0I8fcav/52H6+lyIyaLZ1psqPmtWHCrJggob4PCRgqlCvZXyyKeJqndsyqIgTrhnBg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "c03109a8f28ce10a6d8998661996a1cbc8bb0b07b2849491bef5af51b966f63a",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P02",
+      "id": "p02-object-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": {}\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"yEvKAOff2elWz0v7ES14kQrp1bPOKtzDSfKn5PRcHhtpWfQgzShZMvBmpwlSno9O7rm31YcfkDeOt+BN8T+1AA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "3b22f3f488094c781e197445b5cd187a474bb63dfedb3520a647fc9b1dcdbd4b",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P03",
+      "id": "p03-missing-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {},\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": true\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"3UeiIDeW4+SZ8o9Nnk65t1EPjrn+YOwrbnBsv4YCiddCuHHOYlXCOiT4JNp9Ml5JcUcmzvW73ABDabgYtcIlDg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "213f53a754ae8e85e32c96ecdb5b68ca878fd5a42548a3cb0238e31de02b37c7",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P03",
+      "id": "p03-empty-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": true\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"FtJUWuxlvP9IaR/4ty1Lts/1UpUJtJ+4IMXniTdBoCMN9/WLvKq79AAklL5xvg695m5i5zYV88trOYGHZdpQCg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "cd084459dd01c15fd7f763c43e73d3970fd01a641a9c43507dc02c1f8355a8f8",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P04",
+      "id": "p04-missing-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": true\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"whRXdfWLZNJ13Y+pcvLtBfxLQdoIN0V+ac8BIfwCX3U5VsSBJhe1eBwsglT2C1xoEC/0rVwoAAXc3zLFGNC7AQ==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "ced9cb959fe1d6bc96013fdd195c997a420b19204f97cfc18998b60e265fb7b4",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P04",
+      "id": "p04-wrong-algorithm-1.0",
+      "manifestText": "{\n  \"aura_version\": \"1.0\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": true\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"bxqF0m4L/VUlWCwYGTN00ZHRRpJtQr5z4BhHqsp3dhE/BOxMG3GDpuDQl231y3j0Gz0oRFjKUd5PJng6sy0hDQ==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "97a2a8d6fb826300830cb3ee27511221afce5ae043d7a8d17e6c21129d6135c0",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P01",
+      "id": "p01-tdm-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": true\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"LX4D1oVdO/oe4YIxd85o76qfqJxZdqijYVBkO6tkhLyq5Y49HtLmunGpLwlmvhNEXS0n700aXDj8NwrBtqjDDA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true,
+        "tdmRightsReservation.profileVerified": true
+      },
+      "expectedProfile": "pass",
+      "sha256": {
+        "manifest": "9dc3aaaedf273e2b3762fa3b04ed87e0a9de9bfb2da1a2a0d56ae467eaa141f4",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P02",
+      "id": "p02-false-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": false\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"EFuaY106nh8s0zVzU14Yx6Rlof10sddPhYinPdBIng40BboznKl9kAm9Qgi9ik7PCRj/uGwblYLZG5J5EWciCA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "af3f7a5af238e00783e8b66d596c56d57c91be03180b7fd7b2c38c45401bfd6a",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P02",
+      "id": "p02-null-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": null\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"g6X+Md4FBbp8kPGys6QrrrlINjb9ZpauI9Q3cOTZ2Sutjo2CeJJJYVOI7TAqXABbEjCTdIAJmuOVSR6b3SiOBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "5bdf3bb7f30591377ec138a75726918cb47714a6bc6ef17936a237e965b91ce5",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P02",
+      "id": "p02-string-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": \"true\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"thjM65sSynyZkRkdaX7yWuFCC6EqG7jAN+yAkt0oDf2JerNqVCKJCnhhi51A4BnbEdSUEF+/ZgWniJb9aDHlCA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "75910d0e7891d56d62f06de005b68bc13aeef0f3b523a7ec30a61667f69ae5bd",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P02",
+      "id": "p02-one-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": 1\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"puMxSbx7ghZHVUWHcm8EUJEnrX4m5y0qOkmujjyzJunGUdnyrWzsEOossws6ElXd5zbd9CfEH4p1V7NbrEqDCg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "cd5ae60aec9146c642e3553861472d38e34db835899ad4b0d70b7c66d7b0dacc",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P02",
+      "id": "p02-zero-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": 0\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"EgU5EPcimR8V5bnYHdqwEEJoj65AVJX2YFR917RC+7K4BjNKaM0pp5K6j1AYjRIGVFgHwThgD8KwPTkzCxBVCw==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "fca6e0be75f70d3121187faeccaa6815ea5ffeb2b871fc46715536ac9687f6b4",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P02",
+      "id": "p02-array-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": []\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"q/g7LL5TBTwn+JDbDM8e9cJPWX54GBKF5rJZcZeDcZqflVZvMTEDWXHlx6x6jUaotK778/5hOnnxFtjVdPncBg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "e50cab704417b41dbe2bf1294e6319f83402c7cb67a685f0db33ec7f59aae226",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P02",
+      "id": "p02-object-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": {}\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"a//aztpPjeBQO9fdrr8t9Fhol6vJh8jNtbE66Jbw5y8lYvI/AovTi8iRtoWJEuy+pJW02G5uDhz5qX9jolX5Bg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "ac949ffacd613001d5f098f4e47ef10d3f764d645e4cfff2fd0ea5685c53c5e7",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P03",
+      "id": "p03-missing-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {},\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": true\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"Trt4sEP/EfxNGnIFGdXR0N/612eROGT5FbBdD5GO3SpD9AESaQYkiSpsAbr4H3pf7JtnUmbhbwtGvI9Ei2muAg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "8150bfe154159ce93d3d0a0af98c96a9dc01b4152ff637740caa26036f4c7124",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P03",
+      "id": "p03-empty-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": true\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"I69vAsd8iOlkHDEAB21NYqEq4gG9sGHESj24ZgbNAUOD/Q/Psd7nyWb9rvej/NhoBXUcN0swPi6ZJ0P4U67PCQ==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "18688339f7bd75d1f91ecb2db977f611ad78f3b6aa864ceb080a9ae884461e09",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P04",
+      "id": "p04-missing-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": true\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"yc/v0WxyXjdfsH9XxwFo+AZnKJjiAIuNttQr50zMBpP+JG26VcI+Iv8QpU+11ajVtT4qkcIyw1Ies12zoWKWCQ==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "266ebd151b580f7a1d6c8a26cf1b01aaa25800159c59d95a04a664f5da4e3407",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P04",
+      "id": "p04-wrong-algorithm-1.1",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": true\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"zH2JqomcDUsqShkqOUuHGsh5esgRSVI8Qk8NkLjHMKAmPRhlkB5hlcRQLyCjbXVkmqTt/8Yuc3z0kv802kVNBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "status": "invalid"
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "cb89b46057ec15e46c16f86ff78299838f9ee6e3f2802d174e8b34d3854c1ee8",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P05",
+      "id": "p05-no-profile",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"//s29rCwI3gbbpqStHsABvDJkJOZSYq3jGDeUu0isX8g+BmH2YGfXIoPm2P4TLcbmVhvebOumwooMe1YFaxcBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "tdmRightsReservation.profileClaimed": false,
+        "tdmRightsReservation.profileVerified": null
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "f4dbaaf896ebaf4798786451e8dc303ce1ab406bfb28cea0183964bc3c3e8cbd",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P05",
+      "id": "p05-invalid-profile",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": false\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"EFuaY106nh8s0zVzU14Yx6Rlof10sddPhYinPdBIng40BboznKl9kAm9Qgi9ik7PCRj/uGwblYLZG5J5EWciCA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "tdmRightsReservation.profileVerified": false
+      },
+      "expectedProfile": "fail",
+      "sha256": {
+        "manifest": "af3f7a5af238e00783e8b66d596c56d57c91be03180b7fd7b2c38c45401bfd6a",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "P06",
+      "id": "p06-unassessed-authority",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\",\n    \"tdm_opt_out\": true\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"profile\": \"AURA_TDM_RIGHTS_RESERVATION_V1\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"LX4D1oVdO/oe4YIxd85o76qfqJxZdqijYVBkO6tkhLyq5Y49HtLmunGpLwlmvhNEXS0n700aXDj8NwrBtqjDDA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true,
+        "integrityStatus": "verified",
+        "tdmRightsReservation.issuerAuthorityAssessed": false,
+        "tdmRightsReservation.discoverabilityAssessed": false,
+        "tdmRightsReservation.legalEffectAssessed": false
+      },
+      "expectedProfile": "pass",
+      "sha256": {
+        "manifest": "9dc3aaaedf273e2b3762fa3b04ed87e0a9de9bfb2da1a2a0d56ae467eaa141f4",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "R01",
+      "id": "r01-listed-revoked-key",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"//s29rCwI3gbbpqStHsABvDJkJOZSYq3jGDeUu0isX8g+BmH2YGfXIoPm2P4TLcbmVhvebOumwooMe1YFaxcBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": [{\"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"revoked_at\": \"2099-01-01T00:00:00Z\"}]}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true,
+        "keyRevoked": true,
+        "historicalValidity": "not_assessed",
+        "status": "invalid"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "f4dbaaf896ebaf4798786451e8dc303ce1ab406bfb28cea0183964bc3c3e8cbd",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "c7cfc8c63bc430d7e8c72cd5686661f3323341c9fe4ef09e1bcc8eb513145271"
+      }
+    },
+    {
+      "row": "R02",
+      "id": "r02-unmatched-registry-key",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"//s29rCwI3gbbpqStHsABvDJkJOZSYq3jGDeUu0isX8g+BmH2YGfXIoPm2P4TLcbmVhvebOumwooMe1YFaxcBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"0000000000000000000000000000000000000000000000000000000000000000\", \"public_key_fingerprint_sha3_256\": \"0000000000000000000000000000000000000000000000000000000000000000\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true,
+        "issuerKeyOk": false,
+        "status": "invalid"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "f4dbaaf896ebaf4798786451e8dc303ce1ab406bfb28cea0183964bc3c3e8cbd",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "e934b78a845e6f0cf18096aa9eadd4f46f748bb01855b8dd91059a259f8dd726"
+      }
+    },
+    {
+      "row": "R03",
+      "id": "r03-no-registry",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"//s29rCwI3gbbpqStHsABvDJkJOZSYq3jGDeUu0isX8g+BmH2YGfXIoPm2P4TLcbmVhvebOumwooMe1YFaxcBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": null,
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true,
+        "keyStatusCheck": "not_checked",
+        "registryTrust.authenticity": "not_assessed",
+        "registryTrust.freshness": "not_assessed"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "f4dbaaf896ebaf4798786451e8dc303ce1ab406bfb28cea0183964bc3c3e8cbd",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a"
+      }
+    },
+    {
+      "row": "T01",
+      "id": "t01-declared-time-only",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"//s29rCwI3gbbpqStHsABvDJkJOZSYq3jGDeUu0isX8g+BmH2YGfXIoPm2P4TLcbmVhvebOumwooMe1YFaxcBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "issuedAtValidation.independentlyAttested": false
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "f4dbaaf896ebaf4798786451e8dc303ce1ab406bfb28cea0183964bc3c3e8cbd",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "V01",
+      "id": "v01-duplicate-name",
+      "manifestText": "{\"aura_version\":\"1.1\",\"aura_version\":\"1.1\",\"aura_uid\":\"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\"issuer\":{\"id\":\"AURA-SCOPED-TEST\"},\"issued_at\":\"2026-11-03T08:00:00Z\",\"asset\":{\"hash_algorithm\":\"SHA3-256\",\"hash\":\"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"},\"declarations\":{\"note\":\"Synthetic fixture; issuer time is declared, not attested.\"},\"reference_anchor\":{\"standard\":{\"name\":\"AURA\",\"schema_version\":\"1.1.0\",\"release_tag\":\"v1.1.1\",\"commit\":\"a96d15f48913c63954520965714f397412cf351f\",\"schema_digest\":\"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\"archive_doi\":\"10.5281/zenodo.22063255\"},\"verifier\":{\"name\":\"AURA-VERIFIER\",\"version\":\"1.0.2\",\"release_tag\":\"v1.0.2\",\"commit\":\"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\"source_digest\":\"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\"archive_doi\":\"10.5281/zenodo.22063259\"},\"issuer_key\":{\"issuer_id\":\"AURA-SCOPED-TEST\",\"algorithm\":\"Ed25519\",\"public_key_digest\":\"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\"public_key_doi\":\"urn:aura:test-only:not-publicly-archived\"}},\"signature\":{\"algorithm\":\"Ed25519\",\"canonicalization\":\"RFC-8785-JCS\",\"value\":\"//s29rCwI3gbbpqStHsABvDJkJOZSYq3jGDeUu0isX8g+BmH2YGfXIoPm2P4TLcbmVhvebOumwooMe1YFaxcBA==\"}}",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "parse_rejected",
+      "expectedReference": {
+        "throws": "Duplicate JSON"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "c0a02b82ad56e58eb0e82fa9d4ac185b797d7437f292cfe4604f27ce7e7673e1",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "V02",
+      "id": "v02-conflicting-hash-alias",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"asset_hash\": \"0000000000000000000000000000000000000000000000000000000000000000\",\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"npVh97mqJxXDc6WuaKAxrQrHykC4ECjhRwOCOXUSx26gT3xwrB692N0dgB99812GuC/g5vu8fD2XlMuhH0LgBg==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true,
+        "integrityStatus": "not_checked",
+        "status": "invalid"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "818cc068b8877068bd21fb7be7f991124fd438d558c6c2a2a0acf13855e25a89",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "V03",
+      "id": "v03-impossible-date",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-02-30T00:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"wujXSxiKI4PomK2Rxatc03oqUNQlkFhSywGwQP2jUDJugruL9VE7Kr9iDXkHPSik2l7+mCNZkFdRmwW2zZ/0Dw==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "schemaValidation.status": "pass",
+        "issuedAtValidation.status": "invalid",
+        "signatureOk": true
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "62796be32658f1cb966db77a29bc7dfacefe40cb0967309738f3621204d89a90",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    },
+    {
+      "row": "N02",
+      "id": "n02-pseudonymous-issuer",
+      "manifestText": "{\n  \"aura_version\": \"1.1\",\n  \"aura_uid\": \"aura:v1:01ARZ3NDEKTSV4RRFFQ69G5FAV\",\n  \"issuer\": {\n    \"id\": \"AURA-SCOPED-TEST\"\n  },\n  \"issued_at\": \"2026-11-03T08:00:00Z\",\n  \"asset\": {\n    \"hash_algorithm\": \"SHA3-256\",\n    \"hash\": \"235b45e5658688f4e4719c4f1b9fadb7bd431e50cfabcc8ba3382869249f1b55\"\n  },\n  \"declarations\": {\n    \"note\": \"Synthetic fixture; issuer time is declared, not attested.\"\n  },\n  \"reference_anchor\": {\n    \"standard\": {\n      \"name\": \"AURA\",\n      \"schema_version\": \"1.1.0\",\n      \"release_tag\": \"v1.1.1\",\n      \"commit\": \"a96d15f48913c63954520965714f397412cf351f\",\n      \"schema_digest\": \"sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa\",\n      \"archive_doi\": \"10.5281/zenodo.22063255\"\n    },\n    \"verifier\": {\n      \"name\": \"AURA-VERIFIER\",\n      \"version\": \"1.0.2\",\n      \"release_tag\": \"v1.0.2\",\n      \"commit\": \"b663dece35651b586103b0c4dc70c7ce07f6ab31\",\n      \"source_digest\": \"sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68\",\n      \"archive_doi\": \"10.5281/zenodo.22063259\"\n    },\n    \"issuer_key\": {\n      \"issuer_id\": \"AURA-SCOPED-TEST\",\n      \"algorithm\": \"Ed25519\",\n      \"public_key_digest\": \"sha3-256:911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\",\n      \"public_key_doi\": \"urn:aura:test-only:not-publicly-archived\"\n    }\n  },\n  \"signature\": {\n    \"algorithm\": \"Ed25519\",\n    \"canonicalization\": \"RFC-8785-JCS\",\n    \"value\": \"//s29rCwI3gbbpqStHsABvDJkJOZSYq3jGDeUu0isX8g+BmH2YGfXIoPm2P4TLcbmVhvebOumwooMe1YFaxcBA==\"\n  }\n}\n",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAH7EBdO/egSF7yWIOt4MdPv5G92tgL1rZOsLSUVkYrWw=\n-----END PUBLIC KEY-----\n",
+      "assetHex": "4155524120636f6e736f6c69646174696f6e3a2069736f6c61746564207465737420666978747572652c206e6f7420612070726f64756374696f6e206465636c61726174696f6e2e0a",
+      "issuerText": "{\"issuer\": \"AURA-SCOPED-TEST\", \"algorithm\": \"Ed25519\", \"status\": \"active\", \"public_key_fingerprint_sha256\": \"5e56f409a05dece7b96ab095836875c464535dfc9b6e76b3b6430c4011fa1c4d\", \"public_key_fingerprint_sha3_256\": \"911528883caaf55bec006087f6711f0e1b9f45189e575de70321601453399d56\", \"revoked_keys\": []}",
+      "expectedSchema": "pass",
+      "expectedReference": {
+        "signatureOk": true,
+        "integrityStatus": "verified"
+      },
+      "expectedProfile": null,
+      "sha256": {
+        "manifest": "f4dbaaf896ebaf4798786451e8dc303ce1ab406bfb28cea0183964bc3c3e8cbd",
+        "publicKey": "5505986376c98c109263fe44275c67bb95f00043affa6386ac807f606640b8a9",
+        "asset": "9be238f93e3f800c60746e2ef0b5661d703eae5064ed7835f5b632d3d082d99a",
+        "issuer": "af769dfda9f95ea38500034d88bec466d4cbaf1ff42983648ae70ec4f086cc89"
+      }
+    }
+  ]
+}

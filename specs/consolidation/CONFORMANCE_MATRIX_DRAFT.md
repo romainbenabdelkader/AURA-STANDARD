@@ -1,11 +1,11 @@
 # AURA v1.x — independent conformance test matrix (proposal)
 
-**Status: PROPOSED TEST PLAN ONLY — NOT AN EXECUTED TEST SUITE OR NEW NORMATIVE RULE.**  
+**Status: REVIEW MATRIX — partial execution evidence available; no new normative rule.**  
 **Prepared:** 2026-11-03, on documentation-only consolidation branch.  
 **Baseline:** published AURA-STANDARD v1.2.1; base manifest schemas `aura_version: "1.0"` and `"1.1"`; optional TDM overlay v1.0.  
 **Reference:** [AURA-CORE-v1.x.md](AURA-CORE-v1.x.md) and [CONSOLIDATION_REVIEW.md](CONSOLIDATION_REVIEW.md).
 
-This matrix identifies what an independent implementation should check **against existing published rules**, what is only a reference-verifier policy, and what still needs a normative decision. No new manifest, modified proof, execution report, signed vector, script, or expected machine-readable golden report is published by this file.
+This matrix identifies checks against existing published rules, reference-verifier policies and open normative questions. The [dated reproduction dossier](../../tests/conformance/2026-11-03/README.md) supplies 71 fixed variants, three offline Chromium checks and additional S02/S01 evidence. Expected results below are separate from measured coverage; see section 3.
 
 ## 1. What counts as a result
 
@@ -16,11 +16,13 @@ Use these dimensions rather than collapsing unrelated facts into `VALID` or `INV
 ### Source classification
 
 - **S** — existing published JSON-schema requirement (check with a conforming JSON Schema 2020-12 engine; account for the selected format-checking vocabulary).
-- **C** — existing AURA [CONFORMANCE.md](CONFORMANCE.md), [TEST_VECTORS.md](TEST_VECTORS.md), or TDM profile requirement; apply only at the indicated level or profile.
+- **C** — existing AURA [CONFORMANCE.md](../../CONFORMANCE.md), [TEST_VECTORS.md](../../TEST_VECTORS.md), or TDM profile requirement; apply only at the indicated level or profile.
 - **V** — documented **reference verifier local policy**, not automatically a requirement of the base schema.
 - **O** — **open normative question**: document the present behavior; **do not** silently establish a new conformance gate.
 
-## 2. Test cases — planned, not executed
+Dependencies of the selected cryptographic format, including RFC 8785 JCS input constraints, also belong to **C** when that format is claimed. The field names below describe logical dimensions, not a mandated output JSON contract. An adapter must identify the actual fields of each tested implementation. For example, v1.2.1 reports an unsupported manifest version as an error with `schemaValidation.status: "not_checked"`; it does not return a literal `baseSchema: "unsupported"` field.
+
+## 2. Test matrix and expected results
 
 The matrix's **expected dimension** is an expected result for the *named check*, not necessarily an overall verdict. Some cases require newly generated signed fixtures, and changing any signed field invalidates the old signature unless it is re-signed using a fresh **test-only** key. A parser-only mutation must not be misrepresented as a signed positive vector.
 
@@ -42,7 +44,7 @@ The matrix's **expected dimension** is an expected result for the *named check*,
 | F14 | S | Short `aura_uid` or forbidden Crockford letter `I` | `baseSchema=fail` | Both base schemas |
 | F15 | S | v1.1 anchor `verifier.name` changed to a different implementation name | `baseSchema=fail` under **published** `const "AURA-VERIFIER"`, regardless of whether another verifier can verify the signature | Base v1.1 schema; C-02 |
 | F16 | S | v1.1 anchor digest lacks the `sha3-256:` prefix | `baseSchema=fail` for the digest fields with `$defs.digest` | Base v1.1 schema |
-| F17 | S/O | `prior_evidence[].manifest_hash` is any nonempty string | `baseSchema=pass` when other constraints hold; no normative digest interpretation follows | Base v1.1 schema; C-03 |
+| F17 | S/O | `prior_evidence[].manifest_hash` is an arbitrary string, including the empty-string boundary | `baseSchema=pass` when other constraints hold: the published field has type `string` and no `minLength`; no normative digest interpretation follows | Base v1.1 schema; C-03 |
 | F18 | S | `prior_evidence[].manifest_hash` is not a string | `baseSchema=fail` | Base v1.1 schema |
 | I01 | C | Asset bytes match a declared supported SHA3-256 asset hash | `assetIntegrity=pass` when explicitly checked | CONFORMANCE; quickstart |
 | I02 | C | Modify one asset byte with unchanged signed manifest | `assetIntegrity=fail` and report separately from signature | CONFORMANCE |
@@ -51,7 +53,7 @@ The matrix's **expected dimension** is an expected result for the *named check*,
 | S01 | C | Change signed declaration without re-signing | `signature=fail` with unchanged key | CONFORMANCE; TEST_VECTORS |
 | S02 | C | Sign the correct JCS preimage using a fresh test-only Ed25519 key | `signature=pass` with matching public key, independent of identity claims | GLOSSARY; CONFORMANCE |
 | S03 | C | Verify a correct signed payload against a different public key | `signature=fail`; identity assertion not established | CONFORMANCE |
-| S04 | C | Use a different JSON whitespace/property-order serialization with identical parsed values and freshly signed canonical payload | Canonical signature result **should be invariant** if the same JCS object is recovered; preserve exact semantic JSON value | GLOSSARY; RFC 8785 |
+| S04 | C | Reserialize an existing correctly signed fixture with different whitespace/property order, preserving every parsed value and the original signature bytes; do not re-sign | The original signature must still verify if the same JCS object is recovered; compare canonical preimages as well as verification outcomes | GLOSSARY; RFC 8785 |
 | P01 | S/C | Properly signed TDM `true` manifest with matching asset | Base schema and TDM overlay pass; signature and supplied asset binding checked separately | TDM overlay; TDM profile |
 | P02 | S/C | TDM `tdm_opt_out` values `false`, `null`, string `"true"`, number, array, or object | `tdmProfileSchema=fail` for each non-`true` value | TDM overlay |
 | P03 | S/C | TDM profile with empty or missing `issuer.id` | `tdmProfileSchema=fail` even if base schema accepts `issuer: {}` | TDM overlay |
@@ -62,9 +64,9 @@ The matrix's **expected dimension** is an expected result for the *named check*,
 | R02 | C | Registry verification requested but issuer key unknown | `registryTrust=fail` where registry verification is required; **do not** label math signature forged | CONFORMANCE |
 | R03 | C/V | Trusted registry snapshot not supplied | Mathematical signature may still be checked; registry authenticity/freshness **not established** | TPKR; IMPLEMENTATION_STATUS |
 | T01 | C | Manifest has only `issued_at` but no independent timestamp evidence | `independentTimestamp=not_checked`, never independently established | CONFORMANCE |
-| T02 | C | Verifiable detached RFC 3161 token with complete signed-manifest canonical preimage and trusted time evidence | `independentTimestamp=pass` only if all token, binding and supplied trust checks succeed | CONFORMANCE; GLOSSARY; verifier timestamp documentation |
-| T03 | C | RFC 3161 response over the wrong manifest digest | `timestampBinding=fail` independently of ordinary signature validity | CONFORMANCE; verifier timestamp documentation |
-| V01 | V | Duplicate JSON object member names in raw manifest | **Reference verifier** rejects; do not claim base JSON Schema alone expresses this | IMPLEMENTATION_STATUS |
+| T02 | C/V | Verifiable detached RFC 3161 token using the reference verifier's documented complete signed-manifest canonical preimage and supplied trust material | `independentTimestamp=pass` only if all token, binding and supplied trust checks succeed for that recipe; this does not prescribe RFC 3161 for every possible AURA-Timestamped implementation | CONFORMANCE; GLOSSARY; verifier timestamp documentation |
+| T03 | C/V | RFC 3161 response over the wrong manifest digest under the same selected recipe | `timestampBinding=fail` independently of ordinary signature validity | CONFORMANCE; verifier timestamp documentation |
+| V01 | C/V | Duplicate JSON object member names in raw manifest | Reject for the JCS path before object parsing silently removes the duplicate; reference verifier rejects. JSON Schema validation of an already-parsed object cannot express this raw-input constraint | RFC 8785 §3.1; IMPLEMENTATION_STATUS |
 | V02 | V | Recognized asset-hash aliases disagree | **Reference verifier** rejects; aliases are implementation-local policy | IMPLEMENTATION_STATUS |
 | V03 | V | Impossible calendar `issued_at` value | **Reference verifier** rejects under local date policy; standard's `format` handling must be specified per chosen JSON Schema validator | IMPLEMENTATION_STATUS |
 | N01 | C | All evidence, key and trust material provided locally; network disabled | Core cryptographic verification must succeed/fail solely on supplied materials with **zero required** account, telemetry or remote fetches | CONFORMANCE; PRIVACY |
@@ -72,7 +74,11 @@ The matrix's **expected dimension** is an expected result for the *named check*,
 
 ## 3. Coverage gaps / release gates
 
-This table is a **plan**, not a claim that 40+ fixtures exist or were executed. Existing current-format proof material in this repository is the [neutral quickstart](examples/quickstart-v1.1/README.md); [historical v0.1](TEST_VECTORS.md) test vectors are not current-format acceptance vectors.
+The [dated coverage record](../../tests/conformance/2026-11-03/recorded/review-summary.json) maps 71 variants to 40 rows. N01 is exercised separately by three real Chromium checks. Across the 43 rows, 39 technical dimensions were exercised, P05/P06 remain partial reporting checks, and T02/T03 were not executed in this campaign. This is not 43 fully validated requirements.
+
+The [additional S02/S01 package](../../tests/conformance/2026-11-03/s02/README.md) provides a separately written Python signer, received fixtures and a fresh regeneration checked against the pinned reference release. It strengthens those two existing rows; it does not increase the number of covered rows or establish a second complete independent engine. The [neutral quickstart](../../examples/quickstart-v1.1/README.md) is preserved; [historical v0.1](../../TEST_VECTORS.md) vectors remain historical.
+
+The 43 rows are not exhaustive coverage. Cross-reference the separately pinned reference-verifier tests for Unicode/JCS numbers, signature encoding (including padding bits), hash boundary lengths, registry structure and issuer identifiers. The local no-hash/supplied-file case is also distinct from I03/I04. Keep their dated results separate; this plan does not rerun or replace them. P05/P06 additionally require a reporting/mapping review: selected output flags alone cannot establish every downstream application's treatment of permission, authority or collector receipt.
 
 Before any claims of "independent interoperability":
 
@@ -91,7 +97,7 @@ Before any claims of "independent interoperability":
 - **Third:** R01–R03 and T01–T03 with explicit trust evidence.
 - **Fourth:** independent cross-implementation comparison plus a short reproducible execution report.
 
-No F/S/P/R/T/V/N row has been executed *as part of this documentation consolidation*. Any external or previously published test result must be cited separately with its exact commit, fixture, run and scope.
+Recorded executions are linked above with their fixture bytes, source pins and limits. Prior reference-verifier timestamp CI is separate evidence, not a rerun of T02/T03 in this campaign. No complete independent implementation or production-emission conformance is claimed.
 
 ## 4. What this file does not approve
 

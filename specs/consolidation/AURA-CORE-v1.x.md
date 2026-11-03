@@ -10,14 +10,14 @@ This document gives implementers one reading path through AURA Core. **It does n
 
 | Question | Current authoritative or relevant source |
 | --- | --- |
-| Base manifest structure | [schema/aura-manifest-v1.0.0.json](schema/aura-manifest-v1.0.0.json) or [schema/aura-manifest-v1.1.0.json](schema/aura-manifest-v1.1.0.json), selected by `aura_version` |
-| Optional TDM overlay | [schema/profiles/aura-tdm-rights-reservation-v1.0.json](schema/profiles/aura-tdm-rights-reservation-v1.0.json) plus [specs/AI_Act_Article_53_Conformance_Profile.md](specs/AI_Act_Article_53_Conformance_Profile.md) |
-| Conformance claims and privacy requirements | [CONFORMANCE.md](CONFORMANCE.md) and [PRIVACY.md](PRIVACY.md) |
-| Signature preimage and distinct manifest-digest conventions | [GLOSSARY.md](GLOSSARY.md), [schema/README.md](schema/README.md), and the separately documented verifier's timestamp recipe |
-| Versioning and compatibility | [specs/Standard_Status_and_Versioning.md](specs/Standard_Status_and_Versioning.md) |
-| Implementation capabilities vs. conceptual models | [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md), [TPKR.md](TPKR.md), [ARCHITECTURE.md](ARCHITECTURE.md) |
-| Scope and governance | [CHARTER.md](CHARTER.md), [GOVERNANCE.md](GOVERNANCE.md), [PUBLIC_POSITION.md](PUBLIC_POSITION.md) |
-| Current acceptance example | [examples/quickstart-v1.1/](examples/quickstart-v1.1/README.md); historical `v0.1` tests are not v1.x acceptance tests |
+| Base manifest structure | [schema/aura-manifest-v1.0.0.json](../../schema/aura-manifest-v1.0.0.json) or [schema/aura-manifest-v1.1.0.json](../../schema/aura-manifest-v1.1.0.json), selected by `aura_version` |
+| Optional TDM overlay | [schema/profiles/aura-tdm-rights-reservation-v1.0.json](../../schema/profiles/aura-tdm-rights-reservation-v1.0.json) plus [specs/AI_Act_Article_53_Conformance_Profile.md](../../specs/AI_Act_Article_53_Conformance_Profile.md) |
+| Conformance claims and privacy requirements | [CONFORMANCE.md](../../CONFORMANCE.md) and [PRIVACY.md](../../PRIVACY.md) |
+| Signature preimage and distinct manifest-digest conventions | [GLOSSARY.md](../../GLOSSARY.md), [schema/README.md](../../schema/README.md), and the separately documented verifier's timestamp recipe |
+| Versioning and compatibility | [specs/Standard_Status_and_Versioning.md](../../specs/Standard_Status_and_Versioning.md) |
+| Implementation capabilities vs. conceptual models | [IMPLEMENTATION_STATUS.md](../../IMPLEMENTATION_STATUS.md), [TPKR.md](../../TPKR.md), [ARCHITECTURE.md](../../ARCHITECTURE.md) |
+| Scope and governance | [CHARTER.md](../../CHARTER.md), [GOVERNANCE.md](../../GOVERNANCE.md), [PUBLIC_POSITION.md](../../PUBLIC_POSITION.md) |
+| Current acceptance example | [examples/quickstart-v1.1/](../../examples/quickstart-v1.1/README.md); historical `v0.1` tests are not v1.x acceptance tests |
 
 The terms **MUST**, **MUST NOT**, **SHOULD**, and **MAY** used here *summarize* requirements already present in the cited sources. They have no independent force until this consolidation is explicitly promoted in a subsequent normative publication.
 
@@ -61,9 +61,11 @@ Separate failures for invalid signature, mismatching supplied asset, and unsuppo
 
 ## 4. Reference anchors and linked evidence
 
-Manifest 1.1 includes a **signed** `reference_anchor` containing `standard`, `verifier` and `issuer_key`. The *published* 1.1 schema currently fixes `reference_anchor.verifier.name` to `"AURA-VERIFIER"`, even though independent tools may verify AURA evidence. This is a known neutrality/design question, not a reason to invalidate old packages retroactively.
+Manifest 1.1 includes a **signed** `reference_anchor` containing `standard`, `verifier` and `issuer_key`. The *published* 1.1 schema currently fixes `reference_anchor.verifier.name` to `"AURA-VERIFIER"`. This identifies the referenced verifier artifact; it does not establish which tool actually issued or checked the package, and independent tools may verify the evidence. Whether future formats should permit other reference artifacts is a design question, not a demonstrated runtime dependency or a reason to invalidate old packages retroactively.
 
 Digest-shaped fields in `reference_anchor` use `sha3-256:` followed by 64 lowercase hex characters. The documented issuer public-key digest covers DER/SPKI **binary key bytes**, not PEM text bytes. An anchor or DOI string does **not** itself establish that a remote artifact was fetched and checked.
+
+The [schema publication rules](../../schema/README.md#rules) also require support for both base manifest versions, keep revocation/lifecycle data out of the signed manifest, and prohibit placeholder values in emitted proofs. Schema acceptance alone does not demonstrate those issuance requirements or validate archive coordinates. The quickstart is explicitly a non-production test package; its test-key URN is not evidence of a production public-key archive.
 
 `prior_evidence[].manifest_hash` is a string in the 1.1 schema, **without a normative hash algorithm or preimage rule**. The corrected quickstart references SHA3-256 of the preceding complete original manifest *file bytes*. This example-specific convention is not a general validator rule; the reference verifier does not validate linked-evidence chains.
 
@@ -73,7 +75,7 @@ Keep all pre-existing signed evidence and its original digest convention. Any ne
 
 ## 5. Optional TDM rights-reservation profile
 
-A manifest claiming `profile: "AURA_TDM_RIGHTS_RESERVATION_V1"` must validate against **both** the selected base schema and the corresponding [TDM overlay](schema/profiles/aura-tdm-rights-reservation-v1.0.json). The overlay requires:
+A manifest claiming `profile: "AURA_TDM_RIGHTS_RESERVATION_V1"` must validate against **both** the selected base schema and the corresponding [TDM overlay](../../schema/profiles/aura-tdm-rights-reservation-v1.0.json). The overlay requires:
 
 - nonempty `issuer.id`;
 - `asset.hash_algorithm` exactly `"SHA3-256"`;
@@ -87,7 +89,7 @@ The profile's declaration is within the signature preimage when `signature` is r
 
 ## 6. Conformance and operational trust
 
-Refer to [CONFORMANCE.md](CONFORMANCE.md) for the cumulative levels and exceptions:
+Refer to [CONFORMANCE.md](../../CONFORMANCE.md) for the precise dependencies and evidence-type conditions. These capabilities are not a single mandatory ladder: `AURA-Signed` builds on `AURA-Minimal`; an implementation claiming asset checks must also meet `AURA-Integrity`. `AURA-Timestamped` and `AURA-Registry-Verified` each build on `AURA-Signed`; `AURA-Institutional` builds on `AURA-Registry-Verified`.
 
 | Label | What it adds or assesses |
 | --- | --- |
@@ -100,13 +102,15 @@ Refer to [CONFORMANCE.md](CONFORMANCE.md) for the cumulative levels and exceptio
 
 The conceptual TPKR specification is **not** a deployed global trusted-key registry. The reference verifier's local `issuer.json` input is an implementation-specific caller-supplied snapshot whose authenticity and freshness are not established merely by using it.
 
-A conformant local verification path MUST NOT require an account, remote resolver, telemetry or logging when the manifest, asset (if applicable), key and required trust material are supplied locally. Civil identity MUST NOT be a prerequisite for Core cryptographic validity.
+A conformant local verification path MUST NOT require an account, remote resolver, analytics, telemetry or verification-event logging when the manifest, asset (if applicable), key and required trust material are supplied locally. Separate operational or security records are outside AURA conformance and remain subject to the conditions described in [CONFORMANCE.md](../../CONFORMANCE.md#verification-event-privacy) and [PRIVACY.md](../../PRIVACY.md#no-mandatory-verification-telemetry). Civil identity MUST NOT be a prerequisite for Core cryptographic validity.
 
 ## 7. Security and result reporting boundaries
 
 A robust implementation must distinguish at least these dimensions when it claims them: schema support, canonicalization/signature, supplied asset hash, issuer-key match and trust status, profile-specific constraints, linked-evidence resolution and timestamp verification. A skipped, unsupported or unperformed dimension is not a positive verification.
 
-The released verifier has additional *documented local policies* for duplicate JSON keys, recognized hash aliases, date syntax and issuer-identifier consistency. These are not silently promoted here into published JSON Schema requirements. See [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md).
+For manifest input to JCS, duplicate object member names are excluded by [RFC 8785 §3.1](https://www.rfc-editor.org/rfc/rfc8785.html#section-3.1); lone Unicode surrogates must also be rejected under §3.2.2.2. A raw-input parser must preserve the ability to detect duplicates before ordinary object parsing discards them. This constraint is not expressible by validating an already-parsed object against JSON Schema.
+
+The released verifier also has *documented local policies* for registry JSON duplicates, recognized hash aliases, date syntax and issuer-identifier consistency. These do not become additional base-schema rules through this consolidation. See [IMPLEMENTATION_STATUS.md](../../IMPLEMENTATION_STATUS.md).
 
 A valid signature proves only that the relevant private key signed the specified bytes. A compromised issuer key, self-asserted backdate, stale registry snapshot, copied package or false authority claim can still create misleading evidence. These cases must not be conflated with mathematical signature failure.
 
@@ -115,7 +119,7 @@ A valid signature proves only that the relevant private key signed the specified
 - Keep published `aura_version` 1.0 and 1.1 schemas, archived releases and signed examples **byte-for-byte unchanged** in this consolidation.
 - Preserve historical `v0.1` material as historical; it is not interchangeable with current manifest models.
 - Do not change wire semantics or signed-input interpretation without explicit compatibility assessment and appropriate release version.
-- A breaking change to required format or signature semantics requires a major version under [the current versioning policy](specs/Standard_Status_and_Versioning.md). An additive feature is **not automatically** backward-compatible if it narrows previously accepted input.
+- A breaking change to required format or signature semantics requires a major version under [the current versioning policy](../../specs/Standard_Status_and_Versioning.md). An additive feature is **not automatically** backward-compatible if it narrows previously accepted input.
 - New proposals must identify their own normative authority and provide positive/negative independent conformance vectors before adoption.
 
 ## 9. Unresolved items — not decided by this document
