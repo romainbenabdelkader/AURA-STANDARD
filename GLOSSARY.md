@@ -23,7 +23,7 @@ Digital object being declared or verified, such as audio, video, image, text, da
 ## Asset Hash
 
 Cryptographic digest of the exact asset bytes. The published AURA-VERIFIER
-v1.2.0 accepts an asset binding with `asset.hash_algorithm: "SHA3-256"` and a
+v1.2.1 accepts an asset binding with `asset.hash_algorithm: "SHA3-256"` and a
 64-character lowercase hexadecimal `asset.hash`. Matching bytes do not identify
 a creative work independently of its file representation.
 
