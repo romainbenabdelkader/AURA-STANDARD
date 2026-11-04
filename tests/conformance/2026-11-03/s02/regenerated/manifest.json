@@ -1,0 +1,54 @@
+{
+  "aura_version": "1.1",
+  "profile": "AURA_NEUTRAL_VERIFICATION_EXAMPLE",
+  "aura_uid": "aura:v1:4KE8QH6D98DYA7JPY9SRM1J7C5",
+  "issuer": {
+    "id": "S02-INDEPENDENT-TEST",
+    "service": "independent-python",
+    "key_id": "s02-independent-test-9669e3c82b066fde"
+  },
+  "issued_at": "2026-11-03T08:50:00.000Z",
+  "asset": {
+    "filename": "asset.txt",
+    "hash_algorithm": "SHA3-256",
+    "hash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c"
+  },
+  "proof": {
+    "scope": "asset_integrity_signed_declaration"
+  },
+  "declarations": {
+    "origin": "s02-independent-signing-test",
+    "legal_note": "Test-only. No person, authorship or rights."
+  },
+  "reference_anchor": {
+    "standard": {
+      "name": "AURA",
+      "schema_version": "1.1.0",
+      "release_tag": "v1.1.1",
+      "commit": "a96d15f48913c63954520965714f397412cf351f",
+      "schema_digest": "sha3-256:d06079ae8076c594b43b7687ca02cd3efc40e91a5bbf2131f19043a9e48a69aa",
+      "archive_doi": "10.5281/zenodo.22063255"
+    },
+    "verifier": {
+      "name": "AURA-VERIFIER",
+      "version": "1.0.2",
+      "release_tag": "v1.0.2",
+      "commit": "b663dece35651b586103b0c4dc70c7ce07f6ab31",
+      "source_digest": "sha3-256:174b9fc20210802bb7a5e1e7895561fa76832cd31f301c57bc4cdc93b3842e68",
+      "archive_doi": "10.5281/zenodo.22063259"
+    },
+    "issuer_key": {
+      "issuer_id": "S02-INDEPENDENT-TEST",
+      "key_id": "s02-independent-test-9669e3c82b066fde",
+      "algorithm": "Ed25519",
+      "public_key_digest": "sha3-256:45501326d36422b5f0c9904966c4268d21ec580c3fc9e292247259eedc4ba95b",
+      "public_key_doi": "urn:aura:test-key:4KE8QH6D98DYA7JPY9SRM1J7C5"
+    }
+  },
+  "signature": {
+    "algorithm": "Ed25519",
+    "canonicalization": "RFC-8785-JCS",
+    "format": "Ed25519 raw signature, base64 encoded",
+    "value": "erraXTwmXxxz/HTr7GbK7l9eE+XgVqHWMzyYHTa3pgSmNrLumZI/LpPvrK7BkEe+0xj6aPfA8CecjZJoT4WiDw=="
+  }
+}

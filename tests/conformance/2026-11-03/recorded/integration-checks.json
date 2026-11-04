@@ -1,0 +1,21 @@
+{
+  "verified_at": "2026-11-03T09:30:37.757213+00:00",
+  "received_files_unchanged": true,
+  "fresh_s02_and_s01": true,
+  "replay": {
+    "python-results.json": {
+      "identical_to_prior_recorded_output": true,
+      "sha256": "561169b6602ae145ef24ee0b7eda04710096e26d6817f3bad7f0083e8bf9cbd0"
+    },
+    "reference-results.json": {
+      "identical_to_prior_recorded_output": true,
+      "sha256": "1c203d7f782b36192737351e95b315ed088b423c7056b812a7bfcabd967dce84"
+    },
+    "offline-browser-results.json": {
+      "identical_to_prior_recorded_output": true,
+      "sha256": "fa5a1108e231909439618b439e3457de75c7320cf7ad0988b291e559e684f585"
+    }
+  },
+  "harness_correction": "During integration, a check initially addressed a nonexistent nested report field. It was corrected to the actual issuerKeyPinOk field. No verifier or signed fixture was modified.",
+  "published_scope": "Bounded reproducible evidence, not a second complete independent validator or external organizational review."
+}

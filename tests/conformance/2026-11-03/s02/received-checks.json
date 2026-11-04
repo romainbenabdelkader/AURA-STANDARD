@@ -1,0 +1,40 @@
+{
+  "archive_sha256": "af92690b3e67449ac036c0d52dc6acb990ba1b0499fe0e32cc98095f66019bf0",
+  "files": [
+    {
+      "name": "README.md",
+      "bytes": 1057,
+      "sha256": "229d04a17b8d993dae5232e4542d751138d16a3044d69b1e8dc1c38b4a69de91"
+    },
+    {
+      "name": "asset.txt",
+      "bytes": 40,
+      "sha256": "c6d97b7dccaa7e0a2d5e90025290cd78d6061c69af6f0d3f67d20bab1d7fa2da"
+    },
+    {
+      "name": "issuer.json",
+      "bytes": 511,
+      "sha256": "ab807a0f9319a0b0772b3b5c9ad5564d839fecf7e45c4cae9e76eb27b2ec93c8"
+    },
+    {
+      "name": "manifest.json",
+      "bytes": 1926,
+      "sha256": "ba157b23e70b1ca99f4f02cef8f83ef27947e179cb970b47af5bda3cc5727e5d"
+    },
+    {
+      "name": "manifest.tampered.json",
+      "bytes": 1906,
+      "sha256": "becec2bd329eb93025a4aec612d1a8941082490a521c91b36fc99bda321200d1"
+    },
+    {
+      "name": "public-key.pem",
+      "bytes": 113,
+      "sha256": "034088b413e65760607a8cab6e59eb892a95a78a1d5c85319e418baae258e95a"
+    },
+    {
+      "name": "s02_sign.py",
+      "bytes": 2329,
+      "sha256": "1abd71dffd94fff9e78b6f3ca5d9419e1a90ba801e18caba37602cffb9ac3ee5"
+    }
+  ]
+}

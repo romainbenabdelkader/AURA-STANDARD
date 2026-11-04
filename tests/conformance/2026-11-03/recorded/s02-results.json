@@ -1,0 +1,807 @@
+{
+  "runtime": "v24.22.1",
+  "verifier_commit": "e1fa13c4fb253c2e07a99538524b869028bb62b4",
+  "received_archive_sha256": "af92690b3e67449ac036c0d52dc6acb990ba1b0499fe0e32cc98095f66019bf0",
+  "recorded_claim": "Supplied README names v1.2.1-2-gd05c3de and Node 22.23.4; that earlier execution is not independently observed here.",
+  "scope": "Received and freshly generated S02/S01 fixtures. Two reference paths share code; browser path runs in Node. No external organizational validation or general JCS implementation is established.",
+  "fresh_key_differs": true,
+  "results": [
+    {
+      "package": "received",
+      "row": "S02",
+      "manifest_sha256": "ba157b23e70b1ca99f4f02cef8f83ef27947e179cb970b47af5bda3cc5727e5d",
+      "canonical_unsigned_sha256": "b073d181b8f34c35765dfb1facbc803a4964fb34d241de46be16598642052b09",
+      "canonical_preimage_matches": true,
+      "engines": {
+        "node": {
+          "status": "valid",
+          "schemaValidation": {
+            "status": "pass",
+            "schemaId": "https://aura-standard.org/schema/aura-manifest-v1.1.0.json",
+            "errors": []
+          },
+          "issuedAtValidation": {
+            "status": "pass",
+            "independentlyAttested": false,
+            "errors": [],
+            "warnings": []
+          },
+          "issuerIdentifiers": {
+            "status": "pass",
+            "comparisons": 3,
+            "identityAssessed": false,
+            "errors": []
+          },
+          "registryValidation": {
+            "status": "pass",
+            "errors": []
+          },
+          "keyStatusCheck": "not_listed_as_revoked_in_supplied_registry",
+          "historicalValidity": "not_assessed",
+          "registryTrust": {
+            "source": "caller_supplied",
+            "authenticity": "not_assessed",
+            "freshness": "not_assessed"
+          },
+          "archiveResolution": "not_checked",
+          "archiveReferences": {
+            "status": "not_checked",
+            "references": [
+              {
+                "field": "reference_anchor.standard.archive_doi",
+                "value": "10.5281/zenodo.22063255",
+                "syntax": "doi_like",
+                "resolution": "not_checked"
+              },
+              {
+                "field": "reference_anchor.verifier.archive_doi",
+                "value": "10.5281/zenodo.22063259",
+                "syntax": "doi_like",
+                "resolution": "not_checked"
+              },
+              {
+                "field": "reference_anchor.issuer_key.public_key_doi",
+                "value": "urn:aura:test-key:66RG60P5MZME91B89WRS38X4VF",
+                "syntax": "not_doi",
+                "resolution": "not_checked"
+              }
+            ],
+            "warnings": [
+              "reference_anchor.issuer_key.public_key_doi is not a bare DOI. Schema acceptance does not establish a public archive."
+            ]
+          },
+          "issuerIdentity": "not_assessed",
+          "valid": true,
+          "evidenceType": "evidence_package",
+          "auraUid": "aura:v1:66RG60P5MZME91B89WRS38X4VF",
+          "integrityStatus": "verified",
+          "assetHashOk": true,
+          "signatureOk": true,
+          "issuerKeyPinOk": true,
+          "issuerKeyOk": true,
+          "keyRevoked": false,
+          "revocation": null,
+          "issuerStatus": "active",
+          "computedAssetHash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c",
+          "manifestAssetHash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c",
+          "publicKeyFingerprintSha256": "4fb64b14749268b2ba69cb2cad5f023e76c6c8f53a6806394a194c62a641b559",
+          "publicKeyFingerprintSha3_256": "19d28e448bd6fbd24fe9b5aa81eb962ddcb1abed1a7f5f6b474543eaceaba02a",
+          "canonicalization": "RFC-8785-JCS",
+          "signatureAlgorithm": "Ed25519",
+          "signatureFormat": "Ed25519 raw signature, base64 encoded",
+          "issuedAt": "2026-11-03T08:50:00.000Z",
+          "proofScope": "asset_integrity_signed_declaration",
+          "tdmRightsReservation": {
+            "profileClaimed": false,
+            "fieldPath": "declarations.tdm_opt_out",
+            "declarationValue": null,
+            "declarationValid": false,
+            "syntaxConformant": null,
+            "signatureBound": null,
+            "assetBindingVerified": null,
+            "profileVerified": null,
+            "issuerAuthorityAssessed": false,
+            "discoverabilityAssessed": false,
+            "legalEffectAssessed": false
+          },
+          "warnings": [],
+          "errors": []
+        },
+        "webcrypto_in_node": {
+          "status": "valid",
+          "schemaValidation": {
+            "status": "pass",
+            "schemaId": "https://aura-standard.org/schema/aura-manifest-v1.1.0.json",
+            "errors": []
+          },
+          "issuedAtValidation": {
+            "status": "pass",
+            "independentlyAttested": false,
+            "errors": [],
+            "warnings": []
+          },
+          "issuerIdentifiers": {
+            "status": "pass",
+            "comparisons": 3,
+            "identityAssessed": false,
+            "errors": []
+          },
+          "registryValidation": {
+            "status": "pass",
+            "errors": []
+          },
+          "keyStatusCheck": "not_listed_as_revoked_in_supplied_registry",
+          "historicalValidity": "not_assessed",
+          "registryTrust": {
+            "source": "caller_supplied",
+            "authenticity": "not_assessed",
+            "freshness": "not_assessed"
+          },
+          "archiveResolution": "not_checked",
+          "archiveReferences": {
+            "status": "not_checked",
+            "references": [
+              {
+                "field": "reference_anchor.standard.archive_doi",
+                "value": "10.5281/zenodo.22063255",
+                "syntax": "doi_like",
+                "resolution": "not_checked"
+              },
+              {
+                "field": "reference_anchor.verifier.archive_doi",
+                "value": "10.5281/zenodo.22063259",
+                "syntax": "doi_like",
+                "resolution": "not_checked"
+              },
+              {
+                "field": "reference_anchor.issuer_key.public_key_doi",
+                "value": "urn:aura:test-key:66RG60P5MZME91B89WRS38X4VF",
+                "syntax": "not_doi",
+                "resolution": "not_checked"
+              }
+            ],
+            "warnings": [
+              "reference_anchor.issuer_key.public_key_doi is not a bare DOI. Schema acceptance does not establish a public archive."
+            ]
+          },
+          "issuerIdentity": "not_assessed",
+          "valid": true,
+          "evidenceType": "evidence_package",
+          "auraUid": "aura:v1:66RG60P5MZME91B89WRS38X4VF",
+          "integrityStatus": "verified",
+          "assetHashOk": true,
+          "signatureOk": true,
+          "issuerKeyPinOk": true,
+          "issuerKeyOk": true,
+          "keyRevoked": false,
+          "revocation": null,
+          "issuerStatus": "active",
+          "computedAssetHash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c",
+          "manifestAssetHash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c",
+          "publicKeyFingerprintSha256": "4fb64b14749268b2ba69cb2cad5f023e76c6c8f53a6806394a194c62a641b559",
+          "publicKeyFingerprintSha3_256": "19d28e448bd6fbd24fe9b5aa81eb962ddcb1abed1a7f5f6b474543eaceaba02a",
+          "canonicalization": "RFC-8785-JCS",
+          "signatureAlgorithm": "Ed25519",
+          "signatureFormat": "Ed25519 raw signature, base64 encoded",
+          "issuedAt": "2026-11-03T08:50:00.000Z",
+          "proofScope": "asset_integrity_signed_declaration",
+          "tdmRightsReservation": {
+            "profileClaimed": false,
+            "fieldPath": "declarations.tdm_opt_out",
+            "declarationValue": null,
+            "declarationValid": false,
+            "syntaxConformant": null,
+            "signatureBound": null,
+            "assetBindingVerified": null,
+            "profileVerified": null,
+            "issuerAuthorityAssessed": false,
+            "discoverabilityAssessed": false,
+            "legalEffectAssessed": false
+          },
+          "warnings": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "package": "received",
+      "row": "S01",
+      "manifest_sha256": "becec2bd329eb93025a4aec612d1a8941082490a521c91b36fc99bda321200d1",
+      "canonical_unsigned_sha256": "82bcc7b76f3bbb3bb2de02d3dc82767279dc2dd87fb62c0ed3e8cd163f02f4ea",
+      "canonical_preimage_matches": true,
+      "engines": {
+        "node": {
+          "status": "invalid",
+          "schemaValidation": {
+            "status": "pass",
+            "schemaId": "https://aura-standard.org/schema/aura-manifest-v1.1.0.json",
+            "errors": []
+          },
+          "issuedAtValidation": {
+            "status": "pass",
+            "independentlyAttested": false,
+            "errors": [],
+            "warnings": []
+          },
+          "issuerIdentifiers": {
+            "status": "pass",
+            "comparisons": 3,
+            "identityAssessed": false,
+            "errors": []
+          },
+          "registryValidation": {
+            "status": "pass",
+            "errors": []
+          },
+          "keyStatusCheck": "not_listed_as_revoked_in_supplied_registry",
+          "historicalValidity": "not_assessed",
+          "registryTrust": {
+            "source": "caller_supplied",
+            "authenticity": "not_assessed",
+            "freshness": "not_assessed"
+          },
+          "archiveResolution": "not_checked",
+          "archiveReferences": {
+            "status": "not_checked",
+            "references": [
+              {
+                "field": "reference_anchor.standard.archive_doi",
+                "value": "10.5281/zenodo.22063255",
+                "syntax": "doi_like",
+                "resolution": "not_checked"
+              },
+              {
+                "field": "reference_anchor.verifier.archive_doi",
+                "value": "10.5281/zenodo.22063259",
+                "syntax": "doi_like",
+                "resolution": "not_checked"
+              },
+              {
+                "field": "reference_anchor.issuer_key.public_key_doi",
+                "value": "urn:aura:test-key:66RG60P5MZME91B89WRS38X4VF",
+                "syntax": "not_doi",
+                "resolution": "not_checked"
+              }
+            ],
+            "warnings": [
+              "reference_anchor.issuer_key.public_key_doi is not a bare DOI. Schema acceptance does not establish a public archive."
+            ]
+          },
+          "issuerIdentity": "not_assessed",
+          "valid": false,
+          "evidenceType": "evidence_package",
+          "auraUid": "aura:v1:66RG60P5MZME91B89WRS38X4VF",
+          "integrityStatus": "verified",
+          "assetHashOk": true,
+          "signatureOk": false,
+          "issuerKeyPinOk": true,
+          "issuerKeyOk": true,
+          "keyRevoked": false,
+          "revocation": null,
+          "issuerStatus": "active",
+          "computedAssetHash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c",
+          "manifestAssetHash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c",
+          "publicKeyFingerprintSha256": "4fb64b14749268b2ba69cb2cad5f023e76c6c8f53a6806394a194c62a641b559",
+          "publicKeyFingerprintSha3_256": "19d28e448bd6fbd24fe9b5aa81eb962ddcb1abed1a7f5f6b474543eaceaba02a",
+          "canonicalization": "RFC-8785-JCS",
+          "signatureAlgorithm": "Ed25519",
+          "signatureFormat": "Ed25519 raw signature, base64 encoded",
+          "issuedAt": "2026-11-03T08:50:00.000Z",
+          "proofScope": "asset_integrity_signed_declaration",
+          "tdmRightsReservation": {
+            "profileClaimed": false,
+            "fieldPath": "declarations.tdm_opt_out",
+            "declarationValue": null,
+            "declarationValid": false,
+            "syntaxConformant": null,
+            "signatureBound": null,
+            "assetBindingVerified": null,
+            "profileVerified": null,
+            "issuerAuthorityAssessed": false,
+            "discoverabilityAssessed": false,
+            "legalEffectAssessed": false
+          },
+          "warnings": [],
+          "errors": [
+            "Ed25519 signature mismatch."
+          ]
+        },
+        "webcrypto_in_node": {
+          "status": "invalid",
+          "schemaValidation": {
+            "status": "pass",
+            "schemaId": "https://aura-standard.org/schema/aura-manifest-v1.1.0.json",
+            "errors": []
+          },
+          "issuedAtValidation": {
+            "status": "pass",
+            "independentlyAttested": false,
+            "errors": [],
+            "warnings": []
+          },
+          "issuerIdentifiers": {
+            "status": "pass",
+            "comparisons": 3,
+            "identityAssessed": false,
+            "errors": []
+          },
+          "registryValidation": {
+            "status": "pass",
+            "errors": []
+          },
+          "keyStatusCheck": "not_listed_as_revoked_in_supplied_registry",
+          "historicalValidity": "not_assessed",
+          "registryTrust": {
+            "source": "caller_supplied",
+            "authenticity": "not_assessed",
+            "freshness": "not_assessed"
+          },
+          "archiveResolution": "not_checked",
+          "archiveReferences": {
+            "status": "not_checked",
+            "references": [
+              {
+                "field": "reference_anchor.standard.archive_doi",
+                "value": "10.5281/zenodo.22063255",
+                "syntax": "doi_like",
+                "resolution": "not_checked"
+              },
+              {
+                "field": "reference_anchor.verifier.archive_doi",
+                "value": "10.5281/zenodo.22063259",
+                "syntax": "doi_like",
+                "resolution": "not_checked"
+              },
+              {
+                "field": "reference_anchor.issuer_key.public_key_doi",
+                "value": "urn:aura:test-key:66RG60P5MZME91B89WRS38X4VF",
+                "syntax": "not_doi",
+                "resolution": "not_checked"
+              }
+            ],
+            "warnings": [
+              "reference_anchor.issuer_key.public_key_doi is not a bare DOI. Schema acceptance does not establish a public archive."
+            ]
+          },
+          "issuerIdentity": "not_assessed",
+          "valid": false,
+          "evidenceType": "evidence_package",
+          "auraUid": "aura:v1:66RG60P5MZME91B89WRS38X4VF",
+          "integrityStatus": "verified",
+          "assetHashOk": true,
+          "signatureOk": false,
+          "issuerKeyPinOk": true,
+          "issuerKeyOk": true,
+          "keyRevoked": false,
+          "revocation": null,
+          "issuerStatus": "active",
+          "computedAssetHash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c",
+          "manifestAssetHash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c",
+          "publicKeyFingerprintSha256": "4fb64b14749268b2ba69cb2cad5f023e76c6c8f53a6806394a194c62a641b559",
+          "publicKeyFingerprintSha3_256": "19d28e448bd6fbd24fe9b5aa81eb962ddcb1abed1a7f5f6b474543eaceaba02a",
+          "canonicalization": "RFC-8785-JCS",
+          "signatureAlgorithm": "Ed25519",
+          "signatureFormat": "Ed25519 raw signature, base64 encoded",
+          "issuedAt": "2026-11-03T08:50:00.000Z",
+          "proofScope": "asset_integrity_signed_declaration",
+          "tdmRightsReservation": {
+            "profileClaimed": false,
+            "fieldPath": "declarations.tdm_opt_out",
+            "declarationValue": null,
+            "declarationValid": false,
+            "syntaxConformant": null,
+            "signatureBound": null,
+            "assetBindingVerified": null,
+            "profileVerified": null,
+            "issuerAuthorityAssessed": false,
+            "discoverabilityAssessed": false,
+            "legalEffectAssessed": false
+          },
+          "warnings": [],
+          "errors": [
+            "Ed25519 signature mismatch."
+          ]
+        }
+      }
+    },
+    {
+      "package": "regenerated",
+      "row": "S02",
+      "manifest_sha256": "f5c1a99ff3d7be1a66c854673d198bf593a3ace3b43a9f87d8748ba93287cbae",
+      "canonical_unsigned_sha256": "d23fe2a335672b26ba7c4668072b90ccdbec1203466cc7b836930f4e34d46803",
+      "canonical_preimage_matches": true,
+      "engines": {
+        "node": {
+          "status": "valid",
+          "schemaValidation": {
+            "status": "pass",
+            "schemaId": "https://aura-standard.org/schema/aura-manifest-v1.1.0.json",
+            "errors": []
+          },
+          "issuedAtValidation": {
+            "status": "pass",
+            "independentlyAttested": false,
+            "errors": [],
+            "warnings": []
+          },
+          "issuerIdentifiers": {
+            "status": "pass",
+            "comparisons": 3,
+            "identityAssessed": false,
+            "errors": []
+          },
+          "registryValidation": {
+            "status": "pass",
+            "errors": []
+          },
+          "keyStatusCheck": "not_listed_as_revoked_in_supplied_registry",
+          "historicalValidity": "not_assessed",
+          "registryTrust": {
+            "source": "caller_supplied",
+            "authenticity": "not_assessed",
+            "freshness": "not_assessed"
+          },
+          "archiveResolution": "not_checked",
+          "archiveReferences": {
+            "status": "not_checked",
+            "references": [
+              {
+                "field": "reference_anchor.standard.archive_doi",
+                "value": "10.5281/zenodo.22063255",
+                "syntax": "doi_like",
+                "resolution": "not_checked"
+              },
+              {
+                "field": "reference_anchor.verifier.archive_doi",
+                "value": "10.5281/zenodo.22063259",
+                "syntax": "doi_like",
+                "resolution": "not_checked"
+              },
+              {
+                "field": "reference_anchor.issuer_key.public_key_doi",
+                "value": "urn:aura:test-key:4KE8QH6D98DYA7JPY9SRM1J7C5",
+                "syntax": "not_doi",
+                "resolution": "not_checked"
+              }
+            ],
+            "warnings": [
+              "reference_anchor.issuer_key.public_key_doi is not a bare DOI. Schema acceptance does not establish a public archive."
+            ]
+          },
+          "issuerIdentity": "not_assessed",
+          "valid": true,
+          "evidenceType": "evidence_package",
+          "auraUid": "aura:v1:4KE8QH6D98DYA7JPY9SRM1J7C5",
+          "integrityStatus": "verified",
+          "assetHashOk": true,
+          "signatureOk": true,
+          "issuerKeyPinOk": true,
+          "issuerKeyOk": true,
+          "keyRevoked": false,
+          "revocation": null,
+          "issuerStatus": "active",
+          "computedAssetHash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c",
+          "manifestAssetHash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c",
+          "publicKeyFingerprintSha256": "9669e3c82b066fdec108c44b1c2ba23a7488a34853784b364e62395c78e06c3b",
+          "publicKeyFingerprintSha3_256": "45501326d36422b5f0c9904966c4268d21ec580c3fc9e292247259eedc4ba95b",
+          "canonicalization": "RFC-8785-JCS",
+          "signatureAlgorithm": "Ed25519",
+          "signatureFormat": "Ed25519 raw signature, base64 encoded",
+          "issuedAt": "2026-11-03T08:50:00.000Z",
+          "proofScope": "asset_integrity_signed_declaration",
+          "tdmRightsReservation": {
+            "profileClaimed": false,
+            "fieldPath": "declarations.tdm_opt_out",
+            "declarationValue": null,
+            "declarationValid": false,
+            "syntaxConformant": null,
+            "signatureBound": null,
+            "assetBindingVerified": null,
+            "profileVerified": null,
+            "issuerAuthorityAssessed": false,
+            "discoverabilityAssessed": false,
+            "legalEffectAssessed": false
+          },
+          "warnings": [],
+          "errors": []
+        },
+        "webcrypto_in_node": {
+          "status": "valid",
+          "schemaValidation": {
+            "status": "pass",
+            "schemaId": "https://aura-standard.org/schema/aura-manifest-v1.1.0.json",
+            "errors": []
+          },
+          "issuedAtValidation": {
+            "status": "pass",
+            "independentlyAttested": false,
+            "errors": [],
+            "warnings": []
+          },
+          "issuerIdentifiers": {
+            "status": "pass",
+            "comparisons": 3,
+            "identityAssessed": false,
+            "errors": []
+          },
+          "registryValidation": {
+            "status": "pass",
+            "errors": []
+          },
+          "keyStatusCheck": "not_listed_as_revoked_in_supplied_registry",
+          "historicalValidity": "not_assessed",
+          "registryTrust": {
+            "source": "caller_supplied",
+            "authenticity": "not_assessed",
+            "freshness": "not_assessed"
+          },
+          "archiveResolution": "not_checked",
+          "archiveReferences": {
+            "status": "not_checked",
+            "references": [
+              {
+                "field": "reference_anchor.standard.archive_doi",
+                "value": "10.5281/zenodo.22063255",
+                "syntax": "doi_like",
+                "resolution": "not_checked"
+              },
+              {
+                "field": "reference_anchor.verifier.archive_doi",
+                "value": "10.5281/zenodo.22063259",
+                "syntax": "doi_like",
+                "resolution": "not_checked"
+              },
+              {
+                "field": "reference_anchor.issuer_key.public_key_doi",
+                "value": "urn:aura:test-key:4KE8QH6D98DYA7JPY9SRM1J7C5",
+                "syntax": "not_doi",
+                "resolution": "not_checked"
+              }
+            ],
+            "warnings": [
+              "reference_anchor.issuer_key.public_key_doi is not a bare DOI. Schema acceptance does not establish a public archive."
+            ]
+          },
+          "issuerIdentity": "not_assessed",
+          "valid": true,
+          "evidenceType": "evidence_package",
+          "auraUid": "aura:v1:4KE8QH6D98DYA7JPY9SRM1J7C5",
+          "integrityStatus": "verified",
+          "assetHashOk": true,
+          "signatureOk": true,
+          "issuerKeyPinOk": true,
+          "issuerKeyOk": true,
+          "keyRevoked": false,
+          "revocation": null,
+          "issuerStatus": "active",
+          "computedAssetHash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c",
+          "manifestAssetHash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c",
+          "publicKeyFingerprintSha256": "9669e3c82b066fdec108c44b1c2ba23a7488a34853784b364e62395c78e06c3b",
+          "publicKeyFingerprintSha3_256": "45501326d36422b5f0c9904966c4268d21ec580c3fc9e292247259eedc4ba95b",
+          "canonicalization": "RFC-8785-JCS",
+          "signatureAlgorithm": "Ed25519",
+          "signatureFormat": "Ed25519 raw signature, base64 encoded",
+          "issuedAt": "2026-11-03T08:50:00.000Z",
+          "proofScope": "asset_integrity_signed_declaration",
+          "tdmRightsReservation": {
+            "profileClaimed": false,
+            "fieldPath": "declarations.tdm_opt_out",
+            "declarationValue": null,
+            "declarationValid": false,
+            "syntaxConformant": null,
+            "signatureBound": null,
+            "assetBindingVerified": null,
+            "profileVerified": null,
+            "issuerAuthorityAssessed": false,
+            "discoverabilityAssessed": false,
+            "legalEffectAssessed": false
+          },
+          "warnings": [],
+          "errors": []
+        }
+      }
+    },
+    {
+      "package": "regenerated",
+      "row": "S01",
+      "manifest_sha256": "bbb6c524498b7162ade4eb4e0a3548f21eb79afededa0a0af414b93c97a37a6c",
+      "canonical_unsigned_sha256": "dc2304d9c09ae627d76f60dc9aade7d22493d9dc9cf5d717c258e99e831854ae",
+      "canonical_preimage_matches": true,
+      "engines": {
+        "node": {
+          "status": "invalid",
+          "schemaValidation": {
+            "status": "pass",
+            "schemaId": "https://aura-standard.org/schema/aura-manifest-v1.1.0.json",
+            "errors": []
+          },
+          "issuedAtValidation": {
+            "status": "pass",
+            "independentlyAttested": false,
+            "errors": [],
+            "warnings": []
+          },
+          "issuerIdentifiers": {
+            "status": "pass",
+            "comparisons": 3,
+            "identityAssessed": false,
+            "errors": []
+          },
+          "registryValidation": {
+            "status": "pass",
+            "errors": []
+          },
+          "keyStatusCheck": "not_listed_as_revoked_in_supplied_registry",
+          "historicalValidity": "not_assessed",
+          "registryTrust": {
+            "source": "caller_supplied",
+            "authenticity": "not_assessed",
+            "freshness": "not_assessed"
+          },
+          "archiveResolution": "not_checked",
+          "archiveReferences": {
+            "status": "not_checked",
+            "references": [
+              {
+                "field": "reference_anchor.standard.archive_doi",
+                "value": "10.5281/zenodo.22063255",
+                "syntax": "doi_like",
+                "resolution": "not_checked"
+              },
+              {
+                "field": "reference_anchor.verifier.archive_doi",
+                "value": "10.5281/zenodo.22063259",
+                "syntax": "doi_like",
+                "resolution": "not_checked"
+              },
+              {
+                "field": "reference_anchor.issuer_key.public_key_doi",
+                "value": "urn:aura:test-key:4KE8QH6D98DYA7JPY9SRM1J7C5",
+                "syntax": "not_doi",
+                "resolution": "not_checked"
+              }
+            ],
+            "warnings": [
+              "reference_anchor.issuer_key.public_key_doi is not a bare DOI. Schema acceptance does not establish a public archive."
+            ]
+          },
+          "issuerIdentity": "not_assessed",
+          "valid": false,
+          "evidenceType": "evidence_package",
+          "auraUid": "aura:v1:4KE8QH6D98DYA7JPY9SRM1J7C5",
+          "integrityStatus": "verified",
+          "assetHashOk": true,
+          "signatureOk": false,
+          "issuerKeyPinOk": true,
+          "issuerKeyOk": true,
+          "keyRevoked": false,
+          "revocation": null,
+          "issuerStatus": "active",
+          "computedAssetHash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c",
+          "manifestAssetHash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c",
+          "publicKeyFingerprintSha256": "9669e3c82b066fdec108c44b1c2ba23a7488a34853784b364e62395c78e06c3b",
+          "publicKeyFingerprintSha3_256": "45501326d36422b5f0c9904966c4268d21ec580c3fc9e292247259eedc4ba95b",
+          "canonicalization": "RFC-8785-JCS",
+          "signatureAlgorithm": "Ed25519",
+          "signatureFormat": "Ed25519 raw signature, base64 encoded",
+          "issuedAt": "2026-11-03T08:50:00.000Z",
+          "proofScope": "asset_integrity_signed_declaration",
+          "tdmRightsReservation": {
+            "profileClaimed": false,
+            "fieldPath": "declarations.tdm_opt_out",
+            "declarationValue": null,
+            "declarationValid": false,
+            "syntaxConformant": null,
+            "signatureBound": null,
+            "assetBindingVerified": null,
+            "profileVerified": null,
+            "issuerAuthorityAssessed": false,
+            "discoverabilityAssessed": false,
+            "legalEffectAssessed": false
+          },
+          "warnings": [],
+          "errors": [
+            "Ed25519 signature mismatch."
+          ]
+        },
+        "webcrypto_in_node": {
+          "status": "invalid",
+          "schemaValidation": {
+            "status": "pass",
+            "schemaId": "https://aura-standard.org/schema/aura-manifest-v1.1.0.json",
+            "errors": []
+          },
+          "issuedAtValidation": {
+            "status": "pass",
+            "independentlyAttested": false,
+            "errors": [],
+            "warnings": []
+          },
+          "issuerIdentifiers": {
+            "status": "pass",
+            "comparisons": 3,
+            "identityAssessed": false,
+            "errors": []
+          },
+          "registryValidation": {
+            "status": "pass",
+            "errors": []
+          },
+          "keyStatusCheck": "not_listed_as_revoked_in_supplied_registry",
+          "historicalValidity": "not_assessed",
+          "registryTrust": {
+            "source": "caller_supplied",
+            "authenticity": "not_assessed",
+            "freshness": "not_assessed"
+          },
+          "archiveResolution": "not_checked",
+          "archiveReferences": {
+            "status": "not_checked",
+            "references": [
+              {
+                "field": "reference_anchor.standard.archive_doi",
+                "value": "10.5281/zenodo.22063255",
+                "syntax": "doi_like",
+                "resolution": "not_checked"
+              },
+              {
+                "field": "reference_anchor.verifier.archive_doi",
+                "value": "10.5281/zenodo.22063259",
+                "syntax": "doi_like",
+                "resolution": "not_checked"
+              },
+              {
+                "field": "reference_anchor.issuer_key.public_key_doi",
+                "value": "urn:aura:test-key:4KE8QH6D98DYA7JPY9SRM1J7C5",
+                "syntax": "not_doi",
+                "resolution": "not_checked"
+              }
+            ],
+            "warnings": [
+              "reference_anchor.issuer_key.public_key_doi is not a bare DOI. Schema acceptance does not establish a public archive."
+            ]
+          },
+          "issuerIdentity": "not_assessed",
+          "valid": false,
+          "evidenceType": "evidence_package",
+          "auraUid": "aura:v1:4KE8QH6D98DYA7JPY9SRM1J7C5",
+          "integrityStatus": "verified",
+          "assetHashOk": true,
+          "signatureOk": false,
+          "issuerKeyPinOk": true,
+          "issuerKeyOk": true,
+          "keyRevoked": false,
+          "revocation": null,
+          "issuerStatus": "active",
+          "computedAssetHash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c",
+          "manifestAssetHash": "114d48182d6161e9bc1dbce577f0f0dbcb480eeb43dc3085d217850c2153434c",
+          "publicKeyFingerprintSha256": "9669e3c82b066fdec108c44b1c2ba23a7488a34853784b364e62395c78e06c3b",
+          "publicKeyFingerprintSha3_256": "45501326d36422b5f0c9904966c4268d21ec580c3fc9e292247259eedc4ba95b",
+          "canonicalization": "RFC-8785-JCS",
+          "signatureAlgorithm": "Ed25519",
+          "signatureFormat": "Ed25519 raw signature, base64 encoded",
+          "issuedAt": "2026-11-03T08:50:00.000Z",
+          "proofScope": "asset_integrity_signed_declaration",
+          "tdmRightsReservation": {
+            "profileClaimed": false,
+            "fieldPath": "declarations.tdm_opt_out",
+            "declarationValue": null,
+            "declarationValid": false,
+            "syntaxConformant": null,
+            "signatureBound": null,
+            "assetBindingVerified": null,
+            "profileVerified": null,
+            "issuerAuthorityAssessed": false,
+            "discoverabilityAssessed": false,
+            "legalEffectAssessed": false
+          },
+          "warnings": [],
+          "errors": [
+            "Ed25519 signature mismatch."
+          ]
+        }
+      }
+    }
+  ],
+  "passed": true
+}

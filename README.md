@@ -2,7 +2,7 @@
 # AURA - Open Technical Specification for Verifiable Origin Declarations and Asset Integrity
 
 Authenticated Universal Registration for Assets<br>
-Last updated: 2026-11-01 (documentation update)<br>
+Last updated: 2026-11-04 (documentation and test automation update)<br>
 Latest archived specification: v1.2.1 (schema v1.0.0 frozen canonical, v1.1.0 additive). This branch also contains subsequent documentation updates.
 
 AURA is an open technical specification for signed origin declarations and exact-byte asset integrity checks.
@@ -54,6 +54,12 @@ Conformance levels:
 
 Test vectors:
 /TEST_VECTORS.md
+
+Implementer reading path (informative consolidation under review):
+[specs/consolidation/README.md](specs/consolidation/README.md)
+
+Executable checks, pinned reference release and coverage limits:
+[tests/conformance/README.md](tests/conformance/README.md)
 
 Neutral AURA v1.1 verification quickstart:
 [examples/quickstart-v1.1/README.md](examples/quickstart-v1.1/README.md)

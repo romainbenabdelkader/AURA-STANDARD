@@ -5,6 +5,18 @@ retains the signed v0.1 vectors as legacy implementation material.
 
 The purpose is to help independent implementations verify consistent hashing, manifest canonicalization, signing and error reporting.
 
+## Executable v1.x checks
+
+The [conformance checks](tests/conformance/README.md) replay 71 fixed variants,
+including v1.0/v1.1, TDM positive and negative cases, changed signatures/assets
+and supplied key-revocation information. Expected results are separated by
+schema, signature, integrity and profile dimensions.
+
+The dated dossier retains its original v1.2.1 results. The current runner
+separately checks the pinned v1.2.2 release and a freshly generated S02/S01
+package. The linked coverage notes identify unexecuted timestamp cases and
+partial application-reporting checks; this is not an exhaustive conformance suite.
+
 Implementations claiming support for
 `AURA_TDM_RIGHTS_RESERVATION_V1` additionally MUST test:
 

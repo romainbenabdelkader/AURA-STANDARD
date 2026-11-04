@@ -1,0 +1,66 @@
+name: Standard conformance checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: conformance-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  conformance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22, 24]
+    steps:
+      - name: Check out the proposed standard
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check out the pinned verifier release
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: romainbenabdelkader/AURA-VERIFIER
+          ref: 08d7c70404bab16e2e3b09bb9e59aefaf6fa5391 # v1.2.2
+          path: .ci-verifier
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ matrix.node }}
+          package-manager-cache: false
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Install test dependencies
+        run: python -m pip install -r tests/conformance/requirements.txt
+      - name: Verify preserved quickstart evidence
+        run: node examples/quickstart-v1.1/check-fixture.mjs
+      - name: Replay independent schema and cryptographic checks
+        run: python tests/conformance/2026-11-03/check_python.py
+        env:
+          AURA_RESULTS_DIR: ${{ runner.temp }}/aura-results
+      - name: Replay fixed and fresh fixtures against v1.2.2
+        run: node tests/conformance/check-current.mjs
+        env:
+          AURA_VERIFIER_DIR: ${{ github.workspace }}/.ci-verifier
+          AURA_RESULTS_DIR: ${{ runner.temp }}/aura-results
+          AURA_PYTHON: python
+      - name: Preserve execution reports
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: conformance-node-${{ matrix.node }}
+          path: ${{ runner.temp }}/aura-results
+          if-no-files-found: warn
+          retention-days: 30

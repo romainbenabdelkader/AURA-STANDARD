@@ -1,0 +1,394 @@
+{
+  "checked_at": "2026-11-03T08:23:43.804439+00:00",
+  "pr_head": "378a82ad3aa95978ea3beea0c727ea7772f01de3",
+  "base": "4ab99117604f7a064a12471d9a2a6081b5ea74ed",
+  "verifier": "e1fa13c4fb253c2e07a99538524b869028bb62b4",
+  "original_pr_changes": "A\tAURA-CORE-v1.x.md\nA\tCONFORMANCE_MATRIX_DRAFT.md\nA\tCONSOLIDATION_REVIEW.md\n",
+  "local_draft_files": [
+    "AURA-CORE-v1.x.md",
+    "CONFORMANCE_MATRIX_DRAFT.md",
+    "CONSOLIDATION_REVIEW.md"
+  ],
+  "base_files_unchanged": 58,
+  "vector_count": 71,
+  "planned_rows": 43,
+  "coverage": [
+    {
+      "row": "F01",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f01-v10"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F02",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f02-original-quickstart"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F03",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f03-anchor-absent-v11"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F04",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f04-no-anchor-v10"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F05",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f05-unsupported-version"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F06",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f06-no-signature"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F07",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f07-wrong-algorithm"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F08",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f08-wrong-canonicalization"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F09",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f09-empty-signature"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F10",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f10-empty-issuer-1.0",
+        "f10-empty-issuer-1.1"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F11",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f11-no-evidence-marker-1.0",
+        "f11-no-evidence-marker-1.1"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F12",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f12-extension-1.0",
+        "f12-extension-1.1"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F13",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f13-ulid-range-1.0",
+        "f13-ulid-range-1.1"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F14",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f14-short-1.0",
+        "f14-forbidden-1.0",
+        "f14-short-1.1",
+        "f14-forbidden-1.1"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F15",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f15-other-verifier-anchor"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F16",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f16-digest-prefix-standard",
+        "f16-digest-prefix-verifier",
+        "f16-digest-prefix-issuer_key"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F17",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f17-f18-arbitrary",
+        "f17-f18-empty"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "F18",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "f17-f18-number"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "I01",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "i01-matching-asset"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "I02",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "i02-changed-asset"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "I03",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "i03-fileless"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "I04",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "i04-missing-asset"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "S01",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "s01-tampered-declaration"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "S02",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "s02-fresh-python-signature"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "S03",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "s03-wrong-public-key"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "S04",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "s04-original-signature-reordered"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "P01",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "p01-tdm-1.0",
+        "p01-tdm-1.1"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "P02",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "p02-false-1.0",
+        "p02-null-1.0",
+        "p02-string-1.0",
+        "p02-one-1.0",
+        "p02-zero-1.0",
+        "p02-array-1.0",
+        "p02-object-1.0",
+        "p02-false-1.1",
+        "p02-null-1.1",
+        "p02-string-1.1",
+        "p02-one-1.1",
+        "p02-zero-1.1",
+        "p02-array-1.1",
+        "p02-object-1.1"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "P03",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "p03-missing-1.0",
+        "p03-empty-1.0",
+        "p03-missing-1.1",
+        "p03-empty-1.1"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "P04",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "p04-missing-1.0",
+        "p04-wrong-algorithm-1.0",
+        "p04-missing-1.1",
+        "p04-wrong-algorithm-1.1"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "P05",
+      "status": "partial_reporting_check",
+      "vectors": [
+        "p05-no-profile",
+        "p05-invalid-profile"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "P06",
+      "status": "partial_reporting_check",
+      "vectors": [
+        "p06-unassessed-authority"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "R01",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "r01-listed-revoked-key"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "R02",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "r02-unmatched-registry-key"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "R03",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "r03-no-registry"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "T01",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "t01-declared-time-only"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "T02",
+      "status": "not_executed_here",
+      "vectors": [],
+      "browser_cases": 0
+    },
+    {
+      "row": "T03",
+      "status": "not_executed_here",
+      "vectors": [],
+      "browser_cases": 0
+    },
+    {
+      "row": "V01",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "v01-duplicate-name"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "V02",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "v02-conflicting-hash-alias"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "V03",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "v03-impossible-date"
+      ],
+      "browser_cases": 0
+    },
+    {
+      "row": "N01",
+      "status": "technical_dimension_exercised",
+      "vectors": [],
+      "browser_cases": 3
+    },
+    {
+      "row": "N02",
+      "status": "technical_dimension_exercised",
+      "vectors": [
+        "n02-pseudonymous-issuer"
+      ],
+      "browser_cases": 0
+    }
+  ],
+  "python_failures": [],
+  "reference_failures": [],
+  "offline_browser_passed": true,
+  "timestamp_cases_not_executed": [
+    "T02",
+    "T03"
+  ],
+  "external_independent_implementation": false
+}
