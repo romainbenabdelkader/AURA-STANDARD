@@ -37,7 +37,7 @@ Copy and paste:
 
 ```bash
 git clone --depth 1 https://github.com/romainbenabdelkader/AURA-STANDARD.git
-git clone --depth 1 --branch v1.0.2 https://github.com/romainbenabdelkader/AURA-VERIFIER.git
+git clone --depth 1 --branch v1.2.2 https://github.com/romainbenabdelkader/AURA-VERIFIER.git
 cd AURA-VERIFIER
 ./bin/aura.js verify \
   --asset ../AURA-STANDARD/examples/quickstart-v1.1/asset.txt \
@@ -51,6 +51,12 @@ The first line of the report should be:
 ```text
 AURA verification result: VALID
 ```
+
+The current command uses AURA-VERIFIER v1.2.2. The signed manifest retains its
+historical v1.0.2 reference anchor: that block identifies a reference artifact,
+not the software that must execute this command. The manifest, signature and
+checksums are unchanged. The [conformance checks](../../tests/conformance/README.md)
+exercise this package against the pinned v1.2.2 release.
 
 After the two repositories have been downloaded, the verification command uses
 only local evidence and trust material.

@@ -2,7 +2,7 @@
 # AURA - Open Technical Specification for Verifiable Origin Declarations and Asset Integrity
 
 Authenticated Universal Registration for Assets<br>
-Last updated: 2026-11-01 (documentation update)<br>
+Last updated: 2026-11-04 (documentation and test automation update)<br>
 Latest archived specification: v1.2.1 (schema v1.0.0 frozen canonical, v1.1.0 additive). This branch also contains subsequent documentation updates.
 
 AURA is an open technical specification for signed origin declarations and exact-byte asset integrity checks.
@@ -54,6 +54,12 @@ Conformance levels:
 
 Test vectors:
 /TEST_VECTORS.md
+
+Implementer reading path (informative consolidation under review):
+[specs/consolidation/README.md](specs/consolidation/README.md)
+
+Executable checks, pinned reference release and coverage limits:
+[tests/conformance/README.md](tests/conformance/README.md)
 
 Neutral AURA v1.1 verification quickstart:
 [examples/quickstart-v1.1/README.md](examples/quickstart-v1.1/README.md)
@@ -248,8 +254,8 @@ Repository:
 https://github.com/romainbenabdelkader/AURA-VERIFIER
 
 For current manifest integration, start with its
-[v1.2.1 integrator guide](https://github.com/romainbenabdelkader/AURA-VERIFIER/blob/e1fa13c4fb253c2e07a99538524b869028bb62b4/INTEGRATORS.md)
-and [public v1.0 vector](https://github.com/romainbenabdelkader/AURA-VERIFIER/tree/e1fa13c4fb253c2e07a99538524b869028bb62b4/examples/rfc3161-freetsa).
+[v1.2.2 integrator guide](https://github.com/romainbenabdelkader/AURA-VERIFIER/blob/08d7c70404bab16e2e3b09bb9e59aefaf6fa5391/INTEGRATORS.md)
+and [public v1.0 vector](https://github.com/romainbenabdelkader/AURA-VERIFIER/tree/08d7c70404bab16e2e3b09bb9e59aefaf6fa5391/examples/rfc3161-freetsa).
 The public vector contains fictional issuer and asset data. Its real TSA response
 can be checked locally; the signature/asset checks also run through WebCrypto,
 while RFC 3161 verification uses the Node CLI with OpenSSL.
@@ -257,18 +263,18 @@ while RFC 3161 verification uses the Node CLI with OpenSSL.
 Historical verifier archive v1.1.0 (before the current strict-validation fixes):<br>
 https://doi.org/10.5281/zenodo.22069698
 
-Published verifier v1.2.1:<br>
-[GitHub release](https://github.com/romainbenabdelkader/AURA-VERIFIER/releases/tag/v1.2.1) ·
-[version-specific Zenodo archive](https://doi.org/10.5281/zenodo.23898686)<br>
-Source commit: `e1fa13c4fb253c2e07a99538524b869028bb62b4`.
+Published verifier v1.2.2:<br>
+[GitHub release](https://github.com/romainbenabdelkader/AURA-VERIFIER/releases/tag/v1.2.2) ·
+[version-specific Zenodo archive](https://doi.org/10.5281/zenodo.23917182)<br>
+Source commit: `08d7c70404bab16e2e3b09bb9e59aefaf6fa5391`.
 See [implementation status, archive digests and registry profile](IMPLEMENTATION_STATUS.md).
 Existing signed anchors remain references to their original artifacts.
 
 Web verifier:  
 https://verify.aura-standard.org/web/
 
-Checked on 2026-11-02 against the v1.2.1 commit above: all 16 source modules,
-the three web files and package.json matched, including the corrected integrity label. This is a live deployment URL and can change; use the pinned
+Checked on 2026-11-03 against the v1.2.2 commit above: all 17 source modules,
+the three web files and package.json matched, including input-error reporting. This is a live deployment URL and can change; use the pinned
 source and archive for reproducible verification. The dated deployment check
 and its scope are recorded in [IMPLEMENTATION_STATUS.md](IMPLEMENTATION_STATUS.md).
 

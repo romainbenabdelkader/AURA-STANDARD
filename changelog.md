@@ -1,8 +1,17 @@
 CHANGELOG — AURA Standard
 
 Toutes les modifications majeures du standard AURA sont consignées ici.
-Format conforme à Keep a Changelog.
+Historique des versions et des mises à jour documentaires.
 Statuts des versions définis dans : specs/Standard_Status_and_Versioning.md.
+
+⸻
+
+[Consolidation proposée — sans nouvelle release] – 2026-11-04
+
+• Entrée de lecture v1.x et matrice de consolidation informatives, sans promotion normative.
+• Automatisation des 71 variantes existantes, de l'exemple actuel et des cas S02/S01 contre le vérificateur v1.2.2 épinglé ; résultats historiques du 3 novembre conservés.
+• Canal privé de signalement précisé ; commande actuelle du quickstart alignée sur v1.2.2, sans modifier son ancre signée historique.
+• Schémas publiés, signatures, profils normatifs, tags et archives inchangés. Aucun nouveau schéma ou numéro de release.
 
 ⸻
 
