@@ -76,6 +76,8 @@ The matrix's **expected dimension** is an expected result for the *named check*,
 
 The [dated coverage record](../../tests/conformance/2026-11-03/recorded/review-summary.json) maps 71 variants to 40 rows. N01 is exercised separately by three real Chromium checks. Across the 43 rows, 39 technical dimensions were exercised, P05/P06 remain partial reporting checks, and T02/T03 were not executed in this campaign. This is not 43 fully validated requirements.
 
+The separate [4 November timestamp record](../../tests/conformance/2026-11-04-timestamp/README.md) adds executions for T02/T03 using pinned AURA-VERIFIER v1.2.2 and OpenSSL 3.x. T02 verifies the preserved v1.0 FreeTSA package. T03 first accepts the v1.1 quickstart without a token, then rejects that unchanged package when given the FreeTSA token for a different manifest; signature and asset integrity still pass. The [timestamp runner](../../tests/conformance/check-timestamps.mjs) also replays both existing reference timestamp suites. These cases supplement, rather than rewrite or increase, the historical 71-variant record. They establish the selected reference recipe's results, not independent implementation agreement or qualified timestamp status.
+
 The [additional S02/S01 package](../../tests/conformance/2026-11-03/s02/README.md) provides a separately written Python signer, received fixtures and a fresh regeneration checked against the pinned reference release. It strengthens those two existing rows; it does not increase the number of covered rows or establish a second complete independent engine. The [neutral quickstart](../../examples/quickstart-v1.1/README.md) is preserved; [historical v0.1](../../TEST_VECTORS.md) vectors remain historical.
 
 The 43 rows are not exhaustive coverage. Cross-reference the separately pinned reference-verifier tests for Unicode/JCS numbers, signature encoding (including padding bits), hash boundary lengths, registry structure and issuer identifiers. The local no-hash/supplied-file case is also distinct from I03/I04. Keep their dated results separate; this plan does not rerun or replace them. P05/P06 additionally require a reporting/mapping review: selected output flags alone cannot establish every downstream application's treatment of permission, authority or collector receipt.
@@ -97,7 +99,7 @@ Before any claims of "independent interoperability":
 - **Third:** R01–R03 and T01–T03 with explicit trust evidence.
 - **Fourth:** independent cross-implementation comparison plus a short reproducible execution report.
 
-Recorded executions are linked above with their fixture bytes, source pins and limits. Prior reference-verifier timestamp CI is separate evidence, not a rerun of T02/T03 in this campaign. No complete independent implementation or production-emission conformance is claimed.
+Recorded executions are linked above with their fixture bytes, source pins and limits. Prior reference-verifier timestamp CI remains separate evidence; T02/T03 now have their own dated replay and automated step in the standard's workflow. No complete independent implementation or production-emission conformance is claimed.
 
 ## 4. What this file does not approve
 

@@ -1,0 +1,473 @@
+{
+  "checked_at": "2026-11-04T11:58:11.167Z",
+  "runtime": "v24.22.1",
+  "verifier_version": "1.2.2",
+  "verifier_commit": "08d7c70404bab16e2e3b09bb9e59aefaf6fa5391",
+  "runner_sha256": "740acfd6f2da0a21e43537462b035025780774e2651996e3e70097d1f299f3e0",
+  "lock_sha256": "9737e2c4aed1acb0d0faaae7d8ce82c35353b23b174ba5f39ca41f1dcf0b8910",
+  "source_files_checked": 86,
+  "fixture_sha256": {
+    "freetsa/manifest.json": "0e58ca3fee17b6b333248a0d2e21471777afc3efe5d3e530b14070ed022064c5",
+    "freetsa/public-key.pem": "5754d30ebc14bc3b622425215524d6ce4d8b7ece5de8d8b85c023997171586c1",
+    "freetsa/issuer.json": "36f06b91352203524e0ab3554a2823cc2cb4b7372979da71af4d78db4b8fcdf4",
+    "freetsa/asset.txt": "657fbbfeda1ccda0f149e55d3f4d14ed52469ba422fd71f6d792c8ae3d9bfceb",
+    "freetsa/manifest.canonical.json": "7e6e47d9ae402ae9878e078f4420f8d15e9385be676eebe23d3fa0f4bc973553",
+    "freetsa/manifest.tsr": "f26bb8c611d4ae7fd6a755818b014cc9ea2c50762de61b11cdacec07e7c24c14",
+    "freetsa/manifest.tsq": "b85030bf1b9ca24c5ca5a2901f001a7c7505b9eda1659b431096268768611470",
+    "freetsa/cacert.pem": "2151b61137ffa86bf664691ba67e7da0b19f98c758e3d228d5d8ebf27e044438",
+    "freetsa/tsa.crt": "8bfb0305bb64e2571ca507552ef3245cb1c2fee8728e0ff8689225081ea13467",
+    "quickstart/manifest.json": "633a892403a284f2ae66c235838a76ba8abaf7b5e5637075d5a3a0d07aa4a97b",
+    "quickstart/public-key.pem": "c39a7ddefde6900f3247543e13fc9b59e6012cf2c12f4bdb86465d39dfd9cf75",
+    "quickstart/issuer.json": "ea18a82945debfcc5490483a79ec3bf342bb362cadac5aee4dfd4b828fbef8a6",
+    "quickstart/asset.txt": "0fbee401e10117ffe1fa991a8ec3421fec75d333a65bbe4c07a48ccb73d63e66"
+  },
+  "commands": [
+    {
+      "command": "openssl",
+      "args": [
+        "version"
+      ],
+      "expected_exit": 0,
+      "exit_code": 0,
+      "stdout": "OpenSSL 3.6.2 7 Apr 2026 (Library: OpenSSL 3.6.2 7 Apr 2026)\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "command": "node",
+      "args": [
+        "$VERIFIER/tests/test-timestamp-rfc3161.js"
+      ],
+      "expected_exit": 0,
+      "exit_code": 0,
+      "stdout": "RFC3161: valid, canonical JSON, modified manifest, wrong token, untrusted CA, bad nonce, corrupt token, unsafe paths passed.\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "command": "node",
+      "args": [
+        "$VERIFIER/tests/test-timestamp-public.js"
+      ],
+      "expected_exit": 0,
+      "exit_code": 0,
+      "stdout": "Public FreeTSA fixture and CLI: offline verification, canonical JSON, tampering, nonce, corrupt/missing token, incomplete trust, wrong issuer key and absent evidence passed.\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "command": "node",
+      "args": [
+        "$VERIFIER/bin/aura.js",
+        "verify",
+        "--manifest",
+        "$VERIFIER/examples/rfc3161-freetsa/manifest.json",
+        "--public-key",
+        "$VERIFIER/examples/rfc3161-freetsa/public-key.pem",
+        "--issuer",
+        "$VERIFIER/examples/rfc3161-freetsa/issuer.json",
+        "--asset",
+        "$VERIFIER/examples/rfc3161-freetsa/asset.txt",
+        "--timestamp-response",
+        "$VERIFIER/examples/rfc3161-freetsa/manifest.tsr",
+        "--timestamp-query",
+        "$VERIFIER/examples/rfc3161-freetsa/manifest.tsq",
+        "--tsa-ca",
+        "$VERIFIER/examples/rfc3161-freetsa/cacert.pem",
+        "--tsa-untrusted",
+        "$VERIFIER/examples/rfc3161-freetsa/tsa.crt",
+        "--json"
+      ],
+      "expected_exit": 0,
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"valid\",\n  \"schemaValidation\": {\n    \"status\": \"pass\",\n    \"schemaId\": \"https://aura-standard.org/schema/aura-manifest-v1.0.0.json\",\n    \"errors\": []\n  },\n  \"issuedAtValidation\": {\n    \"status\": \"pass\",\n    \"independentlyAttested\": false,\n    \"errors\": [],\n    \"warnings\": []\n  },\n  \"issuerIdentifiers\": {\n    \"status\": \"pass\",\n    \"comparisons\": 1,\n    \"identityAssessed\": false,\n    \"errors\": []\n  },\n  \"registryValidation\": {\n    \"status\": \"pass\",\n    \"errors\": []\n  },\n  \"keyStatusCheck\": \"not_listed_as_revoked_in_supplied_registry\",\n  \"historicalValidity\": \"not_assessed\",\n  \"registryTrust\": {\n    \"source\": \"caller_supplied\",\n    \"authenticity\": \"not_assessed\",\n    \"freshness\": \"not_assessed\"\n  },\n  \"archiveResolution\": \"not_checked\",\n  \"archiveReferences\": {\n    \"status\": \"not_checked\",\n    \"references\": [],\n    \"warnings\": []\n  },\n  \"issuerIdentity\": \"not_assessed\",\n  \"valid\": true,\n  \"evidenceType\": \"evidence_package\",\n  \"auraUid\": \"aura:v1:00000000000000000000000001\",\n  \"integrityStatus\": \"verified\",\n  \"assetHashOk\": true,\n  \"signatureOk\": true,\n  \"issuerKeyPinOk\": null,\n  \"issuerKeyOk\": true,\n  \"keyRevoked\": false,\n  \"revocation\": null,\n  \"issuerStatus\": \"active\",\n  \"computedAssetHash\": \"9894ffaaf4351670081cf6222a58e3612c4bd25279f711fdfce6f281e4986308\",\n  \"manifestAssetHash\": \"9894ffaaf4351670081cf6222a58e3612c4bd25279f711fdfce6f281e4986308\",\n  \"publicKeyFingerprintSha256\": \"dcc16eeb26081e003da4d31abb87ff042a6b5b795847eebf55b857aed8ef11fd\",\n  \"publicKeyFingerprintSha3_256\": \"2cb69fc15cee441af90b28f03d231702da98c2f1a711b0905f0b8783ebd00cd8\",\n  \"canonicalization\": \"RFC-8785-JCS\",\n  \"signatureAlgorithm\": \"Ed25519\",\n  \"signatureFormat\": \"Ed25519 raw signature, base64 encoded\",\n  \"issuedAt\": \"2026-10-31T12:46:49.197Z\",\n  \"proofScope\": \"asset_integrity_signed_declaration\",\n  \"tdmRightsReservation\": {\n    \"profileClaimed\": false,\n    \"fieldPath\": \"declarations.tdm_opt_out\",\n    \"declarationValue\": null,\n    \"declarationValid\": false,\n    \"syntaxConformant\": null,\n    \"signatureBound\": null,\n    \"assetBindingVerified\": null,\n    \"profileVerified\": null,\n    \"issuerAuthorityAssessed\": false,\n    \"discoverabilityAssessed\": false,\n    \"legalEffectAssessed\": false\n  },\n  \"warnings\": [],\n  \"errors\": [],\n  \"timestamp\": {\n    \"status\": \"verified\",\n    \"standard\": \"RFC3161\",\n    \"binding\": \"jcs_full_signed_manifest\",\n    \"timestampImprintSha256\": \"7e6e47d9ae402ae9878e078f4420f8d15e9385be676eebe23d3fa0f4bc973553\",\n    \"manifestHashSha3_256\": \"sha3-256:b2b40f936f74baafadd9828e1ee5e33ba2cfb9c26b08b13b6c20952886e35181\",\n    \"genTime\": \"2026-10-31T12:46:49.000Z\",\n    \"tsaPolicy\": \"1.2.3.4.1\",\n    \"tsaSerial\": \"0x0999C8BC\",\n    \"nonceCheck\": \"passed_against_supplied_request\",\n    \"trustBasis\": \"supplied_ca_file\",\n    \"tsaPolicyAcceptability\": \"not_assessed\",\n    \"revocationAndLongTermValidation\": \"not_assessed\",\n    \"qualifiedEidas\": \"not_assessed\"\n  },\n  \"auraTimestampedChecks\": \"technical_checks_passed\"\n}\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "command": "node",
+      "args": [
+        "$VERIFIER/bin/aura.js",
+        "verify",
+        "--manifest",
+        "$STANDARD/examples/quickstart-v1.1/manifest.json",
+        "--public-key",
+        "$STANDARD/examples/quickstart-v1.1/public-key.pem",
+        "--issuer",
+        "$STANDARD/examples/quickstart-v1.1/issuer.json",
+        "--asset",
+        "$STANDARD/examples/quickstart-v1.1/asset.txt",
+        "--json"
+      ],
+      "expected_exit": 0,
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"valid\",\n  \"schemaValidation\": {\n    \"status\": \"pass\",\n    \"schemaId\": \"https://aura-standard.org/schema/aura-manifest-v1.1.0.json\",\n    \"errors\": []\n  },\n  \"issuedAtValidation\": {\n    \"status\": \"pass\",\n    \"independentlyAttested\": false,\n    \"errors\": [],\n    \"warnings\": []\n  },\n  \"issuerIdentifiers\": {\n    \"status\": \"pass\",\n    \"comparisons\": 3,\n    \"identityAssessed\": false,\n    \"errors\": []\n  },\n  \"registryValidation\": {\n    \"status\": \"pass\",\n    \"errors\": []\n  },\n  \"keyStatusCheck\": \"not_listed_as_revoked_in_supplied_registry\",\n  \"historicalValidity\": \"not_assessed\",\n  \"registryTrust\": {\n    \"source\": \"caller_supplied\",\n    \"authenticity\": \"not_assessed\",\n    \"freshness\": \"not_assessed\"\n  },\n  \"archiveResolution\": \"not_checked\",\n  \"archiveReferences\": {\n    \"status\": \"not_checked\",\n    \"references\": [\n      {\n        \"field\": \"reference_anchor.standard.archive_doi\",\n        \"value\": \"10.5281/zenodo.22063255\",\n        \"syntax\": \"doi_like\",\n        \"resolution\": \"not_checked\"\n      },\n      {\n        \"field\": \"reference_anchor.verifier.archive_doi\",\n        \"value\": \"10.5281/zenodo.22063259\",\n        \"syntax\": \"doi_like\",\n        \"resolution\": \"not_checked\"\n      },\n      {\n        \"field\": \"reference_anchor.issuer_key.public_key_doi\",\n        \"value\": \"urn:aura:test-key:T8JTWMTHHTM3DKS5AAJ71BM406\",\n        \"syntax\": \"not_doi\",\n        \"resolution\": \"not_checked\"\n      }\n    ],\n    \"warnings\": [\n      \"reference_anchor.issuer_key.public_key_doi is not a bare DOI. Schema acceptance does not establish a public archive.\"\n    ]\n  },\n  \"issuerIdentity\": \"not_assessed\",\n  \"valid\": true,\n  \"evidenceType\": \"evidence_package\",\n  \"auraUid\": \"aura:v1:T8JTWMTHHTM3DKS5AAJ71BM406\",\n  \"integrityStatus\": \"verified\",\n  \"assetHashOk\": true,\n  \"signatureOk\": true,\n  \"issuerKeyPinOk\": true,\n  \"issuerKeyOk\": true,\n  \"keyRevoked\": false,\n  \"revocation\": null,\n  \"issuerStatus\": \"active\",\n  \"computedAssetHash\": \"97d4476b2ae8c3c6b6b16aa15bbc546dac89c77fc5275511387dda7e3fd15a5b\",\n  \"manifestAssetHash\": \"97d4476b2ae8c3c6b6b16aa15bbc546dac89c77fc5275511387dda7e3fd15a5b\",\n  \"publicKeyFingerprintSha256\": \"195f65e0a921642ed66f9d8877a884b3bbc4d2e4bfb8bb3f84dd7cfba253116a\",\n  \"publicKeyFingerprintSha3_256\": \"aeb6618e484933d6b47103cdc2502e6b818004bbabb93bc3821f96bb07ca22ca\",\n  \"canonicalization\": \"RFC-8785-JCS\",\n  \"signatureAlgorithm\": \"Ed25519\",\n  \"signatureFormat\": \"Ed25519 raw signature, base64 encoded\",\n  \"issuedAt\": \"2026-10-01T06:57:17.201Z\",\n  \"proofScope\": \"asset_integrity_signed_declaration\",\n  \"tdmRightsReservation\": {\n    \"profileClaimed\": false,\n    \"fieldPath\": \"declarations.tdm_opt_out\",\n    \"declarationValue\": null,\n    \"declarationValid\": false,\n    \"syntaxConformant\": null,\n    \"signatureBound\": null,\n    \"assetBindingVerified\": null,\n    \"profileVerified\": null,\n    \"issuerAuthorityAssessed\": false,\n    \"discoverabilityAssessed\": false,\n    \"legalEffectAssessed\": false\n  },\n  \"warnings\": [],\n  \"errors\": [],\n  \"timestamp\": {\n    \"status\": \"not_provided\",\n    \"qualifiedEidas\": \"not_assessed\"\n  },\n  \"auraTimestampedChecks\": \"not_established\"\n}\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "command": "node",
+      "args": [
+        "$VERIFIER/bin/aura.js",
+        "verify",
+        "--manifest",
+        "$STANDARD/examples/quickstart-v1.1/manifest.json",
+        "--public-key",
+        "$STANDARD/examples/quickstart-v1.1/public-key.pem",
+        "--issuer",
+        "$STANDARD/examples/quickstart-v1.1/issuer.json",
+        "--asset",
+        "$STANDARD/examples/quickstart-v1.1/asset.txt",
+        "--timestamp-response",
+        "$VERIFIER/examples/rfc3161-freetsa/manifest.tsr",
+        "--timestamp-query",
+        "$VERIFIER/examples/rfc3161-freetsa/manifest.tsq",
+        "--tsa-ca",
+        "$VERIFIER/examples/rfc3161-freetsa/cacert.pem",
+        "--tsa-untrusted",
+        "$VERIFIER/examples/rfc3161-freetsa/tsa.crt",
+        "--json"
+      ],
+      "expected_exit": 2,
+      "exit_code": 2,
+      "stdout": "{\n  \"status\": \"invalid\",\n  \"schemaValidation\": {\n    \"status\": \"pass\",\n    \"schemaId\": \"https://aura-standard.org/schema/aura-manifest-v1.1.0.json\",\n    \"errors\": []\n  },\n  \"issuedAtValidation\": {\n    \"status\": \"pass\",\n    \"independentlyAttested\": false,\n    \"errors\": [],\n    \"warnings\": []\n  },\n  \"issuerIdentifiers\": {\n    \"status\": \"pass\",\n    \"comparisons\": 3,\n    \"identityAssessed\": false,\n    \"errors\": []\n  },\n  \"registryValidation\": {\n    \"status\": \"pass\",\n    \"errors\": []\n  },\n  \"keyStatusCheck\": \"not_listed_as_revoked_in_supplied_registry\",\n  \"historicalValidity\": \"not_assessed\",\n  \"registryTrust\": {\n    \"source\": \"caller_supplied\",\n    \"authenticity\": \"not_assessed\",\n    \"freshness\": \"not_assessed\"\n  },\n  \"archiveResolution\": \"not_checked\",\n  \"archiveReferences\": {\n    \"status\": \"not_checked\",\n    \"references\": [\n      {\n        \"field\": \"reference_anchor.standard.archive_doi\",\n        \"value\": \"10.5281/zenodo.22063255\",\n        \"syntax\": \"doi_like\",\n        \"resolution\": \"not_checked\"\n      },\n      {\n        \"field\": \"reference_anchor.verifier.archive_doi\",\n        \"value\": \"10.5281/zenodo.22063259\",\n        \"syntax\": \"doi_like\",\n        \"resolution\": \"not_checked\"\n      },\n      {\n        \"field\": \"reference_anchor.issuer_key.public_key_doi\",\n        \"value\": \"urn:aura:test-key:T8JTWMTHHTM3DKS5AAJ71BM406\",\n        \"syntax\": \"not_doi\",\n        \"resolution\": \"not_checked\"\n      }\n    ],\n    \"warnings\": [\n      \"reference_anchor.issuer_key.public_key_doi is not a bare DOI. Schema acceptance does not establish a public archive.\"\n    ]\n  },\n  \"issuerIdentity\": \"not_assessed\",\n  \"valid\": false,\n  \"evidenceType\": \"evidence_package\",\n  \"auraUid\": \"aura:v1:T8JTWMTHHTM3DKS5AAJ71BM406\",\n  \"integrityStatus\": \"verified\",\n  \"assetHashOk\": true,\n  \"signatureOk\": true,\n  \"issuerKeyPinOk\": true,\n  \"issuerKeyOk\": true,\n  \"keyRevoked\": false,\n  \"revocation\": null,\n  \"issuerStatus\": \"active\",\n  \"computedAssetHash\": \"97d4476b2ae8c3c6b6b16aa15bbc546dac89c77fc5275511387dda7e3fd15a5b\",\n  \"manifestAssetHash\": \"97d4476b2ae8c3c6b6b16aa15bbc546dac89c77fc5275511387dda7e3fd15a5b\",\n  \"publicKeyFingerprintSha256\": \"195f65e0a921642ed66f9d8877a884b3bbc4d2e4bfb8bb3f84dd7cfba253116a\",\n  \"publicKeyFingerprintSha3_256\": \"aeb6618e484933d6b47103cdc2502e6b818004bbabb93bc3821f96bb07ca22ca\",\n  \"canonicalization\": \"RFC-8785-JCS\",\n  \"signatureAlgorithm\": \"Ed25519\",\n  \"signatureFormat\": \"Ed25519 raw signature, base64 encoded\",\n  \"issuedAt\": \"2026-10-01T06:57:17.201Z\",\n  \"proofScope\": \"asset_integrity_signed_declaration\",\n  \"tdmRightsReservation\": {\n    \"profileClaimed\": false,\n    \"fieldPath\": \"declarations.tdm_opt_out\",\n    \"declarationValue\": null,\n    \"declarationValid\": false,\n    \"syntaxConformant\": null,\n    \"signatureBound\": null,\n    \"assetBindingVerified\": null,\n    \"profileVerified\": null,\n    \"issuerAuthorityAssessed\": false,\n    \"discoverabilityAssessed\": false,\n    \"legalEffectAssessed\": false\n  },\n  \"warnings\": [],\n  \"errors\": [\n    \"RFC 3161 verification failed: Using configuration from /dev/null\\nWarning: certificate from '$VERIFIER/examples/rfc3161-freetsa/tsa.crt' with subject '/O=Free TSA/OU=TSA/description=This certificate digitally signs documents and time stamp requests made using the freetsa.org online services/CN=www.freetsa.org/emailAddress=busilezas@mailbox.org/L=Wuerzburg/C=DE/ST=Bayern' is not a CA cert\\n80E1B1F601000000:error:17800067:time stamp routines:ts_check_imprints:message imprint mismatch:crypto/ts/ts_rsp_verify.c:508:\"\n  ],\n  \"timestamp\": {\n    \"status\": \"invalid\",\n    \"standard\": \"RFC3161\",\n    \"binding\": \"jcs_full_signed_manifest\",\n    \"timestampImprintSha256\": \"4850c6bdb6e835f1a68be3ea406acbc54891268291367fbf9c825abb8b61e5f3\",\n    \"manifestHashSha3_256\": \"sha3-256:4f2d39165b06bbb87a0b73898c04770d1d95942c4ef906bcdc2f3daba7de0ca7\",\n    \"qualifiedEidas\": \"not_assessed\",\n    \"error\": \"Using configuration from /dev/null\\nWarning: certificate from '$VERIFIER/examples/rfc3161-freetsa/tsa.crt' with subject '/O=Free TSA/OU=TSA/description=This certificate digitally signs documents and time stamp requests made using the freetsa.org online services/CN=www.freetsa.org/emailAddress=busilezas@mailbox.org/L=Wuerzburg/C=DE/ST=Bayern' is not a CA cert\\n80E1B1F601000000:error:17800067:time stamp routines:ts_check_imprints:message imprint mismatch:crypto/ts/ts_rsp_verify.c:508:\"\n  },\n  \"auraTimestampedChecks\": \"not_established\"\n}\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "cases": [
+    {
+      "id": "T02-valid-detached-token",
+      "row": "T02",
+      "manifest_version": "1.0",
+      "status": "passed",
+      "matrix_result": {
+        "independentTimestamp": "pass"
+      },
+      "observed": {
+        "status": "valid",
+        "schemaValidation": {
+          "status": "pass",
+          "schemaId": "https://aura-standard.org/schema/aura-manifest-v1.0.0.json",
+          "errors": []
+        },
+        "issuedAtValidation": {
+          "status": "pass",
+          "independentlyAttested": false,
+          "errors": [],
+          "warnings": []
+        },
+        "issuerIdentifiers": {
+          "status": "pass",
+          "comparisons": 1,
+          "identityAssessed": false,
+          "errors": []
+        },
+        "registryValidation": {
+          "status": "pass",
+          "errors": []
+        },
+        "keyStatusCheck": "not_listed_as_revoked_in_supplied_registry",
+        "historicalValidity": "not_assessed",
+        "registryTrust": {
+          "source": "caller_supplied",
+          "authenticity": "not_assessed",
+          "freshness": "not_assessed"
+        },
+        "archiveResolution": "not_checked",
+        "archiveReferences": {
+          "status": "not_checked",
+          "references": [],
+          "warnings": []
+        },
+        "issuerIdentity": "not_assessed",
+        "valid": true,
+        "evidenceType": "evidence_package",
+        "auraUid": "aura:v1:00000000000000000000000001",
+        "integrityStatus": "verified",
+        "assetHashOk": true,
+        "signatureOk": true,
+        "issuerKeyPinOk": null,
+        "issuerKeyOk": true,
+        "keyRevoked": false,
+        "revocation": null,
+        "issuerStatus": "active",
+        "computedAssetHash": "9894ffaaf4351670081cf6222a58e3612c4bd25279f711fdfce6f281e4986308",
+        "manifestAssetHash": "9894ffaaf4351670081cf6222a58e3612c4bd25279f711fdfce6f281e4986308",
+        "publicKeyFingerprintSha256": "dcc16eeb26081e003da4d31abb87ff042a6b5b795847eebf55b857aed8ef11fd",
+        "publicKeyFingerprintSha3_256": "2cb69fc15cee441af90b28f03d231702da98c2f1a711b0905f0b8783ebd00cd8",
+        "canonicalization": "RFC-8785-JCS",
+        "signatureAlgorithm": "Ed25519",
+        "signatureFormat": "Ed25519 raw signature, base64 encoded",
+        "issuedAt": "2026-10-31T12:46:49.197Z",
+        "proofScope": "asset_integrity_signed_declaration",
+        "tdmRightsReservation": {
+          "profileClaimed": false,
+          "fieldPath": "declarations.tdm_opt_out",
+          "declarationValue": null,
+          "declarationValid": false,
+          "syntaxConformant": null,
+          "signatureBound": null,
+          "assetBindingVerified": null,
+          "profileVerified": null,
+          "issuerAuthorityAssessed": false,
+          "discoverabilityAssessed": false,
+          "legalEffectAssessed": false
+        },
+        "warnings": [],
+        "errors": [],
+        "timestamp": {
+          "status": "verified",
+          "standard": "RFC3161",
+          "binding": "jcs_full_signed_manifest",
+          "timestampImprintSha256": "7e6e47d9ae402ae9878e078f4420f8d15e9385be676eebe23d3fa0f4bc973553",
+          "manifestHashSha3_256": "sha3-256:b2b40f936f74baafadd9828e1ee5e33ba2cfb9c26b08b13b6c20952886e35181",
+          "genTime": "2026-10-31T12:46:49.000Z",
+          "tsaPolicy": "1.2.3.4.1",
+          "tsaSerial": "0x0999C8BC",
+          "nonceCheck": "passed_against_supplied_request",
+          "trustBasis": "supplied_ca_file",
+          "tsaPolicyAcceptability": "not_assessed",
+          "revocationAndLongTermValidation": "not_assessed",
+          "qualifiedEidas": "not_assessed"
+        },
+        "auraTimestampedChecks": "technical_checks_passed"
+      }
+    },
+    {
+      "id": "T03-target-without-token",
+      "row": "T03",
+      "manifest_version": "1.1",
+      "role": "control",
+      "status": "passed",
+      "observed": {
+        "status": "valid",
+        "schemaValidation": {
+          "status": "pass",
+          "schemaId": "https://aura-standard.org/schema/aura-manifest-v1.1.0.json",
+          "errors": []
+        },
+        "issuedAtValidation": {
+          "status": "pass",
+          "independentlyAttested": false,
+          "errors": [],
+          "warnings": []
+        },
+        "issuerIdentifiers": {
+          "status": "pass",
+          "comparisons": 3,
+          "identityAssessed": false,
+          "errors": []
+        },
+        "registryValidation": {
+          "status": "pass",
+          "errors": []
+        },
+        "keyStatusCheck": "not_listed_as_revoked_in_supplied_registry",
+        "historicalValidity": "not_assessed",
+        "registryTrust": {
+          "source": "caller_supplied",
+          "authenticity": "not_assessed",
+          "freshness": "not_assessed"
+        },
+        "archiveResolution": "not_checked",
+        "archiveReferences": {
+          "status": "not_checked",
+          "references": [
+            {
+              "field": "reference_anchor.standard.archive_doi",
+              "value": "10.5281/zenodo.22063255",
+              "syntax": "doi_like",
+              "resolution": "not_checked"
+            },
+            {
+              "field": "reference_anchor.verifier.archive_doi",
+              "value": "10.5281/zenodo.22063259",
+              "syntax": "doi_like",
+              "resolution": "not_checked"
+            },
+            {
+              "field": "reference_anchor.issuer_key.public_key_doi",
+              "value": "urn:aura:test-key:T8JTWMTHHTM3DKS5AAJ71BM406",
+              "syntax": "not_doi",
+              "resolution": "not_checked"
+            }
+          ],
+          "warnings": [
+            "reference_anchor.issuer_key.public_key_doi is not a bare DOI. Schema acceptance does not establish a public archive."
+          ]
+        },
+        "issuerIdentity": "not_assessed",
+        "valid": true,
+        "evidenceType": "evidence_package",
+        "auraUid": "aura:v1:T8JTWMTHHTM3DKS5AAJ71BM406",
+        "integrityStatus": "verified",
+        "assetHashOk": true,
+        "signatureOk": true,
+        "issuerKeyPinOk": true,
+        "issuerKeyOk": true,
+        "keyRevoked": false,
+        "revocation": null,
+        "issuerStatus": "active",
+        "computedAssetHash": "97d4476b2ae8c3c6b6b16aa15bbc546dac89c77fc5275511387dda7e3fd15a5b",
+        "manifestAssetHash": "97d4476b2ae8c3c6b6b16aa15bbc546dac89c77fc5275511387dda7e3fd15a5b",
+        "publicKeyFingerprintSha256": "195f65e0a921642ed66f9d8877a884b3bbc4d2e4bfb8bb3f84dd7cfba253116a",
+        "publicKeyFingerprintSha3_256": "aeb6618e484933d6b47103cdc2502e6b818004bbabb93bc3821f96bb07ca22ca",
+        "canonicalization": "RFC-8785-JCS",
+        "signatureAlgorithm": "Ed25519",
+        "signatureFormat": "Ed25519 raw signature, base64 encoded",
+        "issuedAt": "2026-10-01T06:57:17.201Z",
+        "proofScope": "asset_integrity_signed_declaration",
+        "tdmRightsReservation": {
+          "profileClaimed": false,
+          "fieldPath": "declarations.tdm_opt_out",
+          "declarationValue": null,
+          "declarationValid": false,
+          "syntaxConformant": null,
+          "signatureBound": null,
+          "assetBindingVerified": null,
+          "profileVerified": null,
+          "issuerAuthorityAssessed": false,
+          "discoverabilityAssessed": false,
+          "legalEffectAssessed": false
+        },
+        "warnings": [],
+        "errors": [],
+        "timestamp": {
+          "status": "not_provided",
+          "qualifiedEidas": "not_assessed"
+        },
+        "auraTimestampedChecks": "not_established"
+      }
+    },
+    {
+      "id": "T03-valid-signature-wrong-token",
+      "row": "T03",
+      "manifest_version": "1.1",
+      "status": "passed",
+      "matrix_result": {
+        "timestampBinding": "fail"
+      },
+      "token_imprint_sha256": "7e6e47d9ae402ae9878e078f4420f8d15e9385be676eebe23d3fa0f4bc973553",
+      "target_imprint_sha256": "4850c6bdb6e835f1a68be3ea406acbc54891268291367fbf9c825abb8b61e5f3",
+      "observed": {
+        "status": "invalid",
+        "schemaValidation": {
+          "status": "pass",
+          "schemaId": "https://aura-standard.org/schema/aura-manifest-v1.1.0.json",
+          "errors": []
+        },
+        "issuedAtValidation": {
+          "status": "pass",
+          "independentlyAttested": false,
+          "errors": [],
+          "warnings": []
+        },
+        "issuerIdentifiers": {
+          "status": "pass",
+          "comparisons": 3,
+          "identityAssessed": false,
+          "errors": []
+        },
+        "registryValidation": {
+          "status": "pass",
+          "errors": []
+        },
+        "keyStatusCheck": "not_listed_as_revoked_in_supplied_registry",
+        "historicalValidity": "not_assessed",
+        "registryTrust": {
+          "source": "caller_supplied",
+          "authenticity": "not_assessed",
+          "freshness": "not_assessed"
+        },
+        "archiveResolution": "not_checked",
+        "archiveReferences": {
+          "status": "not_checked",
+          "references": [
+            {
+              "field": "reference_anchor.standard.archive_doi",
+              "value": "10.5281/zenodo.22063255",
+              "syntax": "doi_like",
+              "resolution": "not_checked"
+            },
+            {
+              "field": "reference_anchor.verifier.archive_doi",
+              "value": "10.5281/zenodo.22063259",
+              "syntax": "doi_like",
+              "resolution": "not_checked"
+            },
+            {
+              "field": "reference_anchor.issuer_key.public_key_doi",
+              "value": "urn:aura:test-key:T8JTWMTHHTM3DKS5AAJ71BM406",
+              "syntax": "not_doi",
+              "resolution": "not_checked"
+            }
+          ],
+          "warnings": [
+            "reference_anchor.issuer_key.public_key_doi is not a bare DOI. Schema acceptance does not establish a public archive."
+          ]
+        },
+        "issuerIdentity": "not_assessed",
+        "valid": false,
+        "evidenceType": "evidence_package",
+        "auraUid": "aura:v1:T8JTWMTHHTM3DKS5AAJ71BM406",
+        "integrityStatus": "verified",
+        "assetHashOk": true,
+        "signatureOk": true,
+        "issuerKeyPinOk": true,
+        "issuerKeyOk": true,
+        "keyRevoked": false,
+        "revocation": null,
+        "issuerStatus": "active",
+        "computedAssetHash": "97d4476b2ae8c3c6b6b16aa15bbc546dac89c77fc5275511387dda7e3fd15a5b",
+        "manifestAssetHash": "97d4476b2ae8c3c6b6b16aa15bbc546dac89c77fc5275511387dda7e3fd15a5b",
+        "publicKeyFingerprintSha256": "195f65e0a921642ed66f9d8877a884b3bbc4d2e4bfb8bb3f84dd7cfba253116a",
+        "publicKeyFingerprintSha3_256": "aeb6618e484933d6b47103cdc2502e6b818004bbabb93bc3821f96bb07ca22ca",
+        "canonicalization": "RFC-8785-JCS",
+        "signatureAlgorithm": "Ed25519",
+        "signatureFormat": "Ed25519 raw signature, base64 encoded",
+        "issuedAt": "2026-10-01T06:57:17.201Z",
+        "proofScope": "asset_integrity_signed_declaration",
+        "tdmRightsReservation": {
+          "profileClaimed": false,
+          "fieldPath": "declarations.tdm_opt_out",
+          "declarationValue": null,
+          "declarationValid": false,
+          "syntaxConformant": null,
+          "signatureBound": null,
+          "assetBindingVerified": null,
+          "profileVerified": null,
+          "issuerAuthorityAssessed": false,
+          "discoverabilityAssessed": false,
+          "legalEffectAssessed": false
+        },
+        "warnings": [],
+        "errors": [
+          "RFC 3161 verification failed: Using configuration from /dev/null\nWarning: certificate from '$VERIFIER/examples/rfc3161-freetsa/tsa.crt' with subject '/O=Free TSA/OU=TSA/description=This certificate digitally signs documents and time stamp requests made using the freetsa.org online services/CN=www.freetsa.org/emailAddress=busilezas@mailbox.org/L=Wuerzburg/C=DE/ST=Bayern' is not a CA cert\n80E1B1F601000000:error:17800067:time stamp routines:ts_check_imprints:message imprint mismatch:crypto/ts/ts_rsp_verify.c:508:"
+        ],
+        "timestamp": {
+          "status": "invalid",
+          "standard": "RFC3161",
+          "binding": "jcs_full_signed_manifest",
+          "timestampImprintSha256": "4850c6bdb6e835f1a68be3ea406acbc54891268291367fbf9c825abb8b61e5f3",
+          "manifestHashSha3_256": "sha3-256:4f2d39165b06bbb87a0b73898c04770d1d95942c4ef906bcdc2f3daba7de0ca7",
+          "qualifiedEidas": "not_assessed",
+          "error": "Using configuration from /dev/null\nWarning: certificate from '$VERIFIER/examples/rfc3161-freetsa/tsa.crt' with subject '/O=Free TSA/OU=TSA/description=This certificate digitally signs documents and time stamp requests made using the freetsa.org online services/CN=www.freetsa.org/emailAddress=busilezas@mailbox.org/L=Wuerzburg/C=DE/ST=Bayern' is not a CA cert\n80E1B1F601000000:error:17800067:time stamp routines:ts_check_imprints:message imprint mismatch:crypto/ts/ts_rsp_verify.c:508:"
+        },
+        "auraTimestampedChecks": "not_established"
+      }
+    }
+  ],
+  "failures": [],
+  "limitations": [
+    "Node CLI and OpenSSL 3.x only; this is a reference-implementation replay, not a second independent implementation.",
+    "The preserved FreeTSA response is verified locally; no new timestamp or private issuer key is requested.",
+    "Trust is relative to the supplied CA. Anchor authenticity, TSA-policy acceptability, revocation, long-term validation and qualified eIDAS status are not established.",
+    "Certificate validation uses the current system time. Expiry is a failure, not a skipped test.",
+    "The synthetic upstream suite tests TSA binding with a placeholder signature; the mapped T02/T03 cases below use complete signed AURA packages.",
+    "This recipe hashes the complete signed manifest in JCS with SHA-256; it does not define prior_evidence or every possible timestamp profile."
+  ],
+  "openssl": "OpenSSL 3.6.2 7 Apr 2026 (Library: OpenSSL 3.6.2 7 Apr 2026)",
+  "openssl_configuration": "/dev/null",
+  "status": "passed"
+}

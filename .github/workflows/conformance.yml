@@ -56,6 +56,11 @@ jobs:
           AURA_VERIFIER_DIR: ${{ github.workspace }}/.ci-verifier
           AURA_RESULTS_DIR: ${{ runner.temp }}/aura-results
           AURA_PYTHON: python
+      - name: Verify RFC 3161 matrix cases T02 and T03
+        run: node tests/conformance/check-timestamps.mjs
+        env:
+          AURA_VERIFIER_DIR: ${{ github.workspace }}/.ci-verifier
+          AURA_RESULTS_DIR: ${{ runner.temp }}/aura-results
       - name: Preserve execution reports
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

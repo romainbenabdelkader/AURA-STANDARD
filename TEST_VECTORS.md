@@ -14,8 +14,11 @@ schema, signature, integrity and profile dimensions.
 
 The dated dossier retains its original v1.2.1 results. The current runner
 separately checks the pinned v1.2.2 release and a freshly generated S02/S01
-package. The linked coverage notes identify unexecuted timestamp cases and
-partial application-reporting checks; this is not an exhaustive conformance suite.
+package. A separate [T02/T03 replay](tests/conformance/2026-11-04-timestamp/README.md)
+checks the selected RFC 3161 recipe with a valid token and a wrong-manifest token,
+while keeping signature and integrity results separate. The linked coverage
+notes identify remaining limits and partial application-reporting checks;
+this is not an exhaustive conformance suite.
 
 Implementations claiming support for
 `AURA_TDM_RIGHTS_RESERVATION_V1` additionally MUST test:
