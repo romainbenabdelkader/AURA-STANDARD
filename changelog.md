@@ -6,6 +6,14 @@ Statuts des versions définis dans : specs/Standard_Status_and_Versioning.md.
 
 ⸻
 
+[Tests d'horodatage proposés — sans nouvelle release] – 2026-11-04
+
+• Rejeu des deux suites RFC 3161 existantes du vérificateur v1.2.2 épinglé et correspondance explicite avec T02/T03 dans les contrôles Node 20/22/24.
+• Cas négatif : un manifeste signé valide et son actif intact restent vérifiés, tandis qu'un jeton portant sur un autre manifeste est rejeté pour désaccord d'empreinte.
+• Résultats datés distincts du dossier du 3 novembre ; schémas, preuves signées, recette d'horodatage et version publiée inchangés.
+
+⸻
+
 [Consolidation proposée — sans nouvelle release] – 2026-11-04
 
 • Entrée de lecture v1.x et matrice de consolidation informatives, sans promotion normative.
