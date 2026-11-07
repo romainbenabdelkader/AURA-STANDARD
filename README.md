@@ -253,6 +253,9 @@ AURA-VERIFIER is a standalone, open-source reference verifier for AURA evidence.
 Repository:  
 https://github.com/romainbenabdelkader/AURA-VERIFIER
 
+Install the CLI from [npm](https://www.npmjs.com/package/aura-verifier) with Node.js 20+:
+`npm install --global aura-verifier@1.2.2`.
+
 For current manifest integration, start with its
 [v1.2.2 integrator guide](https://github.com/romainbenabdelkader/AURA-VERIFIER/blob/08d7c70404bab16e2e3b09bb9e59aefaf6fa5391/INTEGRATORS.md)
 and [public v1.0 vector](https://github.com/romainbenabdelkader/AURA-VERIFIER/tree/08d7c70404bab16e2e3b09bb9e59aefaf6fa5391/examples/rfc3161-freetsa).
