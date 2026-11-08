@@ -1,0 +1,55 @@
+{
+  "kind": "non_normative_hash_input_experiment",
+  "standard_commit": "2ef46b04aae922eeb576606fa9b2ccb8c802a28a",
+  "verifier_commit": "6b1a631a9febdd724cfa819c67ec9d285179c27c",
+  "source_path": "examples/quickstart-v1.1/superseded/2026-08-23/manifest.json",
+  "referring_path": "examples/quickstart-v1.1/manifest.json",
+  "variants": [
+    {
+      "name": "original_file",
+      "byte_length": 1969,
+      "file_sha3_256": "sha3-256:0da4abe756b5720ed93306b17d10de7ac913b2496f6d8c0d047b6adf6e2e70a4",
+      "canonical_signed_sha3_256": "sha3-256:0365b7357f5d21925ac977e5c316ea39b35911a0f774dcf3336901ee0c00e8e9",
+      "canonical_signed_sha256": "dbb8b908a2a09b12c1f0dac541b397ba028ddde296a70636882a89a16c75cec1"
+    },
+    {
+      "name": "compact_json",
+      "byte_length": 1662,
+      "file_sha3_256": "sha3-256:95144e71ee372c3642fa049d41714789fb009239c0ff8f42aaf7461a494cdf14",
+      "canonical_signed_sha3_256": "sha3-256:0365b7357f5d21925ac977e5c316ea39b35911a0f774dcf3336901ee0c00e8e9",
+      "canonical_signed_sha256": "dbb8b908a2a09b12c1f0dac541b397ba028ddde296a70636882a89a16c75cec1"
+    },
+    {
+      "name": "reordered_pretty_json",
+      "byte_length": 2179,
+      "file_sha3_256": "sha3-256:d9db9173189c18fd37b084079c79bbb66a514615168ee360fa35d0983fcbaa92",
+      "canonical_signed_sha3_256": "sha3-256:0365b7357f5d21925ac977e5c316ea39b35911a0f774dcf3336901ee0c00e8e9",
+      "canonical_signed_sha256": "dbb8b908a2a09b12c1f0dac541b397ba028ddde296a70636882a89a16c75cec1"
+    },
+    {
+      "name": "crlf_json",
+      "byte_length": 2023,
+      "file_sha3_256": "sha3-256:e60e7fb24698a0243bf3a58aac59978eb450ec31b61904cc4ec996eef00417e2",
+      "canonical_signed_sha3_256": "sha3-256:0365b7357f5d21925ac977e5c316ea39b35911a0f774dcf3336901ee0c00e8e9",
+      "canonical_signed_sha256": "dbb8b908a2a09b12c1f0dac541b397ba028ddde296a70636882a89a16c75cec1"
+    },
+    {
+      "name": "utf8_bom_json",
+      "byte_length": 1972,
+      "file_sha3_256": "sha3-256:b2c478e2f6c46431e105e5dcb098afcf224aaac9a6758ed5ea5928942183bb5a",
+      "canonical_signed_sha3_256": "sha3-256:0365b7357f5d21925ac977e5c316ea39b35911a0f774dcf3336901ee0c00e8e9",
+      "canonical_signed_sha256": "dbb8b908a2a09b12c1f0dac541b397ba028ddde296a70636882a89a16c75cec1"
+    }
+  ],
+  "unsigned_payload_sha3_256": "sha3-256:15a26a1abe67e670be87648e605c9f0f9dd2b8d93a73222913bc3553b5fae911",
+  "changed_signature_canonical_sha3_256": "sha3-256:f6b26b58a5cf6f4663012237382f132e813016f7809334d548e4ca1f3ff479b8",
+  "escaped_duplicate_property_rejected": true,
+  "input_conversion_observations": {
+    "bom_retained_by_buffer_text_and_rejected_by_released_parser": true,
+    "bom_removed_by_blob_text": true,
+    "distinct_byte_inputs_can_have_identical_blob_text": true,
+    "invalid_utf8_rejected_by_fatal_decoder": true,
+    "second_bom_rejected_after_removing_one": true
+  },
+  "limits": "Uses the released canonicalizer; does not implement proposed extension validation, verify target signatures, or establish issuer trust or historical validity."
+}
